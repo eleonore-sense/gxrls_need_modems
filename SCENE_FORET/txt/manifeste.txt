@@ -1,0 +1,19 @@
+   _______________________________________________________________________
+ / \                                                                       \
+|   |                                                                       |
+ \_ |                                                                       |
+    |                                                                       |
+    |    "Nous avons besoin d'interfaces qui nous libèrent,                 |
+    |     qui rompent la relation administrée par l'administrateur,         |
+    |     qui ont des camarades en charge de l'administration,              |
+    |     qui fonctionnent de manière distribuée,                           |
+    |     dans les ordinateurs que nous avons actuellement                  |
+    |     et non sur les ordinateurs situés dans les nuages des autres."    |
+    |                                                                       |
+    |      kefir.red, Fermentaciones en constante transformación,           |
+    |      cultivo y cuidado cotidiano basado en saberes compartidos.       |
+    |                                                                       |
+    |                                                                       |
+    |   ____________________________________________________________________|___
+    |  /                                                                       /
+    \_/_______________________________________________________________________/

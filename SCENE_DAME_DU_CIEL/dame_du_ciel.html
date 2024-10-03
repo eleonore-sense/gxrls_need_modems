@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+
+ }
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+  }
+
+
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+<body onload="check_plante()">
+
+
+                <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+retour à la carto -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+    <!--///////////////////////SERPENT///////////////////////////////////-->
+  
+  <div id="letout">
+
+
+    <div id="paysage">
+        <pre ><script>document.include('txt/fond_ciel.txt');</script>
+        </pre>
+    </div>
+
+
+    <div id="dragon" style="top: 100px; left:240px; cursor:pointer; " onclick="fonction_dragon()">
+        <pre ><script>document.include('txt/dragon.txt') ;</script>
+        </pre>
+    </div>
+
+
+    <div id="telescole" style="left:-270px; top: 50px; cursor:pointer; " onclick="fonction_telescope()">
+        <pre ><script>document.include('txt/telescope.txt');</script>
+        </pre>
+    </div>
+
+    <div id="etoile" style="left:200px; top: -260px; cursor: pointer;" onclick="fonction_etoile()">
+        <pre ><script>document.include('txt/etoile.txt');</script>
+        </pre>
+    </div>
+
+
+  <div id="herbe" style="left:360px; top: 35px; cursor: pointer;" onclick="citation_k_j()">
+        <pre ><script>document.include('txt/herbe.txt');</script>
+        </pre>
+    </div>
+
+  <div id="x" style="left:-311px; top: -71px; cursor: pointer;" onclick="appareil_photo()">
+        <pre ><script>document.include('txt/x.txt');</script>
+        </pre>
+    </div>
+
+<!--///////////////////////FLEURS///////////////////////////////////-->
+
+
+<div id="grande_fleur" style=" display:none; cursor: pointer;" onclick="grande_fleur()">
+ <pre style="z-index: 4; background-color: white; top: 200px; left: -135px; "><script>document.include('txt/grande_fleur.txt')</script></pre>
+</div>
+
+<div id="moyenne_fleur" style=" display:none; cursor: pointer;" onclick="moyenne_fleur()">
+ <pre style="z-index: 4; background-color: white ; top: 231px; left: -139px; "><script>document.include('txt/moyenne_fleur.txt')</script></pre>
+</div>
+
+<div id="petite_fleur" style=" display:none; cursor: pointer;" onclick="petite_fleur()">
+ <pre style="z-index: 4; background-color: white; top: 231px; left: -107px; "><script>document.include('txt/petite_fleur.txt')</script></pre>
+</div>
+
+<div id="graine_planter" style=" display:none; cursor: pointer;" onclick="graine_plantee()">
+ <pre style="z-index: 4; background-color: white; top: 240px; left: -135px; "><script>document.include('txt/graine_planter.txt')</script></pre>
+</div>
+
+<div id="a_planter" style=" display:none; cursor: pointer;" onclick="planter()">
+ <pre style="z-index: 4; background-color: white; top: 240px; left: -135px; "><script>document.include('txt/a_planter.txt')</script></pre>
+</div>
+
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+
+<div id="carte_gagnante" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/carte_gagnante.txt')</script></pre>
+</div>
+
+
+ <div id="texte_graine_plantee" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/texte_graine_plantee.txt')</script></pre>
+</div>
+
+
+<div id="a_arroser" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/a_arroser.txt')</script></pre>
+</div>
+
+<div id="pas_arroser" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/pas_arroser.txt')</script></pre>
+</div>
+ 
+
+<div id="recolter" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/bouquet.txt')</script></pre>
+</div>
+ 
+
+
+
+<div id="intro" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+</div>
+
+
+   <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">c'est vrai..! vous êtes qui?</button>
+
+<div id="dame_du_ciel_1" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_1.txt')</script></pre>
+ <button id="bouton_1_a" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 104px; top:50px; left:-80px;">c'est un boulot titanesque!</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 110px; top:50px; left:80px;">j'aime pas trop les math moi...</button>
+</div>
+
+
+<div id="dame_du_ciel_2" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_2.txt')</script></pre>
+ <button id="bouton_2" class="bouton_intro" onclick="dameDuCiel_2()" style="width: 278px; top:78px;">et c'est une bonne situation ça, calculatrice?</button>
+</div>
+
+<div id="dame_du_ciel_3" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_3.txt')</script></pre>
+ <button id="bouton_3" class="bouton_intro" onclick="dameDuCiel_3()" style="width: 238px; top:45px;">ouhlala, c'est vraiment pas beaucoup!</button>
+</div>
+
+<div id="dame_du_ciel_4" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_4.txt')</script></pre>
+ <button id="bouton_4_a" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 60px; top:78px; left:-80px;">qui ça?</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 135px; top:78px; left:80px;">ah oui... Dorothéa...</button>
+</div>
+
+<div id="dame_du_ciel_5" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_5.txt')</script></pre>
+</div>
+
+<div id="dame_du_ciel_6" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_6.txt')</script></pre>
+</div>
+
+<div id="dame_du_ciel_7" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_7.txt')</script></pre>
+</div>
+
+  <div id="citation_k_j" style="display: none;">
+        <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_katherine_johnson.txt');</script>
+        </pre>
+    </div>
+
+
+  <div id="appareil_photo" style="display: none;">
+        <pre style="background-color: white; z-index:6;"><script>document.include('txt/appareil_photo.txt');</script>
+        </pre>
+    </div>
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+
+
+  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+
+  </div>
+
+    </div>
+ 
+    <script type="text/javascript">
+
+        function fonction_telescope(){
+ window.location.href='../SCENE_TELESCOPE/telescope.html'; 
+
+        }
+
+
+        function fonction_etoile(){
+      if(localStorage.getItem("carte_gagnante") == "ok"){
+            document.getElementById("etoile").style.cursor = "auto";   
+          }else{
+            document.getElementById("carte_gagnante").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block"; 
+            localStorage.setItem("carte_gagnante", "ok"); 
+
+          }
+        }
+
+
+        function citation_k_j(){
+      if(localStorage.getItem("citation_k_j") == "ok"){
+            document.getElementById("herbe").style.cursor = "auto";
+     }else{
+            document.getElementById("citation_k_j").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("citation_k_j", "ok"); 
+     }
+ }
+
+        function appareil_photo(){
+      if(localStorage.getItem("appareil_photo") == "ok"){
+            document.getElementById("x").style.cursor = "auto";
+     }else{
+            document.getElementById("appareil_photo").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("appareil_photo", "ok"); 
+     }
+ }
+
+
+        function tout_fermer(){
+            document.getElementById("carte_gagnante").style.display = "none";
+            document.getElementById("tout_fermer").style.display = "none";
+            document.getElementById("texte_graine_plantee").style.display= "none";
+            document.getElementById("a_arroser").style.display= "none";
+            document.getElementById("pas_arroser").style.display= "none";
+            document.getElementById("recolter").style.display= "none";
+            document.getElementById("bouton_oui").style.display= "none";
+            document.getElementById("citation_k_j").style.display= "none";
+            document.getElementById("appareil_photo").style.display= "none";
+
+            document.getElementById("dame_du_ciel_6").style.display= "none";   
+            document.getElementById("dame_du_ciel_7").style.display= "none";   
+                document.getElementById("dame_du_ciel_5").style.display= "none";   
+
+
+        }
+
+
+ ////////////////////////////////LES PLANTES//////////////////////
+
+function check_plante(){
+      if(localStorage.getItem("planter_graine") == "ok"){
+document.getElementById("graine_planter").style.display= "block";
+          }else if(localStorage.getItem("petite_fleur_onload") == "ok"){
+document.getElementById("petite_fleur").style.display= "block";
+
+          }else if(localStorage.getItem("moyenne_fleur_onload") == "ok"){
+document.getElementById("moyenne_fleur").style.display= "block";
+          }else if(localStorage.getItem("grande_fleur_onload") == "ok"){
+document.getElementById("grande_fleur").style.display= "block";
+          }else{
+document.getElementById("a_planter").style.display= "block";
+          }
+
+
+}
+
+function planter(){
+var graine_plantee = new Date();
+localStorage.graine_plantee = graine_plantee;
+document.getElementById("a_planter").style.display= "none";
+document.getElementById("graine_planter").style.display= "block";
+document.getElementById("texte_graine_plantee").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+localStorage.setItem("planter_graine", "ok"); 
+localStorage.setItem("graine_tournesol", "ok"); 
+
+}
+
+
+function graine_plantee(){
+var graine_plantee = Date.parse(localStorage.graine_plantee);    
+var b = new Date();
+var temps_ecoule = (b - graine_plantee)/20000;
+console.log(temps_ecoule);
+if(temps_ecoule<= 5){
+document.getElementById("pas_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+
+}else{
+document.getElementById("a_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+document.getElementById("petite_fleur").style.display = "block";
+document.getElementById("graine_planter").style.display = "none";
+localStorage.setItem("planter_graine", "fini"); 
+localStorage.setItem("petite_fleur_onload", "ok"); 
+localStorage.petite_fleur = b;
+
+}
+}
+
+
+function petite_fleur(){
+var petite_fleur = Date.parse(localStorage.petite_fleur);    
+var b = new Date();
+var temps_ecoule = (b - petite_fleur)/20000;
+console.log(temps_ecoule);
+if(temps_ecoule<= 5){
+document.getElementById("pas_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+
+}else{
+document.getElementById("a_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+document.getElementById("moyenne_fleur").style.display = "block";
+document.getElementById("petite_fleur").style.display = "none";
+localStorage.setItem("petite_fleur_onload", "fini"); 
+localStorage.setItem("moyenne_fleur_onload", "ok"); 
+localStorage.moyenne_fleur = b;
+
+}
+}
+
+function moyenne_fleur(){
+var moyenne_fleur = Date.parse(localStorage.moyenne_fleur);    
+var b = new Date();
+var temps_ecoule = (b - moyenne_fleur)/20000;
+console.log(temps_ecoule);
+if(temps_ecoule<= 5){
+document.getElementById("pas_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+
+}else{
+document.getElementById("a_arroser").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+document.getElementById("grande_fleur").style.display = "block";
+document.getElementById("moyenne_fleur").style.display = "none";
+localStorage.setItem("moyenne_fleur_onload", "fini"); 
+localStorage.setItem("grande_fleur_onload", "ok"); 
+localStorage.grande_fleur = b;
+localStorage.setItem("plus_joli", "ok"); 
+
+}
+}
+
+
+function grande_fleur(){
+if(localStorage.getItem("bouquet") == "ok"){
+document.getElementById("grande_fleur").style.cursor= "auto";
+}else{
+document.getElementById("recolter").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+localStorage.setItem("bouquet", "ok"); 
+
+
+}
+}
+
+
+function fonction_dragon(){
+if(localStorage.getItem("plus_joli") == "ok"){
+document.getElementById("dame_du_ciel_7").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+}else if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
+document.getElementById("dame_du_ciel_6").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+}else{
+document.getElementById("intro").style.display= "block";
+document.getElementById("bouton_oui").style.display= "block";
+}
+}
+
+
+
+function intro(){
+document.getElementById("dame_du_ciel_1").style.display= "block";   
+document.getElementById("bouton_1_a").style.display= "block";
+document.getElementById("bouton_1_b").style.display= "block";
+document.getElementById("bouton_oui").style.display= "none";
+document.getElementById("intro").style.display= "none";
+document.getElementById("bloqueur").style.display = "block";
+}
+
+function dameDuCiel_1(){
+document.getElementById("dame_du_ciel_2").style.display= "block";
+document.getElementById("bouton_2").style.display= "block";
+document.getElementById("dame_du_ciel_1").style.display= "none";   
+document.getElementById("bouton_1_a").style.display= "none";
+document.getElementById("bouton_1_b").style.display= "none";
+}
+
+
+function dameDuCiel_2(){
+document.getElementById("dame_du_ciel_3").style.display= "block";
+document.getElementById("bouton_3").style.display= "block";
+document.getElementById("dame_du_ciel_2").style.display= "none";   
+document.getElementById("bouton_2").style.display= "none";
+}
+
+
+function dameDuCiel_3(){
+document.getElementById("dame_du_ciel_4").style.display= "block";   
+document.getElementById("bouton_4_a").style.display= "block";
+document.getElementById("bouton_4_b").style.display= "block";
+document.getElementById("dame_du_ciel_3").style.display= "none";   
+document.getElementById("bouton_3").style.display= "none";
+}
+
+
+function dameDuCiel_4(){
+document.getElementById("dame_du_ciel_4").style.display= "none";   
+document.getElementById("bouton_4_a").style.display= "none";
+document.getElementById("bouton_4_b").style.display= "none";
+document.getElementById("dame_du_ciel_5").style.display= "block";   
+document.getElementById("bloqueur").style.display= "none";
+document.getElementById("tout_fermer").style.display= "block";
+localStorage.setItem("intro_dame_du_ciel", "ok"); 
+}
+
+
+    </script>
+
+
+</body>
+</html>

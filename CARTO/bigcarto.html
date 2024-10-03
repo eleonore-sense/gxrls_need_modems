@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+  <style>
+
+        body {
+            font-size: 8px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+
+       .lien{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+
+
+  </style>
+</head>
+
+<html>
+
+<body>
+ 
+          <a href="../INFO/info.html" id="info" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%); font-size: 13px; ">
+mais c'est quoi ce jeu?
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%); font-size: 13px;">
+inventaire
+  </a>
+
+  <div id="fond"  style="position:absolute; left: 50%;  top:  50% ;transform: translate(-50%, -50%); height: 750px; width: 1000px;">
+<pre class="bigfond"><script>document.include('big_carto.txt');</script></pre>
+</div>
+
+<a href="../SCENE4_KSJ/ksj.html" id="ksj" class="lien" style="height:95px; width: 115px; margin-top: -275px; margin-left:-380px; "></a>
+
+
+
+<a href="../SCENE_FORET/foret.html" id="foret" class="lien" style="height:60px; width: 100px; margin-top: 40px; margin-left:-85px; position: absolute; "></a>
+
+<a href="../SCENE_CASCADE/cascade.html" id="cascade" class="lien" style="height:75px; width: 67px; margin-top: 30px; margin-left:-215px; position: absolute; "></a>
+
+<a href="../SCENE_TEMPLE/temple.html" id="temple" class="lien" style="height:80px; width: 135px; margin-top: -220px; margin-left:-140px; position: absolute; "></a>
+
+<a href="../SCENE_DAME_DU_CIEL/dame_du_ciel.html" class="lien" id="dame_du_ciel" style="height:105px; width: 85px; margin-top: -190px; margin-left:300px;  "></a>
+
+<a href="../SCENE_ARENE/arene.html" id="arene" class="lien" style="height:65px; width: 60px; margin-top: 245px; margin-left:290px; position: absolute; top: 50%; left: 50%; "></a>
+
+
+  <script type="text/javascript">
+
+
+   
+  </script>
+
+</body>
+</html> 

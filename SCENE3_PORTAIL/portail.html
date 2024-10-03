@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</script>
+
+
+    <style>
+        body {
+            font-size: ;
+            font-family: Courier New;
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+       
+        pre {
+            z-index: 0;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        #toggleButton {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    <pre id="portail1"></pre>
+    <pre id="portail2" style="display: none;"></pre>
+    <pre id="portail3" style="display: none;"></pre>
+    <div id="text_traverser" style="display:none; position: absolute; z-index: 9; transform:translate(-50%, 0%); left: 50%; top:50% justify-content: space-between; background-color: white;">
+            <pre><script>document.include('txt/txt.txt');</script></pre>
+    <button id="toggleButton" style="margin-top: 80px;">traverser le portail</button>
+        </div>
+
+    <script type="text/javascript">
+
+    const preElement_anim_1 = document.getElementById("portail1");
+    const preElement_anim_2 = document.getElementById("portail2");
+    const preElement_anim_3 = document.getElementById("portail3");
+    const toggleButton = document.getElementById("toggleButton");
+    const text_traverser = document.getElementById("text_traverser");
+
+    // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
+    function fetchTextFile(filename) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", filename);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(Error(xhr.statusText));
+                }
+            };
+            xhr.onerror = () => {
+                reject(Error("Network error"));
+            };
+            xhr.send();
+        });
+    }
+
+    // Animation portail1
+    function animate_anim_1() {
+        const textFiles_anim_1 = [
+            'txt/portail 1.txt',
+            'txt/portail 2.txt',
+            'txt/portail 3.txt',
+            'txt/portail 4.txt',
+            'txt/portail 5.txt',
+            'txt/portail 6.txt',
+            'txt/portail 7.txt',
+            'txt/portail 8.txt',
+            'txt/portail 9.txt',
+            'txt/portail 10.txt',
+            'txt/portail 11.txt',
+            'txt/portail 12.txt',
+            'txt/portail 13.txt',
+            'txt/portail 14.txt',
+            'txt/portail 15.txt',
+            'txt/portail 16.txt',
+            'txt/portail 18.txt',
+            'txt/portail 19.txt',
+            'txt/portail 20.txt',
+            'txt/portail 21.txt',
+            'txt/portail 22.txt',
+            'txt/portail 23.txt',
+            'txt/portail 1.txt',
+            'txt/portail 2.txt',
+            'txt/portail 3.txt',
+            'txt/portail 4.txt',
+            'txt/portail 5.txt',
+            'txt/portail 6.txt',
+            'txt/portail 7.txt',
+            'txt/portail 8.txt',
+            'txt/portail 9.txt',
+            'txt/portail 10.txt',
+            'txt/portail 11.txt',
+            'txt/portail 12.txt',
+            'txt/portail 13.txt',
+            'txt/portail 14.txt',
+            'txt/portail 15.txt',
+            'txt/portail 16.txt',
+            'txt/portail 18.txt',
+            'txt/portail 19.txt',
+            'txt/portail 20.txt',
+            'txt/portail 21.txt',
+            'txt/portail 22.txt'
+        ];
+
+        let counter_anim_1 = 0;
+
+        function animate1() {
+            if (counter_anim_1 < textFiles_anim_1.length) {
+                const filename = textFiles_anim_1[counter_anim_1];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_1.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_1++;
+                setTimeout(animate1, 50); //intervalle 50 ms
+            } else { // Une fois la boucle terminée
+                preElement_anim_1.style.display = "none"; //cacher portail1
+                preElement_anim_2.style.display = "block"; // montrer portail2
+                animate_anim_2(); // animer portail2
+                setTimeout(function() {
+                    text_traverser.style.display = "block"; // faire apparaître le bouton
+                }, 2000); // avec 1 sec de délai
+            }
+        }
+
+        animate1(); // Appelle la fonction qui anime portail1
+    }
+
+    // Animation portail2
+    function animate_anim_2() {
+        const textFiles_anim_2 = [
+            'txt/portail 23.txt',
+            'txt/portail 24.txt',
+            'txt/portail 25.txt',
+            'txt/portail 26.txt',
+            'txt/portail 27.txt',
+            'txt/portail 28.txt',
+            'txt/portail 29.txt',
+            'txt/portail 30.txt',
+            'txt/portail 31.txt',
+            'txt/portail 32.txt',
+            'txt/portail 33.txt',
+            'txt/portail 34.txt'
+        ];
+        let counter_anim_2 = 0;
+
+        function animate2() {
+            if (counter_anim_2 < textFiles_anim_2.length) {
+                const filename = textFiles_anim_2[counter_anim_2];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_2.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_2++;
+                setTimeout(animate2, 50); //intervalle 50 ms
+            } else {
+                // anim2 tourne en boucle
+                counter_anim_2 = 0;
+                animate2();
+            }
+        }
+
+        animate2(); // Appelle la fonction qui anime portail2
+    }
+
+
+    // Animation portail3
+    function animate_anim_3() {
+        const textFiles_anim_3 = [
+            'txt/portail 23.txt', //hihi c'est un peu sale comme code oops
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail 23.txt',
+            'txt/portail m 1.txt',
+            'txt/portail m 2.txt',
+            'txt/portail m 3.txt',
+            'txt/portail m 12.txt',
+            'txt/portail m 13.txt',
+            'txt/portail m 14.txt',
+            'txt/portail m 15.txt',
+            'txt/portail m 16.txt',
+            'txt/portail m 17.txt',
+            'txt/portail m 18.txt',
+            'txt/portail m 19.txt',
+            'txt/portail m 20.txt',
+            'txt/portail m 21.txt',
+            'txt/portail m 22.txt',
+            'txt/portail m 23.txt',
+            'txt/portail m 24.txt',
+            'txt/portail m 25.txt',
+            'txt/portail m 26.txt',
+            'txt/portail m 27.txt',
+            'txt/portail m 28.txt',
+            'txt/portail m 29.txt',
+            'txt/portail m 30.txt',
+            'txt/portail m 31.txt',
+            'txt/portail m 32.txt',
+            'txt/portail m 33.txt',
+            'txt/portail m 34.txt',
+            'txt/portail m 35.txt',
+            'txt/portail m 36.txt'
+            ];
+        let counter_anim_3 = 0;
+
+        function animate3() {
+            if (counter_anim_3 < textFiles_anim_3.length) {
+                const filename = textFiles_anim_3[counter_anim_3];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_3.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_3++;
+                setTimeout(animate3, 100); // intervalle 100 ms
+            } else { //quand l'anim3 s'achève
+                setTimeout(() => {  window.location.href='../SCENE4_KSJ/ksj.html'; }, 250); // charger page html (mettre la bonne page html) avec 250ms de délai
+            }
+        }
+
+        animate3(); // Appelle l'animation de portail3
+    }
+
+    function togglePortail() { // quand on appuie sur le bouton
+        
+        preElement_anim_2.style.display = "none"; // Cacher portail2
+        text_traverser.style.display = "none"; // Cacher le bouton
+        preElement_anim_3.style.display = "block"; // Montrer portail3
+        animate_anim_3(); // Animer portail3
+    }
+
+    document.getElementById("toggleButton").addEventListener("click", togglePortail);
+
+    animate_anim_1(); // Démarrer l'anim de portail1
+
+    </script>
+    
+</body>
+</html>

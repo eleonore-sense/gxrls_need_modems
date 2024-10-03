@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-size: ;
+            font-family: Courier New;
+            margin: 0; /* Remove default body margin */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+        pre {
+            z-index: 0;
+            width: 1000px;
+            height: 900px;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+    </style>
+</head>
+<body>
+    <!--///////////////////////SERPENT///////////////////////////////////-->
+    <pre id="portail"></pre>*
+
+    <script type="text/javascript">
+
+    function animate_anim_2() {
+        const textFiles_anim_2 = ['txt/portail 23.txt', 'txt/portail 24.txt', 'txt/portail 25.txt', 'txt/portail 26.txt', 'txt/portail 27.txt', 'txt/portail 28.txt', 'txt/portail 29.txt', 'txt/portail 30.txt', 'txt/portail 31.txt', 'txt/portail 32.txt', 'txt/portail 33.txt', 'txt/portail 34.txt'];
+        let counter_anim_2 = 0;
+        const preElement_anim_2 = document.getElementById("portail");
+
+        function fetchTextFile(filename) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", filename);
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject(Error(xhr.statusText));
+                    }
+                };
+                xhr.onerror = () => {
+                    reject(Error("Network error"));
+                };
+                xhr.send();
+            });
+        }
+
+        function animate2() {
+            const filename = textFiles_anim_2[counter_anim_2];
+            fetchTextFile(filename)
+                .then((fileContent) => {
+                    preElement_anim_2.textContent = fileContent;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            counter_anim_2++;
+            if (counter_anim_2 >= textFiles_anim_2.length) {
+                counter_anim_2 = 0;
+            }
+            setTimeout(animate2, 50);
+        }
+
+        animate2(); // Call the animation function to start the animation
+    }
+
+    animate_anim_2();
+
+    </script>
+</body>
+</html>

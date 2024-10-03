@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+            overflow: hidden;
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+ @keyframes tracteurmove{
+0% {left:850px;}
+10% {left:850px;}
+100% {left:100px;}
+}
+ }
+
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+ }
+
+ #page_quitter{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 15;
+    cursor: pointer;
+ }
+
+  @keyframes cochon_1{
+0%{left:-250px; top: 120px;}
+8%{left:-250px; top: 120px;}
+9%{left:-240px; top: 105px;}
+12%{left:-210px; top: 80px;}
+20%{left:-210px; top: 80px;}
+24%{left:-190px; top: 90px;}
+40%{left:-190px; top: 90px;}
+44%{left:-210px; top: 110px;}
+85%{left:-210px; top: 110px;}
+89%{left:-250px; top: 120px;}
+100%{left:-250px; top: 120px;}}
+
+ @keyframes cochon_endormi_1{
+0% {opacity:0;}
+29% {opacity:0;}
+30% {opacity: 1;}
+100% {opacity: 1;}
+}
+
+ @keyframes cochon_endormi_2{
+0% {opacity:0;}
+39% {opacity:0;}
+40% {opacity: 1;}
+100% {opacity: 1;}
+}
+ 
+  @keyframes cochon_endormi_3{
+0% {opacity:0;}
+49% {opacity:0;}
+50% {opacity: 1;}
+100% {opacity: 1;}
+}
+
+  @keyframes cochon_2{
+0%{left:-140px; top: 200px;}
+19%{left:-140px; top: 200px;}
+22%{left:-180px; top: 170px;}
+30%{left:-180px; top: 170px;}
+34%{left:-210px; top: 180px;}
+50%{left:-210px; top: 180px;}
+54%{left:-160px; top: 170px;}
+75%{left:-160px; top: 170px;}
+79%{left:-140px; top: 200px;}
+100%{left:-140px; top: 200px;}}
+
+  @keyframes cochon_3{
+0%{left:320px; top: 170px;}
+15%{left:320px; top: 170px;}
+19%{left:260px; top: 180px;}
+33%{left:260px; top: 180px;}
+37%{left:290px; top: 150px;}
+67%{left:290px; top: 150px;}
+71%{left:270px; top: 110px;}
+86%{left:270px; top: 110px;}
+90%{left:320px; top: 170px;}
+100%{left:320px; top: 170px;}}
+
+    </style>
+</head>
+<body>
+
+<!--    ////////////////////////CONSTANT////////////////////   -->
+  
+  <div id="letout">
+
+    <div id="paysage">
+        <pre ><script>document.include('txt/fond_ferme.txt');</script>
+        </pre>
+    </div>
+
+
+    <div id="tracteur" style="top: 100px;   animation: tracteurmove both;
+  animation-duration: 12s; cursor: pointer;" onclick="fonction_tracteur();">
+        <pre ><script>document.include('txt/tracteur.txt');</script>
+        </pre>
+    </div>
+
+
+    <div style="cursor: pointer;left:-200px; top: -65px;" onclick="nettoyer()">
+        <pre id="ane1" style="background-color:white;"></pre>
+    </div>
+
+    <div style="cursor: pointer;left:-100px; top: -48px;" onclick="nettoyer()">
+        <pre id="ane2" style="background-color:white;"></pre>
+    </div>
+
+
+
+        <div id="pommier" style="left:200px; top: -30px; cursor: pointer;" onclick="pommier()">
+        <pre ><script>document.include('txt/pommier.txt');</script>
+        </pre>
+    </div>
+
+
+    <div id="etoile" style="left:370px; top: -70px; cursor: pointer;" onclick="os()">
+        <pre >*</pre>
+    </div>
+
+
+  <!--    ////////////////////////COCHON////////////////////   -->
+
+
+    <div id="cochon1" style="left:-250px; top: 120px; ; animation: cochon_1 35s steps(4) infinite;">
+        <pre style="background-color:white;"><script>document.include('txt/cochon_tete_droite.txt');</script>
+        </pre>
+    </div>
+
+    <div id="cochon2" style="left:-140px; top: 200px; animation: cochon_2 35s steps(4) infinite;">
+        <pre style="background-color:white;"><script>document.include('txt/cochon_tete_gauche.txt');</script>
+        </pre>
+    </div>
+
+        <div id="cochon3" style="display:none; left:320px; top: 170px; animation: cochon_3 50s steps(8) infinite;">
+        <pre style="background-color:white;"><script>document.include('txt/cochon_tete_droite.txt');</script>
+        </pre>
+    </div>
+
+
+        <div id="cochon_endormi" onclick="cochon_endormi()" style="cursor: pointer; left:320px; top: 170px; ">
+        <pre style="background-color:white;"><script>document.include('txt/cochon_endormi.txt');</script>
+        </pre>
+        <pre style="top: -17px; left: 81px; animation: cochon_endormi_1 5s infinite">Z</pre>
+        <pre style="top: -2px; left: 103px; animation: cochon_endormi_2 5s infinite">z</pre>
+        <pre style="top: -12px; left: 120px; animation: cochon_endormi_3 5s infinite">z</pre>
+    </div>
+
+ 
+
+
+  <!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+
+
+    <div id="click_tracteur" style="display: none;">
+        <div id="tracteur_txt" >
+            <pre style=" z-index: 9; background-color:white; "><script>document.include('txt/tracteur_txt.txt');</script></pre>
+        </div>
+            <button onclick="window.location.href = '../SCENE2_CHAMPS/champs.html'" style="z-index: 16; position:absolute; width: 108px; transform: translate(-50%,-50%); top:40px; cursor: pointer;">aller au champs</button>
+    </div>
+
+
+
+    <div id="intro" style="display: none;">
+        <div id="tracteur_txt" >
+            <pre style=" z-index: 9; background-color: white;"><script>document.include('txt/intro.txt');</script></pre>
+        </div>
+
+    </div>
+
+
+<div id="cochon_reveille" style=" display:none; cursor: pointer;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/cochon_reveille.txt')</script></pre>
+</div>
+
+
+<div id="pomme" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/pomme.txt')</script></pre>
+</div>
+
+
+<div id="nettoyer" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/nettoyer.txt')</script></pre>
+</div>
+
+<div id="propre" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/propre.txt')</script></pre>
+</div>
+
+<div id="os" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/os.txt')</script></pre>
+</div>
+
+
+
+
+
+<div id="page_quitter" onclick="fonction_quitter()" style="top: 50%;
+            left: 50%;  transform: translate(-50%, -50%);"></div>
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+   ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+    ///////////////////////ANE1///////////////////////////////////
+    var text_ane1 = ['txt/ane_1.txt', 'txt/ane_2.txt'];
+    var counter_ane1 = 0;
+    var preElement_ane1 = document.getElementById("ane1");
+    var textContents_ane1 = [];
+    var duration_ane1 = [4000, 500]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_ane1.length; i++) {
+        preloadText_ane1(text_ane1[i], i);
+    }
+
+    function preloadText_ane1(url, index) {
+        var request_ane1 = new XMLHttpRequest();
+        request_ane1.open('GET', url, true);
+        request_ane1.onreadystatechange = function () {
+            if (request_ane1.readyState === XMLHttpRequest.DONE && request_ane1.status === 200) {
+                textContents_ane1[index] = request_ane1.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_ane1.textContent = textContents_ane1[0];
+                    animate_ane1();
+                }
+            }
+        };
+        request_ane1.send();
+    }
+
+    function animate_ane1() {
+        setTimeout(function() {
+            counter_ane1 = (counter_ane1 + 1) % textContents_ane1.length;
+            preElement_ane1.textContent = textContents_ane1[counter_ane1];
+            animate_ane1();
+        }, duration_ane1[counter_ane1]);
+    }
+
+
+    ///////////////////////ANE2///////////////////////////////////
+    var text_ane2 = ['txt/ane_3.txt', 'txt/ane_4.txt'];
+    var counter_ane2 = 0;
+    var preElement_ane2 = document.getElementById("ane2");
+    var textContents_ane2 = [];
+    var duration_ane2 = [6000, 5000]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_ane2.length; i++) {
+        preloadText_ane2(text_ane2[i], i);
+    }
+
+    function preloadText_ane2(url, index) {
+        var request_ane2 = new XMLHttpRequest();
+        request_ane2.open('GET', url, true);
+        request_ane2.onreadystatechange = function () {
+            if (request_ane2.readyState === XMLHttpRequest.DONE && request_ane2.status === 200) {
+                textContents_ane2[index] = request_ane2.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_ane2.textContent = textContents_ane2[0];
+                    animate_ane2();
+                }
+            }
+        };
+        request_ane2.send();
+    }
+
+    function animate_ane2() {
+        setTimeout(function() {
+            counter_ane2 = (counter_ane2 + 1) % textContents_ane2.length;
+            preElement_ane2.textContent = textContents_ane2[counter_ane2];
+            animate_ane2();
+        }, duration_ane2[counter_ane2]);
+    }
+
+
+
+
+    ///////////////////////**********///////////////////////////////////
+    ///////////////////////FONCTION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+    ///////////////////////TRACTEUR///////////////////////////////////
+
+
+
+
+        function fonction_tracteur(){
+            if(sessionStorage.getItem("intro_ferme") == "ok"){
+            document.getElementById("click_tracteur").style.display = "block";
+            document.getElementById("page_quitter").style.display = "block"; 
+
+        }
+            else{}
+
+        }
+
+
+const timer_intro = setTimeout(fonction_intro, 13000);
+
+        function fonction_intro(){
+            if(sessionStorage.getItem("intro_ferme") == "ok"){
+
+            }else{
+            document.getElementById("intro").style.display = "block";
+            document.getElementById("page_quitter").style.display = "block";
+            sessionStorage.setItem("intro_ferme","ok")
+        }
+}
+
+
+
+
+
+
+    ///////////////////////COCHON///////////////////////////////////
+
+function cochon_endormi(){
+document.getElementById("cochon3").style.display= "block";
+document.getElementById("page_quitter").style.display = "block";    
+document.getElementById("cochon_reveille").style.display= "block";
+document.getElementById("cochon_endormi").style.display= "none";
+} 
+
+
+    ///////////////////////POMMIER///////////////////////////////////
+
+function pommier(){
+document.getElementById("pomme").style.display= "block";
+document.getElementById("page_quitter").style.display = "block";  
+} 
+
+
+
+    ///////////////////////OS///////////////////////////////////
+
+function os(){
+      if(localStorage.getItem("os") == "ok"){
+            document.getElementById("etoile").style.cursor = "auto";   
+          }else{
+            document.getElementById("os").style.display = "block";
+            document.getElementById("page_quitter").style.display = "block"; 
+            localStorage.setItem("os", "ok"); 
+
+          }
+        }
+
+
+
+    ///////////////////////nettoyer///////////////////////////////////
+
+function nettoyer(){
+      if(localStorage.getItem("nettoyer") == "ok"){
+            document.getElementById("propre").style.display = "block";   
+            document.getElementById("page_quitter").style.display = "block"; 
+
+          }else{
+            document.getElementById("nettoyer").style.display = "block";
+            document.getElementById("page_quitter").style.display = "block"; 
+            localStorage.setItem("nettoyer", "ok"); 
+
+          }
+        }
+
+
+
+
+   ///////////////////////QUITTER///////////////////////////////////
+
+
+        function fonction_quitter(){
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("page_quitter").style.display = "none";
+            document.getElementById("cochon_reveille").style.display= "none";
+            document.getElementById("pomme").style.display= "none";
+            document.getElementById("os").style.display= "none";
+            document.getElementById("nettoyer").style.display= "none";
+            document.getElementById("propre").style.display= "none";
+            document.getElementById("click_tracteur").style.display = "none";
+
+        }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+<style>
+        body {
+            font-size: ;
+            font-family: Courier New;
+            margin: 0; /* Remove default body margin */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+        pre {
+            z-index: 0;
+            width: 1000px;
+            height: 900px;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+    </style>
+</head>
+<body>
+    <!--///////////////////////SERPENT///////////////////////////////////-->
+    <pre id="portail"></pre>
+    <pre id="portail2"></pre>
+
+    <script type="text/javascript">
+        var text_anim_1 = [
+            'txt/portail 1.txt',
+            'txt/portail 2.txt',
+            'txt/portail 3.txt',
+            'txt/portail 4.txt',
+            'txt/portail 5.txt',
+            'txt/portail 6.txt',
+            'txt/portail 7.txt',
+            'txt/portail 8.txt',
+            'txt/portail 9.txt',
+            'txt/portail 10.txt',
+            'txt/portail 11.txt',
+            'txt/portail 12.txt',
+            'txt/portail 13.txt',
+            'txt/portail 14.txt',
+            'txt/portail 15.txt',
+            'txt/portail 16.txt',
+            'txt/portail 18.txt',
+            'txt/portail 19.txt',
+            'txt/portail 20.txt',
+            'txt/portail 21.txt',
+            'txt/portail 22.txt',
+            'txt/portail 23.txt',
+            'txt/portail 2.txt',
+            'txt/portail 3.txt',
+            'txt/portail 4.txt',
+            'txt/portail 5.txt',
+            'txt/portail 6.txt',
+            'txt/portail 7.txt',
+            'txt/portail 8.txt',
+            'txt/portail 9.txt',
+            'txt/portail 10.txt',
+            'txt/portail 11.txt',
+            'txt/portail 12.txt',
+            'txt/portail 13.txt',
+            'txt/portail 14.txt',
+            'txt/portail 15.txt',
+            'txt/portail 16.txt',
+            'txt/portail 18.txt',
+            'txt/portail 19.txt',
+            'txt/portail 20.txt',
+            'txt/portail 21.txt',
+            'txt/portail 22.txt',
+            'txt/portail 23.txt',
+                            ];
+
+
+
+        var counter_anim_1 = 0;
+        var preElement = document.getElementById("portail");
+        var textContents_anim_1 = [];
+        var duration_anim_1 = [
+            2000, 
+            50, 
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            4000];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_anim_1.length; i++) {
+            preloadText_anim_1(text_anim_1[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_anim_1(url, index) {
+            var request_anim_1 = new XMLHttpRequest();
+            request_anim_1.open('GET', url, true);
+            request_anim_1.onreadystatechange = function () {
+                if (request_anim_1.readyState === XMLHttpRequest.DONE && request_anim_1.status === 200) {
+                    textContents_anim_1[index] = request_anim_1.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement.textContent = textContents_anim_1[0];
+                    animate1();               
+                }
+
+            }
+            };
+            request_anim_1.send();
+        }
+
+
+   function animate1() {
+      if (counter_anim_1 < textContents_anim_1.length) {
+         setTimeout(function() {
+            counter_anim_1++;
+            preElement.innerHTML = "portail"; // Clear current content
+            preElement.textContent = textContents_anim_1[counter_anim_1];
+            animate1();
+         }, duration_anim_1[counter_anim_1]);
+      } else {
+         animate_anim_2();
+      }
+   
+    }
+
+
+        // Start the animation after all text files are preloaded
+        animate1();
+
+
+    function animate_anim_2() {
+        const textFiles_anim_2 = 
+        ['txt/portail 23.txt', 
+         'txt/portail 24.txt', 
+         'txt/portail 25.txt', 
+         'txt/portail 26.txt', 
+         'txt/portail 27.txt', 
+         'txt/portail 28.txt', 
+         'txt/portail 29.txt', 
+         'txt/portail 30.txt', 
+         'txt/portail 31.txt', 
+         'txt/portail 32.txt', 
+         'txt/portail 33.txt', 
+         'txt/portail 34.txt'];
+        let counter_anim_2 = 0;
+        const preElement_anim_2 = document.getElementById("portail2");
+
+        function fetchTextFile(filename) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", filename);
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject(Error(xhr.statusText));
+                    }
+                };
+                xhr.onerror = () => {
+                    reject(Error("Network error"));
+                };
+                xhr.send();
+            });
+        }
+
+        function animate2() {
+            const filename = textFiles_anim_2[counter_anim_2];
+            fetchTextFile(filename)
+                .then((fileContent) => {
+                    preElement_anim_2.textContent = fileContent;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            counter_anim_2++;
+            if (counter_anim_2 >= textFiles_anim_2.length) {
+                counter_anim_2 = 0;
+            }
+            setTimeout(animate2, 50);
+        }
+
+        animate2(); // Call the animation function to start the animation
+    }
+
+
+    </script>
+</body>
+</html>

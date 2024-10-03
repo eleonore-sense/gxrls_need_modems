@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<style type="text/css">
+		body {
+            font-size: 13px;
+            font-family: Courier New;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+        }
+
+        pre {
+        	position: absolute;
+            top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes pied_drop{
+		0% {margin-top:-600px;}
+		90% {margin-top:-600px;}
+		98% {margin-top:-200px;}
+		100% {margin-top:-200px;}
+		}
+
+		.pied_drop{
+    	animation-name: pied_drop;
+    	animation-duration: 5s;
+		}
+
+		@keyframes arene_shake{
+		0% {margin-top:0px; margin-left:0px;}
+		94% {margin-top:0px; margin-left:0px;}
+		95% {margin-top:5px; margin-left:8px;}
+		96% {margin-top:-5px; margin-left:2px;}
+		97% {margin-top:-2px; margin-left:-6px;}
+		98% {margin-top:5px; margin-left:8px;}
+		99% {margin-top:0px; margin-left:0px;}
+		100% {margin-top:0px; margin-left:0px;}
+		}
+
+		@keyframes envol_nn {
+  		0%   { margin-left: -900px; }
+  		25% { margin-left: -600px; }
+  		100% { margin-left: -600px; }
+		}
+
+		.envol_nn{
+    	animation-name: envol_nn;
+    	animation-duration: 10s;
+		}
+
+		@keyframes pied_lift{
+		0% {margin-top:-200px;}
+		15% {margin-top:-200px;}
+		30% {margin-top:-600px;}
+		100% {margin-top:-600px;}
+		}
+
+		.pied_lift{
+    	animation-name: pied_lift;
+    	animation-duration: 10s;
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.include = function (url) {
+ 			if ('undefined' == typeof(url)) return false;
+ 			var p,rnd;
+ 			if (document.all){
+   				p = new ActiveXObject("Microsoft.XMLHTTP");
+ 			} else {
+   				p = new XMLHttpRequest();
+ 			}
+
+ 			rnd = Math.random().toString().substring(2);
+ 			url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ 			p.open("GET",url,false);
+ 			p.send(null);
+ 			document.write( p.responseText );
+		}	
+	</script>
+</head>
+<body>
+
+	<a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">retour à la carto --></a>
+
+    <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">inventaire</a>
+
+    <!--///////////////////////ARENA///////////////////////////////////-->
+    <pre id="bg-arena" style="margin-left: 0px; margin-top: 0px; animation: arene_shake ; animation-duration: 5s;"><script>document.include('txt/arena.txt');</script></pre>
+
+    <pre id="bug" style="margin-left: 300px; margin-top: 140px;"><script>document.include('txt/bug.txt');</script></pre>
+    
+    
+    <pre id="nuage" style="margin-left:365px; top: 40px; cursor: pointer; height: 80px;" onclick="animate_nuage(); animate_ver()"><script>document.include('txt/nuage1.txt');</script></pre>
+
+    <pre id="ver" style="margin-left:65px; margin-top: 215px; width: 300px;"><script>document.include('txt/ver0.txt');</script></pre>
+
+    <pre id="pied" class="pied_drop" style="margin-left:-75px; margin-top:-200px; background-color: white;"><script>document.include('txt/pied.txt');</script></pre>
+
+    <pre id="nn" style="background-color: white; margin-top: -250px; margin-left: -900px;"></pre>
+
+
+<!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+    <div id="attention" style="display: none;">
+        <pre style="z-index: 3; background-color: white; cursor: pointer;" onclick="fonction_quitter_attention()"><script>document.include('txt/attention.txt');</script></pre>
+    </div>
+
+    <div id="deso" style="display: none; cursor: pointer;" onclick="fonction_bagarre()">
+        <pre style="z-index: 4; background-color: white;"><script>document.include('txt/deso.txt');</script></pre>
+    </div>
+
+    <div id="bagarre" style="display: none; cursor: pointer;" onclick="fonction_euh()">
+        <pre style="z-index: 5; background-color: white;"><script>document.include('txt/bagarre.txt');</script></pre>
+    </div>
+
+	<div id="euh" style="display: none; cursor: pointer;" onclick="fonction_attaque()">
+        <pre style="z-index: 6; background-color: white;"><script>document.include('txt/euh.txt');</script></pre>
+    </div>
+
+    <div id="attaque" style="display: none;">
+        <pre style="z-index: 7; background-color: white;"><script>document.include('txt/releasenn.txt');</script></pre>
+        <div style="position: absolute; z-index: 7; display: flex; transform:translate(-50%, -50%); margin-top: 28px; width: 200px; justify-content: space-between;">
+    		<button onclick="fonction_fuite()" style="cursor: pointer;">fuir</button>
+    		<button style="cursor: not-allowed;">périr</button>
+    	</div>
+    </div>
+    
+
+
+
+<script>
+
+///////////////////////nuage///////////////////////////////////
+var text_nuage = [
+	'txt/nuage1.txt',
+    'txt/nuage2.txt',
+    'txt/nuage3.txt',
+    'txt/nuage4.txt',
+    'txt/nuage5.txt',
+    'txt/nuage1.txt',
+    'txt/nuage2.txt',
+    'txt/nuage3.txt',
+    'txt/nuage4.txt',
+    'txt/nuage5.txt'
+];
+
+var counter_nuage = 0;
+var preElement_nuage = document.getElementById("nuage");
+var textContents_nuage = [];
+var timer_nuage;
+
+// Preload all the text files using AJAX
+for (var i = 0; i < text_nuage.length; i++) {
+    preloadText_nuage(text_nuage[i], i);
+}
+
+// Function to preload a text file and store its content
+function preloadText_nuage(url, index) {
+    var request_nuage = new XMLHttpRequest();
+    request_nuage.open('GET', url, true);
+    request_nuage.onreadystatechange = function () {
+        if (request_nuage.readyState === XMLHttpRequest.DONE && request_nuage.status === 200) {
+            textContents_nuage[index] = request_nuage.responseText;
+        }
+    };
+    request_nuage.send();
+}
+
+function animate_nuage() {
+    if (counter_nuage < text_nuage.length) {
+        preElement_nuage.textContent = textContents_nuage[counter_nuage];
+        counter_nuage++;
+        timer_nuage = setTimeout(animate_nuage, 50);
+    } else {
+        // Reset the animation to the initial state
+        counter_nuage = 0;
+        preElement_nuage.textContent = textContents_nuage[counter_nuage];
+    }
+}
+
+///////////////////////ver///////////////////////////////////
+var text_ver = [
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver0.txt',
+	'txt/ver1.txt',
+    'txt/ver2.txt',
+    'txt/ver3.txt',
+    'txt/ver4.txt',
+    'txt/ver5.txt',
+    'txt/ver6.txt',
+	'txt/ver7.txt',
+    'txt/ver8.txt',
+    'txt/ver9.txt',
+    'txt/ver10.txt',
+    'txt/ver11.txt',
+    'txt/ver12.txt',
+    'txt/ver13.txt',
+    'txt/ver14.txt',
+    'txt/ver15.txt'
+];
+
+var counter_ver = 0;
+var preElement_ver = document.getElementById("ver");
+var textContents_ver = [];
+var timer_ver;
+
+// Preload all the text files using AJAX
+for (var i = 0; i < text_ver.length; i++) {
+    preloadText_ver(text_ver[i], i);
+}
+
+// Function to preload a text file and store its content
+function preloadText_ver(url, index) {
+    var request_ver = new XMLHttpRequest();
+    request_ver.open('GET', url, true);
+    request_ver.onreadystatechange = function () {
+        if (request_ver.readyState === XMLHttpRequest.DONE && request_ver.status === 200) {
+            textContents_ver[index] = request_ver.responseText;
+        }
+    };
+    request_ver.send();
+}
+
+function animate_ver() {
+    if (counter_ver < text_ver.length) {
+        preElement_ver.textContent = textContents_ver[counter_ver];
+        counter_ver++;
+        timer_ver = setTimeout(animate_ver, 75);
+    } else {
+        // Reset the animation to the initial state
+        counter_ver = 0;
+        preElement_ver.textContent = textContents_ver[counter_ver];
+    }
+}
+
+
+const timer_attention = setTimeout(fonction_attention, 6000);
+
+    function fonction_attention(){
+        document.getElementById("attention").style.display = "block";
+    }
+
+
+    function fonction_quitter_attention(){
+        document.getElementById("attention").style.display = "none";
+        document.getElementById("deso").style.display = "block";
+    }
+
+    function fonction_bagarre(){
+        document.getElementById("deso").style.display = "none";
+        document.getElementById("bagarre").style.display = "block";
+    }
+
+    function fonction_euh(){
+        document.getElementById("bagarre").style.display = "none";
+        document.getElementById("euh").style.display = "block";
+    }
+
+    function fonction_attaque(){
+        document.getElementById("euh").style.display = "none";
+        document.getElementById("attaque").style.display = "block";
+    }
+
+    function fonction_fuite(){
+    	document.getElementById("attaque").style.display = "none";
+        document.getElementById("nn").classList.add("envol_nn");
+        document.getElementById("pied").classList.remove("pied_drop");
+        document.getElementById("pied").classList.add("pied_lift");
+        setTimeout(() => {  window.location.href='../BIG CARTO/bigcarto.html'; }, 5000);
+    }
+
+
+///////////////////////nn///////////////////////////////////
+    var text_nn = ['txt/netochka1.txt', 'txt/netochka2.txt'];
+    var counter_nn = 0;
+    var preElement_nn = document.getElementById("nn");
+    var textContents_nn = [];
+    var duration_nn = [250, 250]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_nn.length; i++) {
+        preloadText_nn(text_nn[i], i);
+    }
+
+    function preloadText_nn(url, index) {
+        var request_nn = new XMLHttpRequest();
+        request_nn.open('GET', url, true);
+        request_nn.onreadystatechange = function () {
+            if (request_nn.readyState === XMLHttpRequest.DONE && request_nn.status === 200) {
+                textContents_nn[index] = request_nn.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_nn.textContent = textContents_nn[0];
+                    animate_nn();
+                }
+            }
+        };
+        request_nn.send();
+    }
+
+    function animate_nn() {
+        setTimeout(function() {
+            counter_nn = (counter_nn + 1) % textContents_nn.length;
+            preElement_nn.textContent = textContents_nn[counter_nn];
+            animate_nn();
+        }, duration_nn[counter_nn]);
+    }
+
+</script>
+
+    
+</body>
+</html>

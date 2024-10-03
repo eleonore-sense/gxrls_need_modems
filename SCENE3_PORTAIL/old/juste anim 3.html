@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-size: ;
+            font-family: Courier New;
+            margin: 0; /* Remove default body margin */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+        pre {
+            z-index: 0;
+            width: 1000px;
+            height: 900px;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+    </style>
+</head>
+<body>
+    
+    <pre id="portail3"></pre>
+
+    <script type="text/javascript">
+
+    function animate_anim_3() {
+        const textFiles_anim_3 = [
+            'txt/portail m 1.txt',
+            'txt/portail m 2.txt',
+            'txt/portail m 3.txt',
+            'txt/portail m 12.txt',
+            'txt/portail m 13.txt',
+            'txt/portail m 14.txt',
+            'txt/portail m 15.txt',
+            'txt/portail m 16.txt',
+            'txt/portail m 17.txt',
+            'txt/portail m 18.txt',
+            'txt/portail m 19.txt',
+            'txt/portail m 20.txt',
+            'txt/portail m 21.txt',
+            'txt/portail m 22.txt',
+            'txt/portail m 23.txt',
+            'txt/portail m 24.txt',
+            'txt/portail m 25.txt',
+            'txt/portail m 26.txt',
+            'txt/portail m 27.txt',
+            'txt/portail m 28.txt',
+            'txt/portail m 29.txt',
+            'txt/portail m 30.txt',
+            'txt/portail m 31.txt',
+            'txt/portail m 32.txt',
+            'txt/portail m 33.txt',
+            'txt/portail m 34.txt',
+            'txt/portail m 35.txt',
+            'txt/portail m 36.txt'
+            ];
+        let counter_anim_3 = 0;
+        const preElement_anim_3 = document.getElementById("portail3");
+
+        function fetchTextFile(filename) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", filename);
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject(Error(xhr.statusText));
+                    }
+                };
+                xhr.onerror = () => {
+                    reject(Error("Network error"));
+                };
+                xhr.send();
+            });
+        }
+
+        function animate3() {
+            const filename = textFiles_anim_3[counter_anim_3];
+            fetchTextFile(filename)
+                .then((fileContent) => {
+                    preElement_anim_3.textContent = fileContent;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            counter_anim_3++;
+            if (counter_anim_3 >= textFiles_anim_3.length) {
+                counter_anim_3 = 0;
+            }
+            setTimeout(animate3, 100);
+        }
+
+        animate3(); // Call the animation function to start the animation
+    }
+
+    animate_anim_3();
+
+    </script>
+</body>
+</html>

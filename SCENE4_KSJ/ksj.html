@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<style type="text/css">
+		body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+        }
+
+        pre {
+        	position: absolute;
+            top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);
+        }
+	</style>
+
+	<script type="text/javascript">
+		document.include = function (url) {
+ 			if ('undefined' == typeof(url)) return false;
+ 			var p,rnd;
+ 			if (document.all){
+   				p = new ActiveXObject("Microsoft.XMLHTTP");
+ 			} else {
+   				p = new XMLHttpRequest();
+ 			}
+
+ 			rnd = Math.random().toString().substring(2);
+ 			url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ 			p.open("GET",url,false);
+ 			p.send(null);
+ 			document.write( p.responseText );
+		}	
+	</script>
+
+</head>
+
+<body>
+
+	<a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">retour à la carto --></a>
+
+    <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">inventaire</a>
+
+	<pre id="ksj"><script>document.include('txt/ksj.txt');</script></pre>
+
+	<pre id="reponse1" style="margin-left: 0px; margin-top:-250px; display: none;"><script>document.include('txt/rep1.txt');</script></pre>
+
+	<select id="question" style="position: absolute; margin-left: 600px;">
+	    <option>Demande la clé du savoir</option>
+	    <option>Wesh, on est où là ?</option>
+	</select>
+
+	<button type="button" onclick="myFunction()" style="position: absolute; margin-left: 600px; margin-top: 250px;">Rajouter une question</button>
+
+
+<script>
+
+	document.getElementById('question').addEventListener('change',function(){
+		setTimeout(function(){
+			document.getElementById('reponse1').style.display = "block";},
+		2000);
+    });
+
+
+function myFunction() {
+  var x = document.getElementById("question");
+  var option = document.createElement("option");
+  option.text = "C'est quoi un modem ?";
+  x.add(option);
+}
+
+
+</script>
+
+</body>
+</html> 
+

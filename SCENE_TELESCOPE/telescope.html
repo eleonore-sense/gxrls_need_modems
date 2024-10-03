@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+html, body{
+    background-color: black;
+color: white;
+            font-size: 12px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden;
+}
+
+#etoile_un{
+animation:         pulse 2s steps(1) infinite;
+}
+
+@keyframes pulse {
+  0%   { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+#etoile_deux{
+animation:         pulsebis 2s steps(1) infinite;
+}
+
+@keyframes pulsebis {
+  0%   { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#filanteune{
+animation:         drag 6s steps(6) infinite;
+}
+
+@keyframes drag {
+  0%   { opacity:1;left: 0px; }
+  50% { opacity:1;left: 60px; }
+  51% { opacity:0;left: 60px; }
+  100% { opacity:0;left: 0px; }
+}
+
+#filantedeux{
+animation:         dragdeux 6s steps(6) infinite;
+}
+
+
+@keyframes dragdeux {
+  0%   { opacity:0;left: 0px; }
+  30%   { opacity:0;left: 0px; }
+  31% { opacity:1;left: 0px; }
+  80% { opacity:1;left: 60px; }
+  81% { opacity:0;left: 60px; }
+  100%{ opacity:0; }
+}
+
+#fusee{
+animation:         moove 60s  infinite linear;
+}
+
+@keyframes moove {
+   0%{opacity:0%; top:0px;}
+   9.9%{opacity:0%; top:160px;}
+   10%{opacity:100%;top:160px;}
+  19% {opacity:100%; top:-160px;}
+   19.1%{opacity:0%;}
+   100%{opacity: 0%;}
+}
+
+#retour{
+  opacity:0;
+}
+
+#retour:hover{
+  opacity:1;
+}
+
+#flecheretour{
+  opacity:0.5;
+}
+
+#flecheretour:hover{
+  opacity:0;
+}
+
+#declencheurFond{
+margin-left: -14px;
+margin-top: 0px;
+
+}
+
+#declencheurMH{
+margin-left: 0px;
+margin-top: 0px;
+
+}
+
+
+
+#declencheurFusee{
+margin-left: 0px;
+margin-top: 0px;
+
+}
+#declencheurPrediction{
+
+margin-left: 0px;
+margin-top: 0px;
+    animation-name:cligno;
+        animation-duration: 3s;
+    animation-iteration-count: infinite;
+      filter: brightness(500%);
+text-shadow: 1px 1px 2px violet, 0 0 1em white, 0 0 0.2em white;
+}
+
+  @keyframes cligno {
+    0% {filter: brightness(100%);}
+    30%{filter: brightness(100%);}
+    31%{filter: brightness(0%);}
+    33% {filter: brightness(500%);}
+    34% {filter: brightness(100%);}
+    35% {filter: brightness(100%);}
+    36% {filter: brightness(0%);}
+    37% {filter: brightness(500%);}
+    38% {filter: brightness(0%);}
+    39% {filter: brightness(500%);}
+    44% {filter: brightness(100%);}
+    100% {filter: brightness(100%);}
+  }
+
+
+
+.bouton{
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+
+ }
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+  }
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <!--///////////////////////paysage///////////////////////////////////-->
+            <a href="../SCENE_DAME_DU_CIEL/dame_du_ciel.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+quitter le téléscope -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+
+
+  <div id="letout">
+
+    <div id="paysage">
+        <pre style="z-index: 0"><script>document.include('txt/fond_telescope.txt');</script>
+        </pre>
+    </div>
+
+
+    <div id="etoile_un">
+        <pre ><script>document.include('txt/etoile_un.txt');</script>
+        </pre>
+    </div>
+
+    <div id="etoile_deux" >
+        <pre ><script>document.include('txt/etoile_deux.txt');</script>
+        </pre>
+        <pre onclick="casque_fatoumata()" style="left:-320px; top:-80px; cursor: pointer;">@</pre>
+    </div>
+
+  
+  <pre id="filanteune" style="top:20px; ">
+- --===D</pre>
+
+<pre id="filantedeux" style="top:-300px; margin-left: -100px; ">
+- --===D</pre>
+
+
+<!--///////////////////////LUNE///////////////////////////////////-->
+
+
+
+    <div id="lune">
+        <pre style="cursor:  pointer; z-index: 4; left: -100px; top:-120px;" onclick="fonctionLune()" ><script>document.include('txt/lune.txt')</script>
+        </pre>
+    </div>    
+
+
+    <div id="grosse_etoile">
+        <pre style="cursor:  pointer; z-index: 4; left: -180px; top:155px;" onclick="grosse_etoile()" ><script>document.include('txt/grosse_etoile.txt')</script>
+        </pre>
+    </div>   
+
+                  <!-- fusee -->
+
+    <div id="fusee">
+        <pre onclick="fonction_fusee()" style=" z-index: 7; left:285px; top:0px; cursor: pointer;"><script>document.include('txt/fusee.txt')</script>
+        </pre>
+
+    </div>   
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+<!--///////////////////////MARGARET///////////////////////////////////-->
+
+<div id="citation_margaret" style=" display:none;">
+  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/citation_margaret.txt')</script></pre>
+</div>
+
+
+
+<div id="message_margaret" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/message_margaret.txt')</script></pre>
+</div>
+
+<div id="intro_margaret_1" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_1.txt')</script></pre>
+ <button id="bouton_intro_1a" class="bouton" onclick="fonctionIntro1()" style="top: 35px; width: 182px; left:-90px;">qu'est ce que tu fais la haut?</button>
+  <button id="bouton_intro_1b" class="bouton" onclick="fonctionIntro1()" style="top: 35px; width: 118px; left:123px;">la lune me parle!!</button>
+</div>
+
+<div id="intro_margaret_2" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_2.txt')</script></pre>
+ <button id="bouton_intro_2a" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 79px; left:-116px;">mais non...</button>
+  <button id="bouton_intro_2b" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 149px; left: 86px;">comment tu as fais ça?</button>
+</div>
+
+<div id="intro_margaret_3" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_3.txt')</script></pre>
+ <button id="bouton_intro_3a" class="bouton" onclick="fonctionIntro3()" style="top: 43px; width: 52px; left:-90px;">okay...</button>
+  <button id="bouton_intro_3b" class="bouton" onclick="fonctionIntro3()" style="top: 43px; width: 96px; left:73px;">dis m'en plus!</button>
+</div>
+
+<div id="intro_margaret_4" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_4.txt')</script></pre>
+ <button id="bouton_intro_4a" class="bouton" onclick="tout_fermer()" style="top: 104px; width: 68px; left:-105px;">Whouaaa</button>
+  <button id="bouton_intro_4b" class="bouton" onclick="tout_fermer()" style="top: 105px; width: 135px; left:87px;">j'ai pas tout compris mais ça à l'air super!</button>
+</div>
+
+
+
+
+
+    <button id="bouton_prendre_manifeste" onclick="prendre_manifeste_cyborg()" class="bouton" style=" display:none; top:80px; width:115px; ">trop cool, merci!</button>
+
+    <button id="bouton_pas_de_poeme" onclick="tout_fermer()" class="bouton" style=" display:none; top:55px; width:220px;">heu... je n'ai rien sous la main...</button>
+
+    <button id="bouton_donner_poeme" onclick="donner_poeme()" class="bouton" style="display:none; top:55px;  width:181px;">je peux te réciter un poème!</button>
+
+
+<div id="message_margaret_heureuse" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/message_margaret_heureuse.txt')</script></pre>
+</div>
+
+<div id="margaret_merci" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/margaret_merci.txt')</script></pre>
+</div>
+
+
+<div id="manifeste_cyborg" style=" display:none;" onclick="manifeste_cyborg_inventaire()">
+  <pre style="z-index: 4; background-color: black; cursor: pointer;"><script>document.include('../INVENTAIRE/txt/telescope/donna_haraway_page0.txt')</script></pre>
+</div>
+
+
+
+<div id="margaret_explique" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/margaret_explique.txt')</script></pre>
+ <button id="bouton_pas_compris_1" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:-79px; width:63px">heuuu...</button>
+  <button id="bouton_pas_compris_2" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:54px; width:113px">j'ai tout compris!</button>
+</div>
+
+<div id="margaret_explique_2" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/margaret_explique_2.txt')</script></pre>
+</div>
+<!--///////////////////////PREDICTION///////////////////////////////////-->
+
+<div id="prediction0" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction0.txt')</script></pre>
+</div>
+
+<div id="prediction1" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction1.txt')</script></pre>
+</div>
+
+<div id="prediction2" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction2.txt')</script></pre>
+</div>
+
+<div id="prediction3" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction3.txt')</script></pre>
+</div>
+
+<div id="prediction4" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction4.txt')</script></pre>
+</div>
+
+<div id="prediction5" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction5.txt')</script></pre>
+</div>
+
+
+
+<!--///////////////////////CARTE CIEL///////////////////////////////////-->
+
+<div id="casque_fatoumata" style=" display:none;">
+ <pre style="z-index: 4; background-color: black; "><script>document.include('txt/casque_fatoumata.txt')</script></pre>
+</div>
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+
+
+
+
+    </div>
+ 
+    <script type="text/javascript">
+
+       function fonction_fusee(){
+  if(localStorage.getItem("citation_margaret") !== "ok"){
+document.getElementById("citation_margaret").style.display = "block";
+localStorage.setItem("citation_margaret", "ok");
+document.getElementById("tout_fermer").style.display = "block";
+}
+
+else{
+  document.getElementById("citation_margaret").style.display = "none";
+    document.getElementById("fusee").style.cursor = "pointer";
+}
+}
+
+
+  ///////////////////////////LUNE//////////////////////////////////////
+
+
+function fonctionLune(){
+    if(localStorage.getItem("intro_margaret") !== "ok"){
+document.getElementById("intro_margaret_1").style.display = "block";    
+    }else if(localStorage.getItem("poeme_radia") == "ok"){
+document.getElementById("message_margaret").style.display = "block"; 
+document.getElementById("bouton_donner_poeme").style.display = "block";   
+
+} else if(localStorage.getItem("poeme_radia") == "donne") {
+document.getElementById("message_margaret_heureuse").style.display = "block"; 
+document.getElementById("tout_fermer").style.display = "block"; 
+}else{
+document.getElementById("message_margaret").style.display = "block";
+document.getElementById("bouton_pas_de_poeme").style.display = "block";  
+}
+}
+
+
+
+function fonctionIntro1(){
+document.getElementById("intro_margaret_2").style.display = "block";     
+document.getElementById("intro_margaret_1").style.display = "none";   
+}
+
+function fonctionIntro2(){
+document.getElementById("intro_margaret_3").style.display = "block";     
+document.getElementById("intro_margaret_2").style.display = "none";   
+}
+
+
+function fonctionIntro3(){
+document.getElementById("intro_margaret_4").style.display = "block";   
+document.getElementById("intro_margaret_3").style.display = "none";  
+localStorage.setItem("intro_margaret", "ok");   
+
+}
+
+
+function donner_poeme(){
+document.getElementById("margaret_merci").style.display = "block";
+document.getElementById("bouton_pas_de_poeme").style.display = "none";
+document.getElementById("bouton_prendre_manifeste").style.display = "block";
+document.getElementById("bouton_donner_poeme").style.display = "none";
+document.getElementById("message_margaret").style.display = "none";
+document.getElementById("tout_fermer").style.display = "none";  
+localStorage.setItem("poeme_radia", "donne"); 
+}
+
+
+
+function prendre_manifeste_cyborg(){
+localStorage.setItem("manifeste_cyborg", "ok");   
+document.getElementById("manifeste_cyborg").style.display = "block";
+document.getElementById("margaret_merci").style.display = "none";
+document.getElementById("bouton_prendre_manifeste").style.display = "none";
+
+}
+
+
+function manifeste_cyborg_inventaire(){
+document.getElementById("manifeste_cyborg").style.display = "none";
+document.getElementById("margaret_explique").style.display = "block";  
+document.getElementById("bouton_pas_compris_1").style.display = "block";  
+document.getElementById("bouton_pas_compris_2").style.display = "block";  
+}
+
+
+function margaret_explique_2(){
+document.getElementById("bouton_pas_compris_1").style.display = "none";  
+document.getElementById("bouton_pas_compris_2").style.display = "none";  
+document.getElementById("margaret_explique").style.display = "none";  
+document.getElementById("margaret_explique_2").style.display = "block";  
+document.getElementById("tout_fermer").style.display = "block";  
+}
+        function tout_fermer(){
+            document.getElementById("citation_margaret").style.display = "none";
+            document.getElementById("message_margaret").style.display = "none"; 
+            document.getElementById("message_margaret_heureuse").style.display = "none";   
+            document.getElementById("bouton_pas_de_poeme").style.display = "none";  
+            document.getElementById("tout_fermer").style.display = "none";   
+            document.getElementById("margaret_merci").style.display = "none";
+            document.getElementById("prediction0").style.display="none";
+            document.getElementById("intro_margaret_4").style.display="none";
+            document.getElementById("prediction1").style.display="none";
+            document.getElementById("prediction2").style.display="none";
+            document.getElementById("prediction3").style.display="none";
+            document.getElementById("prediction4").style.display="none";
+            document.getElementById("prediction5").style.display="none";
+            document.getElementById("casque_fatoumata").style.display="none";
+            document.getElementById("margaret_explique").style.display = "none";  
+document.getElementById("margaret_explique_2").style.display = "NONE";  
+
+
+}
+
+
+        function grosse_etoile(){
+
+  var tirage = Math.floor(Math.random() * 5);
+
+if(tirage == 0){
+document.getElementById("prediction0").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}else if(tirage == 1){
+document.getElementById("prediction1").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}else if(tirage == 2){
+document.getElementById("prediction2").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}else if(tirage == 3){
+document.getElementById("prediction3").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}else if(tirage == 4){
+document.getElementById("prediction4").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}else{
+document.getElementById("prediction5").style.display="block";
+document.getElementById("tout_fermer").style.display = "block";  
+
+}
+
+}
+
+
+
+        function casque_fatoumata(){
+      if(localStorage.getItem("casque_fatoumata") == "ok"){
+            document.getElementById("etoile_deux").style.cursor = "auto";   
+          }else{
+            document.getElementById("casque_fatoumata").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block"; 
+            localStorage.setItem("casque_fatoumata", "ok"); 
+
+          }
+        }
+
+
+    </script>
+
+
+</body>
+</html>

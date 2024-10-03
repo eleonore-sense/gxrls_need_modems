@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+ @keyframes tracteurmove{
+0% {left:850px;}
+20% {left:850px;}
+100% {left:100px;}
+}
+ }
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+ }
+
+    </style>
+</head>
+<body>
+
+<!--    ////////////////////////CONSTANT////////////////////   -->
+  
+          <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+retour à la carto -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+
+  <div id="letout">
+
+    <div id="paysage">
+        <pre ><script>document.include('txt/paysage.txt');</script>
+        </pre>
+    </div>
+
+
+                <!-- radia -->
+
+    <div id="radia" style="top: 60px; left: -160px; cursor: pointer;" onclick="fonction_radia()">
+        <pre ><script>document.include('txt/radia.txt');</script>
+        </pre>
+    </div>
+
+                <!-- serpent -->
+
+
+    <div style="left:220px; top: 190px; ">
+        <pre id="serpent"><script>document.include('txt/serpent1.txt');</script></pre>
+    </div>
+
+                <!-- hibou -->
+
+    <div style="left:230px; top: -50px; cursor: pointer;" onclick="fonctionNid()">
+        <pre id="nid"><script>document.include('txt/nid.txt');</script></pre>
+    </div>
+
+
+<div id="hibou" style="display: none; cursor: pointer;">
+    <pre  style=" background-color:white; z-index: 5; position:absolute; left: 255px; top:-30px;" onclick="fonctionHibou()" ><script>document.include('txt/oiseau.txt')</script>
+    </pre>
+
+</div>
+
+
+
+                <!-- jus -->
+
+    <div id="pourcent" style="left:-180px; top: -248px; cursor: pointer;" onclick="fonctionPourcent()">
+        <pre><script>document.include('txt/pourcent.txt');</script></pre>
+    </div>
+
+
+  <div id="jus" style="display: none; cursor: pointer;">
+    <pre style=" z-index: 5; background-color: white;" ><script>document.include('txt/jus.txt')</script>
+    </pre>
+</div>
+
+                <!-- manifeste_kefir -->
+
+    <div id="etoile" style="left:-280px; cursor:pointer; top: 220px;" onclick="fonctionEtoile()">
+        <pre ><script>document.include('txt/etoile.txt');</script>
+        </pre>
+    </div>
+
+ 
+  <div id="manifeste_kefir" style="display: none; cursor: pointer;">
+    <pre style="background-color: white; z-index: 5; " ><script>document.include('txt/manifeste_kefir.txt')</script>
+    </pre>
+
+  </div>
+
+  <!--    ////////////////////////LES POP PAGES////////////////////   -->
+                
+<!--///////////////////////RADIA///////////////////////////////////-->
+
+
+                  <!-- demander modem-->
+
+
+    <div id="click_radia" style="display: none;">
+
+
+        <div id="radia_txt" >
+            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/message_radia.txt');</script></pre>
+        </div>
+
+        <div id="bouton_radia_non" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
+            <button onclick="retour_foret()" style="cursor: pointer;"> je n'ai rien pour toi... </button>
+        </div>
+
+        <div id="bouton_donne_modem" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
+            <button onclick="donner_modem()" style="cursor: pointer;"> j'ai un modem ! </button>
+        </div>
+    </div>
+
+                  <!-- donner modem-->
+
+    <div id="donner_poeme" style="display: none;">
+
+        <div id="radia_txt">
+            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/message_merci.txt');</script></pre>
+        </div>
+
+        <div id="bouton_lire_poeme" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
+            <button onclick="lire_poeme()" style="cursor: pointer;"> lire le poème </button>
+        </div>
+
+    </div>
+
+
+
+
+                  <!-- le poeme-->
+
+
+    <div id="poeme" style="display: none;">
+
+
+        <div id="radia_txt">
+            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/poeme_radia.txt');</script></pre>
+        </div>
+
+    </div>
+
+
+
+                  <!-- radia heureuse -->
+
+    <div id="radia_heureuse" style="display: none;">
+
+
+        <div id="radia_txt" >
+            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/radia_heureuse.txt');</script></pre>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+    </div>
+
+
+
+    <script type="text/javascript">
+   ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+    ///////////////////////serpent///////////////////////////////////
+        var text_serpent = [
+            'txt/serpent1.txt',
+            'txt/serpent2.txt',
+            'txt/serpent3.txt',
+            'txt/serpent2.txt',
+ 
+                            ];
+        var counter_serpent = 0;
+        var preElement_serpent = document.getElementById("serpent");
+        var textContents_serpent = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_serpent.length; i++) {
+            preloadText_serpent(text_serpent[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_serpent(url, index) {
+            var request_serpent = new XMLHttpRequest();
+            request_serpent.open('GET', url, true);
+            request_serpent.onreadystatechange = function () {
+                if (request_serpent.readyState === XMLHttpRequest.DONE && request_serpent.status === 200) {
+                    textContents_serpent[index] = request_serpent.responseText;
+                }
+            };
+            request_serpent.send();
+        }
+
+    var timer_serpent;
+
+        function animate_serpent() {
+            preElement_serpent.textContent = textContents_serpent[counter_serpent];
+            counter_serpent++;
+            if (counter_serpent >= textContents_serpent.length) {
+                counter_serpent = 0;            }
+        
+        timer_serpent = setTimeout(animate_serpent, 666); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_serpent();
+
+
+    ///////////////////////**********///////////////////////////////////
+    ///////////////////////FONCTION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+
+
+
+
+    ///////////////////////RADIA///////////////////////////////////
+
+
+
+
+        function fonction_radia(){
+    if (localStorage.getItem("modem") == "ok") {
+            document.getElementById("click_radia").style.display = "block";
+            document.getElementById("bouton_donne_modem").style.display = "block";
+        
+}else if (localStorage.getItem("modem") == "donne") {
+            document.getElementById("radia_heureuse").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+
+}else{
+            document.getElementById("click_radia").style.display = "block";
+            document.getElementById("bouton_radia_non").style.display = "block";
+}
+}
+
+
+        function retour_foret(){
+            document.getElementById("click_radia").style.display = "none";            
+        }
+
+
+        function donner_modem(){
+            document.getElementById("click_radia").style.display = "none";
+            document.getElementById("donner_poeme").style.display = "block";
+            document.getElementById("bouton_lire_poeme").style.display = "block";
+            localStorage.setItem("modem", "donne");
+
+        }
+
+
+                function lire_poeme(){
+            document.getElementById("donner_poeme").style.display = "none";
+            document.getElementById("poeme").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("poeme_radia", "ok");
+
+
+        }
+
+        function tout_fermer(){
+            document.getElementById("radia_heureuse").style.display = "none";
+            document.getElementById("poeme").style.display = "none";   
+            document.getElementById("tout_fermer").style.display = "none";
+            document.getElementById("jus").style.display = "none";
+            document.getElementById("manifeste_kefir").style.display = "none";
+    }
+
+
+///////////////////////////HIBOU//////////////////////////////////////
+
+function fonctionNid(){
+document.getElementById("hibou").style.display = "block";
+document.getElementById("nid").style.display = "none";
+
+}
+
+function fonctionHibou(){
+document.getElementById("hibou").style.display = "none";
+document.getElementById("nid").style.display = "block";
+
+}
+
+///////////////////////////JUS//////////////////////////////////////
+
+function fonctionPourcent(){
+    if (localStorage.getItem("jus") == "ok") {
+        document.getElementById("pourcent").style.cursor = "auto";
+    }
+    else{
+document.getElementById("jus").style.display = "block";
+document.getElementById("tout_fermer").style.display = "block";
+localStorage.setItem("jus", "ok");
+}
+}
+
+///////////////////////////MANIFESTE_kefir//////////////////////////////////////
+
+function fonctionEtoile(){
+    if (localStorage.getItem("manifeste_kefir") == "ok") {
+        document.getElementById("etoile").style.cursor = "auto";
+    }
+    else{
+document.getElementById("manifeste_kefir").style.display = "block";
+document.getElementById("tout_fermer").style.display = "block";
+localStorage.setItem("manifeste_kefir", "ok");
+
+}
+
+}
+
+
+</script>
+
+</body>
+</html>

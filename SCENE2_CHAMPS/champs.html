@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</script>
+
+
+    <style>
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+
+ @keyframes saute_mouton_1{
+0%{left:-180px; top: -50px;}
+8%{left:-180px; top: -50px;}
+9%{left:-170px; top: -60px;}
+10%{left:-160px; top: -70px;}
+11%{left:-150px; top: -60px;}
+12%{left:-140px; top: -50px;}
+20%{left:-140px; top: -50px;}
+21%{left:-130px; top: -60px;}
+22%{left:-120px; top: -70px;}
+23%{left:-110px; top: -60px;}
+24%{left:-100px; top: -50px;}
+40%{left:-100px; top: -50px;}
+41%{left:-110px; top: -60px;}
+42%{left:-120px; top: -70px;}
+43%{left:-130px; top: -60px;}
+44%{left:-140px; top: -50px;}
+85%{left:-140px; top: -50px;}
+86%{left:-150px; top: -70px;}
+87%{left:-160px; top: -80px;}
+88%{left:-170px; top: -70px;}
+89%{left:-180px; top: -50px;}
+100%{left:-180px; top: -50px;}}
+
+ @keyframes saute_mouton_2{
+0%{left:-100px; top: -65px;}
+5%{left:-130px; top: -40px;}
+6%{left:-160px; top: -10px;}
+7%{left:-170px; top: -10px;}
+8%{left:-180px; top: -20px;}
+30%{left:-180px; top: -20px;}
+31%{left:-190px; top: -10px;}
+32%{left:-200px; top: 0px;}
+33%{left:-210px; top: -10px;}
+34%{left:-220px; top: -20px;}
+60%{left:-220px; top: -20px;}
+61%{left:-210px; top: -30px;}
+62%{left:-200px; top: -40px;}
+63%{left:-180px; top: -30px;}
+64%{left:-170px; top: -25px;}
+70%{left:-170px; top: -20px;}
+71%{left:-150px; top: -10px;}
+72%{left:-130px; top: -20px;}
+74%{left:-100px; top: -50px;}
+94%{left:-100px; top: -50px;}
+100%{left:-100px; top: -65px;}}
+ 
+
+@keyframes envol {
+  0%   { margin-left: 0px; }
+  10%  { margin-left: 200px; margin-top: -110px;}
+  17%  { margin-left: 350px; margin-top: -80px;}
+  25%  { margin-left: 500px; margin-top: -40px;}
+  32%  { margin-left: 600px; margin-top: -100px;}
+  50% { margin-left: 920px; margin-top: -70px;}
+  60%  { margin-left: 600px; margin-top: -100px;}
+  67%  { margin-left: 500px; margin-top: -40px;}
+  70%  { margin-left: 350px; margin-top: -80px;}
+  73%  { margin-left: 200px; margin-top: -110px;}
+  100% { margin-left: 0px; margin-top: -70px;}
+}
+
+ @keyframes tracteurmove{
+from {left:-700px;}
+to {left:-150px;}
+}
+ }
+
+
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+  }
+
+    </style>
+</head>
+<body>
+
+
+ 
+  <div id="letout">
+
+
+<!--    ////////////////////////CONSTANT////////////////////   -->
+    <div id="paysage">
+        <pre><script>document.include('txt/fond_champs.txt');</script>
+        </pre>
+    </div>
+
+
+
+
+
+    <div id="cercle" style="left:220px; top: 70px; cursor: pointer;" onclick="fonction_cercle();">
+        <pre><script>document.include('txt/cercle.txt');</script></pre>
+    </div>
+
+    <div id="moulin" style="left:-290px; top: -195px; cursor: pointer;" onclick="moulin();">
+        <pre><script>document.include('txt/moulin.txt');</script></pre>
+    </div>
+
+
+    <div id="tracteur" style="left:-800px; top: 110px;   animation: tracteurmove both; animation-duration: 6s; cursor: pointer;" onclick="fonction_retour();">
+        <pre><script>document.include('txt/tracteur.txt');</script></pre>
+    </div>
+
+    <div style="left:-270px; top: 200px; cursor: pointer;" onclick="oeuf()">
+        <pre id="canard1"></pre>
+    </div>
+
+    <div style="left:-200px; top: 220px; cursor: pointer;" onclick="oeuf()">
+        <pre id="canard2"></pre>
+    </div>
+
+    <div id="mouton1" style="left:-180px; top: -50px; animation: saute_mouton_1 step-start infinite; animation-duration: 15s; ">
+        <pre><script>document.include('txt/mouton_tete_droite.txt');</script></pre>
+    </div>
+
+
+    <div id="mouton2" style="left:-100px; top: -65px; animation: saute_mouton_2 step-start infinite; animation-duration: 15s;">
+        <pre><script>document.include('txt/mouton_tete_gauche.txt');</script></pre>
+
+    </div>
+
+    <div style="left:350px; top: 195px;">
+        <pre id="chevre"></pre>
+    </div>
+ 
+
+    <div style="left:-333px; top: -283px;">
+        <pre id="fumee" style="display:none;"></pre>
+    </div>
+
+    <div id="graine" style="left:320px; top: -75px; cursor: pointer;" onclick="graine()">
+        <pre><script>document.include('txt/graine.txt');</script></pre>
+    </div>
+
+
+
+
+
+                <!-- oiseau -->
+
+    <div style="cursor: pointer; left:-450px; top: -205px; animation:envol 40s steps(40) infinite; animation-timing-function: linear; " onclick="fonction_oiseau()">
+        <pre id="oiseau" style="background-color: white; "></pre>
+     
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+
+      <div id="click_cercle" style="display: none;">
+
+        <div id="cercle_txt1" style=" z-index: 9; ">
+            <pre style=" z-index: 9; background-color: white;"><script>document.include('txt/cercle_txt1.txt');</script></pre>
+        </div>
+
+        <div id="option" style=" z-index: 9; top: 45px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 200px; justify-content: space-between;">
+            <button onclick="fonction_retour_champs()" style="cursor: pointer;">s'éloigner</button>
+            <button onclick="fonction_portail()">s'approcher</a></button>
+        </div>
+
+      </div>
+
+
+      <div id="click_portail" style="display:none;">
+            <pre style="z-index: 9; background-color:white;"><script>document.include('txt/portail_txt.txt');</script></pre>
+      </div>
+
+
+    <div id="ksj_ciel" style="display: none;">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/ksj_ciel.txt');</script></pre>
+    </div>
+
+
+    <div id="activer_moulin" style="display: none;">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/activer_moulin.txt');</script></pre>
+    </div>
+
+
+        <div id="oeuf" style="display: none;">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/oeuf.txt');</script></pre>
+    </div>
+
+
+            <div id="sac_graine" style="display: none;">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/sac_graine.txt');</script></pre>
+    </div>
+
+
+
+            <div id="click_ferme" style="display: none;">
+
+        <div id="ferme_txt1">
+            <pre style=" z-index: 9; background-color: white;"><script>document.include('txt/ferme_txt1.txt');</script></pre>
+        </div>
+
+        <div id="option_ferme" style=" z-index: 9; top: 35px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 300px; justify-content: space-between;">
+            <button onclick="window.location.href = '../SCENE1_FERME/ferme.html';" style="cursor: pointer;">retourner à la ferme</button>
+            <button onclick="fonction_retour_champs()">rester au champs</a></button>
+        </div>
+
+      </div>
+
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+  <!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+
+  </div>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+    ///////////////////////CANARD1///////////////////////////////////
+        var text_canard1 = [
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite_bec.txt',
+            'txt/canard_tete_droite.txt',
+            'txt/canard_tete_droite_bec.txt',
+                            ];
+        var counter_canard1 = 0;
+        var preElement_canard1 = document.getElementById("canard1");
+        var textContents_canard1 = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_canard1.length; i++) {
+            preloadText_canard1(text_canard1[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_canard1(url, index) {
+            var request_canard1 = new XMLHttpRequest();
+            request_canard1.open('GET', url, true);
+            request_canard1.onreadystatechange = function () {
+                if (request_canard1.readyState === XMLHttpRequest.DONE && request_canard1.status === 200) {
+                    textContents_canard1[index] = request_canard1.responseText;
+                }
+            };
+            request_canard1.send();
+        }
+        function animate_canard1() {
+            preElement_canard1.textContent = textContents_canard1[counter_canard1];
+            counter_canard1++;
+            if (counter_canard1 >= textContents_canard1.length) {
+                counter_canard1 = length;
+            }
+    setTimeout(animate_canard1, 100);
+        }
+
+        // Start the animation after all text files are preloaded
+        animate_canard1();
+
+
+
+
+    ///////////////////////CANARD2///////////////////////////////////
+        var text_canard2 = [
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche_bec.txt',
+            'txt/canard_tete_gauche.txt',
+            'txt/canard_tete_gauche_bec.txt',
+                            ];
+        var counter_canard2 = 0;
+        var preElement_canard2 = document.getElementById("canard2");
+        var textContents_canard2 = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_canard2.length; i++) {
+            preloadText_canard2(text_canard2[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_canard2(url, index) {
+            var request_canard2 = new XMLHttpRequest();
+            request_canard2.open('GET', url, true);
+            request_canard2.onreadystatechange = function () {
+                if (request_canard2.readyState === XMLHttpRequest.DONE && request_canard2.status === 200) {
+                    textContents_canard2[index] = request_canard2.responseText;
+                }
+            };
+            request_canard2.send();
+        }
+        function animate_canard2() {
+            preElement_canard2.textContent = textContents_canard2[counter_canard2];
+            counter_canard2++;
+            if (counter_canard2 >= textContents_canard2.length) {
+                counter_canard2 = length;
+            }
+    setTimeout(animate_canard2, 100);
+        }
+
+        // Start the animation after all text files are preloaded
+        animate_canard2();
+
+
+    ///////////////////////CHEVRE///////////////////////////////////
+        var text_chevre = [
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre.txt',
+            'txt/chevre2.txt',
+            'txt/chevre3.txt',
+            'txt/chevre3.txt',
+            'txt/chevre3.txt',
+            'txt/chevre3.txt',
+            'txt/chevre3.txt',
+            'txt/chevre2.txt',
+
+                            ];
+        var counter_chevre = 0;
+        var preElement_chevre = document.getElementById("chevre");
+        var textContents_chevre = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_chevre.length; i++) {
+            preloadText_chevre(text_chevre[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_chevre(url, index) {
+            var request_chevre = new XMLHttpRequest();
+            request_chevre.open('GET', url, true);
+            request_chevre.onreadystatechange = function () {
+                if (request_chevre.readyState === XMLHttpRequest.DONE && request_chevre.status === 200) {
+                    textContents_chevre[index] = request_chevre.responseText;
+                }
+            };
+            request_chevre.send();
+        }
+        function animate_chevre() {
+            preElement_chevre.textContent = textContents_chevre[counter_chevre];
+            counter_chevre++;
+            if (counter_chevre >= textContents_chevre.length) {
+                counter_chevre = length;
+            }
+    setTimeout(animate_chevre, 100);
+        }
+
+        // Start the animation after all text files are preloaded
+        animate_chevre();
+
+
+
+    ///////////////////////oiseau///////////////////////////////////
+    var text_oiseau = ['txt/oiseau_1.txt', 'txt/oiseau_2.txt'];
+    var counter_oiseau = 0;
+    var preElement_oiseau = document.getElementById("oiseau");
+    var textContents_oiseau = [];
+    var duration_oiseau = [250, 250]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_oiseau.length; i++) {
+        preloadText_oiseau(text_oiseau[i], i);
+    }
+
+    function preloadText_oiseau(url, index) {
+        var request_oiseau = new XMLHttpRequest();
+        request_oiseau.open('GET', url, true);
+        request_oiseau.onreadystatechange = function () {
+            if (request_oiseau.readyState === XMLHttpRequest.DONE && request_oiseau.status === 200) {
+                textContents_oiseau[index] = request_oiseau.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_oiseau.textContent = textContents_oiseau[0];
+                    animate_oiseau();
+                }
+            }
+        };
+        request_oiseau.send();
+    }
+
+    function animate_oiseau() {
+        setTimeout(function() {
+            counter_oiseau = (counter_oiseau + 1) % textContents_oiseau.length;
+            preElement_oiseau.textContent = textContents_oiseau[counter_oiseau];
+            animate_oiseau();
+        }, duration_oiseau[counter_oiseau]);
+    }
+
+
+    ///////////////////////fumee///////////////////////////////////
+    var text_fumee = ['txt/fumee_1.txt', 'txt/fumee_2.txt'];
+    var counter_fumee = 0;
+    var preElement_fumee = document.getElementById("fumee");
+    var textContents_fumee = [];
+    var duration_fumee = [750, 750]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_fumee.length; i++) {
+        preloadText_fumee(text_fumee[i], i);
+    }
+
+    function preloadText_fumee(url, index) {
+        var request_fumee = new XMLHttpRequest();
+        request_fumee.open('GET', url, true);
+        request_fumee.onreadystatechange = function () {
+            if (request_fumee.readyState === XMLHttpRequest.DONE && request_fumee.status === 200) {
+                textContents_fumee[index] = request_fumee.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_fumee.textContent = textContents_fumee[0];
+                    animate_fumee();
+                }
+            }
+        };
+        request_fumee.send();
+    }
+
+    function animate_fumee() {
+        setTimeout(function() {
+            counter_fumee = (counter_fumee + 1) % textContents_fumee.length;
+            preElement_fumee.textContent = textContents_fumee[counter_fumee];
+            animate_fumee();
+        }, duration_fumee[counter_fumee]);
+    }
+
+
+
+
+
+
+
+    ///////////////////////**********///////////////////////////////////
+    ///////////////////////FONCTION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+
+function fonction_oiseau(){
+document.getElementById("ksj_ciel").style.display = "block";
+document.getElementById("tout_fermer").style.display = "block";
+    }
+
+
+function moulin(){
+if (sessionStorage.getItem("moulin") == "ok"){
+            document.getElementById("moulin").style.cursor = "auto";
+
+}else{
+document.getElementById("fumee").style.display = "block";
+document.getElementById("tout_fermer").style.display = "block";
+document.getElementById("activer_moulin").style.display = "block";
+sessionStorage.setItem("moulin", "ok");}
+   }
+
+
+function oeuf(){
+if (sessionStorage.getItem("oeuf") == "ok"){
+            document.getElementById("canard1").style.cursor = "auto";
+            document.getElementById("canard2").style.cursor = "auto";
+}else{
+document.getElementById("oeuf").style.display = "block";
+document.getElementById("tout_fermer").style.display = "block";
+sessionStorage.setItem("oeuf", "ok");}
+   }
+
+
+
+
+function graine(){
+if (sessionStorage.getItem("graine") == "ok"){
+            document.getElementById("graine").style.cursor = "auto";
+
+}else{
+document.getElementById("tout_fermer").style.display = "block";
+document.getElementById("sac_graine").style.display = "block";
+sessionStorage.setItem("graine", "ok");}
+   }
+
+
+
+
+
+
+    ///////////////////////CERCLE///////////////////////////////////
+
+
+
+
+        function fonction_cercle(){
+            document.getElementById("click_cercle").style.display = "block";
+
+        }
+
+        function fonction_retour_champs(){
+            document.getElementById("click_cercle").style.display = "none";
+            document.getElementById("click_ferme").style.display = "none";
+        }
+
+
+
+
+    ///////////////////////PORTAIL///////////////////////////////////
+
+
+
+        function fonction_portail(){
+            document.getElementById("click_cercle").style.display = "none";
+            document.getElementById("click_portail").style.display = "block";
+            document.getElementById("bloqueur").style.display = "block";  
+            setTimeout(() => {  window.location.href='../SCENE3_PORTAIL/portail.html'; }, 5000);
+
+
+
+        }
+
+
+        function fonction_retour(){
+            document.getElementById("click_ferme").style.display = "block";
+
+        }
+
+
+
+
+        function tout_fermer(){
+            document.getElementById("ksj_ciel").style.display = "none";  
+            document.getElementById("tout_fermer").style.display = "none";  
+document.getElementById("activer_moulin").style.display = "none";
+document.getElementById("sac_graine").style.display = "none";
+document.getElementById("oeuf").style.display = "none";
+}
+
+
+    </script>
+
+
+</div></body></html>
