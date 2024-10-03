@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <SCRIPT LANGUAGE="JavaScript">
 
@@ -69,15 +70,21 @@ document.include = function (url) {
 
 
 #telephone{
-    animation: secousse 20s infinite;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
     animation-delay: 5s;
 }
 
 
 #bipbip{
-    animation: bipbip 20s infinite;
+    animation: 20s infinite;
     animation-delay: 5s;
     opacity: 0;
+}
+
+
+.popup{
+    font-size: 13px;
 }
 
 @keyframes secousse {
@@ -122,10 +129,25 @@ document.include = function (url) {
   39% { opacity: 0; }
 }
 
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
     </style>
 </head>
 <body>
 
+<!--
+<p class="animate-text">C'est un texte vraiment magique !</p>
+<p>Ce texte est fixe.</p>
+<p class="animate-text">voici le deuxième texte qui s'affiche à la suite</p>
+<p>Ce texte aussi est fixe.</p>
+<p class="animate-text">Quaerebatur Tyrii textrini prolatae quidam scriptae purpurae tuniculam Graeco est Maras nihil fucandae autem etiam.</p>
+-->
 <!--    ////////////////////////CONSTANT////////////////////   -->
   
           <a href="../SCENE_CASCADE/cascade.html" id="bigcarto" style=" font-size:13px; cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
@@ -178,72 +200,53 @@ inventaire
 
 
 
+<div id="intro_1" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_1.txt')</script></pre>
+ <button id="bouton_1_a" class="bouton_intro" onclick="intro_1()" style="width: 78px; top:50px; left:-80px;">heu... allo?</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="intro_1()" style="width: 95px; top:50px; left:80px;">qui me parle?!</button>
+</div>
+
+
+<div id="intro_2" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_2.txt')</script></pre>
+ <button id="bouton_2_a" class="bouton_intro" onclick="intro_2()" style="width: 98px; top:50px; left:-93px;">c'est toi steve?</button>
+   <button id="bouton_2_b" class="bouton_intro" onclick="intro_2()" style="width: 142px; top:50px; left:71px;">mais vos bureaux sont dans une cascade?</button>
+</div>
+
+<div id="intro_3" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_3.txt')</script></pre>
+ <button id="bouton_3_a" class="bouton_intro" onclick="intro_3()" style="width:89px; top:50px; left: -114px;">salut steve..?</button>
+  <button id="bouton_3_b" class="bouton_intro" onclick="intro_3()" style="width: 113px; top: 50px; left: 100px;">salut stephanie..?</button>
+</div>
+
+<div id="intro_4" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_4.txt')</script></pre>
+ <button id="bouton_4" class="bouton_intro" onclick="intro_4()" style="width: 305px; top:55px;">a oui vener... mais ou sont toustes tes employ·ées?</button>
+
+</div>
+
+<div id="intro_5" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_5.txt')</script></pre>
+  <button id="bouton_5" class="bouton_intro" onclick="intro_5()" style="width: 340px; top:78px; ">whouaa, mais il n'y a que des fxmmes qui travaillent ici?
+</button>
+</div>
+
+<div id="intro_6" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_6.txt')</script></pre>
+   <button id="bouton_6_a" class="bouton_intro" onclick="intro_6()" style="width: 26px; top:64px; left:-160px;">lol
+</button>
+  <button id="bouton_6_b" class="bouton_intro" onclick="intro_6()" style="width: 208px; top:64px; left: 48px;">et ça marche bien comme boite?
+</button>
+</div>
+
+<div id="intro_7" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_7.txt')</script></pre>
+   <button id="bouton_7" class="bouton_intro" onclick="tout_fermer()" style="width: 135px; top:55px;">bien joué stéphanie!
+</button>
+</div>
   <!--    ////////////////////////LES POP PAGES////////////////////   -->
                 
-<!--///////////////////////RADIA///////////////////////////////////-->
 
-
-                  <!-- demander modem-->
-
-
-    <div id="click_telephone" style="display: none;">
-
-
-        <div id="intro_1" >
-            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/intro_1.txt');</script></pre>
-        </div>
-
-        <div id="bouton_radia_non" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="retour_foret()" style="cursor: pointer;"> je n'ai rien pour toi... </button>
-        </div>
-
-        <div id="bouton_donne_modem" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="donner_modem()" style="cursor: pointer;"> j'ai un modem ! </button>
-        </div>
-    </div>
-
-                  <!-- donner modem-->
-
-    <div id="donner_poeme" style="display: none;">
-
-        <div id="radia_txt">
-            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/message_merci.txt');</script></pre>
-        </div>
-
-        <div id="bouton_lire_poeme" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="lire_poeme()" style="cursor: pointer;"> lire le poème </button>
-        </div>
-
-    </div>
-
-
-
-
-                  <!-- le poeme-->
-
-
-    <div id="poeme" style="display: none;">
-
-
-        <div id="radia_txt">
-            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/poeme_radia.txt');</script></pre>
-        </div>
-
-    </div>
-
-
-
-                  <!-- radia heureuse -->
-
-    <div id="radia_heureuse" style="display: none;">
-
-
-        <div id="radia_txt" >
-            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/radia_heureuse.txt');</script></pre>
-        </div>
-
-
-    </div>
 
 
 
@@ -264,7 +267,13 @@ inventaire
     ///////////////////////ANIMATION///////////////////////////////////
         ///////////////////////******///////////////////////////////////
 
-  
+      $( window ).on( "load", function() {
+  if(localStorage.getItem("intro_steve") == "ok"){
+ }else{
+  document.getElementById("telephone").style.animationName = "secousse";
+  document.getElementById("bipbip").style.animationName = "bipbip";
+
+}}); 
 
 
     ///////////////////////**********///////////////////////////////////
@@ -272,21 +281,81 @@ inventaire
         ///////////////////////******///////////////////////////////////
 
 
-///////////////////////////JUS//////////////////////////////////////
+        function tout_fermer(){ 
+                document.getElementById("intro_7").style.display= "none";   
+
+
+        }
+
+///////////////////////////INTRO//////////////////////////////////////
 
 function fonctionTelephone(){
-    if (localStorage.getItem("intro_steeve") == "ok") {
-        document.getElementById("pourcent").style.cursor = "auto";
+    if (localStorage.getItem("intro_steve") == "ok") {
+        document.getElementById("appel_steph").style.cursor = "auto";
     }
     else{
-document.getElementById("jus").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
-localStorage.setItem("jus", "ok");
+document.getElementById("intro_1").style.display = "block";
 }
 }
 
 
-sss
+function intro_1(){ 
+    document.getElementById("intro_1").style.display= "none";   
+    document.getElementById("intro_2").style.display= "block";}
+
+
+function intro_2(){ 
+    document.getElementById("intro_2").style.display= "none";   
+    document.getElementById("intro_3").style.display= "block";}
+
+
+function intro_3(){ 
+    document.getElementById("intro_3").style.display= "none";   
+    document.getElementById("intro_4").style.display= "block";}
+
+
+function intro_4(){ 
+    document.getElementById("intro_4").style.display= "none";   
+    document.getElementById("intro_5").style.display= "block";}
+
+
+function intro_5(){ 
+    document.getElementById("intro_5").style.display= "none";   
+    document.getElementById("intro_6").style.display= "block";}
+
+
+function intro_6(){ 
+    document.getElementById("intro_6").style.display= "none";   
+    document.getElementById("intro_7").style.display= "block";
+            localStorage.setItem("intro_steve", "ok"); 
+  document.getElementById("telephone").style.animationName = "";
+  document.getElementById("bipbip").style.animationName = "";
+}
+
+
+
+/*function animate_text() 
+{
+  let delay = 100,
+      delay_start = 0,
+      contents,
+      letters;
+
+  $(".animate-text").each(function(index, obj) {
+    contents = $(obj).text().trim();
+    $(obj).html(''); // on vide le contenu
+    letters = contents.split("");
+    $(letters).each(function(index_1, letter) {
+      setTimeout(function() {
+        // ---------
+        // effet machine à écrire simple
+        $(obj).html( $(obj).html() + letter ); // on ajoute chaque lettre l une après l autre
+        // ---------
+        // ---------
+      }, delay_start + delay * index_1);
+    });
+  }
+*/
 
 </script>
 
