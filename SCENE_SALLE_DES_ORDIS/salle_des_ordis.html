@@ -137,6 +137,17 @@ document.include = function (url) {
 }
 
 
+        @keyframes envol {
+          0%   { margin-left: 0px; }
+          5%  { margin-top: -30px;}
+          9%  { margin-top: 20px;}
+          13%  { margin-top: 40px;}
+          17%  {margin-top: 30px;}
+          21%  { margin-top: 20px;}
+          25% { margin-left: 120vw; margin-top: 0px;}
+          100% { margin-left: 120vw; }
+        }
+
     </style>
 </head>
 <body>
@@ -180,7 +191,7 @@ inventaire
 
                 <!-- ordi -->
 
-    <div id="ordi_a_cliquer" style="top: 93px; left: -518px; cursor: pointer;" onclick="ordi()">
+    <div id="ordi_a_cliquer" style="top: 93px; left: -518px; cursor: pointer;" onclick=" window.location.href='../SCENE_ORDINATEUR/telescope.html'">
         <pre ><script>document.include('txt/ordi_a_cliquer.txt');</script>
         </pre>
     </div>
@@ -244,11 +255,30 @@ inventaire
    <button id="bouton_7" class="bouton_intro" onclick="tout_fermer()" style="width: 135px; top:55px;">bien joué stéphanie!
 </button>
 </div>
+
+
+
+    <!-- bat -->
+
+    <div style="left:-60vw; top: -244px; animation: envol 40s steps(30) infinite alternate; cursor: pointer; animation-delay: 15s;  " onclick="fonction_bat()">
+        <pre id="bat" style="background-color: white; "></pre>
+        </div>
+
   <!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+
+      <!-- protocole batman-->
+
+    <div id="txt_batman" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_batman.txt');</script></pre>
+    </div>
+
                 
 
+      <!--  telephone-->
 
-
+<div id="appel_steph" class="popup" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/appel_steph.txt')</script></pre>
 
 
 
@@ -276,13 +306,58 @@ inventaire
 }}); 
 
 
+    ///////////////////////bat///////////////////////////////////
+
+
+    var text_bat = ['txt/bat_1.txt', 'txt/bat_2.txt'];
+    var counter_bat = 0;
+    var preElement_bat = document.getElementById("bat");
+    var textContents_bat = [];
+    var duration_bat = [333, 333]; // Duration for each text content in milliseconds
+
+    for (var i = 0; i < text_bat.length; i++) {
+        preloadText_bat(text_bat[i], i);
+    }
+
+    function preloadText_bat(url, index) {
+        var request_bat = new XMLHttpRequest();
+        request_bat.open('GET', url, true);
+        request_bat.onreadystatechange = function () {
+            if (request_bat.readyState === XMLHttpRequest.DONE && request_bat.status === 200) {
+                textContents_bat[index] = request_bat.responseText;
+
+                if (index === 0) {
+                    // Display the content of the first file on startup
+                    preElement_bat.textContent = textContents_bat[0];
+                    animate_bat();
+                }
+            }
+        };
+        request_bat.send();
+    }
+
+    function animate_bat() {
+        setTimeout(function() {
+            counter_bat = (counter_bat + 1) % textContents_bat.length;
+            preElement_bat.textContent = textContents_bat[counter_bat];
+            animate_bat();
+        }, duration_bat[counter_bat]);
+    }
+
+
+
+
+
+
     ///////////////////////**********///////////////////////////////////
     ///////////////////////FONCTION///////////////////////////////////
         ///////////////////////******///////////////////////////////////
 
 
         function tout_fermer(){ 
-                document.getElementById("intro_7").style.display= "none";   
+                document.getElementById("intro_7").style.display= "none";  
+                document.getElementById("appel_steph").style.display= "none";   
+                document.getElementById("txt_batman").style.display= "none"; 
 
 
         }
@@ -291,7 +366,8 @@ inventaire
 
 function fonctionTelephone(){
     if (localStorage.getItem("intro_steve") == "ok") {
-        document.getElementById("appel_steph").style.cursor = "auto";
+        document.getElementById("appel_steph").style.display = "block";
+        $("#tout_fermer").css('display','block');
     }
     else{
 document.getElementById("intro_1").style.display = "block";
@@ -333,6 +409,18 @@ function intro_6(){
 }
 
 
+
+
+    function fonction_bat(){
+        if (localStorage.getItem("batman") == "ok") {
+            document.getElementById("bat").style.cursor = "auto";
+       
+        }else{
+            document.getElementById("txt_batman").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("batman", "ok");
+        }
+    }
 
 /*function animate_text() 
 {
