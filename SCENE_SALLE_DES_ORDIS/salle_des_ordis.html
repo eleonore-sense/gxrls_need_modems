@@ -264,12 +264,34 @@ inventaire
         <pre id="bat" style="background-color: white; "></pre>
         </div>
 
+
+    <!-- étoile laboria -->
+
+    <div id="etoile_laboria" style="left:434px; top: -10px; cursor:pointer;" onclick="fonction_citation_laboria()">$
+        </div>
+
+
+
+    <!-- bougie -->
+
+    <div id="bougie" style="left:-373px; top: -151px; background-color: white; cursor:pointer;" onclick="fonction_bougie()">()<br> &nbsp;i
+        </div>
+
+
+
+    <!-- lettre -->
+
+    <div id="lettre"  onclick="fonction_lettre()">
+        <pre style="left:540px; top: 301px; cursor:pointer;"><script>document.include('txt/lettre.txt');</script>
+        </pre>
+        </div>
+
   <!--    ////////////////////////LES POP PAGES////////////////////   -->
 
 
       <!-- protocole batman-->
 
-    <div id="txt_batman" style="display: none; cursor: pointer;">
+    <div id="txt_batman" class="popup" style="display: none; cursor: pointer;">
         <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_batman.txt');</script></pre>
     </div>
 
@@ -280,8 +302,24 @@ inventaire
 <div id="appel_steph" class="popup" style=" display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/appel_steph.txt')</script></pre>
 
+</div>
+      <!-- laboria cubonix-->
 
+    <div id="txt_laboria" class="popup" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/citation_laboria_cubonix.txt');</script></pre>
+    </div>
 
+          <!--txt_lettre-->
+
+    <div id="txt_lettre" class="popup" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_lettre.txt');</script></pre>
+    </div>
+
+          <!--txt_bougie-->
+
+    <div id="txt_bougie" class="popup" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_bougie.txt');</script></pre>
+    </div>
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
@@ -358,7 +396,10 @@ inventaire
                 document.getElementById("intro_7").style.display= "none";  
                 document.getElementById("appel_steph").style.display= "none";   
                 document.getElementById("txt_batman").style.display= "none"; 
-
+            document.getElementById("txt_laboria").style.display = "none";
+            document.getElementById("txt_bougie").style.display = "none";
+            document.getElementById("txt_lettre").style.display = "none";
+            document.getElementById("tout_fermer").style.display = "none";
 
         }
 
@@ -419,6 +460,40 @@ function intro_6(){
             document.getElementById("txt_batman").style.display = "block";
             document.getElementById("tout_fermer").style.display = "block";
             localStorage.setItem("batman", "ok");
+        }
+    }
+
+
+    function fonction_citation_laboria(){
+        if (localStorage.getItem("citation_laboria_cubonix") == "ok") {
+            document.getElementById("etoile_laboria").style.cursor = "auto";
+       
+        }else{
+            document.getElementById("txt_laboria").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("citation_laboria_cubonix", "ok");
+        }
+    }
+
+    function fonction_bougie(){
+        if (localStorage.getItem("bougie") == "ok") {
+            document.getElementById("bougie").style.cursor = "auto";
+       
+        }else{
+            document.getElementById("txt_bougie").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("bougie", "ok");
+        }
+    }
+
+    function fonction_lettre(){
+        if (localStorage.getItem("lettre") == "ok") {
+            document.getElementById("lettre").style.cursor = "auto";
+       
+        }else{
+            document.getElementById("txt_lettre").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("lettre", "ok");
         }
     }
 
