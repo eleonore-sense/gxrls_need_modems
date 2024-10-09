@@ -2,14 +2,16 @@
 
              BOUTEILLE À LA MER  
              ------------------  
-             "Our communication system is layered into a
-    {}       geopolitical matrix of preexisting colonial    
-    ||       routes. The 19th century copper telegraph
-    )(       cables followed colonial era shipping routes,
-   |__|      and most modern optical cables follow these
-   |  |      same old routes.
-   |__|      Same paths, same stories, same pains.
-             Cables are the hardware of the new imperialism."
+             "Notre système de communication est ancré dans
+             une matrice géopolitique de routes coloniales    
+    {}       préexistantes. Les câbles télégraphiques en 
+    ||       cuivre du XIXe siècle suivaient les routes
+    )(       maritimes de l'époque coloniale, et la plupart 
+   |__|      des câbles optiques modernes empruntent ces mêmes
+   |  |      anciennes routes. 
+   |__|      Mêmes chemins, mêmes histoires,
+             mêmes souffrances. Les câbles sont le matériel
+             du nouvel impérialisme."
 
              Tabita Rezaire - Deep Down Tidal (2017)    
 
