@@ -90,16 +90,16 @@ inventaire
     </div>
 
 
-    <div id="dragon" style="top: -214px; cursor:pointer; " onclick="fonction_dragon()">
+    <div id="gargouille" style="top: -214px; cursor:pointer; " onclick="fonction_gargouille()">
         <pre ><script>document.include('txt/gargouille.txt') ;</script>
         </pre>
     </div>
 
 
-   <!-- <div id="telescole" style="left:-270px; top: 50px; cursor:pointer; " onclick="fonction_telescope()">
-        <pre ><script>document.include('txt/telescope.txt');</script>
+   <div id="vers_arene" style="left:-270px; top: 50px; cursor:pointer; " onclick="fonction_vers_arene()">
+        <pre ><script>document.include('txt/x.txt');</script>
         </pre>
-    </div>-->
+    </div>
 
 
   <div id="x" style="left:-311px; top: -71px; cursor: pointer;" onclick="appareil_photo()">
@@ -181,8 +181,8 @@ inventaire
  
     <script type="text/javascript">
 
-        function fonction_telescope(){
- window.location.href='../SCENE_TELESCOPE/telescope.html'; 
+        function fonction_vers_arene(){
+ window.location.href='../SCENE_ARENE/arene.html'; 
 
         }
 
@@ -212,7 +212,7 @@ inventaire
 
 
 
-function fonction_dragon(){
+function fonction_gargouille(){
 if(localStorage.getItem("plus_joli") == "ok"){
 document.getElementById("dame_du_ciel_7").style.display= "block";
 document.getElementById("tout_fermer").style.display = "block";
