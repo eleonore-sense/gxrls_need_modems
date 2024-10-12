@@ -45,17 +45,6 @@
 		100% {margin-top:0px; margin-left:0px;}
 		}
 
-		@keyframes envol_nn {
-  		0%   { margin-left: -900px; }
-  		25% { margin-left: -600px; }
-  		100% { margin-left: -600px; }
-		}
-
-		.envol_nn{
-    	animation-name: envol_nn;
-    	animation-duration: 10s;
-		}
-
 		@keyframes pied_lift{
 		0% {margin-top:-200px;}
 		15% {margin-top:-200px;}
@@ -105,8 +94,6 @@
 
     <pre id="pied" class="pied_drop" style="margin-left:-75px; margin-top:-200px; background-color: white;"><script>document.include('txt/pied.txt');</script></pre>
 
-    <pre id="nn" style="background-color: white; margin-top: -250px; margin-left: -900px;"></pre>
-
 
 <!--    ////////////////////////LES POP PAGES////////////////////   -->
 
@@ -127,7 +114,7 @@
     </div>
 
     <div id="attaque" style="display: none;">
-        <pre style="z-index: 7; background-color: white;"><script>document.include('txt/releasenn.txt');</script></pre>
+        <pre style="z-index: 7; background-color: white;"><script>document.include('txt/release.txt');</script></pre>
         <div style="position: absolute; z-index: 7; display: flex; transform:translate(-50%, -50%); margin-top: 28px; width: 200px; justify-content: space-between;">
     		<button onclick="fonction_fuite()" style="cursor: pointer;">fuir</button>
     		<button style="cursor: not-allowed;">périr</button>
@@ -281,48 +268,12 @@ const timer_attention = setTimeout(fonction_attention, 6000);
 
     function fonction_fuite(){
     	document.getElementById("attaque").style.display = "none";
-        document.getElementById("nn").classList.add("envol_nn");
         document.getElementById("pied").classList.remove("pied_drop");
         document.getElementById("pied").classList.add("pied_lift");
         setTimeout(() => {  window.location.href='../SCENE_ENTREE_ARENE/entree_arene.html'; }, 5000);
     }
 
 
-///////////////////////nn///////////////////////////////////
-    var text_nn = ['txt/netochka1.txt', 'txt/netochka2.txt'];
-    var counter_nn = 0;
-    var preElement_nn = document.getElementById("nn");
-    var textContents_nn = [];
-    var duration_nn = [250, 250]; // Duration for each text content in milliseconds
-
-    for (var i = 0; i < text_nn.length; i++) {
-        preloadText_nn(text_nn[i], i);
-    }
-
-    function preloadText_nn(url, index) {
-        var request_nn = new XMLHttpRequest();
-        request_nn.open('GET', url, true);
-        request_nn.onreadystatechange = function () {
-            if (request_nn.readyState === XMLHttpRequest.DONE && request_nn.status === 200) {
-                textContents_nn[index] = request_nn.responseText;
-
-                if (index === 0) {
-                    // Display the content of the first file on startup
-                    preElement_nn.textContent = textContents_nn[0];
-                    animate_nn();
-                }
-            }
-        };
-        request_nn.send();
-    }
-
-    function animate_nn() {
-        setTimeout(function() {
-            counter_nn = (counter_nn + 1) % textContents_nn.length;
-            preElement_nn.textContent = textContents_nn[counter_nn];
-            animate_nn();
-        }, duration_nn[counter_nn]);
-    }
 
 </script>
 
