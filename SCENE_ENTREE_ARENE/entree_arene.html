@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+
+ }
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+  }
+
+
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+<body onload="check_plante()">
+
+
+                <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+retour à la carto -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+    <!--///////////////////////SCENE///////////////////////////////////-->
+  
+  <div id="letout">
+
+
+    <div id="paysage" style="top: 50px;">
+      <pre ><script>document.include('txt/fond_entree.txt');</script>
+      </pre>
+    </div>
+
+
+    <div id="gargouille" style="top: -165px; cursor:pointer; " onclick="fonction_gargouille()">
+      <pre ><script>document.include('txt/gargouille.txt') ;</script>
+      </pre>
+    </div>
+
+
+    <div id="vers_arene" style="left:-270px; top: 50px; cursor:pointer; " onclick="fonction_vers_arene()">
+      <pre ><script>document.include('txt/x.txt');</script>
+      </pre>
+    </div>
+
+
+    <div id="x" style="left:-311px; top: -71px; cursor: pointer;" onclick="appareil_photo()">
+      <pre ><script>document.include('txt/x.txt');</script>
+      </pre>
+    </div>
+
+
+    <div style="left:-330px; top: -250px;">
+      <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
+    </div>
+      
+    </pre>
+
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+
+<div id="intro" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+</div>
+
+
+   <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">c'est vrai..! vous êtes qui?</button>
+
+<div id="dame_du_ciel_1" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_1.txt')</script></pre>
+ <button id="bouton_1_a" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 104px; top:50px; left:-80px;">c'est un boulot titanesque!</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 110px; top:50px; left:80px;">j'aime pas trop les math moi...</button>
+</div>
+
+
+<div id="dame_du_ciel_2" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_2.txt')</script></pre>
+ <button id="bouton_2" class="bouton_intro" onclick="dameDuCiel_2()" style="width: 278px; top:78px;">et c'est une bonne situation ça, calculatrice?</button>
+</div>
+
+<div id="dame_du_ciel_3" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_3.txt')</script></pre>
+ <button id="bouton_3" class="bouton_intro" onclick="dameDuCiel_3()" style="width: 238px; top:45px;">ouhlala, c'est vraiment pas beaucoup!</button>
+</div>
+
+<div id="dame_du_ciel_4" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_4.txt')</script></pre>
+ <button id="bouton_4_a" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 60px; top:78px; left:-80px;">qui ça?</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 135px; top:78px; left:80px;">ah oui... Dorothéa...</button>
+</div>
+
+<div id="dame_du_ciel_5" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_5.txt')</script></pre>
+</div>
+
+<div id="dame_du_ciel_6" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_6.txt')</script></pre>
+</div>
+
+<div id="dame_du_ciel_7" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_7.txt')</script></pre>
+</div>
+
+  <div id="citation_k_j" style="display: none;">
+        <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_katherine_johnson.txt');</script>
+        </pre>
+    </div>
+
+
+  <div id="appareil_photo" style="display: none;">
+        <pre style="background-color: white; z-index:6;"><script>document.include('txt/appareil_photo.txt');</script>
+        </pre>
+    </div>
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+
+
+  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+
+  </div>
+
+    </div>
+ 
+    <script type="text/javascript">
+
+        function fonction_vers_arene(){
+ window.location.href='../SCENE_ARENE/arene.html'; 
+
+        }
+
+
+        function appareil_photo(){
+      if(localStorage.getItem("appareil_photo") == "ok"){
+            document.getElementById("x").style.cursor = "auto";
+     }else{
+            document.getElementById("appareil_photo").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            localStorage.setItem("appareil_photo", "ok"); 
+     }
+ }
+
+
+        function tout_fermer(){
+            document.getElementById("tout_fermer").style.display = "none";
+            document.getElementById("bouton_oui").style.display= "none";
+            document.getElementById("appareil_photo").style.display= "none";
+            document.getElementById("dame_du_ciel_6").style.display= "none";   
+            document.getElementById("dame_du_ciel_7").style.display= "none";   
+            document.getElementById("dame_du_ciel_5").style.display= "none";   
+
+
+        }
+
+
+
+
+function fonction_gargouille(){
+if(localStorage.getItem("plus_joli") == "ok"){
+document.getElementById("dame_du_ciel_7").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+}else if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
+document.getElementById("dame_du_ciel_6").style.display= "block";
+document.getElementById("tout_fermer").style.display = "block";
+}else{
+document.getElementById("intro").style.display= "block";
+document.getElementById("bouton_oui").style.display= "block";
+}
+}
+
+
+
+function intro(){
+document.getElementById("dame_du_ciel_1").style.display= "block";   
+document.getElementById("bouton_1_a").style.display= "block";
+document.getElementById("bouton_1_b").style.display= "block";
+document.getElementById("bouton_oui").style.display= "none";
+document.getElementById("intro").style.display= "none";
+document.getElementById("bloqueur").style.display = "block";
+}
+
+function dameDuCiel_1(){
+document.getElementById("dame_du_ciel_2").style.display= "block";
+document.getElementById("bouton_2").style.display= "block";
+document.getElementById("dame_du_ciel_1").style.display= "none";   
+document.getElementById("bouton_1_a").style.display= "none";
+document.getElementById("bouton_1_b").style.display= "none";
+}
+
+
+function dameDuCiel_2(){
+document.getElementById("dame_du_ciel_3").style.display= "block";
+document.getElementById("bouton_3").style.display= "block";
+document.getElementById("dame_du_ciel_2").style.display= "none";   
+document.getElementById("bouton_2").style.display= "none";
+}
+
+
+function dameDuCiel_3(){
+document.getElementById("dame_du_ciel_4").style.display= "block";   
+document.getElementById("bouton_4_a").style.display= "block";
+document.getElementById("bouton_4_b").style.display= "block";
+document.getElementById("dame_du_ciel_3").style.display= "none";   
+document.getElementById("bouton_3").style.display= "none";
+}
+
+
+function dameDuCiel_4(){
+document.getElementById("dame_du_ciel_4").style.display= "none";   
+document.getElementById("bouton_4_a").style.display= "none";
+document.getElementById("bouton_4_b").style.display= "none";
+document.getElementById("dame_du_ciel_5").style.display= "block";   
+document.getElementById("bloqueur").style.display= "none";
+document.getElementById("tout_fermer").style.display= "block";
+localStorage.setItem("intro_dame_du_ciel", "ok"); 
+}
+
+
+    ///////////////////////garg gauche///////////////////////////////////
+        var text_garg_gauche = [
+            'txt/garg_gauche1.txt',
+            'txt/garg_gauche2.txt'];
+
+        var counter_garg_gauche = 0;
+        var preElement_garg_gauche = document.getElementById("garg_gauche");
+        var textContents_garg_gauche = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_garg_gauche.length; i++) {
+            preloadText_garg_gauche(text_garg_gauche[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_garg_gauche(url, index) {
+            var request_garg_gauche = new XMLHttpRequest();
+            request_garg_gauche.open('GET', url, true);
+            request_garg_gauche.onreadystatechange = function () {
+                if (request_garg_gauche.readyState === XMLHttpRequest.DONE && request_garg_gauche.status === 200) {
+                    textContents_garg_gauche[index] = request_garg_gauche.responseText;
+                }
+            };
+            request_garg_gauche.send();
+        }
+
+    var timer_garg_gauche;
+
+        function animate_garg_gauche() {
+            preElement_garg_gauche.textContent = textContents_garg_gauche[counter_garg_gauche];
+            counter_garg_gauche++;
+            if (counter_garg_gauche >= textContents_garg_gauche.length) {
+                counter_garg_gauche = 0;            }
+        
+        timer_garg_gauche = setTimeout(animate_garg_gauche, 333); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_garg_gauche();
+
+
+    </script>
+
+
+</body>
+</html>
