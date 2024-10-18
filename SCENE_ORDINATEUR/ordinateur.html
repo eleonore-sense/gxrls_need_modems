@@ -200,7 +200,7 @@ inventaire
   if(localStorage.getItem("intro_jean") == "ok"){
  }else{
 
-
+setTimeout(() => {init()}, 15000);
 }});   
 
 
@@ -210,12 +210,6 @@ setTimeout(() => {animate_anim_1()}, 2000);
 
 });
 
-
-      $( window ).on( "load", function() {
-
-setTimeout(() => {init()}, 15000);
-
-});
 
   // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
     function fetchTextFile(filename) {
