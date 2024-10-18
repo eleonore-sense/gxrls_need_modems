@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <script src="../jquery-3.7.1.min.js"></script>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+            width: 100vw;
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);
+        }
+    
+       div{position: absolute;}
+
+
+
+}
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+ }
+
+
+#telephone{
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+}
+
+
+#bipbip{
+    animation: 20s infinite;
+    animation-delay: 5s;
+    opacity: 0;
+}
+
+
+.popup{
+    font-size: 13px;
+}
+
+
+
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+    display: none;
+    margin-top: 40px;
+}
+
+.txt_anime { 
+    visibility:hidden;
+}
+
+.txt_anime_2 { 
+    visibility:hidden;
+}
+
+
+.dans_lecran{
+width: 681px;
+margin-left: -113px;
+transform: translate(-50%, -50%);
+
+}
+
+
+.terminal {
+display: none;
+  color:black;
+  font-size:13px;
+  border: none;
+  z-index: 15;
+  position: absolute;
+  width: 681px;
+  height: 401px;
+  margin-top: -97px ;
+margin-left: -113px;
+transform: translate(-50%, -50%);
+resize: none;
+}
+
+textarea:focus{
+outline: none;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<!--    ////////////////////////CONSTANT////////////////////   -->
+  
+          <a href="../SCENE_SALLE_DES_ORDIS/salle_des_ordis.html" id="bigcarto" style=" font-size:13px; cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+retour à la cascade -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="font-size: 13px; cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+
+  <div id="letout">
+
+    <div id="paysage">
+        <pre style=""><script>document.include('txt/fond_ordinateur_tour.txt');</script>
+        </pre>
+    </div>
+
+    <!-- ouvrir ordi -->
+
+    <div id="hello_world" style="left:-106px; top:-104px;">
+        <pre id="hello_world_0" style="font-size:10px;"></pre>
+        <pre id="hello_world_1" style=" display: none;"><script>document.include('txt/hello_world_2.txt');</script></pre>
+        <pre id="hello_world_2" style=" font-size:11px; display: none;"><script>document.include('txt/hello_world_3.txt');</script></pre>
+        <pre id="hello_world_3" style="font-size:10px; display: none;"><script>document.include('txt/hello_world_4.txt');</script></pre>
+    </div>    
+
+      <!-- intro -->
+<div id="terminal_boite">
+ <textarea class="terminal" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="terminal" cols="100" rows="100"></textarea></div>
+      <!-- ouvre disque -->
+
+    <div id="ouvre_disque" style="top: -186px; left: 321px; width:231px; height: 54px; cursor: pointer;" onclick="fonctionLadyGaga()">
+    </div>
+
+
+  <!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+
+      <!-- CD lady gaga-->
+    <div id="cd_lady_gaga" class="popup" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/cd_lady_gaga.txt');</script></pre>
+    </div>
+
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+    </div>
+
+
+
+    <script type="text/javascript">
+ 
+    const preElement_anim_1 = document.getElementById("hello_world_0");
+
+   ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+      $( window ).on( "load", function() {
+  if(localStorage.getItem("intro_jean") == "ok"){
+ }else{
+
+
+}});   
+
+
+      $( window ).on( "load", function() {
+
+setTimeout(() => {animate_anim_1()}, 2000);
+
+});
+
+
+      $( window ).on( "load", function() {
+
+setTimeout(() => {init()}, 15000);
+
+});
+
+  // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
+    function fetchTextFile(filename) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", filename);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(Error(xhr.statusText));
+                }
+            };
+            xhr.onerror = () => {
+                reject(Error("Network error"));
+            };
+            xhr.send();
+        });
+    }
+
+
+
+
+ // Animation intro_1
+    function animate_anim_1() {
+        const textFiles_anim_1 = [
+            'txt/hello_world_0_a.txt',
+            'txt/hello_world_0_b.txt',
+            'txt/hello_world_0_c.txt',
+            'txt/hello_world_0_d.txt',
+            'txt/hello_world_0_e.txt',
+            'txt/hello_world_0_f.txt',
+            'txt/hello_world_0_g.txt',
+            'txt/hello_world_0_h.txt',
+            'txt/hello_world_0_i.txt',
+            'txt/hello_world_0_j.txt',
+            'txt/hello_world_0_k.txt',
+            'txt/hello_world_0_l.txt',
+            'txt/hello_world_0_m.txt',
+            'txt/hello_world_0_n.txt',
+            'txt/hello_world_0_o.txt',
+            'txt/hello_world_0_p.txt'
+        ];
+
+        let counter_anim_1 = 0;
+
+        function animate1() {
+            if (counter_anim_1 < textFiles_anim_1.length) {
+                const filename = textFiles_anim_1[counter_anim_1];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_1.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_1++;
+                setTimeout(animate1, 150); //intervalle 50 ms
+            } else { // Une fois la boucle terminée
+                setTimeout(function() {
+                    $("#hello_world_0").css("display", "none");
+                    $("#hello_world_1").css("display", "block");
+                }, 2000); 
+                    setTimeout(function() {
+                    $("#hello_world_1").css("display", "none");
+                    $("#hello_world_2").css("display", "block");
+                }, 4000); 
+                    setTimeout(function() {
+                    $("#hello_world_2").css("display", "none");
+                    $("#hello_world_3").css("display", "block");
+                }, 6000); 
+                    setTimeout(function() {
+                    $("#hello_world_3").css("display", "none");
+                  }, 8000); 
+            }
+        }
+
+        animate1(); // Appelle la fonction qui anime portail1
+    }
+
+
+
+    ///////////////////////**********///////////////////////////////////
+    ///////////////////////FONCTION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+
+        function tout_fermer(){ 
+            $("#cd_lady_gaga").css("display", "none");
+            $("#tout_fermer").css("display", "none");
+        }
+
+//////////////////////////CD LADY GAGA//////////////////////////////////////
+
+    function fonctionLadyGaga(){
+        if (localStorage.getItem("cds_lady_gaga") == "ok") {
+            $("#ouvre_disque").css('cursor', 'auto');
+       
+        }else{
+            $("#cd_lady_gaga").css("display", "block");
+            $("#tout_fermer").css("display", "block");
+            localStorage.setItem("cd_lady_gaga", "ok");
+        }
+    }
+
+
+
+//////////////////////////TEXTE TERMINAL//////////////////////////////////////
+
+
+    // global vars
+let terminal, writeSpeed;
+
+
+function init() {
+  // default settings
+  terminal = document.getElementById("terminal");
+  $(".terminal").css("display", "block");
+  writeSpeed = 60;
+  terminal.innerText = "[j.sammet@computing_corporation.a:]$ ";
+  terminalStart();
+
+  // input listener
+ terminal.addEventListener("keydown", terminalInputHandler);
+}
+
+function terminalStart() {
+  terminalWrite('\n>> ..............................................................\nLogin as Jean Sammet.............................................\nWelcome to the International Business Machines Corporation.......\nWait for connection..............................................\n.................................................................\nHé ho il y a quelqu’un·e?........................................\noui toi, devant l’ordinateur, c’est à toi que je parle!..........\ntu réalises une quête, c’est bien ça?............................\ntape [o] pour répondre [oui]:');
+}
+
+
+function terminalWrite(text) {
+  let counter = 0;
+
+  (function writer() {
+    terminal.disabled = true;
+
+      var textarea = document.getElementById("terminal");
+  if(textarea.selectionStart == textarea.selectionEnd) {
+     textarea.scrollTop = textarea.scrollHeight;
+  }
+  
+
+    if (counter < text.length) {
+      let terminalText = (`${(terminal.value).replace("|","")}${text.charAt(counter)}`);
+      if (counter !== text.length-1) {
+        terminalText = `${terminalText}|`
+      }
+      terminal.value = terminalText;
+      counter++;
+      setTimeout(writer, writeSpeed);
+    } else {
+      clearTimeout(writer);
+      terminal.disabled = false;
+      terminal.blur();
+      terminal.focus();
+    }
+  })();
+}
+  let phrase = 0;
+function terminalInputHandler(e) {
+  console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 79:
+      if(phrase == 0){
+        terminalWrite('\n>> ..............................................................\nc’est bien, c’est bien. Beaucoup de gens en parle par ici,.......\nremarque, c’est aussi que j’en sais des choses...................\nle langage COBOL et FORMAC par exemple...........................\ntu en as déja entendu parler?....................................\ntape [o] pour répondre [oui] ou [n] pour répondre [non]:');
+        phrase = 1;
+      }else if(phrase == 1){
+        terminalWrite('\n>> ..............................................................\nwhouaou, je suis impressionnée!..................................\nTu es dans la programmation informatique?........................\ntu n’as pas l’air si à l’aise devant cet ordinateur..............\npour avouer que tu as menti, tape [o]:');   
+        phrase = 2;
+
+
+      }else if(phrase ==2){
+        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrit!..................\navec mes équipes, on a simplifier énormément le langage..........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible!.........................\nj’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nentre autre, mon travail a permis que tu discutes................\navec un ordinateur en anglais,...................................\net non plus en formule mathématique, c’est super non?............\ntape [o] pour féliciter j.s et [w] pour demander qui elle est:');
+        phrase = 3;        
+      }else if(phrase ==3){
+        terminalWrite('\n>> ..............................................................\nOhh merci, tu es vraiment un·e correspondant·e sympa!............\nMoi c’est Jean Sammet, je suis enchanté de te rencontrer!........\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité!..................\net c’est un peu grâce à moi aussi................................\nje reste dans le coin si jamais..................................\nje pourrais peut-être t’être utile au cours de ta quête,.........\nbon courage!.....................................................\ntape [q] pour quitter:');
+
+
+
+      }
+    break;
+
+    case 78:
+      if(phrase == 0){
+      terminalWrite("\ncommande non prise en charge\ntape [o] pour répondre [oui]:");
+      }
+      if(phrase == 1){
+        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrit!..................\navec mes équipes, on a simplifier énormément le langage..........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible!.........................\nj’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nentre autre, mon travail a permis que tu discutes................\navec un ordinateur en anglais,...................................\net non plus en formule mathématique, c’est super non?............\ntape [o] pour féliciter j.s et [w] pour demander qui elle est:');
+        phrase = 3;  
+      }
+    break;      
+    default:
+      e.preventDefault();
+      if(phrase == 0){
+      terminalWrite("\ncommande non prise en charge\ntape [o] pour répondre [oui]:");
+  }else{              
+      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+  }
+     break;
+    case 87:
+      if(phrase == 3){
+        terminalWrite('\n>> ..............................................................\nMoi c’est Jean Sammet, enchanté!.................................\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité!..................\net c’est un peu grâce à moi aussi................................\nje reste dans le coin si jamais..................................\nje pourrais peut-être t’être utile au cours de ta quête,.........\nbon courage!.....................................................\ntape [q] pour quitter:');
+      }else{
+      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+      }
+    break;
+
+    case 81:
+      if(phrase == 3){
+$("#terminal").css('display','none');
+localStorage.setItem("intro_jean", "ok");   
+
+      }else{
+      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+      }
+    break;
+  }
+}
+    
+</script>
+
+</body>
+</html>
