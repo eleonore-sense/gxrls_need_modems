@@ -272,7 +272,30 @@ document.include = function (url) {
   </div>
 
 
+<!--///////////////////////CD LADY GAGA//////////////////////////////////-->
 
+    <div id="cd" class="obj" style=" left: -341px; top:-5px;" onclick="fonctionCd()" >
+        <pre><script>document.include('txt/ordinateur/cd_lady_gaga.txt')</script></pre>
+    </div>
+
+
+<div id="cd_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre style="background-color: white;"><script>document.include('../SCENE_ORDINATEUR/txt/cd_lady_gaga.txt')</script>
+    </pre>
+  </div>
+
+
+<!--///////////////////////SUSAN KARE//////////////////////////////////-->
+
+    <div id="smiley" class="obj" style=" left: -223px; top:-5px;" onclick="fonctionSmiley()" >
+        <pre><script>document.include('txt/ordinateur/smiley.txt')</script></pre>
+    </div>
+
+
+<div id="smiley_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre style="background-color: white;"><script>document.include('../SCENE_ORDINATEUR/txt/susan_kare.txt')</script>
+    </pre>
+  </div>
 
 <!--///////////////////////BIBLI///////////////////////////////////-->
 
@@ -685,6 +708,25 @@ document.getElementById("lettre").style.display = "none";
 
 
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("cd_lady_gaga") == "ok"){
+document.getElementById("cd").style.display = "block";
+ 
+ }else{
+document.getElementById("cd").style.display = "none";
+}});  
+
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("susan_kare") == "ok"){
+document.getElementById("smiley").style.display = "block";
+ 
+ }else{
+document.getElementById("smiley").style.display = "none";
+}});  
+
+
 
 function fonctionFermeTout(){
 $('.texte').css('display','none');
@@ -780,6 +822,23 @@ document.getElementById("bougie_texte").style.display = "block";
 function fonctionLettre(){
         fonctionFermeTout();
 document.getElementById("lettre_texte").style.display = "block";
+
+}
+
+
+///////////////////////////LETTRE//////////////////////////////////////
+
+function fonctionCd(){
+        fonctionFermeTout();
+document.getElementById("cd_texte").style.display = "block";
+
+}
+
+///////////////////////////LETTRE//////////////////////////////////////
+
+function fonctionSmiley(){
+        fonctionFermeTout();
+document.getElementById("smiley_texte").style.display = "block";
 
 }
 
