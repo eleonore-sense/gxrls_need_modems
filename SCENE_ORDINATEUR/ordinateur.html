@@ -76,6 +76,8 @@ document.include = function (url) {
 
 .popup{
     font-size: 13px;
+    display: none;
+transform: translate(-50%, -50%);
 }
 
 
@@ -115,10 +117,49 @@ display: none;
   position: absolute;
   width: 681px;
   height: 401px;
-  margin-top: -97px ;
-margin-left: -113px;
 transform: translate(-50%, -50%);
 resize: none;
+}
+
+.terminal2 {
+display: none;
+  color:black;
+  font-size:13px;
+  border: none;
+  z-index: 15;
+  position: absolute;
+  width: 681px;
+  height: 401px;
+transform: translate(-50%, -50%);
+resize: none;
+background-color: white;
+}
+
+.centre_ordi{
+      margin-top: -97px ;
+margin-left: -113px;
+}
+
+
+.fond_bureau{
+    display: none;
+}
+
+.nom_jeuvideo{
+    display: none;
+    z-index: 22;
+    cursor: pointer;
+    margin-top:-275px;
+    font-size: 12px;
+}
+
+
+.jeu_video{
+    z-index:22;
+margin-left: -106px;
+margin-top: -95px;
+    font-size: 12px;
+
 }
 
 textarea:focus{
@@ -162,7 +203,38 @@ inventaire
 
       <!-- intro -->
 <div id="terminal_boite">
- <textarea class="terminal" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="terminal" cols="100" rows="100"></textarea></div>
+ <textarea class="terminal centre_ordi" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="terminal" cols="100" rows="100"></textarea></div>
+
+      <!-- intro -->
+<div id="terminal2_boite">
+ <textarea class="terminal2 centre_ordi" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="terminal2" cols="100" rows="100"></textarea></div>
+      <!-- fichier -->
+
+    <div id="active_fichier" class="fond_bureau"style="top: -256px; left: -424px; cursor: pointer;" onclick="fonctionActiveFichier()">
+        <pre style=""><script>document.include('txt/active_fichier.txt');</script></pre>
+    </div>
+
+
+      <!-- maison -->
+
+    <div id="active_maison" class="fond_bureau" style="top: -264px; left: -341px; cursor: pointer;" onclick="fonctionActiveMaison()">
+        <pre style=""><script>document.include('txt/active_maison.txt');</script></pre>
+    </div>
+
+
+
+      <!-- poubelle -->
+
+    <div id="active_poubelle" class="fond_bureau" style="top: 44px; left: 188px; cursor: pointer;" onclick="fonctionActivePoubelle()">
+        <pre style=""><script>document.include('txt/active_poubelle.txt');</script></pre>
+    </div>
+
+
+      <!-- jeu -->
+
+    <div id="active_jeu" class="fond_bureau" style="top: -264px; left: -252px; cursor: pointer;" onclick="fonctionActiveJeu()">
+        <pre style=""><script>document.include('txt/active_jeu.txt');</script></pre>
+    </div>
       <!-- ouvre disque -->
 
     <div id="ouvre_disque" style="top: -186px; left: 321px; width:231px; height: 54px; cursor: pointer;" onclick="fonctionLadyGaga()">
@@ -173,16 +245,76 @@ inventaire
 
 
       <!-- CD lady gaga-->
+
+
     <div id="cd_lady_gaga" class="popup" style="display: none; cursor: pointer;">
         <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/cd_lady_gaga.txt');</script></pre>
     </div>
 
 
 
+
+
+      <!-- MDP-->
+
+
+    <div id="popup_mdp" class="popup centre_ordi" style="display: none; z-index: 21;">
+        <pre style=" background-color: white; margin: 7px;"><script>document.include('txt/popup_mdp.txt');</script></pre>
+     <div id="le_mdp" class="centre_ecran" style="display: flex; margin-top:30px; transform:translate(-50%,-50%); position: absolute; ">
+        <input type="text" id="mdp" style=" margin-right: 30px;"/>
+        <button id="donner_mdp" style="cursor: pointer;" onclick="fonctionMdp()">soumettre</button>
+
+    </div>        
+    <div id="faux_mdp" style="transform:translate(-50%,-50%); width: 400px; text-align: center; margin-top: 66px; display: none; "><p>/!\ le mot de passe est incorrect. veuillez réessayer</p></div>
+    </div>
+
+
+
+      <!-- JEUX VIDEOS-->
+
+
+    <div id="popup_jeuvideo" class="popup centre_ordi" style="display: none; z-index: 21;  margin-top: -107px;   font-size: 12px;">
+        <pre style=" background-color: white; margin: 7px;"><script>document.include('txt/popup_jeuvideo.txt');</script></pre>
+
+    </div>        
+
+    <div id="nom_mewilo" onclick="fonctionMewilo()" class="nom_jeuvideo" style="margin-left: -228px;"> Méwilo</div>
+    <div id="nom_adibou" onclick="fonctionAdibou()" class="nom_jeuvideo" style="margin-left: -145px;"> Adibou</div>
+    <div id="nom_goblin" onclick="fonctionGoblin()" class="nom_jeuvideo" style="margin-left: -54px;"> Gobliiins</div>
+
+    <div id="mewilo" class="popup jeu_video" style="">
+        <pre style=""><script>document.include('txt/martinique.txt');</script></pre>
+
+    </div>     
+
+
+    <div id="adibou" class="popup jeu_video" style="">
+        <pre style=""><script>document.include('txt/adibou.txt');</script></pre>
+
+    </div> 
+
+    <div id="goblin" class="popup jeu_video" style="">
+        <pre style=""><script>document.include('txt/goblin.txt');</script></pre>
+
+    </div> 
+
+
+      <!-- POUBELLE-->
+
+
+    <div id="susan_kare" class="popup" style="display: none; cursor: pointer;">
+        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/susan_kare.txt');</script></pre>
+    </div>
+
+
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
   <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+    </div>
+
+  <div id="fermer_fenetre" style="height:50px; width: 50px; z-index: 22; cursor: pointer; transform: translate(-50%, -50%);display: none;" onclick="tout_fermer()"></div>
 
     </div>
 
@@ -198,15 +330,16 @@ inventaire
 
       $( window ).on( "load", function() {
   if(localStorage.getItem("intro_jean") == "ok"){
- }else{
+ setTimeout(() => {$(".fond_bureau").css('display','block')}, 10000);
+}else{
 
-setTimeout(() => {init()}, 15000);
+setTimeout(() => {init()}, 10000);
 }});   
 
 
       $( window ).on( "load", function() {
 
-setTimeout(() => {animate_anim_1()}, 2000);
+setTimeout(() => {animate_anim_1()}, 1500);
 
 });
 
@@ -267,23 +400,24 @@ setTimeout(() => {animate_anim_1()}, 2000);
                         console.error(error);
                     });
                 counter_anim_1++;
-                setTimeout(animate1, 150); //intervalle 50 ms
+                setTimeout(animate1, 50); //intervalle 50 ms
             } else { // Une fois la boucle terminée
                 setTimeout(function() {
                     $("#hello_world_0").css("display", "none");
                     $("#hello_world_1").css("display", "block");
-                }, 2000); 
+                }, 1500); 
                     setTimeout(function() {
                     $("#hello_world_1").css("display", "none");
                     $("#hello_world_2").css("display", "block");
-                }, 4000); 
+                }, 3000); 
                     setTimeout(function() {
                     $("#hello_world_2").css("display", "none");
                     $("#hello_world_3").css("display", "block");
-                }, 6000); 
+                }, 5500); 
                     setTimeout(function() {
                     $("#hello_world_3").css("display", "none");
-                  }, 8000); 
+                    $("#hello_world_4").css("display", "block");
+                  }, 7000); 
             }
         }
 
@@ -299,13 +433,20 @@ setTimeout(() => {animate_anim_1()}, 2000);
 
         function tout_fermer(){ 
             $("#cd_lady_gaga").css("display", "none");
+            $("#popup_mdp").css("display", "none");
+            $("#susan_kare").css("display", "none");
             $("#tout_fermer").css("display", "none");
+            $("#fermer_fenetre").css("display", "none");
+            $("#popup_jeuvideo").css("display", "none");
+            $(".nom_jeuvideo").css("display", "none");
+            $(".jeu_video").css("display", "none");
+            document.getElementById("mdp").value="";
         }
 
 //////////////////////////CD LADY GAGA//////////////////////////////////////
 
     function fonctionLadyGaga(){
-        if (localStorage.getItem("cds_lady_gaga") == "ok") {
+        if (localStorage.getItem("cd_lady_gaga") == "ok") {
             $("#ouvre_disque").css('cursor', 'auto');
        
         }else{
@@ -314,6 +455,99 @@ setTimeout(() => {animate_anim_1()}, 2000);
             localStorage.setItem("cd_lady_gaga", "ok");
         }
     }
+
+
+
+
+//////////////////////////MOT DE PASSE//////////////////////////////////////
+
+    function fonctionActiveFichier(){
+
+            $("#popup_mdp").css("display", "block");
+            $("#tout_fermer").css("display", "block");
+            $("#fermer_fenetre").css("display", "block");
+            $("#fermer_fenetre").css("margin-left", "243px");
+            $("#fermer_fenetre").css("margin-top", "-269px");
+        }
+    
+
+
+
+//////////////////////////JEU VIDEO//////////////////////////////////////
+
+    function fonctionActiveJeu(){
+
+            $("#popup_jeuvideo").css("display", "block");
+            $("#nom_mewilo").css("display", "block");
+            $("#tout_fermer").css("display", "block");
+            $("#nom_adibou").css("display", "block");
+            $("#nom_goblin").css("display", "block");
+            $("#fermer_fenetre").css("display", "block");
+            $("#fermer_fenetre").css("margin-left", "353px");
+            $("#fermer_fenetre").css("margin-top", "-524px");
+        }
+    
+
+    function fonctionMewilo(){
+            $(".nom_jeuvideo").css("font-style", "normal");    
+            $(".nom_jeuvideo").css("text-decoration", "none");    
+            $(".jeu_video").css("display", "none");
+            $("#nom_mewilo").css("font-style", "italic");
+            $("#nom_mewilo").css("text-decoration", "underline");
+            $("#mewilo").css("display", "block");
+        }
+
+    function fonctionAdibou(){
+            $(".nom_jeuvideo").css("font-style", "normal");    
+            $(".nom_jeuvideo").css("text-decoration", "none");    
+            $(".jeu_video").css("display", "none");
+            $("#nom_adibou").css("font-style", "italic");
+            $("#nom_adibou").css("text-decoration", "underline");
+            $("#adibou").css("display", "block");
+        }
+
+    function fonctionGoblin(){
+            $(".nom_jeuvideo").css("font-style", "normal");    
+            $(".nom_jeuvideo").css("text-decoration", "none");    
+            $(".jeu_video").css("display", "none");
+            $("#nom_goblin").css("font-style", "italic");
+            $("#nom_goblin").css("text-decoration", "underline");
+            $("#goblin").css("display", "block");
+        }
+    
+
+
+
+//////////////////////////FONCTION MDP//////////////////////////////////////
+
+    function fonctionMdp(){
+
+  var x = document.getElementById("mdp").value;
+  var mdp = 'bonjour' ;
+        if (localStorage.getItem("message_decode") == "ok") {
+       
+        }else if( x==mdp){
+            $("#faux_mdp").css('display','none');
+        }else{
+            $("#faux_mdp").css('display','block');
+        }
+    }
+
+
+//////////////////////////FONCTION MDP//////////////////////////////////////
+
+    function fonctionActivePoubelle(){
+
+        if (localStorage.getItem("susan_kare") == "ok") {
+       $('#active_poubelle').css('cursor','auto');
+        }else{
+            $("#susan_kare").css('display','block');
+            $("#tout_fermer").css("display", "block");
+
+        }
+    }
+
+
 
 
 
@@ -422,11 +656,95 @@ function terminalInputHandler(e) {
       if(phrase == 3){
 $("#terminal").css('display','none');
 localStorage.setItem("intro_jean", "ok");   
-
+$(".fond_bureau").css('display','block');
       }else{
-      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+      terminalWrite("\ncommande non prise en charge.....................................\nen attente d’une entrée valide:");    
       }
     break;
+  }
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////TEXTE TERMINAL2//////////////////////////////////////
+let terminal2, writeSpeed2;
+function fonctionActiveMaison() {
+    $('#terminal2').css('display','block');
+  // default settings
+  terminal2 = document.getElementById("terminal2");
+  writeSpeed2 = 60;
+
+  terminal2.innerText = "[j.sammet@computing_corporation.a:]$ ";
+
+  terminal2Start();
+
+  // input listener
+  terminal2.addEventListener("keydown", terminal2InputHandler);
+}
+
+function terminal2Start() {
+  let x = Math.floor((Math.random() * 2));
+  let text1 = '\n>> ..............................................................\nte voila de retour!..............................................\nla quête avance bien?............................................\nsi jamais tu as besoin de décoder un message,....................\nje te mets à disposition mon programme de décryptage.............\ntu peux y avoir accès en cliquant sur le fichier sur le bureau...\npour l’utiliser, tu dois apporter le mot de passe................\nqui protège ton document.........................................\ntape [q] pour [quitter]:';
+
+let text2 = '\n>> ..............................................................\nsalut salut!.....................................................\nje se sais pas pourquoi mais j’ai une chanson....................\nque je n’arrive pas à me sortir de la tête.......................\nil y a peut-être quelque chose qui traine dans le lecteur-cd.....\ntape [q] pour [quitter]:';
+if (x==1){
+  terminal2Write(text1);
+}else{
+  terminal2Write(text2);    
+}
+}
+
+
+function terminal2Write(text) {
+  let counter = 0;
+  (function writer() {
+    terminal2.disabled = true;
+      var textarea = document.getElementById("terminal2");
+  if(textarea.selectionStart == textarea.selectionEnd) {
+     textarea.scrollTop = textarea.scrollHeight;
+  }
+  
+    if (counter < text.length) {
+      let terminalText = (`${(terminal2.value).replace("|","")}${text.charAt(counter)}`);
+      if (counter !== text.length-1) {
+        terminalText = `${terminalText}|`
+      }
+      terminal2.value = terminalText;
+      counter++;
+      setTimeout(writer, writeSpeed2);
+    } else {
+      clearTimeout(writer);
+      terminal2.disabled = false;
+      terminal2.blur();
+      terminal2.focus();
+    }
+  })();
+}
+
+function terminal2InputHandler(e) {
+  console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 81:
+terminal2.value = "";
+$('#terminal2').css('display','none');
+
+      break;
+
+    default:
+      e.preventDefault();
+      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");
   }
 }
     
