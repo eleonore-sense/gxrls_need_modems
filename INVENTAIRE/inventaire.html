@@ -247,7 +247,7 @@ document.include = function (url) {
 
 <!--///////////////////////LETTRE//////////////////////////////////-->
 
-    <div id="lettre" class="obj" style=" left: -456px; top:-5px;" onclick="fonctionLettre()" >
+    <div id="lettre" class="obj" style=" left: -453px; top:-5px;" onclick="fonctionLettre()" >
         <pre><script>document.include('txt/salle_des_ordis/lettre.txt')</script></pre>
     </div>
 
@@ -294,6 +294,30 @@ document.include = function (url) {
 
 <div id="smiley_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
     <pre style="background-color: white;"><script>document.include('../SCENE_ORDINATEUR/txt/susan_kare.txt')</script>
+    </pre>
+  </div>
+
+<!--///////////////////////BURRITOS //////////////////////////////////-->
+
+    <div id="burritos" class="obj" style=" left: -113px; top:-2px;" onclick="fonctionSmiley()" >
+        <pre><script>document.include('txt/entree_temple/burritos.txt')</script></pre>
+    </div>
+
+
+<div id="burritos_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre style="background-color: white;"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/burritos.txt')</script>
+    </pre>
+  </div>
+
+<!--///////////////////////DISQUETTE JAIME //////////////////////////////////-->
+
+    <div id="disquette_jaime" class="obj" style=" left: -453px; top:100px;" onclick="fonctionDisquetteJaime()" >
+        <pre><script>document.include('txt/entree_temple/disquette.txt')</script></pre>
+    </div>
+
+
+<div id="disquette_jaime_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre style="background-color: white;"><script>document.include('txt/entree_temple/disquette_jaime.txt')</script>
     </pre>
   </div>
 
@@ -499,7 +523,7 @@ document.include = function (url) {
         <pre><script>document.include('txt/salle_des_ordis/protocole_batman.txt')</script></pre>
     </div>
 
-    <div id="rectangle_protocole_batman_livre" class="rect_bibli" style="left: 478px; top: -157px; width:26px; height:97px;">
+    <div id="rectangle_protocole_batman_livre" class="rect_bibli" style="left: 476px; top: -140px; width:24px; height:97px;">
     </div>
 
 
@@ -509,6 +533,24 @@ document.include = function (url) {
   </div>
 
 <div id="rectangle_protocole_batman" class="rectangle" style="width: 501px; height: 500px; top:20px;"></div>
+
+
+<!--///////////////////////MASQUE JOY BUOLAMWINI///////////////////////////////////-->
+
+    <div id="joy_buolamwini_livre" class="obj" style="left: 191px; top: 0px;" onclick="fonctionJoyBuolamwini()" >
+        <pre><script>document.include('txt/entree_temple/joy_buolamwini.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_joy_buolamwini_livre" class="rect_bibli" style="left: 190px; top: 4px; width:31px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_joy_buolamwini" class="texte" onclick="fonctionFermeTout()" >
+        <pre><script>document.include('../SCENE_ENTREE_TEMPLE/txt/joy_buolamwini.txt')</script></pre>
+  </div>
+
+<div id="rectangle_joy_buolamwini" class="rectangle" style="width: 509px; height: 287px; top:20px;"></div>
 
 
 
@@ -623,6 +665,15 @@ document.getElementById("donna_haraway_livre").style.display = "none";
 document.getElementById("rectangle_donna_haraway_livre").style.display = "none";
 }});
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("joy") == "ok"){
+document.getElementById("joy_buolamwini_livre").style.display = "block";
+document.getElementById("rectangle_joy_buolamwini_livre").style.display = "block";
+ 
+ }else{
+document.getElementById("joy_buolamwini_livre").style.display = "none";
+document.getElementById("rectangle_joy_buolamwini_livre").style.display = "none";
+}});
 ///////////////////////////APPARITION OBJ////////////////////////////////
 
 
@@ -725,6 +776,34 @@ document.getElementById("smiley").style.display = "block";
  }else{
 document.getElementById("smiley").style.display = "none";
 }});  
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("burritos") == "ok"){
+document.getElementById("burritos").style.display = "block";
+ 
+ }else{
+document.getElementById("burritos").style.display = "none";
+}});  
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("burritos") == "ok"){
+document.getElementById("burritos").style.display = "block";
+ 
+ }else{
+document.getElementById("burritos").style.display = "none";
+}});  
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("disquette_jaime") == "ok"){
+document.getElementById("disquette_jaime").style.display = "block";
+ 
+ }else{
+document.getElementById("disquette_jaime").style.display = "none";
+}});  
+
 
 
 
@@ -842,6 +921,21 @@ document.getElementById("smiley_texte").style.display = "block";
 
 }
 
+///////////////////////////BURRITOS//////////////////////////////////////
+
+function fonctionBurritos(){
+        fonctionFermeTout();
+document.getElementById("burritos_texte").style.display = "block";
+
+}
+
+///////////////////////////BURRITOS//////////////////////////////////////
+
+function fonctionDisquetteJaime(){
+        fonctionFermeTout();
+document.getElementById("disquette_jaime_texte").style.display = "block";
+
+}
 
 
 ///////////////////////////BIBLI//////////////////////////////////////
@@ -911,6 +1005,15 @@ document.getElementById("txt_protocole_batman").style.display = "block";
 
 }
 
+
+///////////////////////////JOY BUOLAMWINI//////////////////////////////////////
+
+function fonctionJoyBuolamwini(){
+        fonctionFermeTout();
+document.getElementById("rectangle_joy_buolamwini").style.display = "block";
+document.getElementById("txt_joy_buolamwini").style.display = "block";
+
+}
 
 ///////////////////////////CITATION DONNA HARAWAY//////////////////////////////////////
 

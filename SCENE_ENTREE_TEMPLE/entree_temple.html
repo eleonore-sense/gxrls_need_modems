@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="../jquery-3.7.1.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+
+document.include = function (url) {
+ if ('undefined' == typeof(url)) return false;
+ var p,rnd;
+ if (document.all){
+   p = new ActiveXObject("Microsoft.XMLHTTP");
+ }
+ else {
+   p = new XMLHttpRequest();
+ }
+
+ rnd = Math.random().toString().substring(2);
+ url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
+ p.open("GET",url,false);
+ p.send(null);
+ document.write( p.responseText );
+}
+
+</SCRIPT>
+
+
+    <style>
+
+
+        body {
+            font-size: 13px;
+            font-family: Consolas;
+            margin: 0; 
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Set the body height to full viewport height */
+        }
+
+
+
+       pre{position: absolute;
+                   top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);}
+    
+       div{position: absolute;}
+
+
+ }
+
+
+  #letout{
+    height: 900px; 
+    width: 1300px;
+  }
+
+
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.popup{display: none;}
+
+
+    </style>
+</head>
+<body>
+
+
+                <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+retour à la carto -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+inventaire
+  </a>
+
+    <!--///////////////////////SERPENT///////////////////////////////////-->
+  
+  <div id="letout">
+
+
+    <div id="paysage" style="margin-top: 29px;">
+        <pre ><script>document.include('txt/fond_temple.txt');</script>
+        </pre>
+    </div>
+
+    <div id="temple" style="top: -143px; left:32px; cursor:pointer; " onclick="fonctionTemple()">
+        <pre ><script>document.include('txt/temple.txt') ;</script>
+        </pre>
+    </div>
+
+    <div id="sphinx" style="top: 100px; left:-357px; cursor:pointer; " onclick="fonctionSphinx()">
+        <pre ><script>document.include('txt/sphinx.txt') ;</script>
+        </pre>
+    </div>
+
+
+
+  <div id="croco_gif" style="margin-top: 221px; margin-left: 158px;">
+        <pre id="croco" style="cursor: pointer;" onclick="fonctionGeekGirl()"></pre>
+
+  </div>
+
+
+<!--goodies-->
+
+    <div id="etoile" style="left:-154px; top: -283px; cursor: pointer;" onclick="fonctionBurritos()">
+        <pre >*</pre>
+    </div>
+
+    <div id="dollar" style="left:448px; top: -190px; cursor: pointer;" onclick="fonctionJoy()">
+        <pre >$</pre>
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+<!--disquette-->
+
+<div id="disquette_jaime" class="popup"style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/disquette_jaime.txt')</script></pre>
+</div>
+
+
+<!--geekgirl-->
+
+<div id="geekgirl" class="popup"style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/geekgirl.txt')</script></pre>
+</div>
+
+
+
+<!--burritos-->
+
+<div id="burritos" class="popup"style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/burritos.txt')</script></pre>
+</div>
+
+<!--joy buolamwini-->
+
+<div id="joy_buolamwini" class="popup"style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/joy_buolamwini.txt')</script></pre>
+</div>
+
+
+
+<!--///////////////////////INTRO TEMPLE///////////////////////////////////-->
+
+
+
+<div id="intro_temple" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
+
+   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="z-index:5; top:47px;width:98px;">c'est quoi ça?</button>
+
+</div>
+
+
+<div id="intro_temple_2" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
+
+   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="z-index:5; top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
+
+</div>
+
+
+<div id="intro_temple_3" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
+
+   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="z-index:5; top:47px;left: -133px; width:119px;;">J'ai le message!</button>
+
+   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="z-index:5; top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
+
+</div>
+
+
+
+<!--shinx parle-->
+
+<div id="intro_jaime_0" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_0.txt')</script></pre>
+
+   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="z-index:5; top:84px;width:201px;">whoua! comment tu as fais ça?</button>
+
+</div>
+
+
+<div id="intro_jaime_1" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_1.txt')</script></pre>
+</div>
+
+
+<div id="jaime_parle" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_2.txt')</script></pre>
+
+   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="z-index:5; top:47px;left: -95px; width:40px;;">oui!</button>
+
+   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="z-index:5; top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
+
+</div>
+
+
+
+<div id="message_merci" class="popup" style="">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/jaime_merci.txt')</script></pre>
+</div>
+
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+
+
+
+  </div>
+
+    </div>
+
+
+
+
+ 
+    <script type="text/javascript">
+
+
+    ///////////////////////ANIMATION CROCO///////////////////////////////////
+
+    const preElement_anim_1 = document.getElementById("croco");
+
+   ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+
+ 
+
+      $( window ).on( "load", function() {
+        setTimeout(() => {animate_anim_1()}, 1500);
+      if(localStorage.getItem("burritos") == "ok"){
+            document.getElementById("etoile").style.cursor = "auto";
+      }else{
+
+      }
+      if(localStorage.getItem("joy") == "ok"){
+            document.getElementById("dollar").style.cursor = "auto";
+      }else{}
+
+
+
+
+  }
+
+);
+
+
+  // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
+    function fetchTextFile(filename) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", filename);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(Error(xhr.statusText));
+                }
+            };
+            xhr.onerror = () => {
+                reject(Error("Network error"));
+            };
+            xhr.send();
+        });
+    }
+
+
+
+
+ // Animation intro_1
+    function animate_anim_1() {
+        const textFiles_anim_1 = [
+            'txt/croco_1.txt',
+            'txt/croco_2.txt',
+            'txt/croco_3.txt',
+            'txt/croco_4.txt',
+            'txt/croco_5.txt',
+            'txt/croco_6.txt',
+            'txt/croco_7.txt',
+            'txt/croco_8.txt'
+        ];
+
+        let counter_anim_1 = 0;
+
+        function animate1() {
+            if (counter_anim_1 < textFiles_anim_1.length) {
+                const filename = textFiles_anim_1[counter_anim_1];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_1.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_1++;
+                setTimeout(animate1, 100); //intervalle 50 ms
+            } else {
+        counter_anim_1 = 0;
+        setTimeout(animate1, 5000); 
+            }
+
+        }
+
+        animate1(); // Appelle la fonction qui anime portail1
+    }
+
+
+    ///////////////////////POP UP///////////////////////////////////
+
+
+
+
+        function fonctionBurritos(){
+      if(localStorage.getItem("burritos") == "ok"){ 
+            document.getElementById("etoile").style.cursor = "auto";
+
+          }else{
+            document.getElementById("burritos").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block"; 
+            localStorage.setItem("burritos", "ok"); 
+
+          }
+        }
+
+
+
+
+        function fonctionGeekGirl(){
+            document.getElementById("geekgirl").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block"; 
+        }
+
+
+
+
+
+        function fonctionJoy(){
+      if(localStorage.getItem("joy") == "ok"){ 
+            document.getElementById("dollar").style.cursor = "auto";
+
+          }else{
+            document.getElementById("joy_buolamwini").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block"; 
+            localStorage.setItem("joy", "ok"); 
+
+          }
+        }
+
+
+
+
+
+
+        function tout_fermer(){
+           $("#tout_fermer").css('display', 'none');
+           $(".popup").css('display', 'none');
+          
+
+
+        }
+
+
+    function fonctionTemple(){
+        if(localStorage.getItem("intro_temple") == "ok"){
+            if(localStorage.getItem("message_decode") == "donne"){
+                window.location.href='../SCENE_TEMPLE/temple.html';
+            }else{
+                fonctionIntroTemple2();
+            }
+        }else{
+        $("#intro_temple").css('display', 'block');
+        }
+    }
+
+
+       function fonctionIntroTemple1(){
+        $("#intro_temple").css('display', 'none');
+        $("#intro_temple_2").css('display', 'block');
+       }
+
+
+       function fonctionIntroTemple2(){
+        $("#intro_temple_2").css('display', 'none');
+        $("#intro_temple_3").css('display', 'block');
+
+        localStorage.setItem("intro_temple", "ok");
+        if (localStorage.getItem("message_decode") == "ok"){
+       }else{
+         $("#boutonTemple3a").css('cursor','not-allowed');
+       }
+      }    
+
+
+       function fonctionAccesTemple(){
+        if (localStorage.getItem("message_decode") == "ok"){
+        $("#intro_temple_3").css('display', 'none');
+        $("#disquette_jaime").css('display', 'block');
+        localStorage.setItem("disquette_jaime", "ok");
+        localStorage.setItem("message_decode", "donne");
+        $("#tout_fermer").css('display','block');
+       }else{
+         $("#boutonTemple3a").css('cursor','not-allowed');
+       }
+      } 
+
+
+
+       function fonctionSphinx(){
+       
+        if(localStorage.getItem("intro_jaime") == "ok"){
+            if(localStorage.getItem("message_decode") == "donne"){
+                $("#message_merci").css('display', 'block');
+                $("#tout_fermer").css('display', 'block');
+
+
+            }else if(localStorage.getItem("message_decode") == "ok"){
+                    $("#jaime_parle").css('display', 'block'); 
+                    $("#boutonJaimeParle1").css('cursor','pointer');
+            }else{
+                $("#jaime_parle").css('display', 'block');
+                $("#boutonJaimeParle1").css('cursor','not-allowed');
+            }
+
+        }else{
+        $("#intro_jaime_0").css('display', 'block');
+        }
+    }
+ 
+
+
+
+
+    function fonctionIntroJaime1(){
+        $("#intro_jaime_0").css('display', 'none');
+        $("#intro_jaime_1").css('display', 'block');
+        $("#tout_fermer").css('display', 'block');
+        localStorage.setItem("intro_jaime", "ok");
+    }
+
+
+    function fonctionDonnerMessage(){
+        if(localStorage.getItem("message_decode") == "ok"){
+            $("#jaime_parle").css('display', 'none');
+            $("#disquette_jaime").css('display', 'block');     
+            $("#tout_fermer").css('display', 'block');    
+            localStorage.setItem('message_decode', 'donne');     
+            localStorage.setItem('disquette_jaime', 'ok');      
+
+            }else{
+         $("#boutonJaimeParle1").css('cursor','not-allowed');
+    }
+}
+    </script>
+
+
+
+
+</body>
+</html>
