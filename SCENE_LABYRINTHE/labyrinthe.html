@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+
+
+</head>
+
+<style>
+
+    .terminal {
+display: none;
+  color:black;
+  font-size:13px;
+  border: none;
+  z-index: 15;
+  position: absolute;
+  width: 395px;
+  height: 70px;
+  top: 15px;
+transform: translate(-50%, -50%);
+resize: none;
+}
+
+.neto{
+    animation: neto 10s steps(8) infinite;
+    transform: translate(-50%, -50%);
+}
+
+  @keyframes neto{
+0%{margin-left:-250px; margin-top: -120px;}
+15%{margin-left:50px; margin-top: -50px;}
+30%{margin-left:400px; margin-top: 100px;}
+45%{margin-left:10px; margin-top: -50px;}
+60%{margin-left:100px; margin-top: -110px;}
+75%{margin-left:400px; margin-top: 0px;}
+90%{margin-left:100px; margin-top: -300px;}
+100%{margin-left:-250px; margin-top: -120px;}
+}
+
+.agitation{
+    animation: agitation 0.5s steps(3) infinite;
+}
+
+  @keyframes agitation{
+0%{margin-left:-20px; margin-top: -20px;}
+25%{margin-left:20px; margin-top: 20px;}
+50%{margin-left:20px; margin-top: -20px;}
+75%{margin-left:-20px; margin-top: 20px;}
+100%{margin-left:-20px; margin-top: -20px;}
+}
+
+
+
+textarea:focus{
+outline: none;
+}
+
+</style>
+<body>
+
+
+                <a href="../SCENE_ENTREE_TEMPLE/entree_temple.html" id="bigcarto">
+retour à l'entrée du temple -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" >
+inventaire
+  </a>
+
+    <!--///////////////////////SERPENT///////////////////////////////////-->
+  
+  <div id="letout">
+
+
+    <div id="paysage"  style="margin-top: 29px; cursor: pointer;">
+        <pre onclick="fonctionCode()"><script>document.include('txt/labyrinthe_1.txt');</script>
+        </pre>
+    </div>
+
+
+
+
+    <div style="">
+      <pre id="netochka_nezvanova"  style="display: none;"><script>document.include('txt/monstre1.txt');</script></pre>
+    </div>
+
+
+
+<!--text area-->
+<div id="fond_direction" class="popup" style="">
+ <pre class="pre_popup" onclick="aide_ksj()"><script>document.include('txt/fond_direction.txt')</script></pre>
+</div>
+ <textarea class="terminal centre_ordi" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="terminal" cols="100" rows="100"></textarea></div>
+
+
+
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+<!--disquette-->
+
+<div id="intro" class="popup" style="">
+ <pre class="pre_popup" onclick="aide_ksj()"><script>document.include('txt/intro.txt')</script></pre>
+</div>
+
+
+<div id="aide_ksj" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/aide_ksj.txt')</script></pre>
+</div>
+
+
+<div id="pas_content" class="popup" style="">
+ <pre class="pre_popup" onclick=" window.location.href='../SCENE_ENTREE_TEMPLE/entree_temple.html'"><script>document.include('txt/pas_content.txt')</script></pre>
+</div>
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" onclick="tout_fermer()"></div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+ 
+    <script type="text/javascript">
+
+
+
+         $( window ).on( "load", function() {
+ if(localStorage.getItem("intro_labyrinthe") == "ok"){
+}else{
+setTimeout(() => {intro()}, 3000);
+}
+
+
+      })
+
+   ///////////////////////**********///////////////////////////////////
+    ///////////////////////ANIMATION///////////////////////////////////
+        ///////////////////////******///////////////////////////////////
+    ///////////////////////garg gauche///////////////////////////////////
+        var text_monstre = [
+            'txt/monstre_1.txt',
+            'txt/monstre_2.txt'];
+
+        var counter_monstre = 0;
+        var preElement_monstre = document.getElementById("netochka_nezvanova");
+        var textContents_monstre = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_monstre.length; i++) {
+            preloadText_monstre(text_monstre[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_monstre(url, index) {
+            var request_monstre = new XMLHttpRequest();
+            request_monstre.open('GET', url, true);
+            request_monstre.onreadystatechange = function () {
+                if (request_monstre.readyState === XMLHttpRequest.DONE && request_monstre.status === 200) {
+                    textContents_monstre[index] = request_monstre.responseText;
+                }
+            };
+            request_monstre.send();
+        }
+
+    var timer_monstre;
+
+        function animate_monstre() {
+            preElement_monstre.textContent = textContents_monstre[counter_monstre];
+            counter_monstre++;
+            if (counter_monstre >= textContents_monstre.length) {
+                counter_monstre = 0;            }
+        
+        timer_monstre = setTimeout(animate_monstre, 333); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_monstre();
+
+
+
+/////////////////INTRO////////////////
+
+
+function intro(){
+    $('#intro').css('display', 'block');
+}
+
+
+function aide_ksj(){
+    $('#intro').css('display', 'none');
+    $('#aide_ksj').css('display', 'block');
+    $('#tout_fermer').css('display', 'block');
+    localStorage.setItem("intro_labyrinthe", "ok");
+
+}
+
+function tout_fermer(){ 
+
+            $("#tout_fermer").css("display", "none");
+            $(".popup").css("display", "none");
+        }
+ 
+
+
+
+function fonctionCode(){
+ if($("#netochka_nezvanova").css("display") == "block" && localStorage.getItem("intro_labyrinthe") == "ok"){
+    $("#netochka_nezvanova").css('cursor','not-allowed');
+    $("#paysage").css('cursor','not-allowed');
+
+ }else if(localStorage.getItem("intro_labyrinthe") == "ok"){
+    init();
+    $("#fond_direction").css('display','block');
+ }else{}
+
+}
+
+
+
+
+
+
+
+let terminal, writeSpeed;
+
+
+function init() {
+  // default settings
+
+  terminal = document.getElementById("terminal");
+  $(".terminal").css("display", "block");
+  writeSpeed = 60;
+  terminal.innerText = "entre le chemin à parcourir avec les fèches du clavier";
+  terminalStart();
+
+
+  // input listener
+ terminal.addEventListener("keydown", terminalInputHandler);
+}
+
+
+
+function terminalStart() {
+  terminalWrite('\n\n: _');
+}
+
+
+function terminalWrite(text) {
+  let counter = 0;
+
+  (function writer() {
+    terminal.disabled = true;
+
+      var textarea = document.getElementById("terminal");
+  if(textarea.selectionStart == textarea.selectionEnd) {
+     textarea.scrollTop = textarea.scrollHeight;
+  }
+  
+
+    if (counter < text.length) {
+      let terminalText = (`${(terminal.value).replace("|","")}${text.charAt(counter)}`);
+      if (counter !== text.length-1) {
+        terminalText = `${terminalText}|`
+      }
+      terminal.value = terminalText;
+      counter++;
+      setTimeout(writer, writeSpeed);
+    } else {
+      clearTimeout(writer);
+      terminal.disabled = false;
+      terminal.blur();
+      terminal.focus();
+    }
+  })();
+}
+
+  let phrase = 0;
+function terminalInputHandler(e) {
+  console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 0x27:
+      if(phrase == 0){
+        terminalWrite('>');
+        phrase = 1;
+
+      }else if(phrase == 1){
+        terminalWrite(' >');   
+        phrase = 2;
+
+      }else if(phrase ==7){
+        terminalWrite(' >');
+        bravo();        
+
+      }else{
+       attaque();
+
+      }
+    break;
+
+    case 0x25:
+      if(phrase == 3){
+      terminalWrite(" <");
+        phrase = 4;  
+      }
+      else if(phrase == 6){
+        terminalWrite(' <');
+        phrase = 7;  
+      }else{
+       attaque();        
+      }
+    break;      
+
+    case 0x26:
+      if(phrase == 4){
+      terminalWrite(" ^");
+        phrase = 5; 
+      }
+      else if(phrase == 5){
+        terminalWrite(' ^');
+        phrase = 6;  
+      }else{
+       attaque();        
+      }
+    break;    
+
+    case 0x28:
+      if(phrase == 2){
+      terminalWrite(" v");
+        phrase = 3;  
+      }else{
+        document.getElementById("terminal").value="";
+       attaque();        
+      }
+    break;      
+
+
+
+    default:
+      e.preventDefault();
+       attaque();
+    break;
+
+    
+  }
+}
+    
+
+
+
+
+
+function attaque(){
+$("#fond_direction").css('display','none');
+$(".terminal").css("display", "none"); 
+$("#netochka_nezvanova").css('display','block');
+$("#netochka_nezvanova").addClass('neto');
+$('#paysage').addClass('agitation');
+$("#netochka_nezvanova").css('cursor','not-allowed');
+$("#paysage").css('cursor','not-allowed');
+setTimeout(() => {$('#pas_content').css('display','block')}, 5000);
+
+
+}
+
+
+
+
+function bravo(){
+    $(".terminal").css("display", "none");
+    $("#fond_direction").css('display','none'); 
+    localStorage.setItem('pont','ok');
+
+}
+
+
+    </script>
+
+
+
+
+</body>
+</html>
