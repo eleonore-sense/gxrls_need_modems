@@ -2,82 +2,20 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
-<SCRIPT LANGUAGE="JavaScript">
-
-document.include = function (url) {
- if ('undefined' == typeof(url)) return false;
- var p,rnd;
- if (document.all){
-   p = new ActiveXObject("Microsoft.XMLHTTP");
- }
- else {
-   p = new XMLHttpRequest();
- }
-
- rnd = Math.random().toString().substring(2);
- url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- p.open("GET",url,false);
- p.send(null);
- document.write( p.responseText );
-}
-
-</SCRIPT>
+    <script src="../script_commun.js"></script>
 
 
-    <style>
-
-
-        body {
-            font-size: 13px;
-            font-family: Consolas;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-        }
-
-
-
-       pre{position: absolute;
-                   top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);}
-    
-       div{position: absolute;}
-
-
- }
-
-
-  #letout{
-    height: 900px; 
-    width: 1300px;
-  }
-
-
-.bouton_intro{
-    z-index: 25;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    cursor: pointer;
-}
-
-
-.popup{display: none;}
-
-
-    </style>
 </head>
 <body>
 
 
-                <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+                <a href="../CARTO/bigcarto.html" id="bigcarto">
 retour à la carto -->
   </a>
 
-          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" >
 inventaire
   </a>
 
@@ -91,7 +29,7 @@ inventaire
         </pre>
     </div>
 
-    <div id="temple" style="top: -143px; left:32px; cursor:pointer; " onclick="fonctionTemple()">
+    <div id="temple" style="top: -143px; left:32px; cursor:alias; " onclick="fonctionTemple()">
         <pre ><script>document.include('txt/temple.txt') ;</script>
         </pre>
     </div>
@@ -132,14 +70,14 @@ inventaire
 <!--disquette-->
 
 <div id="disquette_jaime" class="popup"style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/disquette_jaime.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/disquette_jaime.txt')</script></pre>
 </div>
 
 
 <!--geekgirl-->
 
 <div id="geekgirl" class="popup"style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/geekgirl.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/geekgirl.txt')</script></pre>
 </div>
 
 
@@ -147,13 +85,13 @@ inventaire
 <!--burritos-->
 
 <div id="burritos" class="popup"style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/burritos.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/burritos.txt')</script></pre>
 </div>
 
 <!--joy buolamwini-->
 
 <div id="joy_buolamwini" class="popup"style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/joy_buolamwini.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/joy_buolamwini.txt')</script></pre>
 </div>
 
 
@@ -163,27 +101,27 @@ inventaire
 
 
 <div id="intro_temple" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
 
-   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="z-index:5; top:47px;width:98px;">c'est quoi ça?</button>
+   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:98px;">c'est quoi ça?</button>
 
 </div>
 
 
 <div id="intro_temple_2" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
 
-   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="z-index:5; top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
+   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
 
 </div>
 
 
 <div id="intro_temple_3" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
 
-   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="z-index:5; top:47px;left: -133px; width:119px;;">J'ai le message!</button>
+   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:119px;;">J'ai le message!</button>
 
-   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="z-index:5; top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
+   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
 
 </div>
 
@@ -192,31 +130,31 @@ inventaire
 <!--shinx parle-->
 
 <div id="intro_jaime_0" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_0.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_0.txt')</script></pre>
 
-   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="z-index:5; top:84px;width:201px;">whoua! comment tu as fais ça?</button>
+   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:201px;">whoua! comment tu as fais ça?</button>
 
 </div>
 
 
 <div id="intro_jaime_1" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_1.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_1.txt')</script></pre>
 </div>
 
 
 <div id="jaime_parle" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_jaime_2.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_2.txt')</script></pre>
 
-   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="z-index:5; top:47px;left: -95px; width:40px;;">oui!</button>
+   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -95px; width:40px;;">oui!</button>
 
-   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="z-index:5; top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
+   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
 
 </div>
 
 
 
 <div id="message_merci" class="popup" style="">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/jaime_merci.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/jaime_merci.txt')</script></pre>
 </div>
 
 
@@ -224,7 +162,7 @@ inventaire
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+  <div id="tout_fermer" onclick="tout_fermer()"></div>
 
 
 
@@ -335,16 +273,15 @@ inventaire
 
 
         function fonctionBurritos(){
-      if(localStorage.getItem("burritos") == "ok"){ 
-            document.getElementById("etoile").style.cursor = "auto";
-
-          }else{
-            document.getElementById("burritos").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block"; 
+      if(localStorage.getItem("burritos") == "ok"){   
+     }else{
+            $("#burritos").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#etoile").css('cursor', 'auto');
             localStorage.setItem("burritos", "ok"); 
+     }
+ }
 
-          }
-        }
 
 
 
@@ -359,16 +296,14 @@ inventaire
 
 
         function fonctionJoy(){
-      if(localStorage.getItem("joy") == "ok"){ 
-            document.getElementById("dollar").style.cursor = "auto";
-
-          }else{
-            document.getElementById("joy_buolamwini").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block"; 
+      if(localStorage.getItem("joy") == "ok"){   
+     }else{
+            $("#joy_buolamwini").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#dollar").css('cursor', 'auto');
             localStorage.setItem("joy", "ok"); 
-
-          }
-        }
+     }
+ }
 
 
 
@@ -379,9 +314,8 @@ inventaire
            $("#tout_fermer").css('display', 'none');
            $(".popup").css('display', 'none');
           
-
-
         }
+
 
 
     function fonctionTemple(){

@@ -4,54 +4,12 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <head>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<SCRIPT LANGUAGE="JavaScript">
-
-document.include = function (url) {
- if ('undefined' == typeof(url)) return false;
- var p,rnd;
- if (document.all){
-   p = new ActiveXObject("Microsoft.XMLHTTP");
- }
- else {
-   p = new XMLHttpRequest();
- }
-
- rnd = Math.random().toString().substring(2);
- url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- p.open("GET",url,false);
- p.send(null);
- document.write( p.responseText );
-}
-
-</SCRIPT>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
 
     <style>
-
-
-
-        body {
-            font-size: 13px;
-            margin: 0; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            font-family: Consolas;
-        }
-
-
-
-       pre{position: absolute;
-            top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);}
-
-
-
-        div{position: absolute;}
 
         button{
             position: absolute;
@@ -75,6 +33,14 @@ document.include = function (url) {
             z-index: 5;
             display: none;
         }
+
+        .pre{
+            background-color: white;
+            margin: 7px;
+        }        
+
+
+
         .rectangle {
             position: absolute;
             z-index: 4;
@@ -108,7 +74,7 @@ document.include = function (url) {
 
 
 <body >
-<a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">retour à la carto --></a>
+<a href="../CARTO/bigcarto.html" id="bigcarto">retour à la carto --></a>
 
 
   <div id="fond"  style=" width: 1200px; height:570px; position:absolute; left: 50%;  top:  50% ;transform: translate(-50%, -50%);">
@@ -141,12 +107,10 @@ document.include = function (url) {
 
 
 
-    <div id="graine_tournesol_texte" class="texte" onclick= "fonctionFermeTout()"  >
-        <pre><script>document.include('txt/poche/graine_tournesol_texte.txt')</script></pre>
+    <div id="graine_tournesol_texte" class="texte" onclick= "fonctionFermeTout()">
+        <pre class="pre"><script>document.include('txt/poche/graine_tournesol_texte.txt')</script></pre>
     </div>
 
-
-  <div id="rectangle_graine_tournesol_texte" class="rectangle" style="width: 490px; height: 270px; top:20px"></div>
 
 
 <!--///////////////////////MODEM//////////////////////////////////-->
@@ -157,11 +121,10 @@ document.include = function (url) {
 
 
 <div id="modem_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre><script>document.include('txt/cascade/modem_texte.txt')</script>
+    <pre class="pre"><script>document.include('txt/cascade/modem_texte.txt')</script>
     </pre>
   </div>
 
-  <div id="rectangle_modem_texte" class="rectangle" style="width: 378px; height: 180px;"></div>
 
 
 
@@ -174,11 +137,10 @@ document.include = function (url) {
 
 
 <div id="jus_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre><script>document.include('../SCENE_FORET/txt/jus.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_FORET/txt/jus.txt')</script>
     </pre>
   </div>
 
-  <div id="rectangle_jus_texte" class="rectangle" style="width: 385px; height: 230px;"></div>
 
 
 <!--///////////////////////BOUQUET//////////////////////////////////-->
@@ -189,12 +151,9 @@ document.include = function (url) {
 
 
 <div id="bouquet_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre><script>document.include('../SCENE_DAME_DU_CIEL/txt/bouquet_2.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_DAME_DU_CIEL/txt/bouquet_2.txt')</script>
     </pre>
   </div>
-
-  <div id="rectangle_bouquet_texte" class="rectangle" style="width: 540px; height: 380px; "></div>
-
 
 
 
@@ -206,13 +165,9 @@ document.include = function (url) {
 
 
 <div id="carte_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre><script>document.include('../SCENE_DAME_DU_CIEL/txt/carte_gagnante.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_DAME_DU_CIEL/txt/carte_gagnante.txt')</script>
     </pre>
   </div>
-
-  <div id="rectangle_carte_texte" class="rectangle" style="width: 965px; height: 490px; "></div>
-
-
 
 
 
@@ -223,13 +178,10 @@ document.include = function (url) {
     </div>
 
 
-<div id="casque_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre><script>document.include('../SCENE_TELESCOPE/txt/casque_fatoumata.txt')</script>
+<div id="casque_texte" class="texte" onclick= "fonctionFermeTout()">
+    <pre class="pre"><script>document.include('../SCENE_TELESCOPE/txt/casque_fatoumata.txt')</script>
     </pre>
   </div>
-
-  <div id="rectangle_casque_texte" class="rectangle" style="width: 409px; height: 204px; "></div>
-
 
 
 <!--///////////////////////APPAREIL PHOTO//////////////////////////////////-->
@@ -240,7 +192,7 @@ document.include = function (url) {
 
 
 <div id="appareil_photo_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_DAME_DU_CIEL/txt/appareil_photo.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_DAME_DU_CIEL/txt/appareil_photo.txt')</script>
     </pre>
   </div>
 
@@ -253,7 +205,7 @@ document.include = function (url) {
 
 
 <div id="lettre_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_lettre.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_lettre.txt')</script>
     </pre>
   </div>
 
@@ -267,7 +219,7 @@ document.include = function (url) {
 
 
 <div id="bougie_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_bougie.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_bougie.txt')</script>
     </pre>
   </div>
 
@@ -280,7 +232,7 @@ document.include = function (url) {
 
 
 <div id="cd_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_ORDINATEUR/txt/cd_lady_gaga.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_ORDINATEUR/txt/cd_lady_gaga.txt')</script>
     </pre>
   </div>
 
@@ -293,19 +245,19 @@ document.include = function (url) {
 
 
 <div id="smiley_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_ORDINATEUR/txt/susan_kare.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_ORDINATEUR/txt/susan_kare.txt')</script>
     </pre>
   </div>
 
 <!--///////////////////////BURRITOS //////////////////////////////////-->
 
-    <div id="burritos" class="obj" style=" left: -113px; top:-2px;" onclick="fonctionSmiley()" >
+    <div id="burritos" class="obj" style=" left: -113px; top:-2px;" onclick="fonctionBurritos()" >
         <pre><script>document.include('txt/entree_temple/burritos.txt')</script></pre>
     </div>
 
 
 <div id="burritos_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/burritos.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/burritos.txt')</script>
     </pre>
   </div>
 
@@ -317,9 +269,25 @@ document.include = function (url) {
 
 
 <div id="disquette_jaime_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre style="background-color: white;"><script>document.include('txt/entree_temple/disquette_jaime.txt')</script>
+    <pre class="pre"><script>document.include('txt/entree_temple/disquette_jaime.txt')</script>
     </pre>
   </div>
+
+<!--///////////////////////BOUSOOLE//////////////////////////////////-->
+
+    <div id="boussole" class="obj" style=" left: -331px; top:111px;" onclick="fonctionBoussole()" >
+        <pre><script>document.include('txt/carto/boussole.txt')</script></pre>
+    </div>
+
+
+<div id="boussole_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../CARTO//boussole.txt')</script>
+    </pre>
+  </div>
+
+
+
+
 
 <!--///////////////////////BIBLI///////////////////////////////////-->
 
@@ -338,11 +306,8 @@ document.include = function (url) {
 
 
         <div id="poeme_radia" class="texte" onclick="fonctionFermeTout()" >
-    <pre><script>document.include('../SCENE_FORET/txt/poeme_radia.txt')</script></pre>
+    <pre class="pre"><script>document.include('../SCENE_FORET/txt/poeme_radia.txt')</script></pre>
   </div>
-
-  <div id="rectangle_poeme_radia" class="rectangle" style="width: 435px; height: 411px;"></div>
-
 
 
 <!--///////////////////////MANIFESTE KEFIR///////////////////////////////////-->
@@ -357,10 +322,8 @@ document.include = function (url) {
 
 
     <div id="manifeste_kefir" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_FORET/txt/manifeste_kefir.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_FORET/txt/manifeste_kefir.txt')</script></pre>
   </div>
-
-<div id="rectangle_manifeste_kefir" class="rectangle" style="width: 588px; height: 307px; top:20px;"></div>
 
 
 <!--///////////////////////LIVRE tabita rezaire///////////////////////////////////-->
@@ -375,12 +338,8 @@ document.include = function (url) {
 
 
     <div id="tabita_rezaire_deep_down" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_CASCADE/txt/bouteille.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_CASCADE/txt/bouteille.txt')</script></pre>
   </div>
-
-<div id="rectangle_tabita_rezaire_deep_down" class="rectangle" style="width: 470px; height: 268px; top:20px;"></div>
-
-
 
 <!--///////////////////////CITATION K J///////////////////////////////////-->
 
@@ -394,12 +353,8 @@ document.include = function (url) {
 
 
     <div id="citation_k_j" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_DAME_DU_CIEL/txt/citation_katherine_johnson.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_DAME_DU_CIEL/txt/citation_katherine_johnson.txt')</script></pre>
   </div>
-
-<div id="rectangle_citation_k_j" class="rectangle" style="width: 550px; height: 309px; top:20px;"></div>
-
-
 
 
 <!--///////////////////////CITATION K J///////////////////////////////////-->
@@ -414,10 +369,8 @@ document.include = function (url) {
 
 
     <div id="citation_m_h" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_TELESCOPE/txt/citation_margaret.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_TELESCOPE/txt/citation_margaret.txt')</script></pre>
   </div>
-
-<div id="rectangle_citation_m_h" class="rectangle" style="width: 617px; height: 347px; top:20px;"></div>
 
 
 <!--///////////////////////MANIFESTE CYBORG///////////////////////////////////-->
@@ -511,10 +464,8 @@ document.include = function (url) {
 
 
     <div id="citation_laboria" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/citation_laboria_cubonix.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/citation_laboria_cubonix.txt')</script></pre>
   </div>
-
-<div id="rectangle_citation_laboria" class="rectangle" style="width: 617px; height: 391px; top:20px;"></div>
 
 
 <!--///////////////////////PROTOCOLE BATMAN///////////////////////////////////-->
@@ -529,13 +480,48 @@ document.include = function (url) {
 
 
     <div id="txt_protocole_batman" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_batman.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_batman.txt')</script></pre>
   </div>
 
-<div id="rectangle_protocole_batman" class="rectangle" style="width: 501px; height: 500px; top:20px;"></div>
 
 
-<!--///////////////////////MASQUE JOY BUOLAMWINI///////////////////////////////////-->
+
+  <!--///////////////////////ROSI BRAIDOTTI///////////////////////////////////-->
+
+    <div id="rosi_braidotti_livre" class="obj" style="left: 218px; top: 8px;" onclick="fonctionRosiBraidotti()" >
+        <pre><script>document.include('txt/cascade/rosi_braidotti.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_rosi_braidotti_livre" class="rect_bibli" style="left: 218px; top: 8px; width:31px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_rosi_braidotti" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_CASCADE/txt/rosi_braidotti.txt')</script></pre>
+  </div>
+
+
+
+  <!--///////////////////////SYSTER///////////////////////////////////-->
+
+    <div id="systers_livre" class="obj" style="left: 153px; top: 168px;" onclick="fonctionSysters()" >
+        <pre><script>document.include('txt/foret/systers.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_systers_livre" class="rect_bibli" style="left: 153px; top: 168px; width:24px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_systers" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_FORET/txt/systers.txt')</script></pre>
+  </div>
+
+
+
+
+  <!--///////////////////////MASQUE JOY BUOLAMWINI///////////////////////////////////-->
 
     <div id="joy_buolamwini_livre" class="obj" style="left: 191px; top: 0px;" onclick="fonctionJoyBuolamwini()" >
         <pre><script>document.include('txt/entree_temple/joy_buolamwini.txt')</script></pre>
@@ -547,21 +533,10 @@ document.include = function (url) {
 
 
     <div id="txt_joy_buolamwini" class="texte" onclick="fonctionFermeTout()" >
-        <pre><script>document.include('../SCENE_ENTREE_TEMPLE/txt/joy_buolamwini.txt')</script></pre>
+        <pre class="pre"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/joy_buolamwini.txt')</script></pre>
   </div>
 
-<div id="rectangle_joy_buolamwini" class="rectangle" style="width: 509px; height: 287px; top:20px;"></div>
-
-
-
-
-
-
 </div>
-</body>
-
-
-
 
 <script type="text/javascript">
 
@@ -569,16 +544,16 @@ document.include = function (url) {
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("poeme_radia") == "ok"){
-document.getElementById("poeme_radia_livre").style.display = "block";
-document.getElementById("rectangle_poeme_radia_livre").style.display = "block";
+$("#poeme_radia_livre").css('display','block');
+$("#rectangle_poeme_radia_livre").css('display','block');
  
  }else if(localStorage.getItem("poeme_radia") == "donne"){
-document.getElementById("poeme_radia_livre").style.display = "block";
-document.getElementById("rectangle_poeme_radia_livre").style.display = "block";
+$("#poeme_radia_livre").css('display','block');
+$("#rectangle_poeme_radia_livre").css('display','block');
  
  }else{
-document.getElementById("poeme_radia_livre").style.display = "none";
-document.getElementById("rectangle_poeme_radia_livre").style.display = "none";
+$("#poeme_radia_livre").css('display', 'none');
+$("#rectangle_poeme_radia_livre").css('display', 'none');
 
 }});   
 
@@ -586,12 +561,12 @@ document.getElementById("rectangle_poeme_radia_livre").style.display = "none";
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("manifeste_kefir") == "ok"){
-document.getElementById("manifeste_kefir_livre").style.display = "block";
-document.getElementById("rectangle_manifeste_kefir_livre").style.display = "block";
+$("#manifeste_kefir_livre").css('display','block');
+$("#rectangle_manifeste_kefir_livre").css('display','block');
  
  }else{
-document.getElementById("manifeste_kefir_livre").style.display = "none";
-document.getElementById("rectangle_manifeste_kefir_livre").style.display = "none";
+$("#manifeste_kefir_livre").css('display', 'none');
+$("#rectangle_manifeste_kefir_livre").css('display', 'none');
 
 }});   
 
@@ -599,209 +574,252 @@ document.getElementById("rectangle_manifeste_kefir_livre").style.display = "none
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("citation_k_j") == "ok"){
-document.getElementById("citation_k_j_livre").style.display = "block";
-document.getElementById("rectangle_citation_k_j_livre").style.display = "block";
+$("#citation_k_j_livre").css('display','block');
+$("#rectangle_citation_k_j_livre").css('display','block');
  
  }else{
-document.getElementById("citation_k_j_livre").style.display = "none";
-document.getElementById("rectangle_citation_k_j_livre").style.display = "none";
+$("#citation_k_j_livre").css('display', 'none');
+$("#rectangle_citation_k_j_livre").css('display', 'none');
 }});
+
+
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("bouteille_a_la_mer") == "ok"){
-document.getElementById("tabita_rezaire_livre").style.display = "block";
-document.getElementById("rectangle_tabita_rezaire_livre").style.display = "block";
+$("#tabita_rezaire_livre").css('display','block');
+$("#rectangle_tabita_rezaire_livre").css('display','block');
  
  }else{
-document.getElementById("tabita_rezaire_livre").style.display = "none";
-document.getElementById("rectangle_tabita_rezaire_livre").style.display = "none";
+$("#tabita_rezaire_livre").css('display', 'none');
+$("#rectangle_tabita_rezaire_livre").css('display', 'none');
 }});
+
+
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("citation_margaret") == "ok"){
-document.getElementById("citation_m_h_livre").style.display = "block";
-document.getElementById("rectangle_citation_m_h_livre").style.display = "block";
+$("#citation_m_h_livre").css('display','block');
+$("#rectangle_citation_m_h_livre").css('display','block');
  
  }else{
-document.getElementById("citation_m_h_livre").style.display = "none";
-document.getElementById("rectangle_citation_m_h_livre").style.display = "none";
+$("#citation_m_h_livre").css('display', 'none');
+$("#rectangle_citation_m_h_livre").css('display', 'none');
 }});
+
 
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("batman") == "ok"){
-document.getElementById("protocole_batman").style.display = "block";
-document.getElementById("rectangle_protocole_batman_livre").style.display = "block";
+$("#protocole_batman").css('display','block');
+$("#rectangle_protocole_batman_livre").css('display','block');
  }else{
-document.getElementById("protocole_batman").style.display = "none";
-document.getElementById("rectangle_protocole_batman_livre").style.display = "none";
+$("#protocole_batman").css('display', 'none');
+$("#rectangle_protocole_batman_livre").css('display', 'none');
 }});
+
+
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("citation_laboria_cubonix") == "ok"){
-document.getElementById("citation_laboria_livre").style.display = "block";
-document.getElementById("rectangle_citation_laboria_livre").style.display = "block";
+$("#citation_laboria_livre").css('display','block');
+$("#rectangle_citation_laboria_livre").css('display','block');
  
  }else{
-document.getElementById("citation_laboria_livre").style.display = "none";
-document.getElementById("rectangle_citation_laboria_livre").style.display = "none";
+$("#citation_laboria_livre").css('display', 'none');
+$("#rectangle_citation_laboria_livre").css('display', 'none');
 }});
+
+
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("manifeste_cyborg") == "ok"){
-document.getElementById("donna_haraway_livre").style.display = "block";
-document.getElementById("rectangle_donna_haraway_livre").style.display = "block";
+$("#donna_haraway_livre").css('display','block');
+$("#rectangle_donna_haraway_livre").css('display','block');
  
  }else{
-document.getElementById("donna_haraway_livre").style.display = "none";
-document.getElementById("rectangle_donna_haraway_livre").style.display = "none";
+$("#donna_haraway_livre").css('display', 'none');
+$("#rectangle_donna_haraway_livre").css('display', 'none');
 }});
+
+
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("joy") == "ok"){
-document.getElementById("joy_buolamwini_livre").style.display = "block";
-document.getElementById("rectangle_joy_buolamwini_livre").style.display = "block";
+$("#joy_buolamwini_livre").css('display','block');
+$("#rectangle_joy_buolamwini_livre").css('display','block');
  
  }else{
-document.getElementById("joy_buolamwini_livre").style.display = "none";
-document.getElementById("rectangle_joy_buolamwini_livre").style.display = "none";
+$("#joy_buolamwini_livre").css('display', 'none');
+$("#rectangle_joy_buolamwini_livre").css('display', 'none');
 }});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("rosi_braidotti") == "ok"){
+$("#rosi_braidotti_livre").css('display','block');
+$("#rectangle_rosi_braidotti_livre").css('display','block');
+ 
+ }else{
+$("#rosi_braidotti_livre").css('display', 'none');
+$("#rectangle_rosi_braidotti_livre").css('display', 'none');
+}});
+
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("systers") == "ok"){
+$("#systers_livre").css('display','block');
+$("#rectangle_systers_livre").css('display','block');
+ 
+ }else{
+$("#systers_livre").css('display', 'none');
+$("#rectangle_systers_livre").css('display', 'none');
+}});
+
 ///////////////////////////APPARITION OBJ////////////////////////////////
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("graine_tournesol") == "ok"){
-document.getElementById("graine_tournesol").style.display = "none";
+$("#graine_tournesol").css('display', 'none');
  
  }else{
-document.getElementById("graine_tournesol").style.display = "block";
+$("#graine_tournesol").css('display','block');
 }});
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("modem") == "ok"){
-document.getElementById("modem").style.display = "block";
+$("#modem").css('display','block');
  
  }else{
-document.getElementById("modem").style.display = "none";
+$("#modem").css('display', 'none');
 }});
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("jus") == "ok"){
-document.getElementById("jus").style.display = "block";
+$("#jus").css('display','block');
  
  }else{
-document.getElementById("jus").style.display = "none";
+$("#jus").css('display', 'none');
 }});
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("bouquet") == "ok"){
-document.getElementById("bouquet").style.display = "block";
+$("#bouquet").css('display','block');
  
  }else{
-document.getElementById("bouquet").style.display = "none";
+$("#bouquet").css('display', 'none');
 }});    
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("carte_gagnante") == "ok"){
-document.getElementById("carte").style.display = "block";
+$("#carte").css('display','block');
  
  }else{
-document.getElementById("carte").style.display = "none";
+$("#carte").css('display', 'none');
 }});    
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("casque_fatoumata") == "ok"){
-document.getElementById("casque").style.display = "block";
+$("#casque").css('display','block');
  
  }else{
-document.getElementById("casque").style.display = "none";
+$("#casque").css('display', 'none');
 }});    
 
  
     $( window ).on( "load", function() {
   if(localStorage.getItem("appareil_photo") == "ok"){
-document.getElementById("appareil_photo").style.display = "block";
+$("#appareil_photo").css('display','block');
  
  }else{
-document.getElementById("appareil_photo").style.display = "none";
+$("#appareil_photo").css('display', 'none');
 }});  
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("bougie") == "ok"){
-document.getElementById("bougie").style.display = "block";
+$("#bougie").css('display','block');
  
  }else{
-document.getElementById("bougie").style.display = "none";
+$("#bougie").css('display', 'none');
 }});  
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("lettre") == "ok"){
-document.getElementById("lettre").style.display = "block";
+$("#lettre").css('display','block');
  
  }else{
-document.getElementById("lettre").style.display = "none";
+$("#lettre").css('display', 'none');
 }});  
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("cd_lady_gaga") == "ok"){
-document.getElementById("cd").style.display = "block";
+$("#cd").css('display','block');
  
  }else{
-document.getElementById("cd").style.display = "none";
+$("#cd").css('display', 'none');
 }});  
 
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("susan_kare") == "ok"){
-document.getElementById("smiley").style.display = "block";
+$("#smiley").css('display','block');
  
  }else{
-document.getElementById("smiley").style.display = "none";
+$("#smiley").css('display', 'none');
 }});  
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("burritos") == "ok"){
-document.getElementById("burritos").style.display = "block";
+$("#burritos").css('display','block');
  
  }else{
-document.getElementById("burritos").style.display = "none";
+$("#burritos").css('display', 'none');
 }});  
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("burritos") == "ok"){
-document.getElementById("burritos").style.display = "block";
+$("#burritos").css('display','block');
  
  }else{
-document.getElementById("burritos").style.display = "none";
+$("#burritos").css('display', 'none');
 }});  
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("disquette_jaime") == "ok"){
-document.getElementById("disquette_jaime").style.display = "block";
+$("#disquette_jaime").css('display','block');
  
  }else{
-document.getElementById("disquette_jaime").style.display = "none";
+$("#disquette_jaime").css('display', 'none');
+}});  
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("boussole") == "ok"){
+$("#boussole").css('display','block');
+ 
+ }else{
+$("#boussole").css('display', 'none');
 }});  
 
 
@@ -821,8 +839,7 @@ $('.bouton_donna_haraway').css('display','none');
 
 function fonctionModem(){
     fonctionFermeTout();
-document.getElementById("rectangle_modem_texte").style.display = "block";
-document.getElementById("modem_texte").style.display = "block";
+$("#modem_texte").css('display','block');
 
 }
 
@@ -831,8 +848,7 @@ document.getElementById("modem_texte").style.display = "block";
 
 function fonctionJus(){
         fonctionFermeTout();
-document.getElementById("rectangle_jus_texte").style.display = "block";
-document.getElementById("jus_texte").style.display = "block";
+$("#jus_texte").css('display','block');
 
 }
 
@@ -840,8 +856,7 @@ document.getElementById("jus_texte").style.display = "block";
 
 function fonctionGraineTournesol(){
         fonctionFermeTout();
-document.getElementById("rectangle_graine_tournesol_texte").style.display = "block";
-document.getElementById("graine_tournesol_texte").style.display = "block";
+$("#graine_tournesol_texte").css('display','block');
 
 }
 
@@ -850,8 +865,7 @@ document.getElementById("graine_tournesol_texte").style.display = "block";
 
 function fonctionBouquet(){
         fonctionFermeTout();
-document.getElementById("rectangle_bouquet_texte").style.display = "block";
-document.getElementById("bouquet_texte").style.display = "block";
+$("#bouquet_texte").css('display','block');
 
 }
 
@@ -860,8 +874,7 @@ document.getElementById("bouquet_texte").style.display = "block";
 
 function fonctionCarteGagnante(){
         fonctionFermeTout();
-document.getElementById("rectangle_carte_texte").style.display = "block";
-document.getElementById("carte_texte").style.display = "block";
+$("#carte_texte").css('display','block');
 
 }
 
@@ -870,8 +883,7 @@ document.getElementById("carte_texte").style.display = "block";
 
 function fonctionCasqueFatoumata(){
         fonctionFermeTout();
-document.getElementById("rectangle_casque_texte").style.display = "block";
-document.getElementById("casque_texte").style.display = "block";
+$("#casque_texte").css('display','block');
 
 }
 
@@ -881,7 +893,7 @@ document.getElementById("casque_texte").style.display = "block";
 
 function fonctionAppareilPhoto(){
         fonctionFermeTout();
-document.getElementById("appareil_photo_texte").style.display = "block";
+$("#appareil_photo_texte").css('display','block');
 
 }
 
@@ -890,7 +902,7 @@ document.getElementById("appareil_photo_texte").style.display = "block";
 
 function fonctionBougie(){
         fonctionFermeTout();
-document.getElementById("bougie_texte").style.display = "block";
+$("#bougie_texte").css('display','block');
 
 }
 
@@ -900,7 +912,7 @@ document.getElementById("bougie_texte").style.display = "block";
 
 function fonctionLettre(){
         fonctionFermeTout();
-document.getElementById("lettre_texte").style.display = "block";
+$("#lettre_texte").css('display','block');
 
 }
 
@@ -909,7 +921,7 @@ document.getElementById("lettre_texte").style.display = "block";
 
 function fonctionCd(){
         fonctionFermeTout();
-document.getElementById("cd_texte").style.display = "block";
+$("#cd_texte").css('display','block');
 
 }
 
@@ -917,7 +929,7 @@ document.getElementById("cd_texte").style.display = "block";
 
 function fonctionSmiley(){
         fonctionFermeTout();
-document.getElementById("smiley_texte").style.display = "block";
+$("#smiley_texte").css('display','block');
 
 }
 
@@ -925,15 +937,24 @@ document.getElementById("smiley_texte").style.display = "block";
 
 function fonctionBurritos(){
         fonctionFermeTout();
-document.getElementById("burritos_texte").style.display = "block";
+$("#burritos_texte").css('display','block');
 
 }
 
-///////////////////////////BURRITOS//////////////////////////////////////
+///////////////////////////Disquette//////////////////////////////////////
 
 function fonctionDisquetteJaime(){
         fonctionFermeTout();
-document.getElementById("disquette_jaime_texte").style.display = "block";
+$("#disquette_jaime_texte").css('display','block');
+
+}
+
+
+///////////////////////////Boussole//////////////////////////////////////
+
+function fonctionBoussole(){
+        fonctionFermeTout();
+$("#boussole_texte").css('display','block');
 
 }
 
@@ -944,8 +965,7 @@ document.getElementById("disquette_jaime_texte").style.display = "block";
 
 function fonctionPoemeRadia(){
         fonctionFermeTout();
-document.getElementById("rectangle_poeme_radia").style.display = "block";
-document.getElementById("poeme_radia").style.display = "block";
+$("#poeme_radia").css('display','block');
 
 }
 
@@ -955,8 +975,7 @@ document.getElementById("poeme_radia").style.display = "block";
 
 function fonctionManifesteKefir(){
         fonctionFermeTout();
-document.getElementById("rectangle_manifeste_kefir").style.display = "block";
-document.getElementById("manifeste_kefir").style.display = "block";
+$("#manifeste_kefir").css('display','block');
 
 }
 
@@ -964,8 +983,7 @@ document.getElementById("manifeste_kefir").style.display = "block";
 
 function fonctionTabitaRezaireDeepDown(){
         fonctionFermeTout();
-document.getElementById("rectangle_tabita_rezaire_deep_down").style.display = "block";
-document.getElementById("tabita_rezaire_deep_down").style.display = "block";
+$("#tabita_rezaire_deep_down").css('display','block');
 
 }
 
@@ -973,8 +991,7 @@ document.getElementById("tabita_rezaire_deep_down").style.display = "block";
 
 function fonctionCitationKJ(){
         fonctionFermeTout();
-document.getElementById("rectangle_citation_k_j").style.display = "block";
-document.getElementById("citation_k_j").style.display = "block";
+$("#citation_k_j").css('display','block');
 
 }
 
@@ -982,26 +999,23 @@ document.getElementById("citation_k_j").style.display = "block";
 
 function fonctionCitationMH(){
         fonctionFermeTout();
-document.getElementById("rectangle_citation_m_h").style.display = "block";
-document.getElementById("citation_m_h").style.display = "block";
+$("#citation_m_h").css('display','block');
 
 }
 
-///////////////////////////CITATION M H//////////////////////////////////////
+///////////////////////////CITATION LABORIA CUBONIX//////////////////////////////////////
 
 function fonctionCitationLaboria(){
         fonctionFermeTout();
-document.getElementById("rectangle_citation_laboria").style.display = "block";
-document.getElementById("citation_laboria").style.display = "block";
+$("#citation_laboria").css('display','block');
 
 }
 
-///////////////////////////CITATION M H//////////////////////////////////////
+///////////////////////////PROTOCOLE BATMAN//////////////////////////////////////
 
 function fonctionProtocoleBatman(){
         fonctionFermeTout();
-document.getElementById("rectangle_protocole_batman").style.display = "block";
-document.getElementById("txt_protocole_batman").style.display = "block";
+$("#txt_protocole_batman").css('display','block');
 
 }
 
@@ -1010,71 +1024,84 @@ document.getElementById("txt_protocole_batman").style.display = "block";
 
 function fonctionJoyBuolamwini(){
         fonctionFermeTout();
-document.getElementById("rectangle_joy_buolamwini").style.display = "block";
-document.getElementById("txt_joy_buolamwini").style.display = "block";
+$("#txt_joy_buolamwini").css('display','block');
 
 }
 
+///////////////////////////ROSI BRAIDOTTI//////////////////////////////////////
+
+function fonctionRosiBraidotti(){
+        fonctionFermeTout();
+$("#txt_rosi_braidotti").css('display','block');
+
+}
+
+///////////////////////////SYSTERS//////////////////////////////////////
+
+function fonctionSysters(){
+        fonctionFermeTout();
+$("#txt_systers").css('display','block');
+
+}
 ///////////////////////////CITATION DONNA HARAWAY//////////////////////////////////////
 
 function fonctionDonnaHaraway(){
         fonctionFermeTout();
-document.getElementById("d_h_couverture").style.display = "block";
-document.getElementById("rectangle_d_h_couverture").style.display = "block";
-
+$("#d_h_couverture").css('display','block');
+$("#rectangle_d_h_couverture").css('display','block');
 }
 
 
 function fonctionOuvrirDonnaHaraway(){
-document.getElementById("d_h_couverture").style.display = "none";
-document.getElementById("rectangle_d_h_couverture").style.display = "none";
-document.getElementById("d_h_page0").style.display = "block";
-document.getElementById("rectangle_d_h_page").style.display = "block";
-document.getElementById("bouton_page0").style.display = "block";
+$("#d_h_couverture").css('display', 'none');
+$("#rectangle_d_h_couverture").css('display', 'none');
+$("#d_h_page0").css('display','block');
+$("#rectangle_d_h_page").css('display','block');
+$("#bouton_page0").css('display','block');
 }
 
 function fonctionPage1(){
-document.getElementById("d_h_page0").style.display = "none";
-document.getElementById("bouton_page0").style.display = "none";
-document.getElementById("d_h_page1").style.display = "block";
-document.getElementById("bouton_page1").style.display = "block";
-document.getElementById("txt_invisible").style.display = "block";
+$("#d_h_page0").css('display', 'none');
+$("#bouton_page0").css('display', 'none');
+$("#d_h_page1").css('display','block');
+$("#bouton_page1").css('display','block');
+$("#txt_invisible").css('display','block');
 }
 
 function fonctionPage2(){
-document.getElementById("d_h_page1").style.display = "none";
-document.getElementById("bouton_page1").style.display = "none";
-document.getElementById("d_h_page2").style.display = "block";
-document.getElementById("bouton_page2").style.display = "block";
-document.getElementById("txt_invisible").style.display = "none";
+$("#d_h_page1").css('display', 'none');
+$("#bouton_page1").css('display', 'none');
+$("#d_h_page2").css('display','block');
+$("#bouton_page2").css('display','block');
+$("#txt_invisible").css('display', 'none');
 }
 
 function fonctionPage3(){
-document.getElementById("d_h_page2").style.display = "none";
-document.getElementById("bouton_page2").style.display = "none";
-document.getElementById("d_h_page3").style.display = "block";
-document.getElementById("bouton_page3").style.display = "block";
+$("#d_h_page2").css('display', 'none');
+$("#bouton_page2").css('display', 'none');
+$("#d_h_page3").css('display','block');
+$("#bouton_page3").css('display','block');
 }
 
 function fonctionPage4(){
-document.getElementById("d_h_page3").style.display = "none";
-document.getElementById("bouton_page3").style.display = "none";
-document.getElementById("d_h_page4").style.display = "block";
-document.getElementById("bouton_page4").style.display = "block";
+$("#d_h_page3").css('display', 'none');
+$("#bouton_page3").css('display', 'none');
+$("#d_h_page4").css('display','block');
+$("#bouton_page4").css('display','block');
 }
 
 
 function fonctionPage5(){
-document.getElementById("d_h_page4").style.display = "none";
-document.getElementById("bouton_page4").style.display = "none";
-document.getElementById("d_h_page5").style.display = "block";
-document.getElementById("bouton_page5").style.display = "block";
+$("#d_h_page4").css('display', 'none');
+$("#bouton_page4").css('display', 'none');
+$("#d_h_page5").css('display','block');
+$("#bouton_page5").css('display','block');
 }
 
 function fonctionPage6(){
-document.getElementById("d_h_page5").style.display = "none";
-document.getElementById("bouton_page5").style.display = "none";
-document.getElementById("d_h_page6").style.display = "block";
+$("#d_h_page5").css('display', 'none');
+$("#bouton_page5").css('display', 'none');
+$("#d_h_page6").css('display','block');
 }
 
 </script>

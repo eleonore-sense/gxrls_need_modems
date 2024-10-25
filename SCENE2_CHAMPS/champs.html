@@ -1,48 +1,13 @@
 <!DOCTYPE html>
 <html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script language="JavaScript">
-
-document.include = function (url) {
- if ('undefined' == typeof(url)) return false;
- var p,rnd;
- if (document.all){
-   p = new ActiveXObject("Microsoft.XMLHTTP");
- }
- else {
-   p = new XMLHttpRequest();
- }
-
- rnd = Math.random().toString().substring(2);
- url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- p.open("GET",url,false);
- p.send(null);
- document.write( p.responseText );
-}
-
-</script>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
 
     <style>
-
-        body {
-            font-size: 13px;
-            font-family: Consolas;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-        }
-
-
-
-       pre{position: absolute;
-                   top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);}
-    
-       div{position: absolute;}
 
 
  @keyframes saute_mouton_1{

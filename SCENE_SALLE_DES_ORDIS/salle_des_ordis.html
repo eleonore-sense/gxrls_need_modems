@@ -2,52 +2,16 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-<SCRIPT LANGUAGE="JavaScript">
-
-document.include = function (url) {
- if ('undefined' == typeof(url)) return false;
- var p,rnd;
- if (document.all){
-   p = new ActiveXObject("Microsoft.XMLHTTP");
- }
- else {
-   p = new XMLHttpRequest();
- }
-
- rnd = Math.random().toString().substring(2);
- url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- p.open("GET",url,false);
- p.send(null);
- document.write( p.responseText );
-}
-
-</SCRIPT>
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
 
 
     <style>
 
-
         body {
             font-size: 9px;
-            font-family: Consolas;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-            width: 100vw;
         }
-
-
-
-       pre{position: absolute;
-                   top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);}
-    
-       div{position: absolute;}
 
 
 
@@ -62,11 +26,6 @@ document.include = function (url) {
 100% {text-shadow: 0 0 0 #000000, 0 0 0 #000000;}
 }
 }
-
-  #letout{
-    height: 900px; 
-    width: 1300px;
- }
 
 
 #telephone{
@@ -83,9 +42,7 @@ document.include = function (url) {
 }
 
 
-.popup{
-    font-size: 13px;
-}
+
 
 @keyframes secousse {
   0% { rotate: 0deg; }
@@ -129,12 +86,7 @@ document.include = function (url) {
   39% { opacity: 0; }
 }
 
-.bouton_intro{
-    z-index: 25;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    cursor: pointer;
-}
+
 
 
         @keyframes envol {
@@ -152,20 +104,14 @@ document.include = function (url) {
 </head>
 <body>
 
-<!--
-<p class="animate-text">C'est un texte vraiment magique !</p>
-<p>Ce texte est fixe.</p>
-<p class="animate-text">voici le deuxième texte qui s'affiche à la suite</p>
-<p>Ce texte aussi est fixe.</p>
-<p class="animate-text">Quaerebatur Tyrii textrini prolatae quidam scriptae purpurae tuniculam Graeco est Maras nihil fucandae autem etiam.</p>
--->
+
 <!--    ////////////////////////CONSTANT////////////////////   -->
   
-          <a href="../SCENE_CASCADE/cascade.html" id="bigcarto" style=" font-size:13px; cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+          <a href="../SCENE_CASCADE/cascade.html" id="bigcarto" style="font-size: 13px;">
 retour à la cascade -->
   </a>
 
-          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="font-size: 13px; cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="font-size: 13px;">
 inventaire
   </a>
 
@@ -191,7 +137,7 @@ inventaire
 
                 <!-- ordi -->
 
-    <div id="ordi_a_cliquer" style="top: 93px; left: -518px; cursor: pointer;" onclick=" window.location.href='../SCENE_ORDINATEUR/ordinateur.html'">
+    <div id="ordi_a_cliquer" style="top: 93px; left: -518px; cursor: alias;" onclick=" window.location.href='../SCENE_ORDINATEUR/ordinateur.html'">
         <pre ><script>document.include('txt/ordi_a_cliquer.txt');</script>
         </pre>
     </div>
@@ -212,38 +158,38 @@ inventaire
 
 
 <div id="intro_1" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_1.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_1.txt')</script></pre>
  <button id="bouton_1_a" class="bouton_intro" onclick="intro_1()" style="width: 78px; top:50px; left:-80px;">heu... allo?</button>
   <button id="bouton_1_b" class="bouton_intro" onclick="intro_1()" style="width: 97px; top:50px; left:80px;">qui me parle?!</button>
 </div>
 
 
 <div id="intro_2" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_2.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_2.txt')</script></pre>
  <button id="bouton_2_a" class="bouton_intro" onclick="intro_2()" style="width: 100px; top:50px; left:-93px;">c'est toi steve?</button>
    <button id="bouton_2_b" class="bouton_intro" onclick="intro_2()" style="width: 146px; top:50px; left:71px;">mais vos bureaux sont dans une cascade?</button>
 </div>
 
 <div id="intro_3" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_3.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_3.txt')</script></pre>
  <button id="bouton_3_a" class="bouton_intro" onclick="intro_3()" style="width:91px; top:50px; left: -114px;">salut steve..?</button>
   <button id="bouton_3_b" class="bouton_intro" onclick="intro_3()" style="width: 117px; top: 50px; left: 100px;">salut stephanie..?</button>
 </div>
 
 <div id="intro_4" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_4.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_4.txt')</script></pre>
  <button id="bouton_4" class="bouton_intro" onclick="intro_4()" style="width: 315px; top:55px;">a oui vener... mais ou sont toustes tes employ·ées?</button>
 
 </div>
 
 <div id="intro_5" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_5.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_5.txt')</script></pre>
   <button id="bouton_5" class="bouton_intro" onclick="intro_5()" style="width: 347px; top:78px; ">whouaa, mais il n'y a que des fxmmes qui travaillent ici?
 </button>
 </div>
 
 <div id="intro_6" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_6.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_6.txt')</script></pre>
    <button id="bouton_6_a" class="bouton_intro" onclick="intro_6()" style="width: 26px; top:64px; left:-160px;">lol
 </button>
   <button id="bouton_6_b" class="bouton_intro" onclick="intro_6()" style="width: 208px; top:64px; left: 48px;">et ça marche bien comme boite?
@@ -251,7 +197,7 @@ inventaire
 </div>
 
 <div id="intro_7" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro_7.txt')</script></pre>
+ <pre class="pre_popup"><script>document.include('txt/intro_7.txt')</script></pre>
    <button id="bouton_7" class="bouton_intro" onclick="tout_fermer()" style="width: 135px; top:55px;">bien joué stéphanie!
 </button>
 </div>
@@ -261,7 +207,7 @@ inventaire
     <!-- bat -->
 
     <div style="left:-60vw; top: -244px; animation: envol 40s steps(30) infinite alternate; cursor: pointer; animation-delay: 15s;  " onclick="fonction_bat()">
-        <pre id="bat" style="background-color: white; "></pre>
+        <pre id="bat" ></pre>
         </div>
 
 
@@ -281,8 +227,8 @@ inventaire
 
     <!-- lettre -->
 
-    <div id="lettre"  onclick="fonction_lettre()">
-        <pre style="left:540px; top: 301px; cursor:pointer;"><script>document.include('txt/lettre.txt');</script>
+    <div id="lettre"  onclick="fonction_lettre()" style="left:540px; top: 301px; cursor:pointer;">
+        <pre><script>document.include('txt/lettre.txt');</script>
         </pre>
         </div>
 
@@ -291,57 +237,68 @@ inventaire
 
       <!-- protocole batman-->
 
-    <div id="txt_batman" class="popup" style="display: none; cursor: pointer;">
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_batman.txt');</script></pre>
+    <div id="txt_batman" class="popup">
+        <pre class="pre_popup"><script>document.include('txt/txt_batman.txt');</script></pre>
     </div>
 
                 
 
       <!--  telephone-->
 
-<div id="appel_steph" class="popup" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/appel_steph.txt')</script></pre>
+<div id="appel_steph" class="popup">
+ <pre class="pre_popup"><script>document.include('txt/appel_steph.txt')</script></pre>
 
 </div>
       <!-- laboria cubonix-->
 
-    <div id="txt_laboria" class="popup" style="display: none; cursor: pointer;">
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/citation_laboria_cubonix.txt');</script></pre>
+    <div id="txt_laboria" class="popup">
+        <pre class="pre_popup"><script>document.include('txt/citation_laboria_cubonix.txt');</script></pre>
     </div>
 
           <!--txt_lettre-->
 
-    <div id="txt_lettre" class="popup" style="display: none; cursor: pointer;">
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_lettre.txt');</script></pre>
+    <div id="txt_lettre" class="popup">
+        <pre class="pre_popup"><script>document.include('txt/txt_lettre.txt');</script></pre>
     </div>
 
           <!--txt_bougie-->
 
-    <div id="txt_bougie" class="popup" style="display: none; cursor: pointer;">
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/txt_bougie.txt');</script></pre>
+    <div id="txt_bougie" class="popup">
+        <pre class="pre_popup"><script>document.include('txt/txt_bougie.txt');</script></pre>
     </div>
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+  <div id="tout_fermer" onclick="tout_fermer()"></div>
 
     </div>
 
 
 
     <script type="text/javascript">
-   ///////////////////////**********///////////////////////////////////
-    ///////////////////////ANIMATION///////////////////////////////////
-        ///////////////////////******///////////////////////////////////
+
+     ///////////////////////ONLOAD////////////////////////////
 
       $( window ).on( "load", function() {
-  if(localStorage.getItem("intro_steve") == "ok"){
- }else{
-  document.getElementById("telephone").style.animationName = "secousse";
-  document.getElementById("bipbip").style.animationName = "bipbip";
+        if(localStorage.getItem("intro_steve") == "ok"){
+        }else{
+            document.getElementById("telephone").style.animationName = "secousse";
+            document.getElementById("bipbip").style.animationName = "bipbip";}
+        if(localStorage.getItem("batman") == "ok"){
+            $('#bat').css('cursor', 'auto');
+        }else{}
+        if(localStorage.getItem("citation_laboria_cubonix") == "ok"){
+            $('#etoile_laboria').css('cursor', 'auto');
+        }else{}
+        if(localStorage.getItem("bougie") == "ok"){
+            $('#bougie').css('cursor', 'auto');
+        }else{}
+        if(localStorage.getItem("lettre") == "ok"){
+            $('#lettre').css('cursor', 'auto');
+        }else{}
+})
 
-}}); 
 
 
     ///////////////////////bat///////////////////////////////////
@@ -393,13 +350,8 @@ inventaire
 
 
         function tout_fermer(){ 
-                document.getElementById("intro_7").style.display= "none";  
-                document.getElementById("appel_steph").style.display= "none";   
-                document.getElementById("txt_batman").style.display= "none"; 
-            document.getElementById("txt_laboria").style.display = "none";
-            document.getElementById("txt_bougie").style.display = "none";
-            document.getElementById("txt_lettre").style.display = "none";
-            document.getElementById("tout_fermer").style.display = "none";
+                $(".popup").css('display', 'none');  
+            $("#tout_fermer").css('display', 'none');
 
         }
 
@@ -407,46 +359,46 @@ inventaire
 
 function fonctionTelephone(){
     if (localStorage.getItem("intro_steve") == "ok") {
-        document.getElementById("appel_steph").style.display = "block";
+        $("#appel_steph").css('display','block');
         $("#tout_fermer").css('display','block');
     }
     else{
-document.getElementById("intro_1").style.display = "block";
+        $("#intro_1").css('display','block');
 }
 }
 
 
 function intro_1(){ 
-    document.getElementById("intro_1").style.display= "none";   
-    document.getElementById("intro_2").style.display= "block";}
+    $("#intro_1").css('display', 'none');   
+    $("#intro_2").css('display','block');}
 
 
 function intro_2(){ 
-    document.getElementById("intro_2").style.display= "none";   
-    document.getElementById("intro_3").style.display= "block";}
+    $("#intro_2").css('display', 'none');   
+    $("#intro_3").css('display','block');}
 
 
 function intro_3(){ 
-    document.getElementById("intro_3").style.display= "none";   
-    document.getElementById("intro_4").style.display= "block";}
+    $("#intro_3").css('display', 'none');   
+    $("#intro_4").css('display','block');}
 
 
 function intro_4(){ 
-    document.getElementById("intro_4").style.display= "none";   
-    document.getElementById("intro_5").style.display= "block";}
+    $("#intro_4").css('display', 'none');   
+    $("#intro_5").css('display','block');}
 
 
 function intro_5(){ 
-    document.getElementById("intro_5").style.display= "none";   
-    document.getElementById("intro_6").style.display= "block";}
+    $("#intro_5").css('display', 'none');   
+    $("#intro_6").css('display','block');}
 
 
 function intro_6(){ 
-    document.getElementById("intro_6").style.display= "none";   
-    document.getElementById("intro_7").style.display= "block";
-            localStorage.setItem("intro_steve", "ok"); 
-  document.getElementById("telephone").style.animationName = "";
-  document.getElementById("bipbip").style.animationName = "";
+    $("#intro_6").css('display', 'none');   
+    $("#intro_7").css('display','block');
+    localStorage.setItem("intro_steve", "ok"); 
+  document.getElementById("#telephone").style.animationName = "";
+  document.getElementById("#bipbip").style.animationName = "";
 }
 
 
@@ -454,71 +406,48 @@ function intro_6(){
 
     function fonction_bat(){
         if (localStorage.getItem("batman") == "ok") {
-            document.getElementById("bat").style.cursor = "auto";
        
         }else{
-            document.getElementById("txt_batman").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#txt_batman").css('display','block');
+            $("#tout_fermer").css('display','block');
             localStorage.setItem("batman", "ok");
+            $("#bat").css('cursor','auto');
         }
     }
 
 
     function fonction_citation_laboria(){
         if (localStorage.getItem("citation_laboria_cubonix") == "ok") {
-            document.getElementById("etoile_laboria").style.cursor = "auto";
+            $("#etoile_laboria").css('cursor','auto');
        
         }else{
-            document.getElementById("txt_laboria").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#txt_laboria").css('display','block');
+            $("#tout_fermer").css('display','block');
             localStorage.setItem("citation_laboria_cubonix", "ok");
         }
     }
 
     function fonction_bougie(){
         if (localStorage.getItem("bougie") == "ok") {
-            document.getElementById("bougie").style.cursor = "auto";
+            $("#bougie").css('cursor','auto');
        
         }else{
-            document.getElementById("txt_bougie").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#txt_bougie").css('display','block');
+            $("#tout_fermer").css('display','block');
             localStorage.setItem("bougie", "ok");
         }
     }
 
     function fonction_lettre(){
         if (localStorage.getItem("lettre") == "ok") {
-            document.getElementById("lettre").style.cursor = "auto";
+            $("#lettre").css('cursor','auto');
        
         }else{
-            document.getElementById("txt_lettre").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#txt_lettre").css('display','block');
+            $("#tout_fermer").css('display','block');
             localStorage.setItem("lettre", "ok");
         }
     }
-
-/*function animate_text() 
-{
-  let delay = 100,
-      delay_start = 0,
-      contents,
-      letters;
-
-  $(".animate-text").each(function(index, obj) {
-    contents = $(obj).text().trim();
-    $(obj).html(''); // on vide le contenu
-    letters = contents.split("");
-    $(letters).each(function(index_1, letter) {
-      setTimeout(function() {
-        // ---------
-        // effet machine à écrire simple
-        $(obj).html( $(obj).html() + letter ); // on ajoute chaque lettre l une après l autre
-        // ---------
-        // ---------
-      }, delay_start + delay * index_1);
-    });
-  }
-*/
 
 </script>
 

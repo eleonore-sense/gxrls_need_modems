@@ -2,76 +2,22 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<SCRIPT LANGUAGE="JavaScript">
-
-document.include = function (url) {
- if ('undefined' == typeof(url)) return false;
- var p,rnd;
- if (document.all){
-   p = new ActiveXObject("Microsoft.XMLHTTP");
- }
- else {
-   p = new XMLHttpRequest();
- }
-
- rnd = Math.random().toString().substring(2);
- url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- p.open("GET",url,false);
- p.send(null);
- document.write( p.responseText );
-}
-
-</SCRIPT>
-
-
-    <style>
-
-
-        body {
-            font-size: 13px;
-            font-family: Consolas;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-            width: 100vw;
-        }
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
 
 
 
-       pre{position: absolute;
-                   top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);}
-    
-       div{position: absolute;}
-
- @keyframes tracteurmove{
-0% {left:850px;}
-20% {left:850px;}
-100% {left:100px;}
-}
- }
-
-
-  #letout{
-    height: 900px; 
-    width: 1300px;
- }
-
-    </style>
 </head>
 <body>
 
 <!--    ////////////////////////CONSTANT////////////////////   -->
   
-          <a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+          <a href="../CARTO/bigcarto.html" id="bigcarto" >
 retour à la carto -->
   </a>
 
-          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" >
 inventaire
   </a>
 
@@ -116,28 +62,40 @@ inventaire
                 <!-- jus -->
 
     <div id="pourcent" style="left:-180px; top: -248px; cursor: pointer;" onclick="fonctionPourcent()">
-        <pre><script>document.include('txt/pourcent.txt');</script></pre>
+        <pre class="pre_popup"><script>document.include('txt/pourcent.txt');</script></pre>
     </div>
 
 
-  <div id="jus" style="display: none; cursor: pointer;">
-    <pre style=" z-index: 5; background-color: white;" ><script>document.include('txt/jus.txt')</script>
+  <div id="jus" class="popup">
+    <pre  class="pre_popup"><script>document.include('txt/jus.txt')</script>
     </pre>
 </div>
 
                 <!-- manifeste_kefir -->
 
-    <div id="etoile" style="left:-280px; cursor:pointer; top: 220px;" onclick="fonctionEtoile()">
+    <div id="etoile" class="popup" onclick="fonctionEtoile()">
         <pre ><script>document.include('txt/etoile.txt');</script>
         </pre>
     </div>
 
  
-  <div id="manifeste_kefir" style="display: none; cursor: pointer;">
-    <pre style="background-color: white; z-index: 5; " ><script>document.include('txt/manifeste_kefir.txt')</script>
+  <div id="manifeste_kefir" class="popup">
+    <pre  class="pre_popup"><script>document.include('txt/manifeste_kefir.txt')</script>
     </pre>
 
   </div>
+
+                <!-- feuille -->
+
+    <div id="feuille" style="left:-302px; top: 200px; cursor: pointer;" onclick="fonctionFeuille()">
+        <pre class="pre_popup"><script>document.include('txt/feuille.txt');</script></pre>
+    </div>
+
+
+  <div id="systers" class="popup">
+    <pre  class="pre_popup"><script>document.include('txt/systers.txt')</script>
+    </pre>
+</div>
 
   <!--    ////////////////////////LES POP PAGES////////////////////   -->
                 
@@ -147,35 +105,22 @@ inventaire
                   <!-- demander modem-->
 
 
-    <div id="click_radia" style="display: none;">
+    <div id="click_radia" class="popup">
+            <pre id="click_radia" class="pre_popup"><script>document.include('txt/message_radia.txt');</script></pre>
 
+            <button id="bouton_radia_non" class="bouton_intro" onclick="retour_foret()" style="top:75px; width: 200px;"> je n'ai rien pour toi... </button>
 
-        <div id="radia_txt" >
-            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/message_radia.txt');</script></pre>
-        </div>
-
-        <div id="bouton_radia_non" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="retour_foret()" style="cursor: pointer;"> je n'ai rien pour toi... </button>
-        </div>
-
-        <div id="bouton_donne_modem" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="donner_modem()" style="cursor: pointer;"> j'ai un modem ! </button>
-        </div>
+            <button id="bouton_donne_modem" class="bouton_intro" onclick="donner_modem()" style="top: 75px; width: 120px;"> j'ai un modem ! </button>
     </div>
 
                   <!-- donner modem-->
 
-    <div id="donner_poeme" style="display: none;">
+    <div id="donner_poeme" class="popup">
+            <pre class="pre_popup"><script>document.include('txt/message_merci.txt');</script></pre>  
 
-        <div id="radia_txt">
-            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/message_merci.txt');</script></pre>
-        </div>
-
-        <div id="bouton_lire_poeme" style=" z-index: 9; top: 75px; display: none; transform:translate(-50%, -50%); left: 50%; width: 200px; text-align: center;">
-            <button onclick="lire_poeme()" style="cursor: pointer;"> lire le poème </button>
-        </div>
-
+            <button id="bouton_lire_poeme" class="bouton_intro" onclick="lire_poeme()" style="top: 65px; width: 103px;"> lire le poème </button>
     </div>
+
 
 
 
@@ -183,27 +128,17 @@ inventaire
                   <!-- le poeme-->
 
 
-    <div id="poeme" style="display: none;">
+    <div id="poeme" class="popup">
 
-
-        <div id="radia_txt">
-            <pre style="background-color: white; z-index: 9;"><script>document.include('txt/poeme_radia.txt');</script></pre>
-        </div>
-
+            <pre class="pre_popup"><script>document.include('txt/poeme_radia.txt');</script></pre>
     </div>
 
 
 
                   <!-- radia heureuse -->
 
-    <div id="radia_heureuse" style="display: none;">
-
-
-        <div id="radia_txt" >
-            <pre style="background-color: white; z-index: 9; "><script>document.include('txt/radia_heureuse.txt');</script></pre>
-        </div>
-
-
+    <div id="radia_heureuse" class="popup">
+        <pre class="pre_popup"><script>document.include('txt/radia_heureuse.txt');</script></pre>
     </div>
 
 
@@ -214,13 +149,34 @@ inventaire
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+  <div id="tout_fermer"  onclick="tout_fermer()"></div>
 
     </div>
 
 
 
     <script type="text/javascript">
+
+
+
+         $( window ).on( "load", function() {
+
+ if(localStorage.getItem("manifeste_kefir") == "ok"){
+$('#etoile').css('cursor', 'auto');
+}else{}
+if(localStorage.getItem("jus") == "ok"){
+$('#pourcent').css('cursor', 'auto');
+}else{}
+if(localStorage.getItem("bouteille_a_la_mer") == "ok"){
+$('#etoile').css('cursor', 'auto');
+}else{}
+if(localStorage.getItem("systers") == "ok"){
+$('#feuille').css('cursor', 'auto');
+}else{}
+
+
+      })
+           
    ///////////////////////**********///////////////////////////////////
     ///////////////////////ANIMATION///////////////////////////////////
         ///////////////////////******///////////////////////////////////
@@ -234,7 +190,7 @@ inventaire
  
                             ];
         var counter_serpent = 0;
-        var preElement_serpent = document.getElementById("serpent");
+        var preElement_serpent = $("#serpent");
         var textContents_serpent = [];
 
         // Preload all the text files using AJAX
@@ -284,63 +240,64 @@ inventaire
 
         function fonction_radia(){
     if (localStorage.getItem("modem") == "ok") {
-            document.getElementById("click_radia").style.display = "block";
-            document.getElementById("bouton_donne_modem").style.display = "block";
+            $("#click_radia").css('display','block');
+            $("#bouton_donne_modem").css('display','block');
+            $("#bouton_radia_non").css('display','none');
+
         
 }else if (localStorage.getItem("modem") == "donne") {
-            document.getElementById("radia_heureuse").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#radia_heureuse").css('display','block');
+            $("#tout_fermer").css('display','block');
 
 }else{
-            document.getElementById("click_radia").style.display = "block";
-            document.getElementById("bouton_radia_non").style.display = "block";
+            $("#click_radia").css('display','block');
+            $("#bouton_radia_non").css('display','block');
+            $("#bouton_donne_modem").css('display','none');
+
 }
 }
 
 
         function retour_foret(){
-            document.getElementById("click_radia").style.display = "none";            
+            $("#click_radia").css('display','none');            
         }
 
 
         function donner_modem(){
-            document.getElementById("click_radia").style.display = "none";
-            document.getElementById("donner_poeme").style.display = "block";
-            document.getElementById("bouton_lire_poeme").style.display = "block";
+            $("#click_radia").css('display','none');
+            $("#donner_poeme").css('display','block');
+            $("#bouton_lire_poeme").css('display','block');
             localStorage.setItem("modem", "donne");
 
         }
 
 
                 function lire_poeme(){
-            document.getElementById("donner_poeme").style.display = "none";
-            document.getElementById("poeme").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
+            $("#donner_poeme").css('display','none');
+            $("#poeme").css('display','block');
+            $("#tout_fermer").css('display','block');
             localStorage.setItem("poeme_radia", "ok");
 
 
         }
 
         function tout_fermer(){
-            document.getElementById("radia_heureuse").style.display = "none";
-            document.getElementById("poeme").style.display = "none";   
-            document.getElementById("tout_fermer").style.display = "none";
-            document.getElementById("jus").style.display = "none";
-            document.getElementById("manifeste_kefir").style.display = "none";
+            $(".popup").css('display','none');
+            $("#tout_fermer").css('display','none');
     }
 
 
 ///////////////////////////HIBOU//////////////////////////////////////
 
 function fonctionNid(){
-document.getElementById("hibou").style.display = "block";
-document.getElementById("nid").style.display = "none";
+$("#hibou").css('display','block');
+$("#nid").css('display','none');
 
 }
 
 function fonctionHibou(){
-document.getElementById("hibou").style.display = "none";
-document.getElementById("nid").style.display = "block";
+$("#hibou").css('display','none');
+$("#nid").css('display','block');
 
 }
 
@@ -348,12 +305,12 @@ document.getElementById("nid").style.display = "block";
 
 function fonctionPourcent(){
     if (localStorage.getItem("jus") == "ok") {
-        document.getElementById("pourcent").style.cursor = "auto";
     }
     else{
-document.getElementById("jus").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
-localStorage.setItem("jus", "ok");
+        $("#jus").css('display','block');
+        $("#tout_fermer").css('display','block');
+        $("#pourcent").css('cursor','auto');
+        localStorage.setItem("jus", "ok");
 }
 }
 
@@ -361,17 +318,27 @@ localStorage.setItem("jus", "ok");
 
 function fonctionEtoile(){
     if (localStorage.getItem("manifeste_kefir") == "ok") {
-        document.getElementById("etoile").style.cursor = "auto";
     }
     else{
-document.getElementById("manifeste_kefir").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
-localStorage.setItem("manifeste_kefir", "ok");
-
+        $("#manifeste_kefir").css('display','block');
+        $("#tout_fermer").css('display','block');
+        $("#etoile").css('cursor','auto');
+        localStorage.setItem("manifeste_kefir", "ok");
+}
 }
 
-}
+///////////////////////////SYSTERS//////////////////////////////////////
 
+function fonctionFeuille(){
+    if (localStorage.getItem("systers") == "ok") {
+    }
+    else{
+        $("#systers").css('display','block');
+        $("#tout_fermer").css('display','block');
+        $("#feuille").css('cursor','auto');
+        localStorage.setItem("systers", "ok");
+}
+}
 
 </script>
 

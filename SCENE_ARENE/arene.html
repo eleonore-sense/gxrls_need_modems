@@ -2,25 +2,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+
 
 	<style type="text/css">
-		body {
-            font-size: 13px;
-            font-family: Courier New;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-            width: 100vw;
-        }
 
-        pre {
-        	position: absolute;
-            top: 50%;
-            left: 50%;  
-            transform: translate(-50%, -50%);
-        }
 
         @keyframes pied_drop{
 		0% {margin-top:-600px;}
@@ -58,29 +46,13 @@
 		}
 	</style>
 
-	<script type="text/javascript">
-		document.include = function (url) {
- 			if ('undefined' == typeof(url)) return false;
- 			var p,rnd;
- 			if (document.all){
-   				p = new ActiveXObject("Microsoft.XMLHTTP");
- 			} else {
-   				p = new XMLHttpRequest();
- 			}
 
- 			rnd = Math.random().toString().substring(2);
- 			url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- 			p.open("GET",url,false);
- 			p.send(null);
- 			document.write( p.responseText );
-		}	
-	</script>
 </head>
 <body>
 
-	<a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">retour à la carto --></a>
+	<a href="../CARTO/bigcarto.html" id="bigcarto" >retour à la carto --></a>
 
-    <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">inventaire</a>
+    <a href="../INVENTAIRE/inventaire.html" id="inventaire" >inventaire</a>
 
     <!--///////////////////////ARENA///////////////////////////////////-->
     <pre id="bg-arena" style="margin-left: 0px; margin-top: 0px; animation: arene_shake ; animation-duration: 5s;"><script>document.include('txt/arena.txt');</script></pre>
