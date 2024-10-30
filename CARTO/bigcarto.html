@@ -63,12 +63,19 @@ inventaire
         <pre >>o<</pre>
     </div>
 
-
-
   <div id="boussole" class="popup">
     <pre  class="pre_popup"><script>document.include('boussole.txt')</script>
     </pre>
 </div>
+                <!-- blabla pont -->
+
+    <div id="blabla_pont" class="popup" style="z-index:30;" onclick="blablaPont()">
+    <pre  class="pre_popup"><script>document.include('bravo.txt')</script>
+    </div>
+
+
+
+
 
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
@@ -79,14 +86,20 @@ inventaire
 
 
   <script type="text/javascript">
-         $( window ).on( "load", function() {
+         $( window ).on( "load", function() {         
           if(localStorage.getItem("pont") == "ok"){
             $('#bigfond').css('display', 'none');
             $('#bigfond_ile').css('display', 'block');
+            $('#blabla_pont').css('display', 'block');
+            $("#tout_fermer").css('display','block');
+
           }
-            else{
-            $('#bigfond').css('display', 'block');
+            else if(localStorage.getItem("pont") == "fait"){
+            $('#bigfond_ile').css('display', 'block');
+            $('#bigfond').css('display', 'none');
+            }else{
             $('#bigfond_ile').css('display', 'none');
+            $('#bigfond').css('display', 'block');              
             }
           if(localStorage.getItem("boussole") == "ok"){
             $('#capteur_boussole').css('display', 'none');
@@ -103,10 +116,14 @@ function fonctionBoussole(){
         $("#tout_fermer").css('display','block');
         localStorage.setItem("boussole", "ok");
 $('#capteur_boussole').css('display', 'none');
-
 }
 }   
 
+function blablaPont(){
+    localStorage.setItem("pont", "fait");
+    $('#blabla_pont').css('display', 'none');
+
+}
 
 
         function tout_fermer(){

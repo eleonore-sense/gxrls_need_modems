@@ -1,0 +1,11 @@
++-------------------------------------------------------------+
+|                                                             |
+|                                                             |
+|        Bravo! tu as réussi à traverser le labyrinthe        |
+|           sans réveiller Netochka Nezvanova!                |
+|            tu as trouvé le passage secret pour accéder      |
+|       à l'île! c'est marrant elle me rappelle               |
+|                 quelque chose cette île...                  |
+|                                                             |
+|                                                             |
++-------------------------------------------------------------+

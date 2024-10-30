@@ -77,10 +77,13 @@ inventaire
 
 
     <div id="paysage"  style="margin-top: 29px; cursor: pointer;">
-        <pre onclick="fonctionCode()"><script>document.include('txt/labyrinthe_1.txt');</script>
+        <pre onclick="fonctionCode()" id="fond_laby"><script>document.include('txt/labyrinthe_1.txt');</script>
+        </pre>
+        <pre id="labyrinthe_anim" style="margin-top: 29px; cursor: auto; display: none;">
+        </pre>
+        <pre id="labyrinthe_fin" onclick=" window.location.href='../CARTO/bigcarto.html'" style="margin-top: 29px; cursor: pointer; display: none;"><script>document.include('txt/labyrinthe_8.txt');</script>
         </pre>
     </div>
-
 
 
 
@@ -117,6 +120,12 @@ inventaire
 <div id="pas_content" class="popup" style="">
  <pre class="pre_popup" onclick=" window.location.href='../SCENE_ENTREE_TEMPLE/entree_temple.html'"><script>document.include('txt/pas_content.txt')</script></pre>
 </div>
+
+
+<div id="bravo" class="popup" style="">
+ <pre class="pre_popup" onclick=" window.location.href='../CARTO/big_carto.html'"><script>document.include('txt/bravo.txt')</script></pre>
+</div>
+
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
@@ -382,10 +391,114 @@ function bravo(){
     $(".terminal").css("display", "none");
     $("#fond_direction").css('display','none'); 
     localStorage.setItem('pont','ok');
-
+    $("#labyrinthe_anim").css("display", "block");
+                setTimeout(animate_anim_3,1000);
 }
 
 
+
+
+    // Animation laby
+
+    const preElement_anim_3 = document.getElementById("labyrinthe_anim");
+
+
+
+    // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
+    function fetchTextFile(filename) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", filename);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(Error(xhr.statusText));
+                }
+            };
+            xhr.onerror = () => {
+                reject(Error("Network error"));
+            };
+            xhr.send();
+        });
+    }
+
+
+
+
+
+    // Animation portail3
+    function animate_anim_3() {
+    $("#fond_laby").css("display", "none");
+        const textFiles_anim_3 = [
+            'txt/labyrinthe_1.txt',
+            'txt/labyrinthe_1_2.txt',
+            'txt/labyrinthe_1_3.txt',
+            'txt/labyrinthe_1_4.txt',
+            'txt/labyrinthe_2.txt',
+            'txt/labyrinthe_2.txt',
+            'txt/labyrinthe_2.txt',
+            'txt/labyrinthe_2.txt',
+            'txt/labyrinthe_2.txt',
+            'txt/labyrinthe_2_2.txt',
+            'txt/labyrinthe_2_3.txt',
+            'txt/labyrinthe_2_4.txt',
+            'txt/labyrinthe_3.txt',
+            'txt/labyrinthe_3.txt',
+            'txt/labyrinthe_3.txt',
+            'txt/labyrinthe_3.txt',
+            'txt/labyrinthe_4.txt',
+            'txt/labyrinthe_4.txt',
+            'txt/labyrinthe_4.txt',
+            'txt/labyrinthe_4.txt',
+            'txt/labyrinthe_4.txt',
+            'txt/labyrinthe_4_2.txt',
+            'txt/labyrinthe_4_3.txt',
+            'txt/labyrinthe_4_4.txt',
+            'txt/labyrinthe_5.txt',
+            'txt/labyrinthe_5.txt',
+            'txt/labyrinthe_5.txt',
+            'txt/labyrinthe_5.txt',
+            'txt/labyrinthe_6.txt',
+            'txt/labyrinthe_6.txt',
+            'txt/labyrinthe_6.txt',
+            'txt/labyrinthe_6.txt',
+            'txt/labyrinthe_6.txt',
+            'txt/labyrinthe_6_2.txt',
+            'txt/labyrinthe_6_3.txt',
+            'txt/labyrinthe_6_4.txt',
+            'txt/labyrinthe_7.txt',
+            'txt/labyrinthe_7.txt',
+            'txt/labyrinthe_7.txt',
+            'txt/labyrinthe_7.txt',
+            'txt/labyrinthe_7.txt',
+            'txt/labyrinthe_7_2.txt',
+            'txt/labyrinthe_7_3.txt',
+            'txt/labyrinthe_7_4.txt',
+            'txt/labyrinthe_8.txt',
+            ];
+ let counter_anim_3 = 0;
+
+        function animate3() {
+            if (counter_anim_3 < textFiles_anim_3.length) {
+                const filename = textFiles_anim_3[counter_anim_3];
+                fetchTextFile(filename)
+                    .then((fileContent) => {
+                        preElement_anim_3.textContent = fileContent;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+                counter_anim_3++;
+                setTimeout(animate3, 100); // intervalle 100 ms
+            } else { //quand l'anim3 s'achève
+$("#labyrinthe_anim").css('display','none');
+$("#labyrinthe_fin").css('display','block');
+            }
+        }
+
+        animate3(); // Appelle l'animation de portail3
+    }
     </script>
 
 
