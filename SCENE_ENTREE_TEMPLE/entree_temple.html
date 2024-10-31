@@ -119,7 +119,7 @@ inventaire
 <div id="intro_temple_3" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
 
-   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:119px;;">J'ai le message!</button>
+   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:155px;">J'ai un gender changer!</button>
 
    <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
 
@@ -145,9 +145,9 @@ inventaire
 <div id="jaime_parle" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_jaime_2.txt')</script></pre>
 
-   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -95px; width:40px;;">oui!</button>
+   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -86px; width:155px;">j'ai un gender changer!</button>
 
-   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
+   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 99px; width:144px; ">je n'ai rien pour toi...</button>
 
 </div>
 
@@ -320,7 +320,7 @@ inventaire
 
     function fonctionTemple(){
         if(localStorage.getItem("intro_temple") == "ok"){
-            if(localStorage.getItem("message_decode") == "donne"){
+            if(localStorage.getItem("gender_changer") == "donne"){
                 window.location.href='../SCENE_LABYRINTHE/labyrinthe.html';
             }else{
                 fonctionIntroTemple2();
@@ -342,7 +342,7 @@ inventaire
         $("#intro_temple_3").css('display', 'block');
 
         localStorage.setItem("intro_temple", "ok");
-        if (localStorage.getItem("message_decode") == "ok"){
+        if (localStorage.getItem("gender_changer") == "ok"){
        }else{
          $("#boutonTemple3a").css('cursor','not-allowed');
        }
@@ -350,11 +350,11 @@ inventaire
 
 
        function fonctionAccesTemple(){
-        if (localStorage.getItem("message_decode") == "ok"){
+        if (localStorage.getItem("gender_changer") == "ok"){
         $("#intro_temple_3").css('display', 'none');
         $("#disquette_jaime").css('display', 'block');
         localStorage.setItem("disquette_jaime", "ok");
-        localStorage.setItem("message_decode", "donne");
+        localStorage.setItem("gender_changer", "donne");
         $("#tout_fermer").css('display','block');
        }else{
          $("#boutonTemple3a").css('cursor','not-allowed');
@@ -366,12 +366,12 @@ inventaire
        function fonctionSphinx(){
        
         if(localStorage.getItem("intro_jaime") == "ok"){
-            if(localStorage.getItem("message_decode") == "donne"){
+            if(localStorage.getItem("gender_changer") == "donne"){
                 $("#message_merci").css('display', 'block');
                 $("#tout_fermer").css('display', 'block');
 
 
-            }else if(localStorage.getItem("message_decode") == "ok"){
+            }else if(localStorage.getItem("gender_changer") == "ok"){
                     $("#jaime_parle").css('display', 'block'); 
                     $("#boutonJaimeParle1").css('cursor','pointer');
             }else{
@@ -397,11 +397,11 @@ inventaire
 
 
     function fonctionDonnerMessage(){
-        if(localStorage.getItem("message_decode") == "ok"){
+        if(localStorage.getItem("gender_changer") == "ok"){
             $("#jaime_parle").css('display', 'none');
             $("#disquette_jaime").css('display', 'block');     
             $("#tout_fermer").css('display', 'block');    
-            localStorage.setItem('message_decode', 'donne');     
+            localStorage.setItem('gender_changer', 'donne');     
             localStorage.setItem('disquette_jaime', 'ok');      
 
             }else{

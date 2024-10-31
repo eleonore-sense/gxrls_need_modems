@@ -281,10 +281,22 @@
 
 
 <div id="boussole_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre class="pre"><script>document.include('../CARTO//boussole.txt')</script>
+    <pre class="pre"><script>document.include('../CARTO/boussole.txt')</script>
     </pre>
   </div>
 
+
+<!--///////////////////////GENDER_CHANGER//////////////////////////////////-->
+
+    <div id="gender_changer" class="obj" style=" left: -227px; top:109px;" onclick="fonctionGenderChanger()" >
+        <pre><script>document.include('txt/ordinateur/gender_changer.txt')</script></pre>
+    </div>
+
+
+<div id="gender_changer_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('txt/ordinateur/gender_changer_txt.txt')</script>
+    </pre>
+  </div>
 
 
 
@@ -823,6 +835,14 @@ $("#boussole").css('display', 'none');
 }});  
 
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("gender_changer") == "ok"){
+$("#gender_changer").css('display','block');
+ 
+ }else{
+$("#gender_changer").css('display', 'none');
+}});  
+
 
 
 function fonctionFermeTout(){
@@ -958,6 +978,13 @@ $("#boussole_texte").css('display','block');
 
 }
 
+///////////////////////////Gender_changer//////////////////////////////////////
+
+function fonctionGenderChanger(){
+        fonctionFermeTout();
+$("#gender_changer_texte").css('display','block');
+
+}
 
 ///////////////////////////BIBLI//////////////////////////////////////
 

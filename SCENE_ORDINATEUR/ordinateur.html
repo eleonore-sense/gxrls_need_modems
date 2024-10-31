@@ -192,7 +192,7 @@ inventaire
 
 
     <div id="cd_lady_gaga" class="popup" >
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/cd_lady_gaga.txt');</script></pre>
+        <pre class="pre_popup"><script>document.include('txt/cd_lady_gaga.txt');</script></pre>
     </div>
 
 
@@ -247,9 +247,16 @@ inventaire
 
 
     <div id="susan_kare" class="popup" style="display: none; cursor: pointer;">
-        <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/susan_kare.txt');</script></pre>
+        <pre class="pre_popup"><script>document.include('txt/susan_kare.txt');</script></pre>
     </div>
 
+
+      <!-- GENDER CHANGER-->
+
+
+    <div id="gender_changer" class="popup" style="display: none; cursor: pointer;">
+        <pre class="pre_popup"><script>document.include('txt/gender_changer.txt');</script></pre>
+    </div>
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
@@ -282,7 +289,13 @@ setTimeout(() => {init()}, 10000);
 
 
       $( window ).on( "load", function() {
-
+if(localStorage.getItem("gender_changer") == "ok"){
+$('#active_fichier').css('cursor','auto');
+}else if(localStorage.getItem("gender_changer") == "donne"){
+$('#active_fichier').css('cursor','auto');
+} else{
+    $('#active_fichier').css('cursor','pointer');
+} 
 setTimeout(() => {animate_anim_1()}, 1500);
 
 });
@@ -378,6 +391,7 @@ setTimeout(() => {animate_anim_1()}, 1500);
         function tout_fermer(){ 
             $("#cd_lady_gaga").css("display", "none");
             $("#popup_mdp").css("display", "none");
+            $(".popup").css("display", "none");
             $("#susan_kare").css("display", "none");
             $("#tout_fermer").css("display", "none");
             $("#fermer_fenetre").css("display", "none");
@@ -406,14 +420,16 @@ setTimeout(() => {animate_anim_1()}, 1500);
 //////////////////////////MOT DE PASSE//////////////////////////////////////
 
     function fonctionActiveFichier(){
-
+            if(localStorage.getItem("gender_changer") == "ok"){                
+            }else if(localStorage.getItem("gender_changer") == "donne"){
+            }else{
             $("#popup_mdp").css("display", "block");
             $("#tout_fermer").css("display", "block");
             $("#fermer_fenetre").css("display", "block");
             $("#fermer_fenetre").css("margin-left", "243px");
             $("#fermer_fenetre").css("margin-top", "-269px");
         }
-    
+    }
 
 
 
@@ -467,11 +483,16 @@ setTimeout(() => {animate_anim_1()}, 1500);
     function fonctionMdp(){
 
   var x = document.getElementById("mdp").value;
-  var mdp = 'bonjour' ;
-        if (localStorage.getItem("message_decode") == "ok") {
+  var mdp = 'eat_code_and_die' ;
+        if (localStorage.getItem("gender_changer") == "ok") {
        
         }else if( x==mdp){
             $("#faux_mdp").css('display','none');
+            $("#popup_mdp").css("display", "none");
+            $("#gender_changer").css("display", "block");
+            $("#tout_fermer").css("display", "block");
+            $("#active_fichier").css('cursor','auto');
+            localStorage.setItem('gender_changer','ok');
         }else{
             $("#faux_mdp").css('display','block');
         }
