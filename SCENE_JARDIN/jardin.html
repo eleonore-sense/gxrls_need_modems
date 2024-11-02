@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+
+
+</head>
+<body>
+
+
+    <a href="../CARTO/bigcarto.html" id="bigcarto">retour à la carto -->
+  	</a>
+
+    <a href="../INVENTAIRE/inventaire.html" id="inventaire" >inventaire
+    </a>
+
+  
+    <div id="letout">
+
+
+    <div id="paysage" style="right: 0;">
+        <pre ><script>document.include('txt/fond_jardin.txt');</script>
+        </pre>
+    </div>
+
+    <div id="postale" style="top: -292.5px; cursor:zoom-in; " onclick="fonctionPostale()">
+        <pre ><script>document.include('txt/driftcoremini.txt') ;</script>
+        </pre>
+    </div>
+
+    <div id="oiseau" style="top: 200px; left: -310px; cursor:pointer; " onclick="fonctionPostale()">
+        <pre ><script>document.include('txt/oiseau.txt') ;</script>
+        </pre>
+    </div>
+
+    <!-- ////AUTRES DIV////
+
+    <div id="sphinx" style="top: 100px; left:-357px; cursor:pointer; " onclick="fonctionSphinx()">
+        <pre ><script>document.include('txt/sphinx.txt') ;</script>
+        </pre>
+    </div>
+
+
+
+  <div id="croco_gif" style="margin-top: 221px; margin-left: 158px;">
+        <pre id="croco" style="cursor: pointer;" onclick="fonctionGeekGirl()"></pre>
+  </div>-->
+
+
+<!--goodies-->
+    <!--
+    <div id="etoile" style="left:-154px; top: -283px; cursor: pointer;" onclick="fonctionBurritos()">
+        <pre >*</pre>
+    </div>
+
+    <div id="dollar" style="left:448px; top: -190px; cursor: pointer;" onclick="fonctionJoy()">
+        <pre >$</pre>
+    </div>
+
+-->
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+<!--carte postale driftcore-->
+
+	<div id="carte_driftcore" class="popup" style="cursor: zoom-out;">
+		<pre class="pre_popup" ><script>document.include('txt/driftcore.txt')</script></pre>
+	</div>
+
+
+
+
+<!--///////////////////////INTRO TEMPLE///////////////////////////////////-->
+
+<!--
+
+<div id="intro_temple" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
+
+   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:98px;">c'est quoi ça?</button>
+
+</div>
+
+
+<div id="intro_temple_2" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
+
+   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
+
+</div>
+
+
+<div id="intro_temple_3" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
+
+   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:119px;;">J'ai le message!</button>
+
+   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
+
+</div>
+
+-->
+
+<!--shinx parle-->
+
+<!--
+
+<div id="intro_jaime_0" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_0.txt')</script></pre>
+
+   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:201px;">whoua! comment tu as fais ça?</button>
+
+</div>
+
+
+<div id="intro_jaime_1" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_1.txt')</script></pre>
+</div>
+
+
+<div id="jaime_parle" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_jaime_2.txt')</script></pre>
+
+   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -95px; width:40px;;">oui!</button>
+
+   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
+
+</div>
+
+
+
+<div id="message_merci" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/jaime_merci.txt')</script></pre>
+</div>
+
+-->
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" onclick="tout_fermer()"></div>
+
+
+
+
+  </div>
+
+    </div>
+
+
+
+
+ 
+    <script type="text/javascript">
+
+
+
+
+    ///////////////////////POP UP///////////////////////////////////
+
+
+
+
+    function fonctionPostale(){
+       	$("#carte_driftcore").css('display','block');
+        $("#tout_fermer").css('display','block');
+    }
+
+
+    function tout_fermer(){
+        $("#tout_fermer").css('display', 'none');
+        $(".popup").css('display', 'none');    
+    }
+
+
+    </script>
+
+
+
+
+</body>
+</html>
