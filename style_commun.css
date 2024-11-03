@@ -56,9 +56,9 @@ font-size: 13px;
 .popup{
     font-size: 13px;
     display: none;
-transform: translate(-50%, -50%);
-cursor: pointer;
-z-index: 8;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 8;
 }
 
 
