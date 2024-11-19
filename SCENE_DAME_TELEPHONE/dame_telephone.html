@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+
+
+</head>
+<body style="">
+
+
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" >
+inventaire
+  </a>
+
+  
+  <div id="letout">
+
+
+    <div id="paysage" style="margin-top: 29px;">
+        <pre ><script></script>
+        </pre>
+    </div>
+
+
+
+<!--tableau-->
+
+    <div id="tableau" style="margin-left: -115px; margin-top: -30px; cursor: pointer;" onclick="fonctionWelcomeHome()">
+        <pre><script>document.include('txt/tableau.txt') ;</script>        
+        </pre>
+    </div>
+
+
+    <!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+<!--cadre-->
+
+<div id="cadre" class="popup"style="height: 100vh;width: 100vw;background-color: #000f38; font-weight: bold;">
+
+ <pre class="pre_popup" style="color:white; background-color: #000f38;"><script>document.include('txt/blanc_crepi.txt')</script></pre>
+
+
+  <pre style="color:#d6ffff; z-index:9;"><script>document.include('txt/chemin_coeur.txt')</script>
+ </pre>
+
+
+ <pre style="color:#2f740e; z-index:9;"><script>document.include('txt/montant_maison.txt')</script>
+ </pre>
+
+  <pre style="color:#9b3410; z-index:9;"><script>document.include('txt/toit_maison.txt')</script>
+ </pre>
+
+
+ <pre style="color:#83ff00; z-index:9;"><script>document.include('txt/vert_maison_herbe.txt')</script>
+ </pre>
+
+ <pre style="color:#e011b6; z-index:9;"><script>document.include('txt/fenetre_porte.txt')</script>
+ </pre>
+
+ <pre onclick="window.location.href='../SCENE_WELCOME_HOME/welcome_home.html';"  style="color:#ffff00; z-index:9;"><script>document.include('txt/cadre_sans_maison.txt')</script>
+ </pre>
+
+</div>
+
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" onclick="tout_fermer()"></div>
+
+
+
+
+  </div>
+
+
+
+ 
+    <script type="text/javascript">
+
+
+      $( window ).on( "load", function() {
+      if(localStorage.getItem("go_home") == "ok"){
+            $("#fente").css('display','block');
+      }else{
+
+      }
+
+
+
+
+  }
+
+);
+
+
+
+        function tout_fermer(){ 
+            $("#tout_fermer").css("display", "none");
+            $(".popup").css("display", "none");
+
+        }
+
+
+    function fonctionWelcomeHome(){
+            $("#cadre").css('display','block');
+        }
+
+
+  
+    </script>
+
+
+
+
+</body>
+</html>
