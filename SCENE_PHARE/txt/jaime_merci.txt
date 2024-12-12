@@ -1,0 +1,9 @@
++----------------------------------------------+
+|                                              |
+|                                              |
+|    Coucou! alors, tu aimes ma disquette?     |
+|       Elle renferme de grands secrets        |
+|          qui pourraient être utiles!         |
+|                                              |
+|                                              |
++----------------------------------------------+
