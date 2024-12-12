@@ -286,7 +286,7 @@
   </div>
 
 
-<!--///////////////////////GENDER_CHANGER//////////////////////////////////-->
+<!--///////////////////////GENDER CHANGER//////////////////////////////////-->
 
     <div id="gender_changer" class="obj" style=" left: -227px; top:109px;" onclick="fonctionGenderChanger()" >
         <pre><script>document.include('txt/ordinateur/gender_changer.txt')</script></pre>
@@ -295,6 +295,31 @@
 
 <div id="gender_changer_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
     <pre class="pre"><script>document.include('txt/ordinateur/gender_changer_txt.txt')</script>
+    </pre>
+  </div>
+
+  <!--///////////////////////FEUILLE AUTOMNE//////////////////////////////////-->
+
+    <div id="feuille_automne" class="obj" style=" left: -114px; top:109px;" onclick="fonctionFeuilleAutomne()" >
+        <pre><script>document.include('txt/welcome_home/feuille_automne.txt')</script></pre>
+    </div>
+
+
+<div id="feuille_automne_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_WELCOME_HOME/txt/feuille_automne.txt')</script>
+    </pre>
+  </div>
+
+
+<!--///////////////////////TOY STORY//////////////////////////////////-->
+
+    <div id="toy_story" class="obj" style=" left: -452px; top:211px;" onclick="fonctionToyStory()" >
+        <pre><script>document.include('txt/welcome_home/toy_story.txt')</script></pre>
+    </div>
+
+
+<div id="toystory_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_WELCOME_HOME/txt/alien.txt')</script>
     </pre>
   </div>
 
@@ -375,7 +400,7 @@
         <pre><script>document.include('txt/telescope/citation_m_h_livre.txt')</script></pre>
     </div>
 
-    <div id="rectangle_citation_m_h_livre" class="rect_bibli" style="left: 326px; top: 183px; width:26px; height:97px;">
+    <div id="rectangle_citation_m_h_livre" class="rect_bibli" style="left: 326px; top: 181px; width:26px; height:97px;">
     </div>
 
 
@@ -548,9 +573,32 @@
         <pre class="pre"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/joy_buolamwini.txt')</script></pre>
   </div>
 
+
+  <!--///////////////////////POEME LORRIE///////////////////////////////////-->
+
+    <div id="poeme_lorrie_livre" class="obj" style="left: 353px; top: 167px;" onclick="fonctionPoemeLorrie()" >
+        <pre><script>document.include('txt/welcome_home/poeme_lorrie_livre.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_poeme_lorrie_livre" class="rect_bibli" style="left: 352px; top: 166px; width:31px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_poeme_lorrie" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_WELCOME_HOME/txt/ascii_lorrie.txt')</script></pre>
+  </div>
+
 </div>
 
+</div>
+
+
+
 <script type="text/javascript">
+
+
+
 
 ///////////////////////////APPARITION LIVRE////////////////////////////////
 
@@ -844,6 +892,24 @@ $("#gender_changer").css('display', 'none');
 }});  
 
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("feuille_automne") == "ok"){
+$("#feuille_automne").css('display','block');
+ 
+ }else{
+$("#feuille_automne").css('display', 'none');
+}});  
+
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("alien_toystory") == "ok"){
+$("#toy_story").css('display','block');
+ 
+ }else{
+$("#toy_story").css('display', 'none');
+}});  
+
 
 function fonctionFermeTout(){
 $('.texte').css('display','none');
@@ -985,6 +1051,24 @@ function fonctionGenderChanger(){
 $("#gender_changer_texte").css('display','block');
 
 }
+
+
+///////////////////////////Gender_changer//////////////////////////////////////
+
+function fonctionFeuilleAutomne(){
+        fonctionFermeTout();
+$("#feuille_automne_texte").css('display','block');
+
+}
+
+///////////////////////////Gender_changer//////////////////////////////////////
+
+function fonctionToyStory(){
+        fonctionFermeTout();
+$("#toystory_texte").css('display','block');
+
+}
+
 
 ///////////////////////////BIBLI//////////////////////////////////////
 
