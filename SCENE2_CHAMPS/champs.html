@@ -9,6 +9,19 @@
 
     <style>
 
+#bigcarto{
+ cursor:pointer; 
+ text-decoration: none; 
+ color: black; 
+ z-index:3; 
+ margin-top: 30px; 
+ position: absolute; 
+ right: 0%;
+ top: 0% ; 
+ margin-right: 30px; 
+ transform: translate(0%, 0%);   
+ display: none;
+}
 
  @keyframes saute_mouton_1{
 0%{left:-180px; top: -50px;}
@@ -89,7 +102,9 @@ to {left:-150px;}
     </style>
 </head>
 <body>
-
+                <a href="../CARTO/bigcarto.html" id="bigcarto">
+retour à la carto -->
+  </a>
 
  
   <div id="letout">
@@ -219,6 +234,9 @@ to {left:-150px;}
             <pre style=" z-index: 9; background-color: white;"><script>document.include('txt/ferme_txt1.txt');</script></pre>
         </div>
 
+
+
+
         <div id="option_ferme" style=" z-index: 9; top: 35px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 300px; justify-content: space-between;">
             <button onclick="window.location.href = '../SCENE1_FERME/ferme.html';" style="cursor: pointer;">retourner à la ferme</button>
             <button onclick="fonction_retour_champs()">rester au champs</a></button>
@@ -226,6 +244,16 @@ to {left:-150px;}
 
       </div>
 
+
+
+            <div id="phrase_fin" style="cursor: pointer; display: none;" onclick="fonctionKSJBack()">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/phrase_fin.txt');</script></pre>
+    </div>
+
+
+            <div id="ksj_back" style="cursor: pointer; display: none;" onclick="tout_fermer()">
+            <pre style=" z-index: 9; background-color: white; margin: 7px;"><script>document.include('txt/ksj_back.txt');</script></pre>
+    </div>
 
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
@@ -247,6 +275,19 @@ to {left:-150px;}
 
 
     <script type="text/javascript">
+
+         $( window ).on( "load", function() {         
+          if(localStorage.getItem("pont") == "ok"){
+ setTimeout(() => {$("#phrase_fin").css('display','block')}, 3000);}
+          else if(localStorage.getItem("pont") == "fait"){
+setTimeout(() => {$("#phrase_fin").css('display','block')}, 3000);}
+          else if(localStorage.getItem("pont") == "fin_du_jeu"){
+            $('#bigcarto').css('display', 'block');
+          }else{}
+          
+      })
+
+
 
     ///////////////////////**********///////////////////////////////////
     ///////////////////////ANIMATION///////////////////////////////////
@@ -602,7 +643,31 @@ sessionStorage.setItem("graine", "ok");}
 document.getElementById("activer_moulin").style.display = "none";
 document.getElementById("sac_graine").style.display = "none";
 document.getElementById("oeuf").style.display = "none";
+document.getElementById("ksj_back").style.display = "none";
 }
+
+
+
+
+
+
+    ///////////////////////KSJ BACK///////////////////////////////////
+
+
+
+
+        function fonctionKSJBack(){
+            document.getElementById("phrase_fin").style.display = "none";
+            document.getElementById("ksj_back").style.display = "block";
+            document.getElementById("bigcarto").style.display = "block";   
+            localStorage.setItem("pont", "fin_du_jeu"); 
+       
+  
+        }
+
+
+
+
 
 
     </script>

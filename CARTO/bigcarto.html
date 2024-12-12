@@ -59,7 +59,7 @@ inventaire
 <a href="../SCENE_PHARE/phare.html" id="phare" class="lien" style="height:116px; width: 84px; margin-top: 29px; margin-left:373px; position: absolute; top: 50%; left: 50%;"></a>
 
 
-<a href="../SCENE1_FERME/ferme.html" id="ferme" class="lien" style="height:116px; width: 84px; margin-top: -245px; margin-left:130px; position: absolute; top: 50%; left: 50%;"></a>
+<a href="../SCENE2_CHAMPS/champs.html" id="ferme" class="lien" style="height:116px; width: 84px; margin-top: -245px; margin-left:130px; position: absolute; top: 50%; left: 50%;"></a>
 
 
                 <!-- boussole -->
@@ -101,6 +101,11 @@ inventaire
 
           }
             else if(localStorage.getItem("pont") == "fait"){
+            $('#bigfond_ile').css('display', 'block');
+            $('#bigfond').css('display', 'none');
+            $('#ferme').css('display', 'block');
+          }
+            else if(localStorage.getItem("pont") == "fin_du_jeu"){
             $('#bigfond_ile').css('display', 'block');
             $('#bigfond').css('display', 'none');
             $('#ferme').css('display', 'block');
