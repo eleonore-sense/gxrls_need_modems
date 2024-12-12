@@ -197,19 +197,6 @@
   </div>
 
 
-<!--///////////////////////BOUGIE//////////////////////////////////-->
-
-    <div id="bougie" class="obj" style=" left: -106px; top:-112px;" onclick="fonctionBougie()" >
-        <pre><script>document.include('txt/salle_des_ordis/bougie.txt')</script></pre>
-    </div>
-
-
-<div id="bougie_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_bougie.txt')</script>
-    </pre>
-  </div>
-
-
 <!--///////////////////////LETTRE//////////////////////////////////-->
 
     <div id="lettre" class="obj" style=" left: -453px; top:-5px;" onclick="fonctionLettre()" >
@@ -219,6 +206,20 @@
 
 <div id="lettre_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
     <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_lettre.txt')</script>
+    </pre>
+  </div>
+
+
+
+<!--///////////////////////BOUGIE//////////////////////////////////-->
+
+    <div id="bougie" class="obj" style=" left: -106px; top:-112px;" onclick="fonctionBougie()" >
+        <pre><script>document.include('txt/salle_des_ordis/bougie.txt')</script></pre>
+    </div>
+
+
+<div id="bougie_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_bougie.txt')</script>
     </pre>
   </div>
 
@@ -299,7 +300,7 @@
 
   <!--///////////////////////FEUILLE AUTOMNE//////////////////////////////////-->
 
-    <div id="feuille_automne" class="obj" style=" left: -114px; top:109px;" onclick="fonctionFeuilleAutomne()" >
+    <div id="feuille_automne" class="obj" style=" left: -114px; top:222px;" onclick="fonctionFeuilleAutomne()" >
         <pre><script>document.include('txt/welcome_home/feuille_automne.txt')</script></pre>
     </div>
 
@@ -323,17 +324,19 @@
   </div>
 
 
-<!--///////////////////////POIGNARD//////////////////////////////////-->
 
-    <div id="poignard" class="obj" style=" left: -95px; top:115px;" onclick="fonctionPoignard()" >
+  <!--///////////////////////FEUILLE AUTOMNE//////////////////////////////////-->
+
+    <div id="poignard" class="obj" style=" left: -107px; top:109px;" onclick="fonctionPoignard()" >
         <pre><script>document.include('txt/jardin/poignard.txt')</script></pre>
     </div>
 
 
-    <div id="poignard_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-        <pre class="pre"><script>document.include('txt/jardin/poignard_texte.txt')</script>
-        </pre>
-    </div>
+<div id="poignard_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('txt/jardin/poignard_texte.txt')</script>
+    </pre>
+  </div>
+
 
 
 
@@ -917,16 +920,7 @@ $("#gender_changer").css('display','block');
  
  }else{
 $("#gender_changer").css('display', 'none');
-}});
-
-
-    $( window ).on( "load", function() {
-  if(localStorage.getItem("poignard") == "ok"){
-$("#poignard").css('display','block');
- 
- }else{
-$("#poignard").css('display', 'none');
-}});    
+}});  
 
 
     $( window ).on( "load", function() {
@@ -947,6 +941,15 @@ $("#toy_story").css('display','block');
 $("#toy_story").css('display', 'none');
 }});  
 
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("poignard") == "ok"){
+$("#poignard").css('display','block');
+ 
+ }else{
+$("#poignard").css('display', 'none');
+}});  
 
 function fonctionFermeTout(){
 $('.texte').css('display','none');
@@ -1090,13 +1093,6 @@ $("#gender_changer_texte").css('display','block');
 }
 
 
-<<<<<<< HEAD
-///////////////////////////Poignard//////////////////////////////////////
-
-function fonctionPoignard(){
-        fonctionFermeTout();
-$("#poignard_texte").css('display','block');
-=======
 ///////////////////////////Gender_changer//////////////////////////////////////
 
 function fonctionFeuilleAutomne(){
@@ -1110,9 +1106,18 @@ $("#feuille_automne_texte").css('display','block');
 function fonctionToyStory(){
         fonctionFermeTout();
 $("#toystory_texte").css('display','block');
->>>>>>> f98dac1a1283aa2fbcc5cd431790b21c0ba0f33b
 
 }
+
+
+///////////////////////////Poignard//////////////////////////////////////
+
+function fonctionPoignard(){
+        fonctionFermeTout();
+$("#poignard_texte").css('display','block');
+
+}
+
 
 
 ///////////////////////////BIBLI//////////////////////////////////////
