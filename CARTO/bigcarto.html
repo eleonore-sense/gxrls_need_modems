@@ -54,10 +54,14 @@ inventaire
 
 <a href="../SCENE_DAME_DU_CIEL/dame_du_ciel.html" class="lien" id="dame_du_ciel" style="height:105px; width: 85px; margin-top: -190px; margin-left:300px;  "></a>
 
-<a href="../SCENE_ENTREE_ARENE/entree_arene.html" id="arene" class="lien" style="height:65px; width: 60px; margin-top: 245px; margin-left:290px; position: absolute; top: 50%; left: 50%; "></a>
+<a href="../SCENE_ENTREE_ARENE/entree_arene.html" id="arene" class="lien" style="height:80px; width: 84px; margin-top: 245px; margin-left:290px; position: absolute; top: 50%; left: 50%; "></a>
+
+<a href="../SCENE_PHARE/phare.html" id="phare" class="lien" style="height:116px; width: 84px; margin-top: 29px; margin-left:373px; position: absolute; top: 50%; left: 50%;"></a>
 
 
-<a href="../SCENE1_FERME/ferme.html" id="ferme" class="lien" style="height:116px; width: 84px; margin-top: -245px; margin-left:130px; position: absolute; top: 50%; left: 50%; display: none;"></a>
+<a href="../SCENE1_FERME/ferme.html" id="ferme" class="lien" style="height:116px; width: 84px; margin-top: -245px; margin-left:130px; position: absolute; top: 50%; left: 50%;"></a>
+
+
                 <!-- boussole -->
 
     <div id="capteur_boussole" style="position: absolute; top: 50%; left: 50%; margin-top: 210px; margin-left: -160px; cursor: pointer;" onclick="fonctionBoussole()">
@@ -92,15 +96,18 @@ inventaire
             $('#bigfond').css('display', 'none');
             $('#bigfond_ile').css('display', 'block');
             $('#blabla_pont').css('display', 'block');
+            $('#ferme').css('display', 'block');
             $("#tout_fermer").css('display','block');
 
           }
             else if(localStorage.getItem("pont") == "fait"){
             $('#bigfond_ile').css('display', 'block');
             $('#bigfond').css('display', 'none');
+            $('#ferme').css('display', 'block');
             }else{
             $('#bigfond_ile').css('display', 'none');
-            $('#bigfond').css('display', 'block');              
+            $('#bigfond').css('display', 'block');    
+            $('#ferme').css('display', 'none');          
             }
           if(localStorage.getItem("boussole") == "ok"){
             $('#capteur_boussole').css('display', 'none');
