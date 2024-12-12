@@ -197,20 +197,6 @@
   </div>
 
 
-<!--///////////////////////LETTRE//////////////////////////////////-->
-
-    <div id="lettre" class="obj" style=" left: -453px; top:-5px;" onclick="fonctionLettre()" >
-        <pre><script>document.include('txt/salle_des_ordis/lettre.txt')</script></pre>
-    </div>
-
-
-<div id="lettre_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_lettre.txt')</script>
-    </pre>
-  </div>
-
-
-
 <!--///////////////////////BOUGIE//////////////////////////////////-->
 
     <div id="bougie" class="obj" style=" left: -106px; top:-112px;" onclick="fonctionBougie()" >
@@ -220,6 +206,19 @@
 
 <div id="bougie_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
     <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_bougie.txt')</script>
+    </pre>
+  </div>
+
+
+<!--///////////////////////LETTRE//////////////////////////////////-->
+
+    <div id="lettre" class="obj" style=" left: -453px; top:-5px;" onclick="fonctionLettre()" >
+        <pre><script>document.include('txt/salle_des_ordis/lettre.txt')</script></pre>
+    </div>
+
+
+<div id="lettre_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_SALLE_DES_ORDIS/txt/txt_lettre.txt')</script>
     </pre>
   </div>
 
@@ -322,6 +321,19 @@
     <pre class="pre"><script>document.include('../SCENE_WELCOME_HOME/txt/alien.txt')</script>
     </pre>
   </div>
+
+
+<!--///////////////////////POIGNARD//////////////////////////////////-->
+
+    <div id="poignard" class="obj" style=" left: -95px; top:115px;" onclick="fonctionPoignard()" >
+        <pre><script>document.include('txt/jardin/poignard.txt')</script></pre>
+    </div>
+
+
+    <div id="poignard_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+        <pre class="pre"><script>document.include('txt/jardin/poignard_texte.txt')</script>
+        </pre>
+    </div>
 
 
 
@@ -905,7 +917,16 @@ $("#gender_changer").css('display','block');
  
  }else{
 $("#gender_changer").css('display', 'none');
-}});  
+}});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("poignard") == "ok"){
+$("#poignard").css('display','block');
+ 
+ }else{
+$("#poignard").css('display', 'none');
+}});    
 
 
     $( window ).on( "load", function() {
@@ -1069,6 +1090,13 @@ $("#gender_changer_texte").css('display','block');
 }
 
 
+<<<<<<< HEAD
+///////////////////////////Poignard//////////////////////////////////////
+
+function fonctionPoignard(){
+        fonctionFermeTout();
+$("#poignard_texte").css('display','block');
+=======
 ///////////////////////////Gender_changer//////////////////////////////////////
 
 function fonctionFeuilleAutomne(){
@@ -1082,6 +1110,7 @@ $("#feuille_automne_texte").css('display','block');
 function fonctionToyStory(){
         fonctionFermeTout();
 $("#toystory_texte").css('display','block');
+>>>>>>> f98dac1a1283aa2fbcc5cd431790b21c0ba0f33b
 
 }
 

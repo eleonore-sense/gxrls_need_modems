@@ -11,7 +11,7 @@
 <body>
 
 
-    <a href="../CARTO/bigcarto.html" id="bigcarto">retour à la carto -->
+    <a href="../SCENE_ENTREE_ARENE/entree_arene.html" id="bigcarto">quitter le jardin -->
   	</a>
 
     <a href="../INVENTAIRE/inventaire.html" id="inventaire" >inventaire
@@ -31,8 +31,13 @@
         </pre>
     </div>
 
-    <div id="oiseau" style="top: 200px; left: -310px; cursor:pointer; " onclick="fonctionPostale()">
+    <div id="oiseau" style="top: 200px; left: -315px; cursor:pointer; " onclick="animate_fontaine()">
         <pre ><script>document.include('txt/oiseau.txt') ;</script>
+        </pre>
+    </div>
+
+    <div style="top: 185px; left: -258px;">
+        <pre id="fontaine" style="height: 215.6px;"><script>document.include('txt/fontaine1.txt') ;</script>
         </pre>
     </div>
 
@@ -50,17 +55,15 @@
   </div>-->
 
 
-<!--goodies-->
-    <!--
-    <div id="etoile" style="left:-154px; top: -283px; cursor: pointer;" onclick="fonctionBurritos()">
+<!--/////////GOODIES/////////-->
+	<div style="top: 300px; left: -380px; cursor: pointer;" onclick="fonctionRose()">
+        <pre id="rose"><script>document.include('txt/rose.txt') ;</script>
+        </pre>
+    </div>
+    
+    <div id="etoile" style="left:-175px; top: 280px; cursor: pointer;" onclick="fonctionPoignard()">
         <pre >*</pre>
     </div>
-
-    <div id="dollar" style="left:448px; top: -190px; cursor: pointer;" onclick="fonctionJoy()">
-        <pre >$</pre>
-    </div>
-
--->
 
 
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
@@ -69,6 +72,20 @@
 
 	<div id="carte_driftcore" class="popup" style="cursor: zoom-out;">
 		<pre class="pre_popup" ><script>document.include('txt/driftcore.txt')</script></pre>
+	</div>
+
+
+<!--citation rose-->
+
+	<div id="rose_citation" class="popup">
+		<pre class="pre_popup" ><script>document.include('txt/rose_citation.txt')</script></pre>
+	</div>
+
+
+<!--poignard-->
+
+	<div id="poignard" class="popup">
+		<pre class="pre_popup" ><script>document.include('txt/poignard.txt')</script></pre>
 	</div>
 
 
@@ -142,14 +159,14 @@
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  <div id="tout_fermer" onclick="tout_fermer()"></div>
+  		<div id="tout_fermer" onclick="tout_fermer()"></div>
 
 
 
 
-  </div>
+	</div>
 
-    </div>
+	</div>
 
 
 
@@ -170,11 +187,88 @@
         $("#tout_fermer").css('display','block');
     }
 
+    function fonctionRose(){
+    	if(localStorage.getItem("rose_citation") == "ok"){   
+    	}else{
+            $("#rose_citation").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#rose").css('cursor', 'auto');
+            localStorage.setItem("rose_citation", "ok"); 
+     	}
+ 		}
+
+ 	function fonctionPoignard(){
+    	if(localStorage.getItem("poignard") == "ok"){   
+     	}else{
+            $("#poignard").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#etoile").css('cursor', 'auto');
+            localStorage.setItem("poignard", "ok"); 
+     		}
+ 		}
+
 
     function tout_fermer(){
         $("#tout_fermer").css('display', 'none');
         $(".popup").css('display', 'none');    
     }
+
+
+    ///////////////////////fontaine///////////////////////////////////
+	var text_fontaine = [
+		'txt/fontaine1.txt',
+		'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+	    'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+		'txt/fontaine6.txt',
+	    'txt/fontaine1.txt',
+	    'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+		'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+	    'txt/fontaine6.txt',
+	    'txt/fontaine1.txt',
+	    'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+		'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+	    'txt/fontaine6.txt'
+	];
+
+	var counter_fontaine = 0;
+	var preElement_fontaine = document.getElementById("fontaine");
+	var textContents_fontaine = [];
+	var timer_fontaine;
+
+	// Preload all the text files using AJAX
+	for (var i = 0; i < text_fontaine.length; i++) {
+	    preloadText_fontaine(text_fontaine[i], i);
+	}
+
+	// Function to preload a text file and store its content
+	function preloadText_fontaine(url, index) {
+	    var request_fontaine = new XMLHttpRequest();
+	    request_fontaine.open('GET', url, true);
+	    request_fontaine.onreadystatechange = function () {
+	        if (request_fontaine.readyState === XMLHttpRequest.DONE && request_fontaine.status === 200) {
+	            textContents_fontaine[index] = request_fontaine.responseText;
+	        }
+	    };
+	    request_fontaine.send();
+	}
+
+	function animate_fontaine() {
+	    if (counter_fontaine < text_fontaine.length) {
+	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
+	        counter_fontaine++;
+	        timer_fontaine = setTimeout(animate_fontaine, 50);
+	    } else {
+	        // Reset the animation to the initial state
+	        counter_fontaine = 0;
+	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
+	    }
+	}
 
 
     </script>
