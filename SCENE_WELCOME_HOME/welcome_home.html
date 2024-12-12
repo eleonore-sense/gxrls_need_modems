@@ -41,7 +41,7 @@ inventaire
         </pre>
         <pre style="color: white;"><script>document.include('txt/ordi_pied.txt') ;</script>        
         </pre>
-        <pre onclick="fonctionJgsParle()" style="color: #83ff00;"><script>document.include('txt/jupe.txt') ;</script>        
+        <pre onclick="fonctionJgsParle()" style="color: #83ff00; cursor: pointer;"><script>document.include('txt/jupe.txt') ;</script>        
         </pre>
     </div>
 
@@ -96,9 +96,94 @@ inventaire
     </div>
 
 
+
+<!--goodies-->
+
+    <div id="etoile" style="left:18px; top: -202px; cursor: pointer; color:white" onclick="fonctionFeuille()">
+        <pre >*</pre>
+    </div>
+
+    <div id="dollar" style="left:-500px; top: 37px; cursor: pointer; color:white" onclick="fonctionAlien()">
+        <pre >$</pre>
+    </div>
+
+
+
+
+<!--///////////////////////INTRO JGS///////////////////////////////////-->
+
+
+
+<div id="intro_jgs" class="popup" style=" ">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_1.txt')</script></pre>
+
+   <button id="boutonJgs1A" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:25px;width:180px;">tu es... la déesse créatrice?</button>
+   <button id="boutonJgs1B" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:55px;width:129px;">dans ton monde..?</button>
+</div>
+
+
+<div id="intro_jgs_2" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_2.txt')</script></pre>
+
+   <button id="boutonJgs2A" class="bouton_intro" onclick="fonctionIntroJgs2()" style="top:82px; width:62px; left:-67px;">Lorrie?</button>
+
+      <button id="boutonJgs2" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:82px; width:45px; left: 91px;">toi?</button>
+
+</div>
+
+
+<div id="intro_jgs_3" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;">><script>document.include('txt/intro_jgs_3.txt')</script></pre>
+
+   <button id="boutonJgs3" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:57px;width:181px;">et toi, c'est quoi ton nom?</button>
+
+
+</div>
+
+
+<div id="intro_jgs_4" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_4.txt')</script></pre>
+
+   <button id="boutonJgs4" class="bouton_intro" onclick="fonctionIntroJgs4()" style="top:100px; width:292px;">Whouaaa, tes journées ont l'air bien remplies!</button>
+
+
+</div>
+
+
+
+<div id="intro_jgs_5" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_5.txt')</script></pre>
+
+   <button id="boutonJgs5A" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:81px;width:105px; left:-100px;">impressionnant!</button>
+   <button id="boutonJgs5B" class="bouton_intro" onclick="fonctionIntroJgs5()" style="top:81px;width:98px; left:106px;">l'ASC..Quoi??</button>
+</div>
+
+
+<div id="intro_jgs_6" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;">><script>document.include('txt/intro_jgs_6.txt')</script></pre>
+
+   <button id="boutonJgs6" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:94px; width:103px;">super fortiche!</button>
+
+
+</div>
+
+
+<div id="intro_jgs_7" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_7.txt')</script></pre>
+
+</div>
+
+
+<div id="blabla_jgs" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/blabla_jgs.txt')</script></pre>
+
+</div>
+
+
+
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
 
-<!--disquette-->
+<!--poeme lorrie-->
 
 <div id="poeme_lorrie" class="popup"style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38;"><script>document.include('txt/blanc_poeme.txt')</script></pre>
@@ -112,6 +197,23 @@ inventaire
 
  <pre style="color:#ffff00; z-index:9;"><script>document.include('txt/jaune_poeme.txt')</script>
  </pre>
+
+</div>
+
+
+
+<!-- feuille automne -->
+
+<div id="feuille_automne" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/feuille_automne.txt')</script></pre>
+
+</div>
+
+
+<!-- alien -->
+
+<div id="alien_toystory" class="popup" style="">
+ <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/alien.txt')</script></pre>
 
 </div>
 
@@ -140,10 +242,15 @@ inventaire
       if(localStorage.getItem("poeme_lorrie") == "ok"){
             $("#lorrie").css('cursor','auto');
       }else{
-
       }
-
-
+      if(localStorage.getItem("alien_toystory") == "ok"){
+            $("#dollar").css('cursor','auto');
+      }else{
+      }
+      if(localStorage.getItem("feuille_automne") == "ok"){
+            $("#etoile").css('cursor','auto');
+      }else{
+      }
 
 
   }
@@ -159,6 +266,67 @@ inventaire
         }
 
 
+
+
+
+
+
+    function fonctionJgsParle(){
+        if(localStorage.getItem("intro_jgs") == "ok"){
+        $("#blabla_jgs").css('display', 'block');
+        $("#tout_fermer").css('display','block');
+
+        }else{
+        $("#intro_jgs").css('display', 'block');
+        }
+    
+}
+
+       function fonctionIntroJgs1(){
+        $("#intro_jgs").css('display', 'none');
+        $("#intro_jgs_2").css('display', 'block');
+       }
+
+
+       function fonctionIntroJgs2(){
+        $("#intro_jgs_2").css('display', 'none');
+        $("#intro_jgs_3").css('display', 'block');
+      }    
+
+
+       function fonctionIntroJgs3(){
+        $("#intro_jgs_3").css('display', 'none');
+        $("#intro_jgs_4").css('display', 'block');
+      }    
+
+       function fonctionIntroJgs4(){
+        $("#intro_jgs_2").css('display', 'none');
+        $("#intro_jgs_4").css('display', 'none');
+        $("#intro_jgs_5").css('display', 'block');
+      }    
+
+       function fonctionIntroJgs5(){
+        $("#intro_jgs_5").css('display', 'none');
+        $("#intro_jgs_6").css('display', 'block');
+      }    
+
+           function fonctionIntroJgs6(){
+        $("#intro_jgs_6").css('display', 'none');
+        $("#intro_jgs_5").css('display', 'none');
+        $("#intro_jgs_7").css('display', 'block');
+        $("#tout_fermer").css("display", "block");
+            localStorage.setItem('intro_jgs', 'ok');
+            localStorage.setItem('go_home', 'ok');
+
+      }    
+
+
+
+
+
+
+
+
     function fonctionPoemeLorrie(){
 
         if (localStorage.getItem("poeme_lorrie") == "ok") {
@@ -167,12 +335,34 @@ inventaire
             $("#poeme_lorrie").css('display','block');
             $("#lorrie").css('cursor','auto');
             $("#tout_fermer").css("display", "block");
+
             localStorage.setItem('poeme_lorrie', 'ok');
         }
     }
 
 
   
+
+          function fonctionFeuille(){
+      if(localStorage.getItem("feuille_automne") == "ok"){   
+     }else{
+            $("#feuille_automne").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#etoile").css('cursor', 'auto');
+            localStorage.setItem("feuille_automne", "ok"); 
+     }
+ }
+
+
+         function fonctionAlien(){
+      if(localStorage.getItem("alien_toystory") == "ok"){   
+     }else{
+            $("#alien_toystory").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#dollar").css('cursor', 'auto');
+            localStorage.setItem("alien_toystory", "ok"); 
+     }
+ }
     </script>
 
 

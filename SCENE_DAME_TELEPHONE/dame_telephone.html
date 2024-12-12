@@ -6,9 +6,26 @@
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
 
+<style>
+
+
+  @keyframes dame{
+0%{left:0px; top: 35px;}
+12%{left:20px; top: 20px;}
+25%{left:35px; top: 0px;}
+37%{left:20px; top: -20px;}
+50%{left:0px; top: -35px;}
+62%{left:-20px; top: -20px;}
+75%{left:-35px; top: 0px;}
+87%{left:-20px; top: 20px;}
+100%{left:0px; top: 35px;}}
+
+</style>
+
+
 
 </head>
-<body style="">
+<body >
 
 
 
@@ -16,6 +33,9 @@
 inventaire
   </a>
 
+                <a href="../SCENE_ENTREE_TEMPLE/entree_temple.html" id="bigcarto">
+retour à l'entrée du tempble -->
+  </a>
   
   <div id="letout">
 
@@ -25,14 +45,118 @@ inventaire
         </pre>
     </div>
 
-
-
 <!--tableau-->
 
-    <div id="tableau" style="margin-left: -115px; margin-top: -30px; cursor: pointer;" onclick="fonctionWelcomeHome()">
+    <div id="tableau" style="margin-left: -314px; margin-top: -198px; cursor: pointer;" onclick="fonctionWelcomeHome()">
         <pre><script>document.include('txt/tableau.txt') ;</script>        
         </pre>
     </div>
+
+
+
+<!--armoire-->
+
+    <div id="armoire" style="margin-left: 314px; margin-top: 11px;" onclick="">
+        <pre><script>document.include('txt/armoire.txt') ;</script>        
+        </pre>
+    </div>
+
+<!--dame_telephone-->
+
+    <div id="dame_telephone" style="margin-left: -24px; margin-top: -30px; cursor: pointer; animation: dame linear reverse infinite; animation-duration: 12s;" onclick="fonctionDameDuTel()">
+        <pre style="background-color:white;"><script>document.include('txt/dame_telephone_d.txt') ;</script>        
+        </pre>
+    </div>
+
+
+<!--fente-->
+
+    <div id="fente" style="margin-left: -433px; margin-top: -103px; cursor: pointer; display: none;" onclick="fonctionPorte()">
+        <pre><script>document.include('txt/fente.txt') ;</script>        
+        </pre>
+    </div>
+
+
+<!--porte-->
+
+    <div id="porte" style="margin-left: -422px; margin-top: 65px; cursor: pointer;" onclick="window.location.href='../SCENE_LABYRINTHE/labyrinthe.html';">
+        <pre><script>document.include('txt/porte.txt') ;</script>        
+        </pre>
+    </div>
+
+
+<!--///////////////////////INTRO DAMEDUTEL///////////////////////////////////-->
+
+
+
+<div id="intro_damedutel" class="popup" style=" ">
+ <pre class="pre_popup"><script>document.include('txt/intro_damedutel_1.txt')</script></pre>
+
+   <button id="boutonDameDuTel1" class="bouton_intro" onclick="fonctionIntroDameDuTel1()" style="top:73px;width:237px;">heu... c'est ça la cyberslacker party?</button>
+</div>
+
+
+<div id="intro_damedutel_2" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_damedutel_2.txt')</script></pre>
+
+   <button id="boutonDameDuTel2A" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:100px; left:-127px;">Whouaou, <br>à l'ancienne!</button>
+
+      <button id="boutonDameDuTel2" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:167px; left: 121px;">ok... et ce n'est pas trop mou comme métier?</button>
+
+</div>
+
+
+<div id="intro_damedutel_3" class="popup" style="">
+ <pre class="pre_popup">><script>document.include('txt/intro_damedutel_3.txt')</script></pre>
+
+   <button id="boutonDameDuTel3A" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width:154px; left:-133px;">Haa oui quand même!</button>
+
+   <button id="boutonDameDuTel3B" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width: 239px; left:120px;">et comment on devient standardiste?</button>
+
+
+</div>
+
+
+<div id="intro_damedutel_4" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_damedutel_4.txt')</script></pre>
+
+   <button id="boutonDameDuTel4" class="bouton_intro" onclick="fonctionIntroDameDuTel4()" style="top:71px; width:117px;">mais c'est zinzin!</button>
+
+
+</div>
+
+
+
+<div id="intro_damedutel_5" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_damedutel_5.txt')</script></pre>
+
+   <button id="boutonDameDuTel5A" class="bouton_intro" onclick="fonctionIntroDameDuTel5()" style="top:55px;width:206px;">Pfiouu, les lourdos de l'espace!</button>
+</div>
+
+
+<div id="intro_damedutel_6" class="popup" style="">
+ <pre class="pre_popup">><script>document.include('txt/intro_damedutel_6.txt')</script></pre>
+
+   <button id="boutonDameDuTel6A" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:72px; left: -89px;">pas mal!</button>
+
+   <button id="boutonDameDuTel6B" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:109px; left:95px">that's my gxrls!</button>
+
+
+</div>
+
+
+<div id="intro_damedutel_7" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/intro_damedutel_7.txt')</script></pre>
+
+</div>
+
+
+<div id="blabla_damedutel" class="popup" style="">
+ <pre class="pre_popup"><script>document.include('txt/blabla_damedutel.txt')</script></pre>
+
+</div>
+
+
 
 
     <!--///////////////////////PAGE POP UP///////////////////////////////////-->
@@ -88,15 +212,16 @@ inventaire
       if(localStorage.getItem("go_home") == "ok"){
             $("#fente").css('display','block');
       }else{
+            $("#fente").css('display','none');
 
       }
+      if(localStorage.getItem("go_home") == "fente"){
+            $("#porte").css('display','block');  
+            $("#fente").css('display','none');      
+      }else{ 
+        $("#porte").css('display','none'); }
 
-
-
-
-  }
-
-);
+});
 
 
 
@@ -107,10 +232,73 @@ inventaire
         }
 
 
+
+
+
+    function fonctionDameDuTel(){
+        if(localStorage.getItem("intro_damedutel") == "ok"){
+        $("#blabla_damedutel").css('display', 'block');
+        $("#tout_fermer").css('display','block');
+
+        }else{
+        $("#intro_damedutel").css('display', 'block');
+        }
+    
+}
+
+       function fonctionIntroDameDuTel1(){
+        $("#intro_damedutel").css('display', 'none');
+        $("#intro_damedutel_2").css('display', 'block');
+       }
+
+
+       function fonctionIntroDameDuTel2(){
+        $("#intro_damedutel_2").css('display', 'none');
+        $("#intro_damedutel_3").css('display', 'block');
+      }    
+
+
+       function fonctionIntroDameDuTel3(){
+        $("#intro_damedutel_3").css('display', 'none');
+        $("#intro_damedutel_4").css('display', 'block');
+      }    
+
+       function fonctionIntroDameDuTel4(){
+        $("#intro_damedutel_4").css('display', 'none');
+        $("#intro_damedutel_5").css('display', 'block');
+      }    
+
+       function fonctionIntroDameDuTel5(){
+        $("#intro_damedutel_5").css('display', 'none');
+        $("#intro_damedutel_6").css('display', 'block');
+      }    
+
+           function fonctionIntroDameDuTel6(){
+        $("#intro_damedutel_6").css('display', 'none');
+        $("#intro_damedutel_7").css('display', 'block');
+        $("#tout_fermer").css("display", "block");
+            localStorage.setItem('intro_damedutel', 'ok');
+
+      }    
+
+
+
+
+
+
     function fonctionWelcomeHome(){
             $("#cadre").css('display','block');
         }
 
+
+
+
+    function fonctionPorte(){
+            $("#porte").css('display','block');
+            $("#fente").css('display','none');
+            localStorage.setItem('go_home', 'fente');
+
+        }
 
   
     </script>
