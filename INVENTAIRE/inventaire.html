@@ -744,6 +744,22 @@ $("#systers_livre").css('display', 'none');
 $("#rectangle_systers_livre").css('display', 'none');
 }});
 
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("poeme_lorrie") == "ok"){
+$("#poeme_lorrie_livre").css('display','block');
+$("#rectangle_poeme_lorrie_livre").css('display','block');
+ 
+ }else{
+$("#poeme_lorrie_livre").css('display', 'none');
+$("#rectangle_poeme_lorrie_livre").css('display', 'none');
+}});
+
+
+
+
+
+
 ///////////////////////////APPARITION OBJ////////////////////////////////
 
 
@@ -1154,6 +1170,19 @@ function fonctionSysters(){
 $("#txt_systers").css('display','block');
 
 }
+
+
+
+///////////////////////////SYSTERS//////////////////////////////////////
+
+function fonctionPoemeLorrie(){
+        fonctionFermeTout();
+$("#txt_poeme_lorrie").css('display','block');
+
+}
+
+
+
 ///////////////////////////CITATION DONNA HARAWAY//////////////////////////////////////
 
 function fonctionDonnaHaraway(){
