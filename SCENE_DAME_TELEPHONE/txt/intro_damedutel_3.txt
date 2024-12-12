@@ -1,0 +1,13 @@
++-------------------------------------------------------------------------+
+|                                                                         |
+|                                                                         |
+|    Tu rigoles? nos clients sont des personnes fortunées qui passent     |
+|          leur temps à se plaindre. On est en pression constante!        |
+|     On nous met même en compétitions de vitesse de mise en relation,    |
+|       et les records tournent autour de 400 connexions par heure,       |
+|          ce qui fait 1 communication toutes les 10 secondes!!           |
+|                                                                         |
+|                                                                         |
+|                                                                         |
+|                                                                         |
++-------------------------------------------------------------------------+
