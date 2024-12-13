@@ -38,11 +38,24 @@ inventaire
   <div id="letout">
 
 
-    <div id="paysage" style="top: 50px;">
+    <div id="paysage" style="top: 43px;">
       <pre ><script>document.include('txt/fond_entree.txt');</script>
       </pre>
     </div>
 
+    <div style="left:20.5px; top: 307px;">
+      <pre id="champi"><script>document.include('txt/champi.txt');</script></pre>
+    </div>
+
+    <div id="grille_a" style="top: 131px; left:-180px;">
+      <pre ><script>document.include('txt/grille_a1.txt') ;</script>
+      </pre>
+    </div>
+
+    <div id="grille_b" style="top: 147px; left:184px;">
+      <pre ><script>document.include('txt/grille_b1.txt') ;</script>
+      </pre>
+    </div>
 
     <div id="gargouille" style="top: -165px; cursor:pointer; " onclick="fonction_gargouille()">
       <pre ><script>document.include('txt/gargouille.txt') ;</script>
@@ -50,14 +63,8 @@ inventaire
     </div>
 
 
-    <div id="vers_arene" style="left:-270px; top: 50px; cursor:pointer; " onclick="fonction_vers_arene()">
-      <pre ><script>document.include('txt/x.txt');</script>
-      </pre>
-    </div>
-
-
-    <div id="x" style="left:-311px; top: -71px; cursor: pointer;" onclick="appareil_photo()">
-      <pre ><script>document.include('txt/x.txt');</script>
+    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;" onclick="appareil_photo()">
+      <pre ><script>document.include('txt/meurtriere.txt');</script>
       </pre>
     </div>
 
@@ -65,8 +72,12 @@ inventaire
     <div style="left:-330px; top: -250px;">
       <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
     </div>
+
+    <div style="left:350px; top: -250px;">
+      <pre id="garg_droite"><script>document.include('txt/garg_droite1.txt');</script></pre>
+    </div>
       
-    </pre>
+    
 
 
 
@@ -78,7 +89,7 @@ inventaire
 </div>
 
 
-   <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">c'est vrai..! vous êtes qui?</button>
+   <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">Ça colle, je... j'ai l'impression de m'enfoncer</button>
 
 <div id="dame_du_ciel_1" style=" display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_1.txt')</script></pre>
@@ -150,7 +161,7 @@ inventaire
 
         function appareil_photo(){
       if(localStorage.getItem("appareil_photo") == "ok"){
-            document.getElementById("x").style.cursor = "auto";
+            document.getElementById("meurtriere").style.cursor = "auto";
      }else{
             document.getElementById("appareil_photo").style.display = "block";
             document.getElementById("tout_fermer").style.display = "block";
@@ -273,6 +284,47 @@ localStorage.setItem("intro_dame_du_ciel", "ok");
 }
         // Start the animation after all text files are preloaded
         animate_garg_gauche();
+
+
+        ///////////////////////garg droite///////////////////////////////////
+        var text_garg_droite = [
+            'txt/garg_droite1.txt',
+            'txt/garg_droite2.txt'];
+
+        var counter_garg_droite = 0;
+        var preElement_garg_droite = document.getElementById("garg_droite");
+        var textContents_garg_droite = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_garg_droite.length; i++) {
+            preloadText_garg_droite(text_garg_droite[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_garg_droite(url, index) {
+            var request_garg_droite = new XMLHttpRequest();
+            request_garg_droite.open('GET', url, true);
+            request_garg_droite.onreadystatechange = function () {
+                if (request_garg_droite.readyState === XMLHttpRequest.DONE && request_garg_droite.status === 200) {
+                    textContents_garg_droite[index] = request_garg_droite.responseText;
+                }
+            };
+            request_garg_droite.send();
+        }
+
+    var timer_garg_droite;
+
+        function animate_garg_droite() {
+            preElement_garg_droite.textContent = textContents_garg_droite[counter_garg_droite];
+            counter_garg_droite++;
+            if (counter_garg_droite >= textContents_garg_droite.length) {
+                counter_garg_droite = 0;            }
+        
+        timer_garg_droite = setTimeout(animate_garg_droite, 333); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_garg_droite();
 
 
     </script>
