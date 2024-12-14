@@ -57,7 +57,7 @@ inventaire
       </pre>
     </div>
 
-    <div id="gargouille" style="top: -165px; cursor:pointer; " onclick="fonction_gargouille()">
+    <div id="gargouille" style="top: -165px; cursor:pointer;" onclick="fonction_gargouille()">
       <pre ><script>document.include('txt/gargouille.txt') ;</script>
       </pre>
     </div>
@@ -69,11 +69,11 @@ inventaire
     </div>
 
 
-    <div style="left:-330px; top: -250px;">
+    <div style="left:-330px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_gauche()">
       <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
     </div>
 
-    <div style="left:350px; top: -250px;">
+    <div style="left:350px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_droite()">
       <pre id="garg_droite"><script>document.include('txt/garg_droite1.txt');</script></pre>
     </div>
       
@@ -85,57 +85,59 @@ inventaire
 
 
 <div id="intro" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+  <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">Ça colle, je... j'ai l'impression de m'enfoncer</button>
+</div>
+
+<div id="vns_1" style=" display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_1.txt')</script></pre>
+  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 110px; top:60px; left:-80px;">Facile à dire avec vos ailes&nbsp;!</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 110px; top:60px; left:80px;">Respire...</button>
 </div>
 
 
-   <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">Ça colle, je... j'ai l'impression de m'enfoncer</button>
+<div id="vns_2" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_2.txt')</script></pre>
+ <button id="bouton_2" class="bouton_intro" onclick="VNS_2()" style="width: 250px; top:78px;">Je ne saurai dire si cette histoire est vraie ou fausse...</button>
+</div>
 
-<div id="dame_du_ciel_1" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_1.txt')</script></pre>
- <button id="bouton_1_a" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 104px; top:50px; left:-80px;">c'est un boulot titanesque!</button>
-  <button id="bouton_1_b" class="bouton_intro" onclick="dameDuCiel_1()" style="width: 110px; top:50px; left:80px;">j'aime pas trop les math moi...</button>
+<div id="vns_3" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_3.txt')</script></pre>
+ <button id="bouton_3" class="bouton_intro" onclick="VNS_3()" style="width: 120px; top:70px;">C'est qui "eux"&nbsp;?</button>
+</div>
+
+<div id="vns_4" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_4.txt')</script></pre>
+ <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:-80px;">Ma ferme aussi elle faisait partie de la terre...</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:80px;">Comment je fais pour passer la porte que vous gardez&nbsp;?</button>
+</div>
+
+<div id="vns_5" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_5.txt')</script></pre>
+</div>
+
+<div id="vns_6" style=" display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_6.txt')</script></pre>
+</div>
+
+<div id="vns_gauche" style=" display:none;">
+ <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_gauche.txt')</script></pre>
+</div>
+
+<div id="vns_droite" style=" display:none;">
+ <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_droite.txt')</script></pre>
+</div>
+
+<div id="citation_k_j" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_katherine_johnson.txt');</script>
+  </pre>
 </div>
 
 
-<div id="dame_du_ciel_2" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_2.txt')</script></pre>
- <button id="bouton_2" class="bouton_intro" onclick="dameDuCiel_2()" style="width: 278px; top:78px;">et c'est une bonne situation ça, calculatrice?</button>
+<div id="appareil_photo" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/appareil_photo.txt');</script>
+  </pre>
 </div>
-
-<div id="dame_du_ciel_3" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_3.txt')</script></pre>
- <button id="bouton_3" class="bouton_intro" onclick="dameDuCiel_3()" style="width: 238px; top:45px;">ouhlala, c'est vraiment pas beaucoup!</button>
-</div>
-
-<div id="dame_du_ciel_4" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_4.txt')</script></pre>
- <button id="bouton_4_a" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 60px; top:78px; left:-80px;">qui ça?</button>
-  <button id="bouton_4_b" class="bouton_intro" onclick="dameDuCiel_4()" style="width: 135px; top:78px; left:80px;">ah oui... Dorothéa...</button>
-</div>
-
-<div id="dame_du_ciel_5" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_5.txt')</script></pre>
-</div>
-
-<div id="dame_du_ciel_6" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_6.txt')</script></pre>
-</div>
-
-<div id="dame_du_ciel_7" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dame_du_ciel_7.txt')</script></pre>
-</div>
-
-  <div id="citation_k_j" style="display: none;">
-        <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_katherine_johnson.txt');</script>
-        </pre>
-    </div>
-
-
-  <div id="appareil_photo" style="display: none;">
-        <pre style="background-color: white; z-index:6;"><script>document.include('txt/appareil_photo.txt');</script>
-        </pre>
-    </div>
 
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
@@ -151,98 +153,103 @@ inventaire
 
     </div>
  
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function fonction_vers_arene(){
- window.location.href='../SCENE_ARENE/arene.html'; 
+  function fonction_vers_arene(){
+  window.location.href='../SCENE_ARENE/arene.html'; 
+  }
 
-        }
-
-
-        function appareil_photo(){
-      if(localStorage.getItem("appareil_photo") == "ok"){
-            document.getElementById("meurtriere").style.cursor = "auto";
-     }else{
-            document.getElementById("appareil_photo").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block";
-            localStorage.setItem("appareil_photo", "ok"); 
-     }
- }
+  function appareil_photo(){
+    if(localStorage.getItem("appareil_photo") == "ok"){
+      document.getElementById("meurtriere").style.cursor = "auto";
+    }else{
+      document.getElementById("appareil_photo").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      localStorage.setItem("appareil_photo", "ok"); 
+    }
+    }
 
 
-        function tout_fermer(){
-            document.getElementById("tout_fermer").style.display = "none";
-            document.getElementById("bouton_oui").style.display= "none";
-            document.getElementById("appareil_photo").style.display= "none";
-            document.getElementById("dame_du_ciel_6").style.display= "none";   
-            document.getElementById("dame_du_ciel_7").style.display= "none";   
-            document.getElementById("dame_du_ciel_5").style.display= "none";   
-
-
-        }
+  function tout_fermer(){
+    document.getElementById("tout_fermer").style.display = "none";
+    document.getElementById("bouton_oui").style.display= "none";
+    document.getElementById("appareil_photo").style.display= "none";
+    document.getElementById("vns_6").style.display= "none";     
+    document.getElementById("vns_5").style.display= "none";
+    document.getElementById("vns_gauche").style.display= "none";     
+    document.getElementById("vns_droite").style.display= "none";   
+  }
 
 
 
 
-function fonction_gargouille(){
-if(localStorage.getItem("plus_joli") == "ok"){
-document.getElementById("dame_du_ciel_7").style.display= "block";
-document.getElementById("tout_fermer").style.display = "block";
-}else if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
-document.getElementById("dame_du_ciel_6").style.display= "block";
-document.getElementById("tout_fermer").style.display = "block";
-}else{
-document.getElementById("intro").style.display= "block";
-document.getElementById("bouton_oui").style.display= "block";
-}
-}
+  function fonction_gargouille(){
+    if(localStorage.getItem("intro_vns") == "ok"){
+    document.getElementById("vns_6").style.display= "block";
+    document.getElementById("tout_fermer").style.display = "block";
+    }else{
+    document.getElementById("intro").style.display= "block";
+    document.getElementById("bouton_oui").style.display= "block";
+    }
+    }
 
 
 
-function intro(){
-document.getElementById("dame_du_ciel_1").style.display= "block";   
-document.getElementById("bouton_1_a").style.display= "block";
-document.getElementById("bouton_1_b").style.display= "block";
-document.getElementById("bouton_oui").style.display= "none";
-document.getElementById("intro").style.display= "none";
-document.getElementById("bloqueur").style.display = "block";
-}
+  function intro(){
+    document.getElementById("vns_1").style.display= "block";   
+    document.getElementById("bouton_1_a").style.display= "block";
+    document.getElementById("bouton_1_b").style.display= "block";
+    document.getElementById("bouton_oui").style.display= "none";
+    document.getElementById("intro").style.display= "none";
+    document.getElementById("bloqueur").style.display = "block";
+  }
 
-function dameDuCiel_1(){
-document.getElementById("dame_du_ciel_2").style.display= "block";
-document.getElementById("bouton_2").style.display= "block";
-document.getElementById("dame_du_ciel_1").style.display= "none";   
-document.getElementById("bouton_1_a").style.display= "none";
-document.getElementById("bouton_1_b").style.display= "none";
-}
-
-
-function dameDuCiel_2(){
-document.getElementById("dame_du_ciel_3").style.display= "block";
-document.getElementById("bouton_3").style.display= "block";
-document.getElementById("dame_du_ciel_2").style.display= "none";   
-document.getElementById("bouton_2").style.display= "none";
-}
+  function VNS_1(){
+    document.getElementById("vns_2").style.display= "block";
+    document.getElementById("bouton_2").style.display= "block";
+    document.getElementById("vns_1").style.display= "none";   
+    document.getElementById("bouton_1_a").style.display= "none";
+    document.getElementById("bouton_1_b").style.display= "none";
+  }
 
 
-function dameDuCiel_3(){
-document.getElementById("dame_du_ciel_4").style.display= "block";   
-document.getElementById("bouton_4_a").style.display= "block";
-document.getElementById("bouton_4_b").style.display= "block";
-document.getElementById("dame_du_ciel_3").style.display= "none";   
-document.getElementById("bouton_3").style.display= "none";
-}
+  function VNS_2(){
+    document.getElementById("vns_3").style.display= "block";
+    document.getElementById("bouton_3").style.display= "block";
+    document.getElementById("vns_2").style.display= "none";   
+    document.getElementById("bouton_2").style.display= "none";
+  }
 
 
-function dameDuCiel_4(){
-document.getElementById("dame_du_ciel_4").style.display= "none";   
-document.getElementById("bouton_4_a").style.display= "none";
-document.getElementById("bouton_4_b").style.display= "none";
-document.getElementById("dame_du_ciel_5").style.display= "block";   
-document.getElementById("bloqueur").style.display= "none";
-document.getElementById("tout_fermer").style.display= "block";
-localStorage.setItem("intro_dame_du_ciel", "ok"); 
-}
+  function VNS_3(){
+    document.getElementById("vns_4").style.display= "block";   
+    document.getElementById("bouton_4_a").style.display= "block";
+    document.getElementById("bouton_4_b").style.display= "block";
+    document.getElementById("vns_3").style.display= "none";   
+    document.getElementById("bouton_3").style.display= "none";
+  }
+
+
+  function VNS_4(){
+    document.getElementById("vns_4").style.display= "none";   
+    document.getElementById("bouton_4_a").style.display= "none";
+    document.getElementById("bouton_4_b").style.display= "none";
+    document.getElementById("vns_5").style.display= "block";   
+    document.getElementById("bloqueur").style.display= "none";
+    document.getElementById("tout_fermer").style.display= "block";
+    localStorage.setItem("intro_vns", "ok"); 
+  }
+
+  function fonction_gargouille_gauche(){
+    document.getElementById("vns_gauche").style.display= "block";
+    document.getElementById("tout_fermer").style.display= "block";
+    }
+
+  function fonction_gargouille_droite(){
+    document.getElementById("vns_droite").style.display= "block";
+    document.getElementById("tout_fermer").style.display= "block";
+    }
+    
 
 
     ///////////////////////garg gauche///////////////////////////////////
