@@ -63,8 +63,14 @@ inventaire
     </div>
 
 
-    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;" onclick="appareil_photo()">
+    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;">
       <pre ><script>document.include('txt/meurtriere.txt');</script>
+      </pre>
+    </div>
+
+
+    <div id="etoile" style="left:-304px; top: 291px; cursor: pointer;" onclick="slime()">
+      <pre ><script>document.include('txt/etoile.txt');</script>
       </pre>
     </div>
 
@@ -134,8 +140,8 @@ inventaire
 </div>
 
 
-<div id="appareil_photo" style="display: none;">
-  <pre style="background-color: white; z-index:6;"><script>document.include('txt/appareil_photo.txt');</script>
+<div id="slime" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/slime.txt');</script>
   </pre>
 </div>
 
@@ -159,13 +165,13 @@ inventaire
   window.location.href='../SCENE_ARENE/arene.html'; 
   }
 
-  function appareil_photo(){
-    if(localStorage.getItem("appareil_photo") == "ok"){
-      document.getElementById("meurtriere").style.cursor = "auto";
+  function slime(){
+    if(localStorage.getItem("slime") == "ok"){
+      document.getElementById("etoile").style.cursor = "auto";
     }else{
-      document.getElementById("appareil_photo").style.display = "block";
+      document.getElementById("slime").style.display = "block";
       document.getElementById("tout_fermer").style.display = "block";
-      localStorage.setItem("appareil_photo", "ok"); 
+      localStorage.setItem("slime", "ok"); 
     }
     }
 
@@ -173,7 +179,7 @@ inventaire
   function tout_fermer(){
     document.getElementById("tout_fermer").style.display = "none";
     document.getElementById("bouton_oui").style.display= "none";
-    document.getElementById("appareil_photo").style.display= "none";
+    document.getElementById("slime").style.display= "none";
     document.getElementById("vns_6").style.display= "none";     
     document.getElementById("vns_5").style.display= "none";
     document.getElementById("vns_gauche").style.display= "none";     
