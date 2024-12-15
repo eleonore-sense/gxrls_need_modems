@@ -43,17 +43,25 @@ inventaire
       </pre>
     </div>
 
-    <div style="left:20.5px; top: 307px;">
-      <pre id="champi"><script>document.include('txt/champi.txt');</script></pre>
+    <div id="champi" style="left:20.5px; top: 307px;">
+      <pre><script>document.include('txt/champi.txt');</script></pre>
     </div>
 
-    <div id="grille_a" style="top: 131px; left:-180px;">
-      <pre ><script>document.include('txt/grille_a1.txt') ;</script>
+    <div id="pouce" style="left:617px; top: 138px; display:none;">
+      <pre><script>document.include('txt/pouce.txt');</script></pre>
+    </div>
+
+    <div id="grille_a" style="top: 131px; left:-180px; cursor: not-allowed;" onclick="fonctionArene()">
+      <pre id="grille_a_ferme" style="display: block;"><script>document.include('txt/grille_a1.txt') ;</script>
+      </pre>
+      <pre id="grille_a_ouvert" style="display: none;"><script>document.include('txt/grille_a2.txt') ;</script>
       </pre>
     </div>
 
-    <div id="grille_b" style="top: 147px; left:184px;">
-      <pre ><script>document.include('txt/grille_b1.txt') ;</script>
+    <div id="grille_b" style="top: 147px; left:184px; cursor: not-allowed;">
+      <pre id="grille_b_ferme" style="display: block;"><script>document.include('txt/grille_b1.txt') ;</script>
+      </pre>
+      <pre id="grille_b_ouvert" style="display: none;"><script>document.include('txt/grille_b2.txt') ;</script>
       </pre>
     </div>
 
@@ -63,7 +71,7 @@ inventaire
     </div>
 
 
-    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;">
+    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;" onclick="citation_gynepunk()">
       <pre ><script>document.include('txt/meurtriere.txt');</script>
       </pre>
     </div>
@@ -92,50 +100,57 @@ inventaire
 
 <div id="intro" style=" display:none;">
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
-  <button id="bouton_oui" onclick="intro()" style=" display:none; z-index:5; top:47px;left: 0px; position: absolute; width:205px; transform: translate(-50%, -50%);">Ça colle, je... j'ai l'impression de m'enfoncer</button>
+  <button id="bouton_0_a" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:-100px;">Ça colle, je...<br>j'ai l'impression de m'enfoncer</button>
+  <button id="bouton_0_b" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:100px;">Y a quoi dans ce marécage&nbsp;? La végétation autour est très étrange</button>
 </div>
 
 <div id="vns_1" style=" display:none;">
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_1.txt')</script></pre>
-  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 110px; top:60px; left:-80px;">Facile à dire avec vos ailes&nbsp;!</button>
-  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 110px; top:60px; left:80px;">Respire...</button>
+  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:-80px;">Facile à dire avec vos ailes qui vous gardent au sec...</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:80px;">Ça a toujours été marécageux par ici&nbsp;?</button>
 </div>
 
 
-<div id="vns_2" style=" display:none;">
+<div id="vns_2" style="display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_2.txt')</script></pre>
  <button id="bouton_2" class="bouton_intro" onclick="VNS_2()" style="width: 250px; top:78px;">Je ne saurai dire si cette histoire est vraie ou fausse...</button>
 </div>
 
-<div id="vns_3" style=" display:none;">
+<div id="vns_3" style="display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_3.txt')</script></pre>
  <button id="bouton_3" class="bouton_intro" onclick="VNS_3()" style="width: 120px; top:70px;">C'est qui "eux"&nbsp;?</button>
 </div>
 
-<div id="vns_4" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_4.txt')</script></pre>
- <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:-80px;">Ma ferme aussi elle faisait partie de la terre...</button>
-  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:80px;">Comment je fais pour passer la porte que vous gardez&nbsp;?</button>
+<div id="vns_4" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_4.txt')</script></pre>
+  <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:-80px;">Ma ferme aussi elle faisait partie de la terre...</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:80px;">Y a quoi derrière les grilles que vous gardez&nbsp;?</button>
 </div>
 
-<div id="vns_5" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_5.txt')</script></pre>
+<div id="vns_5" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_5.txt')</script></pre>
 </div>
 
-<div id="vns_6" style=" display:none;">
- <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_6.txt')</script></pre>
+<div id="vns_6" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_6.txt')</script></pre>
+  <button id="bouton_vns_non" class="bouton_intro" onclick="tout_fermer()" style="top:78px; width: 250px;">J'essaie, mais je n'y suis pas encore</button>
+  <button id="bouton_vns_oui" class="bouton_intro" onclick="donner_fleur()" style="top: 78px; width: 300px;">Je ne sais pas, mais j'ai passé une éternité à faire pousser ce bouquet de tournesols</button>
 </div>
 
-<div id="vns_gauche" style=" display:none;">
- <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_gauche.txt')</script></pre>
+<div id="vns_7" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_7.txt')</script></pre>
 </div>
 
-<div id="vns_droite" style=" display:none;">
- <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_droite.txt')</script></pre>
+<div id="vns_gauche" style="display:none;">
+  <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_gauche.txt')</script></pre>
 </div>
 
-<div id="citation_k_j" style="display: none;">
-  <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_katherine_johnson.txt');</script>
+<div id="vns_droite" style="display:none;">
+  <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_droite.txt')</script></pre>
+</div>
+
+<div id="citation_gynepunk" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_gynepunk.txt');</script>
   </pre>
 </div>
 
@@ -161,8 +176,29 @@ inventaire
  
 <script type="text/javascript">
 
-  function fonction_vers_arene(){
-  window.location.href='../SCENE_ARENE/arene.html'; 
+
+  ///////////////////////ONLOAD////////////////////////////
+
+  if(localStorage.getItem("bouquet") == "donne"){
+    document.getElementById("grille_a_ouvert").style.display= "block";
+    document.getElementById("grille_a_ferme").style.display= "none";
+    document.getElementById("grille_a").style.cursor= "alias";
+  }
+
+  if(localStorage.getItem("slime") == "ok"){
+    document.getElementById("etoile").style.cursor= "auto";
+  }
+
+  if(localStorage.getItem("citation_gynepunk") == "ok"){
+    document.getElementById("meurtriere").style.cursor= "auto";
+  }
+
+  ///////////////////////FONCTIONS////////////////////////////
+
+  function fonctionArene(){
+    if(localStorage.getItem("bouquet") == "donne"){
+      window.location.href='../SCENE_ARENE/arene.html';
+    }
   }
 
   function slime(){
@@ -171,19 +207,34 @@ inventaire
     }else{
       document.getElementById("slime").style.display = "block";
       document.getElementById("tout_fermer").style.display = "block";
-      localStorage.setItem("slime", "ok"); 
+      document.getElementById("etoile").style.cursor = "auto";
+      localStorage.setItem("slime", "ok");
     }
+  }
+
+  function citation_gynepunk(){
+    if(localStorage.getItem("citation_gynepunk") == "ok"){
+      document.getElementById("meurtriere").style.cursor = "auto";   
+    }else{
+      document.getElementById("citation_gynepunk").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      document.getElementById("meurtriere").style.cursor = "auto";
+      localStorage.setItem("citation_gynepunk", "ok");
     }
+  }
 
 
   function tout_fermer(){
     document.getElementById("tout_fermer").style.display = "none";
-    document.getElementById("bouton_oui").style.display= "none";
+    document.getElementById("bouton_0_a").style.display= "none";
+    document.getElementById("bouton_0_b").style.display= "none";
     document.getElementById("slime").style.display= "none";
+    document.getElementById("citation_gynepunk").style.display= "none";
+    document.getElementById("vns_7").style.display= "none";
     document.getElementById("vns_6").style.display= "none";     
     document.getElementById("vns_5").style.display= "none";
     document.getElementById("vns_gauche").style.display= "none";     
-    document.getElementById("vns_droite").style.display= "none";   
+    document.getElementById("vns_droite").style.display= "none"; 
   }
 
 
@@ -193,11 +244,23 @@ inventaire
     if(localStorage.getItem("intro_vns") == "ok"){
     document.getElementById("vns_6").style.display= "block";
     document.getElementById("tout_fermer").style.display = "block";
+      if(localStorage.getItem("bouquet") == "ok"){
+      document.getElementById("bouton_vns_oui").style.display= "block";
+      document.getElementById("bouton_vns_non").style.display= "none";
+      }else if (localStorage.getItem("bouquet") == "donne"){
+      document.getElementById("vns_6").style.display= "none";
+      document.getElementById("vns_7").style.display= "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      }else{
+      document.getElementById("bouton_vns_oui").style.display= "none";
+      document.getElementById("bouton_vns_non").style.display= "block";
+      }
     }else{
     document.getElementById("intro").style.display= "block";
-    document.getElementById("bouton_oui").style.display= "block";
+    document.getElementById("bouton_0_a").style.display= "block";
+    document.getElementById("bouton_0_b").style.display= "block";
     }
-    }
+  }
 
 
 
@@ -205,7 +268,8 @@ inventaire
     document.getElementById("vns_1").style.display= "block";   
     document.getElementById("bouton_1_a").style.display= "block";
     document.getElementById("bouton_1_b").style.display= "block";
-    document.getElementById("bouton_oui").style.display= "none";
+    document.getElementById("bouton_0_a").style.display= "none";
+    document.getElementById("bouton_0_b").style.display= "none";
     document.getElementById("intro").style.display= "none";
     document.getElementById("bloqueur").style.display = "block";
   }
@@ -249,12 +313,30 @@ inventaire
   function fonction_gargouille_gauche(){
     document.getElementById("vns_gauche").style.display= "block";
     document.getElementById("tout_fermer").style.display= "block";
-    }
+  }
 
   function fonction_gargouille_droite(){
     document.getElementById("vns_droite").style.display= "block";
     document.getElementById("tout_fermer").style.display= "block";
-    }
+  }
+
+  function donner_fleur(){
+    document.getElementById("vns_6").style.display= "none";
+    setTimeout(function() {
+      document.getElementById("pouce").style.display= "block";
+    }, 1000);
+    setTimeout(function() {
+      document.getElementById("grille_a_ouvert").style.display= "block";
+      document.getElementById("grille_a_ferme").style.display= "none";
+    }, 2000);
+    setTimeout(function() {
+        document.getElementById("vns_7").style.display = "block";
+    }, 3000);  
+    document.getElementById("bloqueur").style.display= "none";
+    document.getElementById("tout_fermer").style.display= "block";
+    document.getElementById("grille_a").style.cursor= "alias";
+    localStorage.setItem("bouquet", "donne");
+  }
     
 
 
@@ -338,6 +420,7 @@ inventaire
 }
         // Start the animation after all text files are preloaded
         animate_garg_droite();
+
 
 
     </script>
