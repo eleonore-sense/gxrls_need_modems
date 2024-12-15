@@ -82,6 +82,10 @@ inventaire
       </pre>
     </div>
 
+    <div id="sang" style="left:-531px; top: 253px; cursor: pointer;" onclick="thf()">
+      <pre ><script>document.include('txt/sang.txt');</script>
+      </pre>
+    </div>
 
     <div style="left:-330px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_gauche()">
       <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
@@ -154,9 +158,13 @@ inventaire
   </pre>
 </div>
 
-
 <div id="slime" style="display: none;">
   <pre style="background-color: white; z-index:6;"><script>document.include('txt/slime.txt');</script>
+  </pre>
+</div>
+
+<div id="thf" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/thf.txt');</script>
   </pre>
 </div>
 
@@ -223,6 +231,11 @@ inventaire
     }
   }
 
+  function thf(){
+      document.getElementById("thf").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+  }
+
 
   function tout_fermer(){
     document.getElementById("tout_fermer").style.display = "none";
@@ -230,6 +243,7 @@ inventaire
     document.getElementById("bouton_0_b").style.display= "none";
     document.getElementById("slime").style.display= "none";
     document.getElementById("citation_gynepunk").style.display= "none";
+    document.getElementById("thf").style.display= "none";
     document.getElementById("vns_7").style.display= "none";
     document.getElementById("vns_6").style.display= "none";     
     document.getElementById("vns_5").style.display= "none";
