@@ -38,60 +38,60 @@ inventaire
   <div id="letout">
 
 
-    <div id="paysage" style="top: 43px;">
+    <div id="paysage" style="margin-top: 43px;">
       <pre ><script>document.include('txt/fond_entree.txt');</script>
       </pre>
     </div>
 
-    <div id="champi" style="left:20.5px; top: 307px;">
+    <div id="champi" style="margin-left:20.5px; margin-top: 307px;">
       <pre><script>document.include('txt/champi.txt');</script></pre>
     </div>
 
-    <div id="pouce" style="left:617px; top: 138px; display:none;">
+    <div id="pouce" style="margin-left:617px; margin-top: 138px; display:none;">
       <pre><script>document.include('txt/pouce.txt');</script></pre>
     </div>
 
-    <div id="grille_a" style="top: 131px; left:-180px; cursor: not-allowed;" onclick="fonctionArene()">
+    <div id="grille_a" style="margin-top: 130px; margin-left:-165px; cursor: not-allowed;" onclick="fonctionArene()">
       <pre id="grille_a_ferme" style="display: block;"><script>document.include('txt/grille_a1.txt') ;</script>
       </pre>
       <pre id="grille_a_ouvert" style="display: none;"><script>document.include('txt/grille_a2.txt') ;</script>
       </pre>
     </div>
 
-    <div id="grille_b" style="top: 147px; left:184px; cursor: not-allowed;">
+    <div id="grille_b" style="margin-top: 143px; margin-left:167px; cursor: not-allowed;">
       <pre id="grille_b_ferme" style="display: block;"><script>document.include('txt/grille_b1.txt') ;</script>
       </pre>
       <pre id="grille_b_ouvert" style="display: none;"><script>document.include('txt/grille_b2.txt') ;</script>
       </pre>
     </div>
 
-    <div id="gargouille" style="top: -165px; cursor:pointer;" onclick="fonction_gargouille()">
+    <div id="gargouille" style="margin-top: -159px; cursor:pointer;" onclick="fonction_gargouille()">
       <pre ><script>document.include('txt/gargouille.txt') ;</script>
       </pre>
     </div>
 
 
-    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;" onclick="citation_gynepunk()">
+    <div id="meurtriere" style="margin-left:368px; margin-top: 89px; cursor: pointer;" onclick="citation_gynepunk()">
       <pre ><script>document.include('txt/meurtriere.txt');</script>
       </pre>
     </div>
 
 
-    <div id="etoile" style="left:-304px; top: 291px; cursor: pointer;" onclick="slime()">
+    <div id="etoile" style="margin-left:-287px; margin-top: 291px; cursor: pointer;" onclick="slime()">
       <pre ><script>document.include('txt/etoile.txt');</script>
       </pre>
     </div>
 
-    <div id="sang" style="left:-531px; top: 253px; cursor: pointer;" onclick="thf()">
+    <div id="sang" style="margin-left:-407px; margin-top: 219px; cursor: pointer;" onclick="thf()">
       <pre ><script>document.include('txt/sang.txt');</script>
       </pre>
     </div>
 
-    <div style="left:-330px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_gauche()">
+    <div style="margin-left:-297px; margin-top: -220px; cursor:pointer;" onclick="fonction_gargouille_gauche()">
       <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
     </div>
 
-    <div style="left:350px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_droite()">
+    <div style="margin-left:324px; margin-top: -250px; cursor:pointer;" onclick="fonction_gargouille_droite()">
       <pre id="garg_droite"><script>document.include('txt/garg_droite1.txt');</script></pre>
     </div>
       
@@ -102,8 +102,8 @@ inventaire
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
 
 
-<div id="intro" style=" display:none;">
-  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+<div id="intro" class="popup" style=" display:none;">
+  <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
   <button id="bouton_0_a" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:-100px;">Ça colle, je...<br>j'ai l'impression de m'enfoncer</button>
   <button id="bouton_0_b" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:100px;">Y a quoi dans ce marécage&nbsp;? La végétation autour est très étrange</button>
 </div>
