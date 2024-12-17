@@ -4,71 +4,138 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+	
 
-	<style type="text/css">
-		body {
-            font-size: 13px;
-            font-family: Consolas;
-            margin: 0; 
-            display: flex; /* Use flexbox to center the content */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set the body height to full viewport height */
-            width: 100vw;
-        }
 
-        pre {
-        	position: absolute;
+
+</head>
+
+<style>
+
+    
+        div{
             top: 50%;
             left: 50%;  
             transform: translate(-50%, -50%);
         }
-	</style>
 
-	<script type="text/javascript">
-		document.include = function (url) {
- 			if ('undefined' == typeof(url)) return false;
- 			var p,rnd;
- 			if (document.all){
-   				p = new ActiveXObject("Microsoft.XMLHTTP");
- 			} else {
-   				p = new XMLHttpRequest();
- 			}
 
- 			rnd = Math.random().toString().substring(2);
- 			url = url.indexOf('?')>-1 ? url+'&rnd='+rnd : url+'?rnd='+rnd;
- 			p.open("GET",url,false);
- 			p.send(null);
- 			document.write( p.responseText );
-		}	
-	</script>
+  @keyframes dame{
+0%{left:0px; top: 35px;}
+12%{left:20px; top: 20px;}
+25%{left:35px; top: 0px;}
+37%{left:20px; top: -20px;}
+50%{left:0px; top: -35px;}
+62%{left:-20px; top: -20px;}
+75%{left:-35px; top: 0px;}
+87%{left:-20px; top: 20px;}
+100%{left:0px; top: 35px;}}
 
-</head>
+
+
+.punchline{
+	display:none;
+}
+</style>
 
 <body>
 
-	<a href="../CARTO/bigcarto.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">retour à la carto --></a>
 
-    <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: black; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">inventaire</a>
 
-	<pre id="ksj"><script>document.include('txt/ksj.txt');</script></pre>
+                <a href="../CARTO/bigcarto.html" id="bigcarto">
+retour à la carto -->
+  </a>
 
-	<pre id="reponse1" style="margin-left: 0px; margin-top:-250px; display: none;"><script>document.include('txt/rep1.txt');</script></pre>
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire">
+inventaire
+  </a>
 
-	<select id="question" style="position: absolute; margin-left: 600px;">
-	    <option>Demande la clé du savoir</option>
-	    <option>Wesh, on est où là ?</option>
+
+<div id="letout">
+
+	<div id="bande_deco_haut" style="margin-top: -320px;">
+		<pre ><script>document.include('txt/bord.txt');</script></pre>
+	</div>
+
+
+	<div id="punchline" style="margin-top: -230px; width: 255px; margin-left: 190px; transform:translate(0%,0%);">
+		<p class="punchline" id="punchline1">L’informatique est trop importante pour être laissée aux hommes.</p>
+		<p class="punchline" id="punchline2">L’informatique esblopte pour être laissée aux hommes.</p>
+		<p class="punchline" id="punchline3">L’informatique exesdnte pour être laissée aux hommes.</p>
+		<p class="punchline" id="punchline4">L’informique rhaaa pour être laissée aux hommes.</p>
+		<p class="punchline" id="punchline5">L’informatique est ouhlala importante pour être laissée aux hommes.</p>
+
+	</div>
+
+	<div id="ksj" style="margin-left: -260px; animation: dame linear reverse infinite; animation-duration: 12s;">
+		<pre ><script>document.include('txt/ksj.txt');</script></pre>
+	</div>
+
+
+
+<div id="deroule_question" style="margin-top:-124px; margin-left: 190px; transform: translate(0%, 0%);">
+	<select id="question" style="">
+	    <option>...</option>
+	    <option>Whouaa, mais ou est-ce que je suis?</option>
 	</select>
+</div>
 
-	<button type="button" onclick="myFunction()" style="position: absolute; margin-left: 600px; margin-top: 250px;">Rajouter une question</button>
 
+<div id="reponse" style="transform: translate(0%, 0%);">
+	<pre id="reponse1" style="display: none; transform: translate(0%,0%); margin-left: 190px;"><script>document.include('txt/rep1.txt');</script></pre>
+
+</div>
+
+
+
+	<button type="button" onclick="myFunction()" style="display: none;">Rajouter une question</button>
+
+
+	<div id="bande_deco_bas" style="margin-top: 320px;">
+		<pre ><script>document.include('txt/bord.txt');</script></pre>
+	</div>
+
+
+
+
+</div>
 
 <script>
+
+
+
+      $( window ).on( "load", function() {
+
+  var tirage = Math.floor(Math.random() * 5);
+
+if(tirage == 0){
+$("#punchline1").css('display','block'); 
+}else if(tirage == 1){
+$("#punchline2").css('display','block'); 
+
+}else if(tirage == 2){
+$("#punchline3").css('display','block'); 
+
+}else if(tirage == 3){
+$("#punchline4").css('display','block'); 
+
+}else if(tirage == 4){
+$("#punchline5").css('display','block'); 
+
+}else{
+$("#punchline6").css('display','block'); 
+
+}
+
+})
 
 	document.getElementById('question').addEventListener('change',function(){
 		setTimeout(function(){
 			document.getElementById('reponse1').style.display = "block";},
-		2000);
+		500);
     });
 
 
@@ -80,7 +147,13 @@ function myFunction() {
 }
 
 
+
+
 </script>
+
+
+
+
 
 </body>
 </html> 
