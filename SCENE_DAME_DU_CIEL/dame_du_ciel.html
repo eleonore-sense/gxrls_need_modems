@@ -210,9 +210,11 @@ $('#x').css('cursor', 'auto');
 if(localStorage.getItem("bouquet") == "ok"){
 $('#grande_fleur').css('cursor', 'auto');
 }else{}
+if(localStorage.getItem("bouquet") == "donne"){
+$('#grande_fleur').css('cursor', 'auto');
+}
 
-
-      })        
+  })        
 
         function fonction_telescope(){
  window.location.href='../SCENE_TELESCOPE/telescope.html'; 
@@ -362,6 +364,9 @@ localStorage.setItem("plus_joli", "ok");
 
 function grande_fleur(){
 if(localStorage.getItem("bouquet") == "ok"){
+$("#grande_fleur").css('cursor','auto');    
+}else if(localStorage.getItem("bouquet") == "donne"){
+$("#grande_fleur").css('cursor','auto');
 }else{
 $("#recolter").css('display','block');
 $("#tout_fermer").css('display','block');
