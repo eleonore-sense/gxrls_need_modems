@@ -39,6 +39,17 @@
 .punchline{
 	display:none;
 }
+
+
+.reponse{
+	transform: translate(0%, 0%);}
+
+.pre_reponse{
+display: none; 
+transform: translate(0%,0%); 
+margin-left: 190px;
+
+}
 </style>
 
 <body>
@@ -63,10 +74,10 @@ inventaire
 
 	<div id="punchline" style="margin-top: -230px; width: 255px; margin-left: 190px; transform:translate(0%,0%);">
 		<p class="punchline" id="punchline1">L’informatique est trop importante pour être laissée aux hommes.</p>
-		<p class="punchline" id="punchline2">L’informatique esblopte pour être laissée aux hommes.</p>
-		<p class="punchline" id="punchline3">L’informatique exesdnte pour être laissée aux hommes.</p>
-		<p class="punchline" id="punchline4">L’informique rhaaa pour être laissée aux hommes.</p>
-		<p class="punchline" id="punchline5">L’informatique est ouhlala importante pour être laissée aux hommes.</p>
+		<p class="punchline" id="punchline2"></p>
+		<p class="punchline" id="punchline3"></p>
+		<p class="punchline" id="punchline4"></p>
+		<p class="punchline" id="punchline5"></p>
 
 	</div>
 
@@ -78,20 +89,21 @@ inventaire
 
 <div id="deroule_question" style="margin-top:-124px; margin-left: 190px; transform: translate(0%, 0%);">
 	<select id="question" style="">
-	    <option>...</option>
-	    <option>Whouaa, mais ou est-ce que je suis?</option>
+	    <option value="0">...</option>
+	    <option id="option1" value="1">Whouaa, mais ou est-ce que je suis?</option>
+	    <option id="option2" value="2">pourquoi avez-vous des plumes?</option>	    
 	</select>
 </div>
 
 
-<div id="reponse" style="transform: translate(0%, 0%);">
-	<pre id="reponse1" style="display: none; transform: translate(0%,0%); margin-left: 190px;"><script>document.include('txt/rep1.txt');</script></pre>
-
+<div id="reponse" class="reponse">
+	<pre id="reponse1" class="pre_reponse"><script>document.include('txt/rep1.txt');</script></pre>
+	<pre id="reponse2" class="reponse"><script>document.include('txt/rep2.txt');</script></pre>
 </div>
 
 
 
-	<button type="button" onclick="myFunction()" style="display: none;">Rajouter une question</button>
+	<button type="button" onclick="myFunction()" style="">Rajouter une question</button>
 
 
 	<div id="bande_deco_bas" style="margin-top: 320px;">
@@ -132,7 +144,23 @@ $("#punchline6").css('display','block');
 
 })
 
-	document.getElementById('question').addEventListener('change',function(){
+var activities = document.getElementById("question");
+ var choix = $('#question').find(":selected").val();
+
+activities.addEventListener("click", function(){
+if (choix==1){
+	$('#reponse1').css('display', 'block');
+} else if(choix==2){
+	$('#reponse2').css('display', 'block');
+}else{}
+
+
+
+});
+
+
+	document.getElementBy
+Id('question').addEventListener('change',function(){
 		setTimeout(function(){
 			document.getElementById('reponse1').style.display = "block";},
 		500);
@@ -140,10 +168,13 @@ $("#punchline6").css('display','block');
 
 
 function myFunction() {
-  var x = document.getElementById("question");
-  var option = document.createElement("option");
-  option.text = "C'est quoi un modem ?";
-  x.add(option);
+//  var x = document.getElementById("question");
+//  var option = document.createElement("option");
+//  option.text = "C'est quoi un modem ?";
+//  x.add(option);
+$('#option1').text('Hello world');
+$('#option1').val('defaultValue');
+
 }
 
 
