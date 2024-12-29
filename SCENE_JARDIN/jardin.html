@@ -26,6 +26,11 @@
         </pre>
     </div>
 
+    <div id="paysage_djinn" style="right: 0; display: none;">
+        <pre ><script>document.include('txt/fond_jardin_djinn.txt');</script>
+        </pre>
+    </div>
+
     <div id="postale" style="top: -292.5px; cursor:zoom-in; " onclick="fonctionPostale()">
         <pre ><script>document.include('txt/driftcoremini.txt') ;</script>
         </pre>
@@ -41,18 +46,15 @@
         </pre>
     </div>
 
-    <div style="top: 277px; left: 121px; cursor:pointer;">
-        <pre id="lanterne" style="height: 215.6px;"><script>document.include('txt/lanterne.txt') ;</script>
+    <div style="top: 192.5px; left: 121px; cursor:pointer;" onclick="fonctionLanterne()">
+        <pre id="lanterne"><script>document.include('txt/lanterne.txt') ;</script>
         </pre>
     </div>
 
-    <!-- ////AUTRES DIV////
-
-    <div id="sphinx" style="top: 100px; left:-357px; cursor:pointer; " onclick="fonctionSphinx()">
-        <pre ><script>document.include('txt/sphinx.txt') ;</script>
-        </pre>
+    <div id="djinn" style="margin-top: 38px; margin-left: 294px; cursor:pointer; display: none;" onclick="fonctionDjinn1()">
+      <pre><script>document.include('txt/djinn.txt') ;</script>
+      </pre>
     </div>
--->
 
 
 <!--/////////GOODIES/////////-->
@@ -88,80 +90,41 @@
 		<pre class="pre_popup" ><script>document.include('txt/poignard.txt')</script></pre>
 	</div>
 
+<!--dialogue djinn-->
 
+    <div id="dialogue_1" class="popup" style=" display:none;">
+        <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_1.txt')</script></pre>
+        <button id="bouton_1_a" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:20px;">Tu sors d'où&nbsp;?</button>
+        <button id="bouton_1_b" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:60px;">C'est vrai qu'on y a mis de l'attention</button>
+    </div>
 
+    <div id="dialogue_2" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_2.txt')</script></pre>
+        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:-100px;">Dis-m'en plus</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
+    </div>
 
-<!--///////////////////////INTRO TEMPLE///////////////////////////////////-->
+    <div id="dialogue_3" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_3.txt')</script></pre>
+        <button id="bouton_3" class="bouton_intro" onclick="fonctionDjinn4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
+    </div>
 
-<!--
+    <div id="dialogue_4" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_4.txt')</script></pre>
+        <button id="bouton_4" class="bouton_intro" onclick="fonctionDjinn5()" style="width: 280px; top:33px;">Tu travaillais à l'imprimerie, c'est ça&nbsp;?</button>
+    </div>
 
-<div id="intro_temple" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
+    <div id="dialogue_5" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_5.txt')</script></pre>
+    </div>
 
-   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:98px;">c'est quoi ça?</button>
-
-</div>
-
-
-<div id="intro_temple_2" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
-
-   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
-
-</div>
-
-
-<div id="intro_temple_3" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
-
-   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:119px;;">J'ai le message!</button>
-
-   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
-
-</div>
-
--->
-
-<!--shinx parle-->
-
-<!--
-
-<div id="intro_jaime_0" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_0.txt')</script></pre>
-
-   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:201px;">whoua! comment tu as fais ça?</button>
-
-</div>
-
-
-<div id="intro_jaime_1" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_1.txt')</script></pre>
-</div>
-
-
-<div id="jaime_parle" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_2.txt')</script></pre>
-
-   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -95px; width:40px;;">oui!</button>
-
-   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 55px; width:144px; ">je n'ai rien pour toi...</button>
-
-</div>
-
-
-
-<div id="message_merci" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/jaime_merci.txt')</script></pre>
-</div>
-
--->
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  		<div id="tout_fermer" onclick="tout_fermer()"></div>
+  		<div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
 
-
+        <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
 
 
 	</div>
@@ -175,6 +138,22 @@
     <script type="text/javascript">
 
 
+    ///////////////////////ONLOAD////////////////////////////
+
+    if(localStorage.getItem("lanterne_frotte") == "ok"){
+        document.getElementById("paysage").style.display= "none";
+        document.getElementById("paysage_djinn").style.display= "block";
+        document.getElementById("djinn").style.display= "block";
+        document.getElementById("lanterne").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("rose_citation") == "ok"){
+        document.getElementById("rose").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("poignard") == "ok"){
+        document.getElementById("etoile").style.cursor= "auto";
+    }
 
 
     ///////////////////////POP UP///////////////////////////////////
@@ -207,10 +186,68 @@
      		}
  		}
 
+ 	function fonctionLanterne(){
+    	if(localStorage.getItem("lanterne_frotte") == "ok"){   		
+    	}else{
+            $("#djinn").css('display','block');
+            $("#paysage").css('display','none');
+            $("#paysage_djinn").css('display','block');
+            $("#lanterne").css('cursor', 'auto');
+            localStorage.setItem("lanterne_frotte", "ok"); 
+     	}
+ 		}
+
+
+    function fonctionDjinn1(){
+        if(localStorage.getItem("intro_djinn") == "ok"){
+            document.getElementById("dialogue_5").style.display= "block";
+            document.getElementById("tout_fermer").style.display = "block";
+        }else{
+            document.getElementById("dialogue_1").style.display= "block";
+            document.getElementById("bouton_1_a").style.display= "block";
+            document.getElementById("bouton_1_b").style.display= "block";
+        }
+    }
+
+    function fonctionDjinn2(){
+        document.getElementById("dialogue_2").style.display= "block";   
+        document.getElementById("bouton_2_a").style.display= "block";
+        document.getElementById("bouton_2_b").style.display= "block";
+        document.getElementById("bouton_1_a").style.display= "none";
+        document.getElementById("bouton_1_b").style.display= "none";
+        document.getElementById("dialogue_1").style.display= "none";
+        document.getElementById("bloqueur").style.display = "block";
+    }
+
+    function fonctionDjinn3(){
+        document.getElementById("dialogue_3").style.display= "block";   
+        document.getElementById("bouton_3").style.display= "block";
+        document.getElementById("bouton_2_a").style.display= "none";
+        document.getElementById("bouton_2_b").style.display= "none";
+        document.getElementById("dialogue_2").style.display= "none";
+    }
+
+    function fonctionDjinn4(){
+        document.getElementById("dialogue_4").style.display= "block";   
+        document.getElementById("bouton_4").style.display= "block";
+        document.getElementById("bouton_3").style.display= "none";
+        document.getElementById("dialogue_3").style.display= "none";
+    }
+
+    function fonctionDjinn5(){
+        document.getElementById("dialogue_5").style.display= "block";   
+        document.getElementById("bouton_4").style.display= "none";
+        document.getElementById("dialogue_4").style.display= "none";
+        document.getElementById("tout_fermer").style.display= "block";
+        document.getElementById("bloqueur").style.display = "none";
+        localStorage.setItem("intro_djinn", "ok"); 
+    }
+
 
     function tout_fermer(){
         $("#tout_fermer").css('display', 'none');
-        $(".popup").css('display', 'none');    
+        $(".popup").css('display', 'none');
+        $("#dialogue_5").css('display', 'none');
     }
 
 
