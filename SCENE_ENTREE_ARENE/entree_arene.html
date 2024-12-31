@@ -54,7 +54,7 @@
       </pre>
     </div>
 
-    <div id="grille_b" style="margin-top: 143px; margin-left:167px; cursor: not-allowed;">
+    <div id="grille_b" style="margin-top: 143px; margin-left:167px; cursor: not-allowed;" onclick="fonctionJardin()">
       <pre id="grille_b_ferme" style="display: block;"><script>document.include('txt/grille_b1.txt') ;</script>
       </pre>
       <pre id="grille_b_ouvert" style="display: none;"><script>document.include('txt/grille_b2.txt') ;</script>
@@ -141,6 +141,15 @@
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_7.txt')</script></pre>
 </div>
 
+<div id="vns_8" style="display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_8.txt')</script></pre>
+ <button id="bouton_8" class="bouton_intro" onclick="grille_b()" style="width: 230px; top:60px;">Il y a quoi derrière l'autre grille&nbsp;?</button>
+</div>
+
+<div id="vns_9" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_9.txt')</script></pre>
+</div>
+
 <div id="vns_gauche" style="display:none;">
   <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_gauche.txt')</script></pre>
 </div>
@@ -188,6 +197,12 @@
     document.getElementById("grille_a").style.cursor= "alias";
   }
 
+  if(localStorage.getItem("grille_b") == "ouvert"){
+    document.getElementById("grille_b_ouvert").style.display= "block";
+    document.getElementById("grille_b_ferme").style.display= "none";
+    document.getElementById("grille_b").style.cursor= "alias";
+  }
+
   if(localStorage.getItem("slime") == "ok"){
     document.getElementById("etoile").style.cursor= "auto";
   }
@@ -201,6 +216,12 @@
   function fonctionArene(){
     if(localStorage.getItem("bouquet") == "donne"){
       window.location.href='../SCENE_ARENE/arene.html';
+    }
+  }
+
+  function fonctionJardin(){
+    if(localStorage.getItem("grille_b") == "ouvert"){
+      window.location.href='../SCENE_JARDIN/jardin.html';
     }
   }
 
@@ -237,6 +258,7 @@
     document.getElementById("slime").style.display= "none";
     document.getElementById("citation_gynepunk").style.display= "none";
     document.getElementById("thf").style.display= "none";
+    document.getElementById("vns_9").style.display= "none";
     document.getElementById("vns_7").style.display= "none";
     document.getElementById("vns_6").style.display= "none";     
     document.getElementById("vns_5").style.display= "none";
@@ -258,6 +280,14 @@
       document.getElementById("vns_6").style.display= "none";
       document.getElementById("vns_7").style.display= "block";
       document.getElementById("tout_fermer").style.display = "block";
+        if (localStorage.getItem("retourne_source") == "ok"){
+        document.getElementById("vns_7").style.display= "none";
+        document.getElementById("vns_8").style.display= "block";
+        }
+          if (localStorage.getItem("grille_b") == "ouvert"){
+          document.getElementById("vns_8").style.display= "none";
+          document.getElementById("vns_9").style.display= "block";
+          }
       }else{
       document.getElementById("bouton_vns_oui").style.display= "none";
       document.getElementById("bouton_vns_non").style.display= "block";
@@ -343,6 +373,25 @@
     document.getElementById("tout_fermer").style.display= "block";
     document.getElementById("grille_a").style.cursor= "alias";
     localStorage.setItem("bouquet", "donne");
+  }
+
+
+  function grille_b(){
+    document.getElementById("vns_8").style.display= "none";
+    setTimeout(function() {
+      document.getElementById("pouce").style.display= "block";
+    }, 1000);
+    setTimeout(function() {
+      document.getElementById("grille_b_ouvert").style.display= "block";
+      document.getElementById("grille_b_ferme").style.display= "none";
+    }, 2000);
+    setTimeout(function() {
+        document.getElementById("vns_9").style.display = "block";
+    }, 3000);  
+    document.getElementById("bloqueur").style.display= "none";
+    document.getElementById("tout_fermer").style.display= "block";
+    document.getElementById("grille_b").style.cursor= "alias";
+    localStorage.setItem("grille_b", "ouvert");
   }
     
 
