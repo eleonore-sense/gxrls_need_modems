@@ -90,8 +90,38 @@ _|_________\\\\\\                  (_
 
     <pre id="pied" class="pied_drop" style="margin-left:-75px; margin-top:-200px; background-color: white;"><script>document.include('txt/pied.txt');</script></pre>
 
+    <div id="toile" style="margin-left:-1200px; margin-top: 500px; cursor: pointer;" onclick="transfem_serv()">
+      <pre ><script>document.include('txt/toile.txt');</script>
+      </pre>
+    </div>
+
+    <div id="spider" style="margin-left:-950px; margin-top: 350px; cursor: pointer;" onclick="spideralex()">
+      <pre ><script>document.include('txt/spider.txt');</script>
+      </pre>
+    </div>
+
+    <div id="star" style="margin-left:500px; margin-top: 0px; cursor: pointer;" onclick="moog()">
+      <pre ><script>document.include('txt/star.txt');</script>
+      </pre>
+    </div>
+
 
 <!--    ////////////////////////LES POP PAGES////////////////////   -->
+
+    <div id="transfem_serv" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/transfem_serv.txt');</script>
+      </pre>
+    </div>
+
+    <div id="spideralex" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_spideralex.txt');</script>
+      </pre>
+    </div>
+
+    <div id="moog" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/moog.txt');</script>
+      </pre>
+    </div>
 
     <div id="bug_1" class="popup" style=" display:none;">
         <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/bug_1.txt')</script></pre>
@@ -261,6 +291,21 @@ function animate_ver() {
     }
 }
 
+
+/////////ONLOAD/////////
+
+    if(localStorage.getItem("transfem_serv") == "ok"){
+        document.getElementById("toile").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("citation_spideralex") == "ok"){
+        document.getElementById("spider").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("moog") == "ok"){
+        document.getElementById("star").style.cursor= "auto";
+    }
+
 /////////DIALOGUE/////////
 
     if (localStorage.getItem("retourne_source") == "ok") {
@@ -343,11 +388,50 @@ function animate_ver() {
         setTimeout(() => {  window.location.href='../SCENE_ENTREE_ARENE/entree_arene.html'; }, 2000);
     }
 
+
+/////////////////////////////POPUP PAGES/////////////////////////////////
+
+    function transfem_serv(){
+        if(localStorage.getItem("transfem_serv") == "ok"){
+            document.getElementById("toile").style.cursor = "auto";   
+        }else{
+            document.getElementById("transfem_serv").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            document.getElementById("toile").style.cursor = "auto";
+            localStorage.setItem("transfem_serv", "ok");
+        }
+    }
+
+    function spideralex(){
+        if(localStorage.getItem("citation_spideralex") == "ok"){
+            document.getElementById("spider").style.cursor = "auto";   
+        }else{
+            document.getElementById("spideralex").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            document.getElementById("spider").style.cursor = "auto";
+            localStorage.setItem("citation_spideralex", "ok");
+        }
+    }
+
+    function moog(){
+        if(localStorage.getItem("moog") == "ok"){
+            document.getElementById("star").style.cursor = "auto";   
+        }else{
+            document.getElementById("moog").style.display = "block";
+            document.getElementById("tout_fermer").style.display = "block";
+            document.getElementById("star").style.cursor = "auto";
+            localStorage.setItem("moog", "ok");
+        }
+    }
+
     function tout_fermer(){
         $("#tout_fermer").css('display', 'none');
         $(".popup").css('display', 'none');
         $("#bug_6").css('display', 'none');
         $("#bug_7").css('display', 'none');
+        $("#transfem_serv").css('display', 'none');
+        $("#spideralex").css('display', 'none');
+        $("#moog").css('display', 'none');
     }
 
 
