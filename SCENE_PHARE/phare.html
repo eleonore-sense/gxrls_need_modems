@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-SEA <-- FREE --> RIVER
+<!--
+    SEA <- FREE -> RIVER
+-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../style_commun.css">
@@ -12,165 +14,116 @@ SEA <-- FREE --> RIVER
 <body>
 
 
-                <a href="../CARTO/bigcarto.html" id="bigcarto">
-retour à la carto -->
-  </a>
+    <a href="../CARTO/bigcarto.html" id="bigcarto">retour à la carto -->
+    </a>
 
-          <a href="../INVENTAIRE/inventaire.html" id="inventaire" >
-inventaire
-  </a>
+    <a href="../INVENTAIRE/inventaire.html" id="inventaire" >inventaire
+    </a>
 
-    <!--///////////////////////SERPENT///////////////////////////////////-->
   
-  <div id="letout">
+    <div id="letout">
 
 
-    <div id="paysage" style="margin-top: 29px;">
-        <pre ><script>document.include('txt/fond_temple.txt');</script>
-        </pre>
-    </div>
-
-    <div id="temple" style="top: -143px; left:32px; cursor:alias; " onclick="fonctionTemple()">
-        <pre ><script>document.include('txt/temple.txt') ;</script>
-        </pre>
-    </div>
-
-    <div id="sphinx" style="top: 100px; left:-357px; cursor:pointer; " onclick="fonctionSphinx()">
-        <pre ><script>document.include('txt/sphinx.txt') ;</script>
+    <div id="paysage" style="right: 0;">
+        <pre ><script>document.include('txt/fond_phare.txt');</script>
         </pre>
     </div>
 
 
+    <div id="cafe" style="top: -280px; cursor:zoom-in; " onclick="fonctionCafe()">
+        <pre ><script>document.include('txt/cafe.txt') ;</script>
+        </pre>
+    </div>
 
-  <div id="croco_gif" style="margin-top: 221px; margin-left: 158px;">
-        <pre id="croco" style="cursor: pointer;" onclick="fonctionGeekGirl()"></pre>
+    <div id="oiseau" style="top: 200px; left: -315px; cursor:pointer; " onclick="animate_fontaine()">
+        <pre ><script>document.include('txt/oiseau.txt') ;</script>
+        </pre>
+    </div>
 
-  </div>
+    <div style="top: 185px; left: -258px;">
+        <pre id="fontaine" style="height: 215.6px;"><script>document.include('txt/fontaine1.txt') ;</script>
+        </pre>
+    </div>
+
+    <div id="djinn" style="margin-top: 38px; margin-left: 294px; cursor:pointer;" onclick="fonctionDjinn1()">
+      <pre><script>document.include('txt/djinn.txt') ;</script>
+      </pre>
+    </div>
 
 
-<!--goodies-->
-
-    <div id="etoile" style="left:-154px; top: -283px; cursor: pointer;" onclick="fonctionBurritos()">
+<!--/////////GOODIES/////////-->
+	<div style="top: 300px; left: -380px; cursor: pointer;" onclick="fonctionRose()">
+        <pre id="rose"><script>document.include('txt/rose.txt') ;</script>
+        </pre>
+    </div>
+    
+    <div id="etoile" style="left:-175px; top: 280px; cursor: pointer;" onclick="fonctionPoignard()">
         <pre >*</pre>
     </div>
-
-    <div id="dollar" style="left:448px; top: -190px; cursor: pointer;" onclick="fonctionJoy()">
-        <pre >$</pre>
-    </div>
-
-
-
-
-    </div>
-
-
 
 
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
 
-<!--disquette-->
+<!--carte postale driftcore-->
 
-<div id="disquette_jaime" class="popup"style="">
- <pre class="pre_popup"><script>document.include('txt/disquette_jaime.txt')</script></pre>
-</div>
-
-
-<!--geekgirl-->
-
-<div id="geekgirl" class="popup"style="">
- <pre class="pre_popup"><script>document.include('txt/geekgirl.txt')</script></pre>
-</div>
+	<div id="carte_driftcore" class="popup" style="cursor: zoom-out;">
+		<pre class="pre_popup" ><script>document.include('txt/driftcore.txt')</script></pre>
+	</div>
 
 
+<!--citation rose-->
 
-<!--burritos-->
-
-<div id="burritos" class="popup"style="">
- <pre class="pre_popup"><script>document.include('txt/burritos.txt')</script></pre>
-</div>
-
-<!--joy buolamwini-->
-
-<div id="joy_buolamwini" class="popup"style="">
- <pre class="pre_popup"><script>document.include('txt/joy_buolamwini.txt')</script></pre>
-</div>
+	<div id="rose_citation" class="popup">
+		<pre class="pre_popup" ><script>document.include('txt/rose_citation.txt')</script></pre>
+	</div>
 
 
+<!--poignard-->
 
-<!--///////////////////////INTRO TEMPLE///////////////////////////////////-->
+	<div id="poignard" class="popup">
+		<pre class="pre_popup" ><script>document.include('txt/poignard.txt')</script></pre>
+	</div>
 
+<!--dialogue djinn-->
 
+    <div id="dialogue_1" class="popup" style=" display:none;">
+        <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_1.txt')</script></pre>
+        <button id="bouton_1_a" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:20px;">Tu sors d'où&nbsp;?</button>
+        <button id="bouton_1_b" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:60px;">C'est vrai qu'on y a mis de l'attention</button>
+    </div>
 
-<div id="intro_temple" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
+    <div id="dialogue_2" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_2.txt')</script></pre>
+        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:-100px;">Dis-m'en plus</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
+    </div>
 
-   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:98px;">c'est quoi ça?</button>
+    <div id="dialogue_3" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_3.txt')</script></pre>
+        <button id="bouton_3" class="bouton_intro" onclick="fonctionDjinn4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
+    </div>
 
-</div>
+    <div id="dialogue_4" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_4.txt')</script></pre>
+        <button id="bouton_4" class="bouton_intro" onclick="fonctionDjinn5()" style="width: 280px; top:33px;">Tu travaillais à l'imprimerie, c'est ça&nbsp;?</button>
+    </div>
 
-
-<div id="intro_temple_2" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
-
-   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
-
-</div>
-
-
-<div id="intro_temple_3" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
-
-   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:155px;">J'ai un gender changer!</button>
-
-   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
-
-</div>
-
-
-
-<!--shinx parle-->
-
-<div id="intro_jaime_0" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_0.txt')</script></pre>
-
-   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:201px;">whoua! comment tu as fais ça?</button>
-
-</div>
-
-
-<div id="intro_jaime_1" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_1.txt')</script></pre>
-</div>
-
-
-<div id="jaime_parle" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/intro_jaime_2.txt')</script></pre>
-
-   <button id="boutonJaimeParle1" class="bouton_intro" onclick="fonctionDonnerMessage()" style="top:47px;left: -86px; width:155px;">j'ai un gender changer!</button>
-
-   <button id="boutonJaimeParle2" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 99px; width:144px; ">je n'ai rien pour toi...</button>
-
-</div>
-
-
-
-<div id="message_merci" class="popup" style="">
- <pre class="pre_popup"><script>document.include('txt/jaime_merci.txt')</script></pre>
-</div>
-
+    <div id="dialogue_5" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_5.txt')</script></pre>
+    </div>
 
 
 <!--///////////////////////FERMER PAGE///////////////////////////////////-->
 
 
-  <div id="tout_fermer" onclick="tout_fermer()"></div>
+  		<div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+        <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
 
 
+	</div>
 
-
-  </div>
-
-    </div>
+	</div>
 
 
 
@@ -179,236 +132,157 @@ inventaire
     <script type="text/javascript">
 
 
-    ///////////////////////ANIMATION CROCO///////////////////////////////////
-
-    const preElement_anim_1 = document.getElementById("croco");
-
-   ///////////////////////**********///////////////////////////////////
-    ///////////////////////ANIMATION///////////////////////////////////
-        ///////////////////////******///////////////////////////////////
-
- 
-
-      $( window ).on( "load", function() {
-        setTimeout(() => {animate_anim_1()}, 1500);
-      if(localStorage.getItem("burritos") == "ok"){
-            document.getElementById("etoile").style.cursor = "auto";
-      }else{
-
-      }
-      if(localStorage.getItem("joy") == "ok"){
-            document.getElementById("dollar").style.cursor = "auto";
-      }else{}
+    ///////////////////////ONLOAD////////////////////////////
 
 
-
-
-  }
-
-);
-
-
-  // Fonction pour récupérer le contenu d'un fichier texte en utilisant XMLHttpRequest
-    function fetchTextFile(filename) {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", filename);
-            xhr.onload = () => {
-                if (xhr.status === 200) {
-                    resolve(xhr.responseText);
-                } else {
-                    reject(Error(xhr.statusText));
-                }
-            };
-            xhr.onerror = () => {
-                reject(Error("Network error"));
-            };
-            xhr.send();
-        });
+    if(localStorage.getItem("rose_citation") == "ok"){
+        document.getElementById("rose").style.cursor= "auto";
     }
 
-
-
-
- // Animation intro_1
-    function animate_anim_1() {
-        const textFiles_anim_1 = [
-            'txt/croco_1.txt',
-            'txt/croco_2.txt',
-            'txt/croco_3.txt',
-            'txt/croco_4.txt',
-            'txt/croco_5.txt',
-            'txt/croco_6.txt',
-            'txt/croco_7.txt',
-            'txt/croco_8.txt'
-        ];
-
-        let counter_anim_1 = 0;
-
-        function animate1() {
-            if (counter_anim_1 < textFiles_anim_1.length) {
-                const filename = textFiles_anim_1[counter_anim_1];
-                fetchTextFile(filename)
-                    .then((fileContent) => {
-                        preElement_anim_1.textContent = fileContent;
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                    });
-                counter_anim_1++;
-                setTimeout(animate1, 100); //intervalle 50 ms
-            } else {
-        counter_anim_1 = 0;
-        setTimeout(animate1, 5000); 
-            }
-
-        }
-
-        animate1(); // Appelle la fonction qui anime portail1
+    if(localStorage.getItem("poignard") == "ok"){
+        document.getElementById("etoile").style.cursor= "auto";
     }
 
 
     ///////////////////////POP UP///////////////////////////////////
 
 
+    function fonctionPostale(){
+       	$("#carte_driftcore").css('display','block');
+        $("#tout_fermer").css('display','block');
+    }
 
+    function fonctionRose(){
+    	if(localStorage.getItem("rose_citation") == "ok"){   
+    	}else{
+            $("#rose_citation").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#rose").css('cursor', 'auto');
+            localStorage.setItem("rose_citation", "ok"); 
+     	}
+ 		}
 
-        function fonctionBurritos(){
-      if(localStorage.getItem("burritos") == "ok"){   
-     }else{
-            $("#burritos").css('display','block');
+ 	function fonctionPoignard(){
+    	if(localStorage.getItem("poignard") == "ok"){   
+     	}else{
+            $("#poignard").css('display','block');
             $("#tout_fermer").css('display','block');
             $("#etoile").css('cursor', 'auto');
-            localStorage.setItem("burritos", "ok"); 
-     }
- }
+            localStorage.setItem("poignard", "ok"); 
+     		}
+ 		}
 
 
-
-
-
-        function fonctionGeekGirl(){
-            document.getElementById("geekgirl").style.display = "block";
-            document.getElementById("tout_fermer").style.display = "block"; 
-        }
-
-
-
-
-
-        function fonctionJoy(){
-      if(localStorage.getItem("joy") == "ok"){   
-     }else{
-            $("#joy_buolamwini").css('display','block');
-            $("#tout_fermer").css('display','block');
-            $("#dollar").css('cursor', 'auto');
-            localStorage.setItem("joy", "ok"); 
-     }
- }
-
-
-
-
-
-
-        function tout_fermer(){
-           $("#tout_fermer").css('display', 'none');
-           $(".popup").css('display', 'none');
-          
-        }
-
-
-
-    function fonctionTemple(){
-        if(localStorage.getItem("intro_temple") == "ok"){
-            if(localStorage.getItem("gender_changer") == "donne"){
-                window.location.href='../SCENE_DAME_TELEPHONE/dame_telephone.html';
-            }else{
-                fonctionIntroTemple2();
-            }
+    function fonctionDjinn1(){
+        if(localStorage.getItem("intro_djinn") == "ok"){
+            document.getElementById("dialogue_5").style.display= "block";
+            document.getElementById("tout_fermer").style.display = "block";
         }else{
-        $("#intro_temple").css('display', 'block');
+            document.getElementById("dialogue_1").style.display= "block";
+            document.getElementById("bouton_1_a").style.display= "block";
+            document.getElementById("bouton_1_b").style.display= "block";
         }
     }
 
-
-       function fonctionIntroTemple1(){
-        $("#intro_temple").css('display', 'none');
-        $("#intro_temple_2").css('display', 'block');
-       }
-
-
-       function fonctionIntroTemple2(){
-        $("#intro_temple_2").css('display', 'none');
-        $("#intro_temple_3").css('display', 'block');
-
-        localStorage.setItem("intro_temple", "ok");
-        if (localStorage.getItem("gender_changer") == "ok"){
-       }else{
-         $("#boutonTemple3a").css('cursor','not-allowed');
-       }
-      }    
-
-
-       function fonctionAccesTemple(){
-        if (localStorage.getItem("gender_changer") == "ok"){
-        $("#intro_temple_3").css('display', 'none');
-        $("#disquette_jaime").css('display', 'block');
-        localStorage.setItem("disquette_jaime", "ok");
-        localStorage.setItem("gender_changer", "donne");
-        $("#tout_fermer").css('display','block');
-       }else{
-         $("#boutonTemple3a").css('cursor','not-allowed');
-       }
-      } 
-
-
-
-       function fonctionSphinx(){
-       
-        if(localStorage.getItem("intro_jaime") == "ok"){
-            if(localStorage.getItem("gender_changer") == "donne"){
-                $("#message_merci").css('display', 'block');
-                $("#tout_fermer").css('display', 'block');
-
-
-            }else if(localStorage.getItem("gender_changer") == "ok"){
-                    $("#jaime_parle").css('display', 'block'); 
-                    $("#boutonJaimeParle1").css('cursor','pointer');
-            }else{
-                $("#jaime_parle").css('display', 'block');
-                $("#boutonJaimeParle1").css('cursor','not-allowed');
-            }
-
-        }else{
-        $("#intro_jaime_0").css('display', 'block');
-        }
+    function fonctionDjinn2(){
+        document.getElementById("dialogue_2").style.display= "block";   
+        document.getElementById("bouton_2_a").style.display= "block";
+        document.getElementById("bouton_2_b").style.display= "block";
+        document.getElementById("bouton_1_a").style.display= "none";
+        document.getElementById("bouton_1_b").style.display= "none";
+        document.getElementById("dialogue_1").style.display= "none";
+        document.getElementById("bloqueur").style.display = "block";
     }
- 
 
+    function fonctionDjinn3(){
+        document.getElementById("dialogue_3").style.display= "block";   
+        document.getElementById("bouton_3").style.display= "block";
+        document.getElementById("bouton_2_a").style.display= "none";
+        document.getElementById("bouton_2_b").style.display= "none";
+        document.getElementById("dialogue_2").style.display= "none";
+    }
 
+    function fonctionDjinn4(){
+        document.getElementById("dialogue_4").style.display= "block";   
+        document.getElementById("bouton_4").style.display= "block";
+        document.getElementById("bouton_3").style.display= "none";
+        document.getElementById("dialogue_3").style.display= "none";
+    }
 
-
-    function fonctionIntroJaime1(){
-        $("#intro_jaime_0").css('display', 'none');
-        $("#intro_jaime_1").css('display', 'block');
-        $("#tout_fermer").css('display', 'block');
-        localStorage.setItem("intro_jaime", "ok");
+    function fonctionDjinn5(){
+        document.getElementById("dialogue_5").style.display= "block";   
+        document.getElementById("bouton_4").style.display= "none";
+        document.getElementById("dialogue_4").style.display= "none";
+        document.getElementById("tout_fermer").style.display= "block";
+        document.getElementById("bloqueur").style.display = "none";
+        localStorage.setItem("intro_djinn", "ok"); 
     }
 
 
-    function fonctionDonnerMessage(){
-        if(localStorage.getItem("gender_changer") == "ok"){
-            $("#jaime_parle").css('display', 'none');
-            $("#disquette_jaime").css('display', 'block');     
-            $("#tout_fermer").css('display', 'block');    
-            localStorage.setItem('gender_changer', 'donne');     
-            localStorage.setItem('disquette_jaime', 'ok');      
-
-            }else{
-         $("#boutonJaimeParle1").css('cursor','not-allowed');
+    function tout_fermer(){
+        $("#tout_fermer").css('display', 'none');
+        $(".popup").css('display', 'none');
+        $("#dialogue_5").css('display', 'none');
     }
-}
+
+
+    ///////////////////////fontaine///////////////////////////////////
+	var text_fontaine = [
+		'txt/fontaine1.txt',
+		'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+	    'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+		'txt/fontaine6.txt',
+	    'txt/fontaine1.txt',
+	    'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+		'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+	    'txt/fontaine6.txt',
+	    'txt/fontaine1.txt',
+	    'txt/fontaine2.txt',
+	    'txt/fontaine3.txt',
+		'txt/fontaine4.txt',
+	    'txt/fontaine5.txt',
+	    'txt/fontaine6.txt'
+	];
+
+	var counter_fontaine = 0;
+	var preElement_fontaine = document.getElementById("fontaine");
+	var textContents_fontaine = [];
+	var timer_fontaine;
+
+	// Preload all the text files using AJAX
+	for (var i = 0; i < text_fontaine.length; i++) {
+	    preloadText_fontaine(text_fontaine[i], i);
+	}
+
+	// Function to preload a text file and store its content
+	function preloadText_fontaine(url, index) {
+	    var request_fontaine = new XMLHttpRequest();
+	    request_fontaine.open('GET', url, true);
+	    request_fontaine.onreadystatechange = function () {
+	        if (request_fontaine.readyState === XMLHttpRequest.DONE && request_fontaine.status === 200) {
+	            textContents_fontaine[index] = request_fontaine.responseText;
+	        }
+	    };
+	    request_fontaine.send();
+	}
+
+	function animate_fontaine() {
+	    if (counter_fontaine < text_fontaine.length) {
+	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
+	        counter_fontaine++;
+	        timer_fontaine = setTimeout(animate_fontaine, 50);
+	    } else {
+	        // Reset the animation to the initial state
+	        counter_fontaine = 0;
+	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
+	    }
+	}
+
+
     </script>
 
 
