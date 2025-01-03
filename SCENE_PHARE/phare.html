@@ -30,45 +30,44 @@
     </div>
 
 
-    <div id="cafe" style="top: -280px; cursor:zoom-in; " onclick="fonctionCafe()">
-        <pre ><script>document.include('txt/cafe.txt') ;</script>
-        </pre>
-    </div>
 
-    <div id="oiseau" style="top: 200px; left: -315px; cursor:pointer; " onclick="animate_fontaine()">
-        <pre ><script>document.include('txt/oiseau.txt') ;</script>
-        </pre>
-    </div>
-
-    <div style="top: 185px; left: -258px;">
-        <pre id="fontaine" style="height: 215.6px;"><script>document.include('txt/fontaine1.txt') ;</script>
-        </pre>
-    </div>
-
-    <div id="djinn" style="margin-top: 38px; margin-left: 294px; cursor:pointer;" onclick="fonctionDjinn1()">
-      <pre><script>document.include('txt/djinn.txt') ;</script>
+    <div id="decodeur" style="margin-left: 415px; cursor:pointer;" onclick="fonctionDjinn1()">
+      <pre><script>document.include('txt/decodeur_1.txt') ;</script>
       </pre>
     </div>
 
 
 <!--/////////GOODIES/////////-->
-	<div style="top: 300px; left: -380px; cursor: pointer;" onclick="fonctionRose()">
-        <pre id="rose"><script>document.include('txt/rose.txt') ;</script>
+    <div id="phare" style="top: -184px; margin-left: -486px; cursor:pointer;" onclick="fonctionNews()">
+        <pre><script>document.include('txt/phare.txt') ;</script>
         </pre>
     </div>
     
-    <div id="etoile" style="left:-175px; top: 280px; cursor: pointer;" onclick="fonctionPoignard()">
-        <pre >*</pre>
+    <div style="top: 100px; left: 100px; cursor: pointer;" onclick="fonctionArete()">
+        <pre id="arete"><script>document.include('txt/arete.txt') ;</script>
+        </pre>
+    </div>
+
+    <div style="top: 300px; left: -380px; cursor: pointer;" onclick="fonctionRose()">
+        <pre id="rose"><script>document.include('txt/rose.txt') ;</script>
+        </pre>
     </div>
 
 
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
 
-<!--carte postale driftcore-->
+<!--electronic cafe-->
 
-	<div id="carte_driftcore" class="popup" style="cursor: zoom-out;">
-		<pre class="pre_popup" ><script>document.include('txt/driftcore.txt')</script></pre>
-	</div>
+    <div id="cafe" style="top: -280px;" onclick="fonctionCafe()">
+        <pre ><script>document.include('txt/cafe.txt') ;</script>
+        </pre>
+    </div>
+
+<!--news-->
+
+    <div id="news" class="popup">
+        <pre class="pre_popup" ><script>document.include('txt/news.txt')</script></pre>
+    </div>
 
 
 <!--citation rose-->
@@ -134,6 +133,9 @@
 
     ///////////////////////ONLOAD////////////////////////////
 
+    if(localStorage.getItem("news") == "ok"){
+        document.getElementById("phare").style.cursor= "auto";
+    }
 
     if(localStorage.getItem("rose_citation") == "ok"){
         document.getElementById("rose").style.cursor= "auto";
@@ -147,10 +149,15 @@
     ///////////////////////POP UP///////////////////////////////////
 
 
-    function fonctionPostale(){
-       	$("#carte_driftcore").css('display','block');
-        $("#tout_fermer").css('display','block');
-    }
+    function fonctionNews(){
+        if(localStorage.getItem("news") == "ok"){   
+        }else{
+            $("#news").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#phare").css('cursor', 'auto');
+            localStorage.setItem("news", "ok"); 
+        }
+        }
 
     function fonctionRose(){
     	if(localStorage.getItem("rose_citation") == "ok"){   
