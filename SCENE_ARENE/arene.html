@@ -316,6 +316,7 @@ function animate_ver() {
 
     function bug_1(){
         document.getElementById("bug_1").style.display = "block";
+        localStorage.setItem("intro_bug", "ok");
     }
 
     function bug_7(){
@@ -366,7 +367,6 @@ function animate_ver() {
             document.getElementById("bug_6").style.display= "block";
             $("#tout_fermer").css("display", "block");
             localStorage.setItem("retourne_source","ok");
-            localStorage.setItem("blabla_ksj","bug");
         }else{
             document.getElementById("popup_phrase").style.display= "none";
             document.getElementById("bug_5").style.display= "block";
