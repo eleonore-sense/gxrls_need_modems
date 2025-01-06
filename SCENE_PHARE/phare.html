@@ -31,8 +31,8 @@
 
 
 
-    <div id="decodeur" style="margin-left: 415px; cursor:pointer;" onclick="fonctionDjinn1()">
-      <pre><script>document.include('txt/decodeur_1.txt') ;</script>
+    <div id="decodeur" style="margin-left: 415px; cursor:pointer;" onclick="fonctionJude1()">
+      <pre id="decodeur_ordi" style="height: 688px;"><script>document.include('txt/decodeur_1.txt') ;</script>
       </pre>
     </div>
 
@@ -45,11 +45,6 @@
     
     <div style="top: 100px; left: 100px; cursor: pointer;" onclick="fonctionArete()">
         <pre id="arete"><script>document.include('txt/arete.txt') ;</script>
-        </pre>
-    </div>
-
-    <div style="top: 300px; left: -380px; cursor: pointer;" onclick="fonctionRose()">
-        <pre id="rose"><script>document.include('txt/rose.txt') ;</script>
         </pre>
     </div>
 
@@ -70,45 +65,31 @@
     </div>
 
 
-<!--citation rose-->
+<!--stjude-->
 
-	<div id="rose_citation" class="popup">
-		<pre class="pre_popup" ><script>document.include('txt/rose_citation.txt')</script></pre>
-	</div>
-
-
-<!--poignard-->
-
-	<div id="poignard" class="popup">
-		<pre class="pre_popup" ><script>document.include('txt/poignard.txt')</script></pre>
-	</div>
-
-<!--dialogue djinn-->
-
-    <div id="dialogue_1" class="popup" style=" display:none;">
-        <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_1.txt')</script></pre>
-        <button id="bouton_1_a" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:20px;">Tu sors d'où&nbsp;?</button>
-        <button id="bouton_1_b" class="bouton_intro" onclick="fonctionDjinn2()" style="width:150px; top:60px;">C'est vrai qu'on y a mis de l'attention</button>
+    <div id="stjude_1" class="popup" style=" display:none;">
+        <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_1.txt')</script></pre>
+        <button id="bouton_1" class="bouton_intro" onclick="fonctionJude2()" style="width:200px; top:50px;">Quel est ce visage qui parle dans cette roche&nbsp;?</button>
     </div>
 
-    <div id="dialogue_2" style=" display:none;">
-        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_2.txt')</script></pre>
-        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:-100px;">Dis-m'en plus</button>
-        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
+    <div id="stjude_2" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_2.txt')</script></pre>
+        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionJude3()" style="width: 160px; top:70px; left:-100px;">Dis-m'en plus</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionJude3()" style="width: 160px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
     </div>
 
-    <div id="dialogue_3" style=" display:none;">
-        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_3.txt')</script></pre>
-        <button id="bouton_3" class="bouton_intro" onclick="fonctionDjinn4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
+    <div id="stjude_3" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_3.txt')</script></pre>
+        <button id="bouton_3" class="bouton_intro" onclick="fonctionJude4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
     </div>
 
-    <div id="dialogue_4" style=" display:none;">
-        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_4.txt')</script></pre>
-        <button id="bouton_4" class="bouton_intro" onclick="fonctionDjinn5()" style="width: 280px; top:33px;">Tu travaillais à l'imprimerie, c'est ça&nbsp;?</button>
+    <div id="stjude_4" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_4.txt')</script></pre>
+        <button id="bouton_4" class="bouton_intro" onclick="fonctionDecodage()" style="width: 280px; top:33px;">Ah, tiens&nbsp;! J'en ai une sous la mains</button>
     </div>
 
-    <div id="dialogue_5" style=" display:none;">
-        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_5.txt')</script></pre>
+    <div id="stjude_5" style=" display:none;">
+        <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_5.txt')</script></pre>
     </div>
 
 
@@ -137,14 +118,6 @@
         document.getElementById("phare").style.cursor= "auto";
     }
 
-    if(localStorage.getItem("rose_citation") == "ok"){
-        document.getElementById("rose").style.cursor= "auto";
-    }
-
-    if(localStorage.getItem("poignard") == "ok"){
-        document.getElementById("etoile").style.cursor= "auto";
-    }
-
 
     ///////////////////////POP UP///////////////////////////////////
 
@@ -159,135 +132,104 @@
         }
         }
 
-    function fonctionRose(){
-    	if(localStorage.getItem("rose_citation") == "ok"){   
-    	}else{
-            $("#rose_citation").css('display','block');
-            $("#tout_fermer").css('display','block');
-            $("#rose").css('cursor', 'auto');
-            localStorage.setItem("rose_citation", "ok"); 
-     	}
- 		}
 
- 	function fonctionPoignard(){
-    	if(localStorage.getItem("poignard") == "ok"){   
-     	}else{
-            $("#poignard").css('display','block');
-            $("#tout_fermer").css('display','block');
-            $("#etoile").css('cursor', 'auto');
-            localStorage.setItem("poignard", "ok"); 
-     		}
- 		}
-
-
-    function fonctionDjinn1(){
-        if(localStorage.getItem("intro_djinn") == "ok"){
-            document.getElementById("dialogue_5").style.display= "block";
+    function fonctionJude1(){
+        if(localStorage.getItem("intro_Jude") == "ok"){
+            document.getElementById("stjude_4").style.display= "block";
             document.getElementById("tout_fermer").style.display = "block";
         }else{
-            document.getElementById("dialogue_1").style.display= "block";
-            document.getElementById("bouton_1_a").style.display= "block";
-            document.getElementById("bouton_1_b").style.display= "block";
+            document.getElementById("stjude_1").style.display= "block";
+            document.getElementById("bouton_1").style.display= "block";
         }
     }
 
-    function fonctionDjinn2(){
-        document.getElementById("dialogue_2").style.display= "block";   
+    function fonctionJude2(){
+        document.getElementById("stjude_2").style.display= "block";   
         document.getElementById("bouton_2_a").style.display= "block";
         document.getElementById("bouton_2_b").style.display= "block";
-        document.getElementById("bouton_1_a").style.display= "none";
-        document.getElementById("bouton_1_b").style.display= "none";
-        document.getElementById("dialogue_1").style.display= "none";
+        document.getElementById("bouton_1").style.display= "none";
+        document.getElementById("stjude_1").style.display= "none";
         document.getElementById("bloqueur").style.display = "block";
     }
 
-    function fonctionDjinn3(){
-        document.getElementById("dialogue_3").style.display= "block";   
+    function fonctionJude3(){
+        document.getElementById("stjude_3").style.display= "block";   
         document.getElementById("bouton_3").style.display= "block";
         document.getElementById("bouton_2_a").style.display= "none";
         document.getElementById("bouton_2_b").style.display= "none";
-        document.getElementById("dialogue_2").style.display= "none";
+        document.getElementById("stjude_2").style.display= "none";
+        localStorage.setItem("intro_Jude", "ok");
     }
 
-    function fonctionDjinn4(){
-        document.getElementById("dialogue_4").style.display= "block";   
+    function fonctionJude4(){
+        document.getElementById("stjude_4").style.display= "block";   
         document.getElementById("bouton_4").style.display= "block";
         document.getElementById("bouton_3").style.display= "none";
-        document.getElementById("dialogue_3").style.display= "none";
+        document.getElementById("stjude_3").style.display= "none";
     }
 
-    function fonctionDjinn5(){
-        document.getElementById("dialogue_5").style.display= "block";   
+
+    function fonctionJude5(){
+        document.getElementById("stjude_5").style.display= "block";   
         document.getElementById("bouton_4").style.display= "none";
-        document.getElementById("dialogue_4").style.display= "none";
+        document.getElementById("stjude_4").style.display= "none";
         document.getElementById("tout_fermer").style.display= "block";
-        document.getElementById("bloqueur").style.display = "none";
-        localStorage.setItem("intro_djinn", "ok"); 
+        document.getElementById("bloqueur").style.display = "none"; 
     }
 
 
     function tout_fermer(){
         $("#tout_fermer").css('display', 'none');
         $(".popup").css('display', 'none');
-        $("#dialogue_5").css('display', 'none');
+        $("#stjude_5").css('display', 'none');
     }
 
 
-    ///////////////////////fontaine///////////////////////////////////
-	var text_fontaine = [
-		'txt/fontaine1.txt',
-		'txt/fontaine2.txt',
-	    'txt/fontaine3.txt',
-	    'txt/fontaine4.txt',
-	    'txt/fontaine5.txt',
-		'txt/fontaine6.txt',
-	    'txt/fontaine1.txt',
-	    'txt/fontaine2.txt',
-	    'txt/fontaine3.txt',
-		'txt/fontaine4.txt',
-	    'txt/fontaine5.txt',
-	    'txt/fontaine6.txt',
-	    'txt/fontaine1.txt',
-	    'txt/fontaine2.txt',
-	    'txt/fontaine3.txt',
-		'txt/fontaine4.txt',
-	    'txt/fontaine5.txt',
-	    'txt/fontaine6.txt'
-	];
+    ///////////////////////decodeur///////////////////////////////////
+var text_decodeur = [
+    'txt/decodeur_2.txt',
+    'txt/decodeur_3.txt',
+    'txt/decodeur_4.txt',
+    'txt/decodeur_5.txt'
+];
 
-	var counter_fontaine = 0;
-	var preElement_fontaine = document.getElementById("fontaine");
-	var textContents_fontaine = [];
-	var timer_fontaine;
+var counter_decodeur = 0;
+var preElement_decodeur = document.getElementById("decodeur_ordi");
+var textContents_decodeur = [];
+var timer_decodeur;
 
-	// Preload all the text files using AJAX
-	for (var i = 0; i < text_fontaine.length; i++) {
-	    preloadText_fontaine(text_fontaine[i], i);
-	}
+// Preload all the text files using AJAX
+for (var i = 0; i < text_decodeur.length; i++) {
+    preloadText_decodeur(text_decodeur[i], i);
+}
 
-	// Function to preload a text file and store its content
-	function preloadText_fontaine(url, index) {
-	    var request_fontaine = new XMLHttpRequest();
-	    request_fontaine.open('GET', url, true);
-	    request_fontaine.onreadystatechange = function () {
-	        if (request_fontaine.readyState === XMLHttpRequest.DONE && request_fontaine.status === 200) {
-	            textContents_fontaine[index] = request_fontaine.responseText;
-	        }
-	    };
-	    request_fontaine.send();
-	}
+// Function to preload a text file and store its content
+function preloadText_decodeur(url, index) {
+    var request_decodeur = new XMLHttpRequest();
+    request_decodeur.open('GET', url, true);
+    request_decodeur.onreadystatechange = function () {
+        if (request_decodeur.readyState === XMLHttpRequest.DONE && request_decodeur.status === 200) {
+            textContents_decodeur[index] = request_decodeur.responseText;
+        }
+    };
+    request_decodeur.send();
+}
 
-	function animate_fontaine() {
-	    if (counter_fontaine < text_fontaine.length) {
-	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
-	        counter_fontaine++;
-	        timer_fontaine = setTimeout(animate_fontaine, 50);
-	    } else {
-	        // Reset the animation to the initial state
-	        counter_fontaine = 0;
-	        preElement_fontaine.textContent = textContents_fontaine[counter_fontaine];
-	    }
-	}
+// Play the animation
+function fonctionDecodage() {
+    document.getElementById("stjude_4").style.display= "none";
+    if (timer_decodeur) clearInterval(timer_decodeur); // Clear any previous animation
+    counter_decodeur = 0; // Reset the counter
+
+    timer_decodeur = setInterval(function () {
+        if (counter_decodeur < text_decodeur.length) {
+            preElement_decodeur.textContent = textContents_decodeur[counter_decodeur];
+            counter_decodeur++;
+        } else {
+            clearInterval(timer_decodeur); // Stop the animation when all frames are shown
+        }
+    }, 1000);
+}
 
 
     </script>
