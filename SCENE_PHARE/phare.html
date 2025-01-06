@@ -9,6 +9,30 @@
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
 
+    <style>
+        @keyframes cafe_drop{
+        0% {margin-top:-500px;}
+        2% {margin-top:-500px;}
+        98% {margin-top:-280px;}
+        100% {margin-top:-280px;}
+        }
+
+        .cafe_drop{
+        animation-name: cafe_drop;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        }
+
+        .cafe_lift{
+        margin-top:-500px;
+        }
+
+        .cafe_ok{
+        margin-top:-280px;
+        }
+
+    </style>
+
 
 </head>
 <body>
@@ -36,6 +60,11 @@
       </pre>
     </div>
 
+    <div id="decodeur_ok" style="margin-left: 415px; cursor:pointer; display: none;" onclick="fonctionJude1()">
+      <pre id="decodeur_ordi" style="height: 688px;"><script>document.include('txt/decodeur_5.txt') ;</script>
+      </pre>
+    </div>
+
 
 <!--/////////GOODIES/////////-->
     <div id="phare" style="top: -184px; margin-left: -486px; cursor:pointer;" onclick="fonctionNews()">
@@ -48,14 +77,33 @@
         </pre>
     </div>
 
+    <div style="top: 200px; left: -100px; cursor: pointer;" onclick="fonctionSeu()">
+        <pre id="palmier"><script>document.include('txt/palmier.txt') ;</script>
+        </pre>
+    </div>
+
 
 <!--///////////////////////PAGE POP UP///////////////////////////////////-->
 
 <!--electronic cafe-->
 
-    <div id="cafe" style="top: -280px;" onclick="fonctionCafe()">
+    <div id="cafe" class="cafe_lift">
         <pre ><script>document.include('txt/cafe.txt') ;</script>
         </pre>
+    </div>
+
+<!--citation mindy seu-->
+
+    <div id="citation_mindyseu" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_mindyseu.txt');</script>
+      </pre>
+    </div>
+
+<!--arete poisson-->
+
+    <div id="arete_poisson" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/arete_poisson.txt');</script>
+      </pre>
     </div>
 
 <!--news-->
@@ -80,12 +128,13 @@
 
     <div id="stjude_3" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_3.txt')</script></pre>
-        <button id="bouton_3" class="bouton_intro" onclick="fonctionJude4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
+        <button id="bouton_3" class="bouton_intro" onclick="fonctionJude4()" style="width: 200px; top:60px;">Je peux essayer&nbsp;?</button>
     </div>
 
     <div id="stjude_4" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_4.txt')</script></pre>
-        <button id="bouton_4" class="bouton_intro" onclick="fonctionDecodage()" style="width: 280px; top:33px;">Ah, tiens&nbsp;! J'en ai une sous la mains</button>
+        <button id="bouton_4_a" class="bouton_intro" onclick="tout_fermer()" style="width: 280px; top:33px;">C'est quoi une disquette&nbsp;?</button>
+        <button id="bouton_4_b" class="bouton_intro" onclick="fonctionDecodage()" style="width: 280px; top:33px;">Ah, tiens&nbsp;! J'en ai une sous la main</button>
     </div>
 
     <div id="stjude_5" style=" display:none;">
@@ -118,6 +167,24 @@
         document.getElementById("phare").style.cursor= "auto";
     }
 
+    if(localStorage.getItem("arete_poisson") == "ok"){
+        document.getElementById("arete").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("citation_seu") == "ok"){
+        document.getElementById("palmier").style.cursor= "auto";
+    }
+
+    if(localStorage.getItem("intro_Jude") == "ok"){
+        document.getElementById("cafe").classList.remove("cafe_lift");
+        document.getElementById("cafe").classList.add("cafe_ok");
+    }
+
+    if(localStorage.getItem("disquette_jaime") == "donne"){
+        document.getElementById("decodeur_ok").style.display= "block";
+        document.getElementById("decodeur").style.display= "none";
+    }
+
 
     ///////////////////////POP UP///////////////////////////////////
 
@@ -132,11 +199,44 @@
         }
         }
 
+    function fonctionArete(){
+        if(localStorage.getItem("arete_poisson") == "ok"){   
+        }else{
+            $("#arete_poisson").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#arete").css('cursor', 'auto');
+            localStorage.setItem("arete_poisson", "ok"); 
+        }
+        }
+
+    function fonctionSeu(){
+        if(localStorage.getItem("citation_seu") == "ok"){   
+        }else{
+            $("#citation_mindyseu").css('display','block');
+            $("#tout_fermer").css('display','block');
+            $("#palmier").css('cursor', 'auto');
+            localStorage.setItem("citation_seu", "ok"); 
+        }
+        }
 
     function fonctionJude1(){
         if(localStorage.getItem("intro_Jude") == "ok"){
             document.getElementById("stjude_4").style.display= "block";
             document.getElementById("tout_fermer").style.display = "block";
+            if(localStorage.getItem("disquette_jaime") == "ok"){
+                document.getElementById("bouton_4_b").style.display= "block";
+                document.getElementById("bouton_4_a").style.display= "none";
+            }else if(localStorage.getItem("disquette_jaime") == "donne"){
+                document.getElementById("stjude_5").style.display= "block";   
+                document.getElementById("bouton_4_a").style.display= "none";
+                document.getElementById("bouton_4_b").style.display= "none";
+                document.getElementById("stjude_4").style.display= "none";
+                document.getElementById("tout_fermer").style.display= "block";
+                document.getElementById("bloqueur").style.display = "none";
+            }else{
+                document.getElementById("bouton_4_b").style.display= "none";
+                document.getElementById("bouton_4_a").style.display= "block";    
+            }
         }else{
             document.getElementById("stjude_1").style.display= "block";
             document.getElementById("bouton_1").style.display= "block";
@@ -158,14 +258,26 @@
         document.getElementById("bouton_2_a").style.display= "none";
         document.getElementById("bouton_2_b").style.display= "none";
         document.getElementById("stjude_2").style.display= "none";
+        document.getElementById("cafe").classList.remove("cafe_lift");
+        document.getElementById("cafe").classList.add("cafe_drop");
         localStorage.setItem("intro_Jude", "ok");
     }
 
     function fonctionJude4(){
-        document.getElementById("stjude_4").style.display= "block";   
-        document.getElementById("bouton_4").style.display= "block";
-        document.getElementById("bouton_3").style.display= "none";
-        document.getElementById("stjude_3").style.display= "none";
+        if(localStorage.getItem("disquette_jaime") == "ok"){
+            document.getElementById("stjude_4").style.display= "block";   
+            document.getElementById("bouton_4_b").style.display= "block";
+            document.getElementById("bouton_4_a").style.display= "none";
+            document.getElementById("bouton_3").style.display= "none";
+            document.getElementById("stjude_3").style.display= "none";
+        }else{
+            document.getElementById("stjude_4").style.display= "block";   
+            document.getElementById("bouton_4_b").style.display= "none";
+            document.getElementById("bouton_4_a").style.display= "block";
+            document.getElementById("bouton_3").style.display= "none";
+            document.getElementById("stjude_3").style.display= "none";
+            document.getElementById("bloqueur").style.display = "none";
+        }
     }
 
 
@@ -181,7 +293,10 @@
     function tout_fermer(){
         $("#tout_fermer").css('display', 'none');
         $(".popup").css('display', 'none');
+        $("#stjude_4").css('display', 'none');
         $("#stjude_5").css('display', 'none');
+        $("#citation_mindyseu").css('display', 'none');
+        $("#arete_poisson").css('display', 'none');
     }
 
 
@@ -218,6 +333,7 @@ function preloadText_decodeur(url, index) {
 // Play the animation
 function fonctionDecodage() {
     document.getElementById("stjude_4").style.display= "none";
+    localStorage.setItem("disquette_jaime", "donne");
     if (timer_decodeur) clearInterval(timer_decodeur); // Clear any previous animation
     counter_decodeur = 0; // Reset the counter
 
@@ -229,6 +345,11 @@ function fonctionDecodage() {
             clearInterval(timer_decodeur); // Stop the animation when all frames are shown
         }
     }, 1000);
+    setTimeout(function() {
+        document.getElementById("stjude_5").style.display= "block";   
+        document.getElementById("tout_fermer").style.display= "block";
+        document.getElementById("bloqueur").style.display = "none";
+    }, 5000);
 }
 
 
