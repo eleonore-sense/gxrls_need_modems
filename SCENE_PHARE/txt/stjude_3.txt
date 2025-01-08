@@ -1,10 +1,15 @@
 +---------------------------------------------------------+
 |                                                         |
 |                                                         |
-|          y a de tout : photo, poésie, musique           |
-|        Le but est de faire exister nos réseaux          |
-|       dans la vraie vie, et d'en créer l'archive.       |
-|                                                         |
+|      Y a vraiment de tout : jeu, poésie, musique...     | 
+|   Tu cherches du monde pour monter un groupe de rock ?  |
+|     Une adresse pour déguster les meilleurs bagels ?    |
+|     Tu peux envoyer des messages vers l'ordinateur      |
+|   avec le téléscripteur, ou parcourir sa mémoire pour   |
+|        lire les réponses ou les anciens messages.       |
+|    On aime bien aussi imprimer les derniers messages    |
+|    et les afficher à côté du terminal pour signaler     |
+|                  qu'il y a du nouveau.                  |
 |                                                         |
 |                                                         |
 |                                                         |
