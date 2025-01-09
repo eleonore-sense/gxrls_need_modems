@@ -99,10 +99,10 @@
       </pre>
     </div>
 
-<!--arete poisson-->
+<!--anna anthropy-->
 
-    <div id="arete_poisson" style="display: none;">
-      <pre style="background-color: white; z-index:6;"><script>document.include('txt/arete_poisson.txt');</script>
+    <div id="anthropy" style="display: none;">
+      <pre style="background-color: white; z-index:6;"><script>document.include('txt/anthropy.txt');</script>
       </pre>
     </div>
 
@@ -167,7 +167,7 @@
         document.getElementById("phare").style.cursor= "auto";
     }
 
-    if(localStorage.getItem("arete_poisson") == "ok"){
+    if(localStorage.getItem("anthropy") == "ok"){
         document.getElementById("arete").style.cursor= "auto";
     }
 
@@ -200,12 +200,12 @@
         }
 
     function fonctionArete(){
-        if(localStorage.getItem("arete_poisson") == "ok"){   
+        if(localStorage.getItem("anthropy") == "ok"){   
         }else{
-            $("#arete_poisson").css('display','block');
+            $("#anthropy").css('display','block');
             $("#tout_fermer").css('display','block');
             $("#arete").css('cursor', 'auto');
-            localStorage.setItem("arete_poisson", "ok"); 
+            localStorage.setItem("anthropy", "ok"); 
         }
         }
 
@@ -296,7 +296,7 @@
         $("#stjude_4").css('display', 'none');
         $("#stjude_5").css('display', 'none');
         $("#citation_mindyseu").css('display', 'none');
-        $("#arete_poisson").css('display', 'none');
+        $("#anthropy").css('display', 'none');
     }
 
 
