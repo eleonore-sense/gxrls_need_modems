@@ -339,12 +339,49 @@
 
 
 <div id="poignard_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre class="pre"><script>document.include('txt/jardin/poignard_texte.txt')</script>
+    <pre class="pre"><script>document.include('../SCENE_JARDIN/txt/poignard.txt')</script>
     </pre>
   </div>
 
 
 
+  <!--///////////////////////MOOG//////////////////////////////////-->
+
+    <div id="moog" class="obj" style=" left: -271px; top:109px;" onclick="fonctionMoog()" >
+        <pre><script>document.include('txt/arene/moog.txt')</script></pre>
+    </div>
+
+
+<div id="moog_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_ARENE/txt/moog.txt')</script>
+    </pre>
+  </div>
+
+
+  <!--///////////////////////CARTOUCHE ANTHROPY/////////////////////////////////-->
+
+    <div id="cartouche_jeu" class="obj" style=" left: -170px; top:100px;" onclick="fonctionCartoucheJeu()" >
+        <pre><script>document.include('txt/phare/cartouche_jeu.txt')</script></pre>
+    </div>
+
+
+<div id="cartouche_jeu_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_PHARE/txt/anthropy.txt')</script>
+    </pre>
+  </div>
+
+
+  <!--///////////////////////NEWS/////////////////////////////////-->
+
+    <div id="news" class="obj" style=" left: -53px; top:109px;" onclick="fonctionNews()" >
+        <pre><script>document.include('txt/phare/news.txt')</script></pre>
+    </div>
+
+
+<div id="news_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_PHARE/txt/news.txt')</script>
+    </pre>
+  </div>
 
 
 <!--///////////////////////LIGNE 5/////////////////////////////////--> 
@@ -447,7 +484,7 @@
   </div>
 
 
-<!--///////////////////////CITATION K J///////////////////////////////////-->
+<!--///////////////////////CITATION MH///////////////////////////////////-->
 
     <div id="citation_m_h_livre" class="obj" style="left: 326px; top: 153px;" onclick="fonctionCitationMH()" >
         <pre><script>document.include('txt/telescope/citation_m_h_livre.txt')</script></pre>
@@ -661,10 +698,79 @@
         <pre class="pre"><script>document.include('../SCENE_ENTREE_ARENE/txt/citation_gynepunk.txt')</script></pre>
   </div>
 
-</div>
+
+
+  <!--///////////////////////CITATION RADHILA GAJJALA///////////////////////////////////-->
+
+    <div id="citation_radhika_livre" class="obj" style="left: 174px; top: 168px;" onclick="fonctionCitationRadhika()" >
+        <pre><script>document.include('txt/jardin/citation_radhika_livre.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_citation_radhika_livre" class="rect_bibli" style="left: 174px; top: 168px; width:23px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_citation_radhika" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_JARDIN/txt/rose_citation.txt')</script></pre>
+  </div>
+
+
+
+  <!--///////////////////////CITATION SPIDERALEX///////////////////////////////////-->
+
+    <div id="citation_spideralex_livre" class="obj" style="left: 344px; top: -8px;" onclick="fonctionCitationSpiderAlex()" >
+        <pre><script>document.include('txt/arene/citation_spideralex_livre.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_citation_spideralex_livre" class="rect_bibli" style="left: 344px; top: 0px; width:23px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_citation_spideralex" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_ARENE/txt/citation_spideralex.txt')</script></pre>
+  </div>
+
+
+
+  <!--///////////////////////CITATION TRANSFEM///////////////////////////////////-->
+
+    <div id="citation_transfem_livre" class="obj" style="left: 470px; top: 0px;" onclick="fonctionCitationTransfem()" >
+        <pre><script>document.include('txt/arene/citation_transfem_livre.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_citation_transfem_livre" class="rect_bibli" style="left: 460px; top: 0px; width:31px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_citation_transfem" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_ARENE/txt/transfem_serv.txt')</script></pre>
+  </div>
+
+
+
+  <!--///////////////////////CITATION MINDY SEU///////////////////////////////////-->
+
+    <div id="citation_mindy_livre" class="obj" style="left: 394px; top: -1px;" onclick="fonctionCitationMindy()" >
+        <pre><script>document.include('txt/phare/citation_mindy_livre.txt')</script></pre>
+    </div>
+
+    <div id="rectangle_citation_mindy_livre" class="rect_bibli" style="left: 394px; top: 0px; width:36px; height:97px;">
+    </div>
+
+
+
+    <div id="txt_citation_mindy" class="texte" onclick="fonctionFermeTout()" >
+        <pre class="pre"><script>document.include('../SCENE_PHARE/txt/citation_mindyseu.txt')</script></pre>
+  </div>
+
+
 
 </div>
 
+</div>
 
 
 <script type="text/javascript">
@@ -837,6 +943,55 @@ $("#rectangle_citation_gynepunk_livre").css('display','block');
 $("#citation_gynepunk_livre").css('display', 'none');
 $("#rectangle_citation_gynepunk_livre").css('display', 'none');
 }});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("rose_citation") == "ok"){
+$("#citation_radhika_livre").css('display','block');
+$("#rectangle_citation_radhika_livre").css('display','block');
+ 
+ }else{
+$("#citation_radhika_livre").css('display', 'none');
+$("#rectangle_citation_radhika_livre").css('display', 'none');
+}});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("citation_spideralex") == "ok"){
+$("#citation_spideralex_livre").css('display','block');
+$("#rectangle_citation_spideralex_livre").css('display','block');
+ 
+ }else{
+$("#citation_spideralex_livre").css('display', 'none');
+$("#rectangle_citation_spideralex_livre").css('display', 'none');
+}});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("transfem_serv") == "ok"){
+$("#citation_transfem_livre").css('display','block');
+$("#rectangle_citation_transfem_livre").css('display','block');
+ 
+ }else{
+$("#citation_transfem_livre").css('display', 'none');
+$("#rectangle_citation_transfem_livre").css('display', 'none');
+}});
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("citation_seu") == "ok"){
+$("#citation_mindy_livre").css('display','block');
+$("#rectangle_citation_mindy_livre").css('display','block');
+ 
+ }else{
+$("#citation_mindy_livre").css('display', 'none');
+$("#rectangle_citation_mindy_livre").css('display', 'none');
+}});
+
+
+
+
+
 
 
 
@@ -1028,6 +1183,29 @@ $("#slime").css('display','block');
 $("#slime").css('display', 'none');
 }}); 
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("moog") == "ok"){
+$("#moog").css('display','block');
+ 
+ }else{
+$("#moog").css('display', 'none');
+}}); 
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("anthropy") == "ok"){
+$("#cartouche_jeu").css('display','block');
+ 
+ }else{
+$("#cartouche_jeu").css('display', 'none');
+}}); 
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("news") == "ok"){
+$("#news").css('display','block');
+ 
+ }else{
+$("#news").css('display', 'none');
+}}); 
 
 
 function fonctionFermeTout(){
@@ -1196,7 +1374,30 @@ $("#poignard_texte").css('display','block');
 
 }
 
+///////////////////////////Moog//////////////////////////////////////
 
+function fonctionMoog(){
+        fonctionFermeTout();
+$("#moog_texte").css('display','block');
+
+}
+
+
+///////////////////////////CartoucheJeu//////////////////////////////////////
+
+function fonctionCartoucheJeu(){
+        fonctionFermeTout();
+$("#cartouche_jeu_texte").css('display','block');
+
+}
+
+///////////////////////////News//////////////////////////////////////
+
+function fonctionNews(){
+        fonctionFermeTout();
+$("#news_texte").css('display','block');
+
+}
 
 ///////////////////////////Slime//////////////////////////////////////
 
@@ -1309,6 +1510,43 @@ $("#txt_poeme_lorrie").css('display','block');
 function fonctionCitationGynepunk(){
         fonctionFermeTout();
 $("#txt_citation_gynepunk").css('display','block');
+
+}
+
+
+///////////////////////////CITATION RADHILA GAJJALA//////////////////////////////////////
+
+function fonctionCitationRadhika(){
+        fonctionFermeTout();
+$("#txt_citation_radhika").css('display','block');
+
+}
+
+///////////////////////////CITATION SPIDERALEX//////////////////////////////////////
+
+function fonctionCitationSpiderAlex(){
+        fonctionFermeTout();
+$("#txt_citation_spideralex").css('display','block');
+
+}
+
+
+///////////////////////////CITATION TRANSFEM SERVER//////////////////////////////////////
+
+function fonctionCitationTransfem(){
+        fonctionFermeTout();
+$("#txt_citation_transfem").css('display','block');
+
+}
+
+
+
+
+///////////////////////////CITATION MINDY SEU//////////////////////////////////////
+
+function fonctionCitationMindy(){
+        fonctionFermeTout();
+$("#txt_citation_mindy").css('display','block');
 
 }
 
