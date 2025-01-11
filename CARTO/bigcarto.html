@@ -22,6 +22,20 @@
     
 
 
+#bouton_redemarrer{
+ cursor:pointer; 
+ text-decoration: none; 
+ color: black; 
+ z-index:3; 
+ margin-top: 60px; 
+ position: absolute; 
+ right: 0%;
+ top: 0% ; 
+ margin-right: 30px; 
+ transform: translate(0%, 0%);
+width: 120px; 
+}
+
   </style>
 </head>
 
@@ -32,6 +46,8 @@
           <a href="../INDEX/index.html" id="bigcarto" style="font-size: 13px; ">
 générique
   </a>
+
+              <button id="bouton_redemarrer"onclick="redemarrer()">redemarrer le jeu</button>
 
           <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="font-size: 13px;">
 inventaire
@@ -145,7 +161,10 @@ function blablaPont(){
     }
 
 
-
+function redemarrer(){
+  window.location.href='../SCENE1_FERME/ferme.html'
+ localStorage.clear();
+}
 
   </script>
 
