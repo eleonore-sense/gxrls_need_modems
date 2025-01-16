@@ -5,9 +5,9 @@
 |            ______                                                                    |
 |          ,'"       "-._                                                              |
 |        ,'              "-._ _._             Cette énorme antenne semble              |
-|        ;              __,-'/   |            transmettre super loin!                  |
+|        ;              __,-'/   |            transmettre super loin !                 |
 |       ;|           ,-' _,'"'._,.                                                     |
-|       |:            _,'      |\ `.          On dirait qu'il y a une inscription:     |
+|       |:            _,'      |\ `.          On dirait qu'il y a une inscription :    |
 |       : \       _,-'         | \  `.        "création de supports numériques         |
 |        \ \   ,-'             |  \   \        dans les langues africaines             |
 |         \ '.         .-.     |       \       sur la toile et les applications"       |

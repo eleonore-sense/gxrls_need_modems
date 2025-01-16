@@ -1,10 +1,10 @@
-+------------------------------------------------+
-|                                                |
-|                                                |
-|       Ah et tu risques de croiser plein        |
-|         de créatures. Considère-les            |
-|       comme une extension des milliers         |
-|    de main qui ont construit cet "endroit".    |
-|                                                |
-|                                                |
-+------------------------------------------------+
++-----------------------------------------------+
+|                                               |
+|                                               |
+|       Ah et tu risques de croiser plein       |
+|          de créatures. Considère-les          |
+|       comme une extension des milliers        |
+|   de mains qui ont construit cet "endroit".   |
+|                                               |
+|                                               |
++-----------------------------------------------+

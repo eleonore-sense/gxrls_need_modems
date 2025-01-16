@@ -165,7 +165,7 @@
         <div id="tracteur_txt" >
             <pre style=" z-index: 9; background-color:white; "><script>document.include('txt/tracteur_txt.txt');</script></pre>
         </div>
-            <button onclick="window.location.href = '../SCENE2_CHAMPS/champs.html'" style="z-index: 16; position:absolute; width: 108px; transform: translate(-50%,-50%); top:40px; cursor: pointer;">aller au champs</button>
+            <button onclick="window.location.href = '../SCENE2_CHAMPS/champs.html'" style="z-index: 16; position:absolute; width: 108px; transform: translate(-50%,-50%); top:40px; cursor: pointer;">Aller au champ</button>
     </div>
 
 
@@ -212,7 +212,13 @@
 
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
+
+//////ONLOAD/////
+if(localStorage.getItem("os") == "ok"){
+    document.getElementById("etoile").style.cursor = "auto";
+}
+
    ///////////////////////**********///////////////////////////////////
     ///////////////////////ANIMATION///////////////////////////////////
         ///////////////////////******///////////////////////////////////
@@ -351,6 +357,8 @@ document.getElementById("page_quitter").style.display = "block";
 
     ///////////////////////OS///////////////////////////////////
 
+
+
 function os(){
       if(localStorage.getItem("os") == "ok"){
             document.getElementById("etoile").style.cursor = "auto";   
@@ -361,8 +369,6 @@ function os(){
 
           }
         }
-
-
 
     ///////////////////////nettoyer///////////////////////////////////
 

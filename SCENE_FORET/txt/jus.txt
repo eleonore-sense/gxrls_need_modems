@@ -3,7 +3,7 @@
  |%:¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨:%|
  |%:                                             :%|
  |%:     .~~~~.        Hey, tu as trouvé         :%|
- |%:     i====i_       un jus de pamplemousse!   :%|
+ |%:     i====i_       un jus de pamplemousse !  :%|
  |%:     |cccc|_)      c'est toujours            :%|
  |%:     |cccc|        réconfortant              :%|
  |%:     `-==-'        pendant une quête...      :%|

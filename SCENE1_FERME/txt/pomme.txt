@@ -4,7 +4,7 @@
 |                                                  |
 |      ,--./,-.                                    |
 |     / #      \      Les pommes de ce pommier     |
-|    |          |     ont l'air trop bonnes!       |
+|    |          |     ont l'air trop bonnes !      |
 |     \        /                                   |
 |      `._,._,'                                    |
 |                                                  |

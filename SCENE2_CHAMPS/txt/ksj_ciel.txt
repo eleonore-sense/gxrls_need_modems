@@ -1,8 +1,8 @@
 +--------------------------------------+
 |                                      |
 |                                      |
-|        Il est vraiment étrange       |
-|         cet oiseau qui rode...       |
+|       Il est vraiment étrange        |
+|        cet oiseau qui rôde...        |
 |         Je n'arrive pas bien         |
 |     à distinguer ce que c'est...     |
 |      On dirait presque qu'iel a      |

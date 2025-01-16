@@ -1,7 +1,7 @@
 +------------------------------+
 |                              |
-|          aller hop!          |
-|    il est temps d'activer    |
-|         le moulin!           |
+|          Allez hop !         |
+|    Il est temps d'activer    |
+|         le moulin !          |
 |                              |
 +------------------------------+

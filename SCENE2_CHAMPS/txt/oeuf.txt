@@ -2,9 +2,9 @@
 |                                            |
 |                                            |
 |      ,'"`.                                 |
-|     /     \        Chouette un oeuf!       |
-|    :       :       de quoi se faire        |
-|    :       :    de superbes omelettes!     |
+|     /     \        Chouette un œuf !       |
+|    :       :       De quoi se faire        |
+|    :       :    de superbes omelettes !    |
 |     `.___,'                                |
 |                                            |
 |                                            |

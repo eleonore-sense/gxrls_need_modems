@@ -3,20 +3,22 @@
 |   |                                                   |
  \_ |                                                   |
     |      "I think that I shall never see              |
-    |       a graph more lovely than a tree.            |
+    |       A graph more lovely than a tree.            |
     |                                                   |
     |       A tree whose crucial property               |
-    |       is loop-free connectivity.                  |
+    |       Is loop-free connectivity.                  |
     |                                                   |
     |       A tree that must be sure to span            |
-    |       so packe can reach every LAN.               |
+    |       So packets can reach every LAN.             |
     |                                                   |
     |       First, the root must be selected.           |
     |       By ID, it is elected.                       |
-    |       Least-cost paths from root are traced.      |
+    |                                                   |
+    |       Least cost paths from root are traced.      |
+    |       In the tree, these paths are placed.        |
     |                                                   |
     |       A mesh is made by folks like me,            |
-    |       then bridges find a spanning tree."         |
+    |       Then bridges find a spanning tree."         |
     |                                                   |
     |                                                   |
     |            			Radia Perlman   |
