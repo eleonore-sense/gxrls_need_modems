@@ -2,10 +2,10 @@
 |                                                                         |
 |                   _                                                     |
 |            __..--''/\                                                   |
-|      _..-''_.\`|  /  \         Oh, une lettre!                          |
-|     \`-._  `.-'_ /    \        c'est certainement un programme          |
+|      _..-''_.\`|  /  \         Oh, une lettre !                         |
+|     \`-._  `.-'_ /    \        C'est certainement un programme          |
 |      \   ``-.(|\)`._   \       de logiciel envoyé par                   |
-|       \    ,'       `-._\      les télétravailleur·euses à Steeve!      |
+|       \    ,'       `-._\      les télétravailleur·euses à Steve!       |
 |        \  /     _..--''                                                 |
 |         \/_..-''                                                        |
 |                                                                         |

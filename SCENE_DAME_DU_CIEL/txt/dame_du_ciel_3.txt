@@ -1,8 +1,8 @@
 +--------------------------------------------------+
 |                                                  |
 |                                                  |
-|       Bah écoute, on est payé entre 0,01         |
-|           et 0,6 franc de l'heure...             |
+|       Bah écoute, on est payées entre 0,01       |
+|            et 0,6 franc de l'heure...            |
 |                                                  |
 |                                                  |
 |                                                  |

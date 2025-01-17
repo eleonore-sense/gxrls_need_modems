@@ -19,10 +19,10 @@
      )                       `-......-`                           )
                                                                    
     (                                                            (  
-     )             "si le probleme a une solution                 )
-    (              il ne sert a rien de s'inquiter               (
+     )             "Si le problème a une solution                 )
+    (              il ne sert a rien de s'inquiéter              (
                    mais s'il n'y a pas de solution,                  
-    (              s'inquieter ne changera rien"                 (
+    (              s'inquiéter ne changera rien"                 (
      )                                                            )
     (                                                            (
     /\''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''\    

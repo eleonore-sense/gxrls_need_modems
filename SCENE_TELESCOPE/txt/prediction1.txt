@@ -20,9 +20,9 @@
                                                                    
     (                                                            (   
      )               "Si je dois tomber de haut                   )
-    (                 que la chute soit lente.                   (
+    (                 que ma chute soit lente                    (
                       Je n'ai trouvé de repos                      
-    (                 que dans l'indifférence."                  (
+    (                 que dans l'indifférence"                   (
      )                                                            )
     (                                                            (
     /\''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''\    

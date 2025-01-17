@@ -22,7 +22,7 @@
      )      "Le pire, c'est pas la méchanceté des hommes          )
     (      Mais le silence des autres qui font tous semblant     (
              d'hésiter, Et quand les enfants me demandent            
-    (       Pourquoi la mer est-elle salée? Je suis obligé       (
+    (      Pourquoi la mer est-elle salée ? Je suis obligé       (
      )      de répondre que les poissons ont trop pleuré"         )
     (                                                            (
     /\''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''\    

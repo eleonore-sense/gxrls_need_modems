@@ -1,17 +1,17 @@
 +--------------------------------------------------------------+
 |                                                              |
 |                                                              |
-|  j'ai créer un programme système de priorisation des tâches: |
-|    en gros, quand le module lunaire s’apprêtait à alunir,    |
+|  J'ai créé un programme système de priorisation des tâches.  |
+|    En gros, quand le module lunaire s’apprêtait à alunir,    |
 |          de nombreuses alarmes se sont déclenchées.          |
-|   L’ordinateur de bord subissait une surchauffe anormale     |
-|     et était incapable de traiter toutes les données         |
-|    simultanément. Mais j'avais intégré des programmes        |
-|            de récupération dans le logiciel,                 |
+|    L’ordinateur de bord subissait une surchauffe anormale    |
+|       et était incapable de traiter toutes les données       |
+|      simultanément. Mais j'avais intégré des programmes      |
+|               de récupération dans le logiciel,              |
 |    ce qui permettait d’éliminer les tâches de priorité       |
 |  inférieure et d’exécuter celles de priorité plus élevée.    |
 |                                                              |
-|  l'ensemble du code était une pile de papier de ma taille!   |
+|  L'ensemble du code était une pile de papier de ma taille !  |
 |                                                              |
 |                                                              |
 |                                                              |

@@ -2,8 +2,8 @@
 |                                                  |
 |                                                  |
 |    Nous sommes les dames de la carte du ciel,    |
-|      on détermine la position des étoiles        |
-|       à partir de plaque photographique.         |
+|       on détermine la position des étoiles       |
+|       à partir de plaques photographiques.       |
 |                                                  |
 |                                                  |
 |                                                  |

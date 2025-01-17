@@ -1,9 +1,9 @@
 +---------------------------------------------------------------+
 |                                                               |
 |                                                               |
-|     tu es ici dans les bureaux du freelance programmers.      |
-|        Ici on conçoit des logiciels informatiques             |
-|           C'est moi Steeve. Enfin Stéphanie...                |
+|      Tu es ici dans les bureaux de Freelance Programmers.     |
+|           Ici on conçoit des logiciels informatiques          |
+|              C'est moi Steve. Enfin Stéphanie...              |
 |                                                               |
 |                                                               |
 |                                                               |
