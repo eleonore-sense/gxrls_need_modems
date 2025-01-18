@@ -206,7 +206,7 @@ inventaire
         <pre style=" background-color: white; margin: 7px;"><script>document.include('txt/popup_mdp.txt');</script></pre>
      <div id="le_mdp" class="centre_ecran" style="display: flex; margin-top:30px; transform:translate(-50%,-50%); position: absolute; ">
         <input type="text" id="mdp" style=" margin-right: 30px;"/>
-        <button id="donner_mdp" style="cursor: pointer;" onclick="fonctionMdp()">soumettre</button>
+        <button id="donner_mdp" style="cursor: pointer;" onclick="fonctionMdp()">Soumettre</button>
 
     </div>        
     <div id="faux_mdp" style="transform:translate(-50%,-50%); width: 400px; text-align: center; margin-top: 66px; display: none; "><p>/!\ le mot de passe est incorrect. veuillez réessayer</p></div>
@@ -381,7 +381,14 @@ setTimeout(() => {animate_anim_1()}, 1500);
         animate1(); // Appelle la fonction qui anime portail1
     }
 
+////ONLOAD////
+if (localStorage.getItem("cd_lady_gaga") == "ok") {
+    $("#ouvre_disque").css('cursor', 'auto');
+}
 
+if (localStorage.getItem("susan_kare") == "ok") {
+    $('#active_poubelle').css('cursor','auto');
+}
 
     ///////////////////////**********///////////////////////////////////
     ///////////////////////FONCTION///////////////////////////////////
@@ -402,6 +409,8 @@ setTimeout(() => {animate_anim_1()}, 1500);
         }
 
 //////////////////////////CD LADY GAGA//////////////////////////////////////
+
+
 
     function fonctionLadyGaga(){
         if (localStorage.getItem("cd_lady_gaga") == "ok") {
@@ -499,19 +508,17 @@ setTimeout(() => {animate_anim_1()}, 1500);
     }
 
 
-//////////////////////////FONCTION MDP//////////////////////////////////////
+//////////////////////////FONCTION POUBELLE//////////////////////////////////////
 
-    function fonctionActivePoubelle(){
-
-        if (localStorage.getItem("susan_kare") == "ok") {
-       $('#active_poubelle').css('cursor','auto');
-        }else{
-            $("#susan_kare").css('display','block');
-            $("#tout_fermer").css("display", "block");
-            localStorage.setItem("susan_kare", "ok");   
-
-        }
+function fonctionActivePoubelle(){
+    if (localStorage.getItem("susan_kare") == "ok") {
+        $('#active_poubelle').css('cursor','auto');
+    }else{
+        $("#susan_kare").css('display','block');
+        $("#tout_fermer").css("display", "block");
+        localStorage.setItem("susan_kare", "ok");   
     }
+}
 
 
 
@@ -537,7 +544,7 @@ function init() {
 }
 
 function terminalStart() {
-  terminalWrite('\n>> ..............................................................\nLogin as Jean Sammet.............................................\nWelcome to the International Business Machines Corporation.......\nWait for connection..............................................\n.................................................................\nHé ho il y a quelqu’un·e?........................................\noui toi, devant l’ordinateur, c’est à toi que je parle!..........\ntu réalises une quête, c’est bien ça?............................\ntape [o] pour répondre [oui]:');
+  terminalWrite('\n>> ..............................................................\nLogin as Jean Sammet.............................................\nWelcome to the International Business Machines Corporation.......\nWait for connection..............................................\n.................................................................\nHé ho il y a quelqu’un·e ?.......................................\nOui toi, devant l’ordinateur, c’est à toi que je parle !.........\nTu réalises une quête, c’est bien ça ?...........................\nTape [o] pour répondre [oui]:');
 }
 
 
@@ -575,18 +582,18 @@ function terminalInputHandler(e) {
   switch (e.keyCode) {
     case 79:
       if(phrase == 0){
-        terminalWrite('\n>> ..............................................................\nc’est bien, c’est bien. Beaucoup de gens en parle par ici,.......\nremarque, c’est aussi que j’en sais des choses...................\nle langage COBOL et FORMAC par exemple...........................\ntu en as déja entendu parler?....................................\ntape [o] pour répondre [oui] ou [n] pour répondre [non]:');
+        terminalWrite('\n>> ..............................................................\nC’est bien, c’est bien. Beaucoup de gens en parlent par ici,.....\nremarque, c’est aussi que j’en sais des choses...................\nle langage COBOL et FORMAC par exemple...........................\nTu en as déja entendu parler ?...................................\nTape [o] pour répondre [oui] ou [n] pour répondre [non]:');
         phrase = 1;
       }else if(phrase == 1){
-        terminalWrite('\n>> ..............................................................\nwhouaou, je suis impressionnée!..................................\nTu es dans la programmation informatique?........................\ntu n’as pas l’air si à l’aise devant cet ordinateur..............\npour avouer que tu as menti, tape [o]:');   
+        terminalWrite('\n>> ..............................................................\nWhouaou, je suis impressionnée !.................................\nTu es dans la programmation informatique ?.......................\nTu n’as pas l’air si à l’aise devant cet ordinateur..............\nPour avouer que tu as menti, tape [o]:');   
         phrase = 2;
 
 
       }else if(phrase ==2){
-        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrit!..................\navec mes équipes, on a simplifier énormément le langage..........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible!.........................\nj’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nentre autre, mon travail a permis que tu discutes................\navec un ordinateur en anglais,...................................\net non plus en formule mathématique, c’est super non?............\ntape [o] pour féliciter j.s et [w] pour demander qui elle est:');
+        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrits !................\nAvec mes équipes, on a énormément simplifié le langage...........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible !........................\nJ’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nEntre autres, mon travail a permis que tu discutes...............\navec un ordinateur en anglais,...................................\net non plus en formules mathématiques, c’est super non ?.........\nTape [o] pour féliciter j.s et [w] pour demander qui elle est:');
         phrase = 3;        
       }else if(phrase ==3){
-        terminalWrite('\n>> ..............................................................\nOhh merci, tu es vraiment un·e correspondant·e sympa!............\nMoi c’est Jean Sammet, je suis enchanté de te rencontrer!........\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité!..................\net c’est un peu grâce à moi aussi................................\nje reste dans le coin si jamais..................................\nje pourrais peut-être t’être utile au cours de ta quête,.........\nbon courage!.....................................................\ntape [q] pour quitter:');
+        terminalWrite('\n>> ..............................................................\nOhh merci, tu es vraiment un·e correspondant·e sympa !...........\nMoi c’est Jean Sammet, je suis enchantée de te rencontrer !......\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité !.................\nEt c’est un peu grâce à moi aussi................................\nJe reste dans le coin si jamais..................................\nJe pourrai peut-être t’être utile au cours de ta quête...........\nBon courage !....................................................\nTape [q] pour quitter:');
 
 
 
@@ -595,26 +602,26 @@ function terminalInputHandler(e) {
 
     case 78:
       if(phrase == 0){
-      terminalWrite("\ncommande non prise en charge\ntape [o] pour répondre [oui]:");
+      terminalWrite("\nCommande non prise en charge\ntape [o] pour répondre [oui]:");
       }
       if(phrase == 1){
-        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrit!..................\navec mes équipes, on a simplifier énormément le langage..........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible!.........................\nj’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nentre autre, mon travail a permis que tu discutes................\navec un ordinateur en anglais,...................................\net non plus en formule mathématique, c’est super non?............\ntape [o] pour féliciter j.s et [w] pour demander qui elle est:');
+        terminalWrite('\n>> ..............................................................\nCe sont des langages de programmation............................\net c’est en grande partie moi qui les ai écrits !................\nAvec mes équipes, on a énormément simplifié le langage...........\ncomme ça lorsque l’on code, on fait beaucoup moins de fautes.....\nce qui le rend beaucoup plus accessible !........................\nJ’ai l’impression que ce n’est pas très clair pour toi...........\n.................................................................\nEntre autres, mon travail a permis que tu discutes...............\navec un ordinateur en anglais,...................................\net non plus en formules mathématiques, c’est super non ?.........\nTape [o] pour féliciter j.s et [w] pour demander qui elle est:');
         phrase = 3;  
       }
     break;      
     default:
       e.preventDefault();
       if(phrase == 0){
-      terminalWrite("\ncommande non prise en charge\ntape [o] pour répondre [oui]:");
+      terminalWrite("\nCommande non prise en charge\nTape [o] pour répondre [oui]:");
   }else{              
-      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+      terminalWrite("\nCommande non prise en charge.....................................\nEn attente d'une entrée valide:");    
   }
      break;
     case 87:
       if(phrase == 3){
-        terminalWrite('\n>> ..............................................................\nMoi c’est Jean Sammet, enchanté!.................................\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité!..................\net c’est un peu grâce à moi aussi................................\nje reste dans le coin si jamais..................................\nje pourrais peut-être t’être utile au cours de ta quête,.........\nbon courage!.....................................................\ntape [q] pour quitter:');
+        terminalWrite('\n>> ..............................................................\nMoi c’est Jean Sammet, enchantée !...............................\nOuiiii, tu as l’impression de parler à un ordinateur.............\nmais c’est avec moi que tu échanges en réalité !.................\nEt c’est un peu grâce à moi aussi................................\nJe reste dans le coin si jamais..................................\nJe pourrai peut-être t’être utile au cours de ta quête...........\nBon courage !....................................................\nTape [q] pour quitter:');
       }else{
-      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");    
+      terminalWrite("\nCommande non prise en charge.....................................\nEn attente d'une entrée valide:");    
       }
     break;
 
@@ -624,7 +631,7 @@ $("#terminal").css('display','none');
 localStorage.setItem("intro_jean", "ok");   
 $(".fond_bureau").css('display','block');
       }else{
-      terminalWrite("\ncommande non prise en charge.....................................\nen attente d’une entrée valide:");    
+      terminalWrite("\nCommande non prise en charge.....................................\nEn attente d’une entrée valide:");    
       }
     break;
   }
@@ -662,9 +669,9 @@ function fonctionActiveMaison() {
 
 function terminal2Start() {
   let x = Math.floor((Math.random() * 2));
-  let text1 = '\n>> ..............................................................\nte voila de retour!..............................................\nla quête avance bien?............................................\nsi jamais tu as besoin de décoder un message,....................\nje te mets à disposition mon programme de décryptage.............\ntu peux y avoir accès en cliquant sur le fichier sur le bureau...\npour l’utiliser, tu dois apporter le mot de passe................\nqui protège ton document.........................................\ntape [q] pour [quitter]:';
+  let text1 = '\n>> ..............................................................\nTe voilà de retour !.............................................\nLa quête avance bien ?...........................................\nDis-moi, je peux te demander un petit service ?..................\nJ’ai un fichier important sur le bureau..........................\nque je n’arrive plus à lire......................................\nJ’ai égaré le mot de passe qui le protège........................\nComme tu es un·e aventurier·e qui voyage pas mal,................\nje me suis dit que tu pourrais peut-être.........................\ninspecter un peu partout pour m’aider à le retrouver ?...........\nJe l’aurais fait moi-même, mais, vois-tu,........................\nje ne suis qu’un simple fantôme qui hante cette machine..........\nTape [q] pour [quitter]:';
 
-let text2 = '\n>> ..............................................................\nsalut salut!.....................................................\nje se sais pas pourquoi mais j’ai une chanson....................\nque je n’arrive pas à me sortir de la tête.......................\nil y a peut-être quelque chose qui traine dans le lecteur-cd.....\ntape [q] pour [quitter]:';
+let text2 = '\n>> ..............................................................\nSalut salut !....................................................\nJe ne sais pas pourquoi mais j’ai une chanson....................\nque je n’arrive pas à me sortir de la tête.......................\nIl y a peut-être quelque chose qui traîne dans le lecteur CD.....\nTape [q] pour [quitter]:';
 if (x==1){
   terminal2Write(text1);
 }else{
@@ -710,7 +717,7 @@ $('#terminal2').css('display','none');
 
     default:
       e.preventDefault();
-      terminalWrite("\ncommande non prise en charge.....................................\nen attente d'une entrée valide:");
+      terminalWrite("\nCommande non prise en charge.....................................\nEn attente d'une entrée valide:");
   }
 }
     

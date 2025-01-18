@@ -5,11 +5,11 @@
 |      __.-"       "--.__                                                                    |
 |    ."  "--.__GENDER    "--.__                                                              |
 |    |         "--.__  CHANGER "--.__                                                        |
-|    |    ___        "--.__          ".        bravo! tu as écris le bon mot de passe!       |
-|    | ¤ |"--.__  "--.__   "--.       |        ça peut être très utile pour relier           |
-|    |   |_ x x "--..__ __     "      |        des branchements et faire des connexions,     |
+|    |    ___        "--.__          ".        Bravo ! Tu as écris le bon mot de passe !     |
+|    | ¤ |"--.__  "--.__   "--.       |        Ça peut être très utile pour relier           |
+|    |   |_ x x "--..__ __     "      |        des branchements et faire des connexions.     |
 |    |     "--.__ x x  |  |    |      |                                                      |
-|    ".__        "--.__|__|  ¤ |      |        fais en bon usage!                            |
+|    ".__        "--.__|__|  ¤ |      |        Fais-en bon usage !                           |
 |        "--.__                |      |                                                      |
 |              "--.__          |      |                                                      |
 |                    "--._     |      |                                                      |

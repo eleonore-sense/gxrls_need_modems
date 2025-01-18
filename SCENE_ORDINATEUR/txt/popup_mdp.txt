@@ -2,7 +2,7 @@
 |_________________________________________________________x_|
 |                                                           |
 |                                                           |
-|     entrez le mot de passe pour décoder votre message:    |
+|    Entrez le mot de passe pour décoder votre message :    |
 |                                                           |
 |                                                           |
 |                                                           |
