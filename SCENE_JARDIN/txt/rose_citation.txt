@@ -19,7 +19,7 @@
 @ |`./ |   ;`._/ \   /         '-.|    /   ;          |  \ |`-\ _/_.'    @
 @ ; _\.|;   \    |.-'             `._.'`'-'            \_.`'`-'' |   _.' @
 @  \   '.`-'``._./                                        |  `,_.' '\.'| @
-@   `'--'    _ .-.     En présence de la technologie.    _'.-.' / | /_ ; @
+@   `'--'    _ .-.     En présence de la technologie     _'.-.' / | /_ ; @
 @     .''-.,' `.  | _   occidentale, comment et quand  ,' `.  ||_  '  /  @
 @ ,.-'\ \ _|_.,-._./ \    sommes-nous construit·e·s.  _|_.,-._.' \._-`   @
 @  \''-',' /  \-.| \  |     comme ignorant·e·s ?    /` /  \-.| \  |_/-., @
