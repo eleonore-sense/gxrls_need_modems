@@ -32,6 +32,10 @@ _|_________\\\\\\                  (_
  display: none;
 }
 
+
+
+
+
  @keyframes saute_mouton_1{
 0%{left:-180px; top: -50px;}
 8%{left:-180px; top: -50px;}
@@ -203,9 +207,9 @@ retour à la carto -->
             <pre style=" z-index: 9; background-color: white;"><script>document.include('txt/cercle_txt1.txt');</script></pre>
         </div>
 
-        <div id="option" style=" z-index: 9; top: 65px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 200px; justify-content: space-between;">
-            <button onclick="fonction_retour_champs()" style="cursor: pointer;">S'éloigner</button>
-            <button onclick="fonction_portail()" style="cursor: pointer;">S'approcher</a></button>
+        <div id="option" style=" z-index: 9; top: 65px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 220px; justify-content: space-between;">
+            <button onclick="fonction_retour_champs()" style="cursor: pointer;">s'éloigner</button>
+            <button onclick="fonction_portail()" style="cursor: pointer;">s'approcher</a></button>
         </div>
 
       </div>
@@ -246,9 +250,9 @@ retour à la carto -->
 
 
 
-        <div id="option_ferme" style=" z-index: 9; top: 35px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 300px; justify-content: space-between;">
-            <button onclick="window.location.href = '../SCENE1_FERME/ferme.html';" style="cursor: pointer;">Retourner à la ferme</button>
-            <button onclick="fonction_retour_champs()" style="cursor: pointer;">Rester au champ</a></button>
+        <div id="option_ferme" style=" z-index: 9; top: 35px; display: flex; transform:translate(-50%, -50%); left: 50%; width: 335px; justify-content: space-between;">
+            <button onclick="window.location.href = '../SCENE1_FERME/ferme.html';" style="cursor: pointer;">retourner à la ferme</button>
+            <button onclick="fonction_retour_champs()" style="cursor: pointer;">rester au champ</a></button>
         </div>
 
       </div>
@@ -553,6 +557,26 @@ setTimeout(() => {$("#phrase_fin").css('display','block')}, 3000);}
 
 
 
+    ///////////////////////ONLOAD////////////////////////////
+
+      $( window ).on( "load", function() {
+ if(sessionStorage.getItem("oeuf") == "ok"){
+$('#canard1').css('cursor', 'auto');
+$('#canard2').css('cursor', 'auto');
+}else{}
+if(sessionStorage.getItem("moulin") == "ok"){
+$('#moulin').css('cursor', 'auto');
+$('#fumee').css('display', 'block');
+}else{}
+if(localStorage.getItem("graine") == "ok"){
+$('#graine').css('cursor', 'auto');
+}else{}
+
+})
+
+
+
+
 
     ///////////////////////**********///////////////////////////////////
     ///////////////////////FONCTION///////////////////////////////////
@@ -560,30 +584,30 @@ setTimeout(() => {$("#phrase_fin").css('display','block')}, 3000);}
 
 
 function fonction_oiseau(){
-document.getElementById("ksj_ciel").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
+$("#ksj_ciel").css("display","block");
+$("#tout_fermer").css("display","block");
     }
 
 
 function moulin(){
 if (sessionStorage.getItem("moulin") == "ok"){
-            document.getElementById("moulin").style.cursor = "auto";
+$('#moulin').css('cursor', 'auto');
 
 }else{
-document.getElementById("fumee").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
-document.getElementById("activer_moulin").style.display = "block";
+$("#fumee").css("display","block");
+$("#tout_fermer").css("display","block");
+$("#activer_moulin").css("display","block");
 sessionStorage.setItem("moulin", "ok");}
    }
 
 
 function oeuf(){
 if (sessionStorage.getItem("oeuf") == "ok"){
-            document.getElementById("canard1").style.cursor = "auto";
-            document.getElementById("canard2").style.cursor = "auto";
+$('#canard1').css('cursor', 'auto');
+$('#canard2').css('cursor', 'auto');
 }else{
-document.getElementById("oeuf").style.display = "block";
-document.getElementById("tout_fermer").style.display = "block";
+    $("#oeuf").css("display","block");
+$("#tout_fermer").css("display","block");
 sessionStorage.setItem("oeuf", "ok");}
    }
 
@@ -591,13 +615,13 @@ sessionStorage.setItem("oeuf", "ok");}
 
 
 function graine(){
-if (sessionStorage.getItem("graine") == "ok"){
-            document.getElementById("graine").style.cursor = "auto";
+if (localStorage.getItem("graine") == "ok"){
+            $("#graine").css('cursor','auto');
 
 }else{
-document.getElementById("tout_fermer").style.display = "block";
-document.getElementById("sac_graine").style.display = "block";
-sessionStorage.setItem("graine", "ok");}
+$("#tout_fermer").css('display','block');
+$("#sac_graine").css('display','block');
+localStorage.setItem("graine", "ok");}
    }
 
 
@@ -611,13 +635,13 @@ sessionStorage.setItem("graine", "ok");}
 
 
         function fonction_cercle(){
-            document.getElementById("click_cercle").style.display = "block";
+            $("#click_cercle").css('display','block');
 
         }
 
         function fonction_retour_champs(){
-            document.getElementById("click_cercle").style.display = "none";
-            document.getElementById("click_ferme").style.display = "none";
+            $("#click_cercle").css('display','none');
+            $("#click_ferme").css('display','none');
         }
 
 
@@ -628,9 +652,9 @@ sessionStorage.setItem("graine", "ok");}
 
 
         function fonction_portail(){
-            document.getElementById("click_cercle").style.display = "none";
-            document.getElementById("click_portail").style.display = "block";
-            document.getElementById("bloqueur").style.display = "block";  
+            $("#click_cercle").css('display','none');
+            $("#click_portail").css('display','block');
+            $("#bloqueur").css('display','block');  
             setTimeout(() => {  window.location.href='../SCENE3_PORTAIL/portail.html'; }, 5000);
 
 
@@ -639,7 +663,7 @@ sessionStorage.setItem("graine", "ok");}
 
 
         function fonction_retour(){
-            document.getElementById("click_ferme").style.display = "block";
+            $("#click_ferme").css('display','block');
 
         }
 
@@ -647,12 +671,12 @@ sessionStorage.setItem("graine", "ok");}
 
 
         function tout_fermer(){
-            document.getElementById("ksj_ciel").style.display = "none";  
-            document.getElementById("tout_fermer").style.display = "none";  
-document.getElementById("activer_moulin").style.display = "none";
-document.getElementById("sac_graine").style.display = "none";
-document.getElementById("oeuf").style.display = "none";
-document.getElementById("ksj_back").style.display = "none";
+            $("#ksj_ciel").css('display','none');  
+            $("#tout_fermer").css('display','none');  
+$("#activer_moulin").css('display','none');
+$("#sac_graine").css('display','none');
+$("#oeuf").css('display','none');
+$("#ksj_back").css('display','none');
 }
 
 
@@ -666,9 +690,9 @@ document.getElementById("ksj_back").style.display = "none";
 
 
         function fonctionKSJBack(){
-            document.getElementById("phrase_fin").style.display = "none";
-            document.getElementById("ksj_back").style.display = "block";
-            document.getElementById("bigcarto").style.display = "block";   
+            $("#phrase_fin").css('display','none');
+            $("#ksj_back").css('display','block');
+            $("#bigcarto").css('display','block');   
             localStorage.setItem("pont", "fin_du_jeu"); 
        
   

@@ -35,6 +35,10 @@ color: white;
 animation:         pulse 2s steps(1) infinite;
 }
 
+button{
+    font-family: consolas;
+}
+
 @keyframes pulse {
   0%   { opacity: 0; }
   50% { opacity: 1; }
@@ -152,7 +156,7 @@ text-shadow: 1px 1px 2px violet, 0 0 1em white, 0 0 0.2em white;
 
 
 .bouton{
-    z-index: 5;
+    z-index: 6;
     transform: translate(-50%, -50%);
     position: absolute;
     cursor: pointer;
@@ -238,7 +242,7 @@ inventaire
                   <!-- fusee -->
 
     <div id="fusee">
-        <pre onclick="fonction_fusee()" style=" z-index: 7; left:285px; top:0px; cursor: pointer;"><script>document.include('txt/fusee.txt')</script>
+        <pre onclick="fonction_fusee()" style=" z-index: 7; left:285px; top:0px;"><script>document.include('txt/fusee.txt')</script>
         </pre>
 
     </div>   
@@ -259,37 +263,37 @@ inventaire
 
 <div id="intro_margaret_1" style=" display:none;">
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_1.txt')</script></pre>
- <button id="bouton_intro_1a" class="bouton" onclick="fonctionIntro1()" style="top: 35px; width: 182px; left:-90px;">Qu'est ce que tu fais là-haut&nbsp;?</button>
-  <button id="bouton_intro_1b" class="bouton" onclick="fonctionIntro1()" style="top: 35px; width: 118px; left:123px;">La lune me parle&nbsp;!!</button>
+ <button id="bouton_intro_1a" class="bouton" onclick="fonctionIntro1()" style="top: 18px; width: 251px;">Qu'est ce que tu fais là-haut&nbsp;?</button>
+  <button id="bouton_intro_1b" class="bouton" onclick="fonctionIntro1()" style="top: 47px; width: 161px; ">La lune me parle&nbsp;!!</button>
 </div>
 
 <div id="intro_margaret_2" style=" display:none;">
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_2.txt')</script></pre>
- <button id="bouton_intro_2a" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 79px; left:-116px;">Mais non...</button>
-  <button id="bouton_intro_2b" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 149px; left: 86px;">Comment tu as fais ça&nbsp;?</button>
+ <button id="bouton_intro_2a" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 102px; left:-116px;">Mais non...</button>
+  <button id="bouton_intro_2b" class="bouton" onclick="fonctionIntro2()" style="top: 50px; width: 189px; left: 86px;">Comment tu as fais ça&nbsp;?</button>
 </div>
 
 <div id="intro_margaret_3" style=" display:none;">
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_3.txt')</script></pre>
- <button id="bouton_intro_3a" class="bouton" onclick="fonctionIntro3()" style="top: 43px; width: 52px; left:-90px;">Okay...</button>
-  <button id="bouton_intro_3b" class="bouton" onclick="fonctionIntro3()" style="top: 43px; width: 96px; left:73px;">Dis m'en plus&nbsp;!</button>
+ <button id="bouton_intro_3a" class="bouton" onclick="fonctionIntro3()" style="top: 44px; width: 133px; left:-90px;">Okay...</button>
+  <button id="bouton_intro_3b" class="bouton" onclick="fonctionIntro3()" style="top: 44px; width: 133px; left:73px;">Dis m'en plus&nbsp;!</button>
 </div>
 
 <div id="intro_margaret_4" style=" display:none;">
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/intro_margaret_4.txt')</script></pre>
- <button id="bouton_intro_4a" class="bouton" onclick="tout_fermer()" style="top: 104px; width: 68px; left:-105px;">Whouaaa</button>
-  <button id="bouton_intro_4b" class="bouton" onclick="tout_fermer()" style="top: 105px; width: 135px; left:87px;">J'ai pas tout compris mais ça à l'air super&nbsp;!</button>
+ <button id="bouton_intro_4a" class="bouton" onclick="tout_fermer()" style="top: 104px; width: 70px; left:-123px;">Whouaaa</button>
+  <button id="bouton_intro_4b" class="bouton" onclick="tout_fermer()" style="top: 105px; width: 199px; left:72px;">J'ai pas tout compris mais ça à l'air super&nbsp;!</button>
 </div>
 
 
 
 
 
-    <button id="bouton_prendre_manifeste" onclick="prendre_manifeste_cyborg()" class="bouton" style=" display:none; top:80px; width:115px; ">Trop cool, merci&nbsp;!</button>
+    <button id="bouton_prendre_manifeste" onclick="prendre_manifeste_cyborg()" class="bouton" style=" display:none; top:80px; width:157px; ">Trop cool, merci&nbsp;!</button>
 
-    <button id="bouton_pas_de_poeme" onclick="tout_fermer()" class="bouton" style=" display:none; top:55px; width:220px;">Heu... je n'ai rien sous la main...</button>
+    <button id="bouton_pas_de_poeme" onclick="tout_fermer()" class="bouton" style=" display:none; top:55px; width:284px;">Heu... je n'ai rien sous la main...</button>
 
-    <button id="bouton_donner_poeme" onclick="donner_poeme()" class="bouton" style="display:none; top:55px;  width:181px;">Je peux te réciter un poème&nbsp;!</button>
+    <button id="bouton_donner_poeme" onclick="donner_poeme()" class="bouton" style="display:none; top:55px;  width:239px;">Je peux te réciter un poème&nbsp;!</button>
 
 
 <div id="message_margaret_heureuse" style=" display:none;">
@@ -309,8 +313,8 @@ inventaire
 
 <div id="margaret_explique" style=" display:none;">
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/margaret_explique.txt')</script></pre>
- <button id="bouton_pas_compris_1" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:-79px; width:63px">Heuuu...</button>
-  <button id="bouton_pas_compris_2" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:54px; width:113px">J'ai tout compris&nbsp;!</button>
+ <button id="bouton_pas_compris_1" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:-98px; width:72px">Heuuu...</button>
+  <button id="bouton_pas_compris_2" onclick="margaret_explique_2()" class="bouton" style="top:39px; left:63px; width:161px">J'ai tout compris&nbsp;!</button>
 </div>
 
 <div id="margaret_explique_2" style=" display:none;">
@@ -338,9 +342,6 @@ inventaire
  <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction4.txt')</script></pre>
 </div>
 
-<div id="prediction5" style=" display:none;">
- <pre style="z-index: 4; background-color: black; "><script>document.include('txt/prediction5.txt')</script></pre>
-</div>
 
 
 
@@ -356,23 +357,39 @@ inventaire
   <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
 
 
-
+  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 5; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
 
 
     </div>
  
     <script type="text/javascript">
 
+
+
+     ///////////////////////ONLOAD////////////////////////////
+
+      $( window ).on( "load", function() {
+        if(localStorage.getItem("citation_margaret") == "ok"){
+            $("#fusee").css('cursor','auto');
+        }else{
+            $("#fusee").css('cursor','pointer');
+        }
+})
+
+
+
+
+
        function fonction_fusee(){
-  if(localStorage.getItem("citation_margaret") !== "ok"){
-document.getElementById("citation_margaret").style.display = "block";
-localStorage.setItem("citation_margaret", "ok");
-document.getElementById("tout_fermer").style.display = "block";
+  if(localStorage.getItem("citation_margaret") == "ok"){
+    document.getElementById("fusee").style.cursor = "cursor";
 }
 
 else{
-  document.getElementById("citation_margaret").style.display = "none";
-    document.getElementById("fusee").style.cursor = "pointer";
+    document.getElementById("citation_margaret").style.display = "block";
+$("#fusee").css('cursor','auto');
+localStorage.setItem("citation_margaret", "ok");
+document.getElementById("tout_fermer").style.display = "block";
 }
 }
 
@@ -383,6 +400,7 @@ else{
 function fonctionLune(){
     if(localStorage.getItem("intro_margaret") !== "ok"){
 document.getElementById("intro_margaret_1").style.display = "block";    
+$("#bloqueur").css('display','block');
     }else if(localStorage.getItem("poeme_radia") == "ok"){
 document.getElementById("message_margaret").style.display = "block"; 
 document.getElementById("bouton_donner_poeme").style.display = "block";   
@@ -392,7 +410,8 @@ document.getElementById("message_margaret_heureuse").style.display = "block";
 document.getElementById("tout_fermer").style.display = "block"; 
 }else{
 document.getElementById("message_margaret").style.display = "block";
-document.getElementById("bouton_pas_de_poeme").style.display = "block";  
+document.getElementById("bouton_pas_de_poeme").style.display = "block";
+$("#bloqueur").css('display','none');  
 }
 }
 
@@ -400,7 +419,8 @@ document.getElementById("bouton_pas_de_poeme").style.display = "block";
 
 function fonctionIntro1(){
 document.getElementById("intro_margaret_2").style.display = "block";     
-document.getElementById("intro_margaret_1").style.display = "none";   
+document.getElementById("intro_margaret_1").style.display = "none"; 
+$("#bloqueur").css('display','block');  
 }
 
 function fonctionIntro2(){
@@ -413,7 +433,7 @@ function fonctionIntro3(){
 document.getElementById("intro_margaret_4").style.display = "block";   
 document.getElementById("intro_margaret_3").style.display = "none";  
 localStorage.setItem("intro_margaret", "ok");   
-
+$("#bloqueur").css('display','none');
 }
 
 
@@ -466,9 +486,9 @@ document.getElementById("tout_fermer").style.display = "block";
             document.getElementById("prediction2").style.display="none";
             document.getElementById("prediction3").style.display="none";
             document.getElementById("prediction4").style.display="none";
-            document.getElementById("prediction5").style.display="none";
             document.getElementById("casque_fatoumata").style.display="none";
             document.getElementById("margaret_explique").style.display = "none";  
+$("#bloqueur").css('display','none');
 document.getElementById("margaret_explique_2").style.display = "NONE";  
 
 
@@ -477,7 +497,7 @@ document.getElementById("margaret_explique_2").style.display = "NONE";
 
         function grosse_etoile(){
 
-  var tirage = Math.floor(Math.random() * 5);
+  var tirage = Math.floor(Math.random() * 4);
 
 if(tirage == 0){
 document.getElementById("prediction0").style.display="block";
@@ -495,12 +515,8 @@ document.getElementById("tout_fermer").style.display = "block";
 document.getElementById("prediction3").style.display="block";
 document.getElementById("tout_fermer").style.display = "block";  
 
-}else if(tirage == 4){
-document.getElementById("prediction4").style.display="block";
-document.getElementById("tout_fermer").style.display = "block";  
-
 }else{
-document.getElementById("prediction5").style.display="block";
+document.getElementById("prediction4").style.display="block";
 document.getElementById("tout_fermer").style.display = "block";  
 
 }

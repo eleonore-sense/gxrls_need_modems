@@ -1,30 +1,28 @@
-   ____________________________________________________
- / \                                                   \
-|   |                                                   |
- \_ |                                                   |
-    |      "I think that I shall never see              |
-    |       A graph more lovely than a tree.            |
-    |                                                   |
-    |       A tree whose crucial property               |
-    |       Is loop-free connectivity.                  |
-    |                                                   |
-    |       A tree that must be sure to span            |
-    |       So packets can reach every LAN.             |
-    |                                                   |
-    |       First, the root must be selected.           |
-    |       By ID, it is elected.                       |
-    |                                                   |
-    |       Least cost paths from root are traced.      |
-    |       In the tree, these paths are placed.        |
-    |                                                   |
-    |       A mesh is made by folks like me,            |
-    |       Then bridges find a spanning tree."         |
-    |                                                   |
-    |                                                   |
-    |            			Radia Perlman   |
-    |                                                   |
-    |   ________________________________________________|___
-    |  /                                                   /
-    \_/___________________________________________________/
+   _____________________________________________________________
+ / \                                                            \
+|   |                                                            |
+ \_ |                                                            |
+    |      "Je pense que jamais je ne verrai                     |
+    |       Un graphe aussi beau qu'un arbre parfait.            |
+    |       Un arbre dont la propriété cruciale                  |
+    |       est la connectivité sans boucle.                     |
+    |       Est d’être sans boucle, structure idéale.            |
+    |                                                            |
+    |       Un arbre qui doit toujours s’étendre                 |
+    |       Pour que chaque LAN puisse s’y rendre.               |
+    |       D'abord, la racine est désignée,                     |
+    |       Par son ID, elle est bien identifiée.                |
+    |                                                            |
+    |       Les chemins les plus courts sont tracés,             |
+    |       Et dans l’arbre, soigneusement placés.               |
+    |       Un maillage conçu par des gens comme nous,           |
+    |       Les ponts forment un arbre couvrant, après tout.     |
+    |                                                            |
+    |                                                            |
+    |                          Spanning Tree -Radia Perlman      |
+    |                                                            |
+    |   _________________________________________________________|___
+    |  /                                                            /
+    \_/____________________________________________________________/
 
  
