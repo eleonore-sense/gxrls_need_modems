@@ -1,7 +1,17 @@
 <!DOCTYPE html>
+<!---
+              _ ____________________
+_|_________\\\\\\                  (_
+ |                                   |
+ |         eat_code_and_die          |
+ |_                        __________|_
+   )_______________________\         |
+
+-->
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <title>↯–↯–GXRLS NEED MODEM-↯–↯</title>
     <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
@@ -61,27 +71,23 @@ inventaire
 
 
 <div id="grande_fleur" style=" display:none; cursor: pointer;" onclick="grande_fleur()">
- <pre class="pre_popup" style="top: 200px; left: -135px; "><script>document.include('txt/grande_fleur.txt')</script>
+ <pre  style="top: 200px; left: -135px; "><script>document.include('txt/grande_fleur.txt')</script>
 </pre>
 </div>
 
 <div id="moyenne_fleur" style=" display:none; cursor: pointer;" onclick="moyenne_fleur()">
- <pre class="pre_popup" style="top: 231px; left: -139px; "><script>document.include('txt/moyenne_fleur.txt')</script>
+ <pre  style="top: 231px; left: -139px; "><script>document.include('txt/moyenne_fleur.txt')</script>
 </pre>
 </div>
 
 <div id="petite_fleur" style=" display:none; cursor: pointer;" onclick="petite_fleur()">
- <pre class="pre_popup" style="top: 231px; left: -107px; "><script>document.include('txt/petite_fleur.txt')</script>
+ <pre  style="top: 231px; left: -107px; "><script>document.include('txt/petite_fleur.txt')</script>
 </pre>
 </div>
 
-<div id="graine_planter" style=" display:none; cursor: pointer;" onclick="graine_plantee()">
- <pre class="pre_popup" style="top: 240px; left: -135px; "><script>document.include('txt/graine_planter.txt')</script>
-</pre>
-</div>
 
-<div id="a_planter" style=" display:none; cursor: pointer;" onclick="planter()">
- <pre class="pre_popup" style="top: 240px; left: -135px; "><script>document.include('txt/a_planter.txt')</script>
+<div id="a_planter" style=" display:none; cursor: pointer;" onclick="graine_plantee()">
+ <pre  style="top: 240px; left: -135px; "><script>document.include('txt/graine_planter.txt')</script>
 </pre>
 </div>
 
@@ -299,17 +305,19 @@ localStorage.setItem("graine_tournesol", "ok");
 function graine_plantee(){
 var graine_plantee = Date.parse(localStorage.graine_plantee);    
 var b = new Date();
-var temps_ecoule = (b - graine_plantee)/20000;
+var temps_ecoule = b - graine_plantee;
 console.log(temps_ecoule);
-if(temps_ecoule<= 5){
+if(temps_ecoule<= 20000){
 $("#pas_arroser").css('display','block');
 $("#tout_fermer").css('display','block');
+localStorage.setItem("graine_tournesol", "ok"); 
+}else if (localStorage.getItem("planter_graine")=="fini"){
 
 }else{
-$("#a_arroser").css('display','block');
+$("#texte_graine_plantee").css('display','block');
 $("#tout_fermer").css('display','block');
 $("#petite_fleur").css('display','block');
-$("#graine_planter").css('display','none');
+$("#a_planter").css('display','none');
 localStorage.setItem("planter_graine", "fini"); 
 localStorage.setItem("petite_fleur_onload", "ok"); 
 localStorage.petite_fleur = b;
@@ -321,9 +329,9 @@ localStorage.petite_fleur = b;
 function petite_fleur(){
 var petite_fleur = Date.parse(localStorage.petite_fleur);    
 var b = new Date();
-var temps_ecoule = (b - petite_fleur)/20000;
+var temps_ecoule = (b - petite_fleur);
 console.log(temps_ecoule);
-if(temps_ecoule<= 5){
+if(temps_ecoule<= 20000){
 $("#pas_arroser").css('display','block');
 $("#tout_fermer").css('display','block');
 
@@ -342,9 +350,9 @@ localStorage.moyenne_fleur = b;
 function moyenne_fleur(){
 var moyenne_fleur = Date.parse(localStorage.moyenne_fleur);    
 var b = new Date();
-var temps_ecoule = (b - moyenne_fleur)/20000;
+var temps_ecoule = (b - moyenne_fleur);
 console.log(temps_ecoule);
-if(temps_ecoule<= 5){
+if(temps_ecoule<= 20000){
 $("#pas_arroser").css('display','block');
 $("#tout_fermer").css('display','block');
 

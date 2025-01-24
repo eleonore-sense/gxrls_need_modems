@@ -1,8 +1,17 @@
 <!DOCTYPE html>
+<!---
+              _ ____________________
+_|_________\\\\\\                  (_
+ |                                   |
+ |         eat_code_and_die          |
+ |_                        __________|_
+   )_______________________\         |
 
+-->
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <title>↯–↯–GXRLS NEED MODEM-↯–↯</title>
     <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
@@ -72,7 +81,9 @@
 
 
 <body >
-<a href="../CARTO/bigcarto.html" id="bigcarto">retour à la carto --></a>
+          <a href="javascript:history.go(-1)" id="bigcarto" >
+retour au jeu
+  </a>
 
 
   <div id="fond"  style=" width: 1200px; height:570px; position:absolute; left: 50%;  top:  50% ;transform: translate(-50%, -50%);">
@@ -1004,18 +1015,15 @@ $("#rectangle_citation_mindy_livre").css('display', 'none');
 
 
     $( window ).on( "load", function() {
-  if(localStorage.getItem("graine_tournesol") == "ok"){
-$("#graine_tournesol").css('display', 'none');
- 
- }else{
 $("#graine_tournesol").css('display','block');
-}});
+});
 
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("modem") == "ok"){
 $("#modem").css('display','block');
- 
+   }else if(localStorage.getItem("modem") == "donne"){
+$("#modem").css('display','block');
  }else{
 $("#modem").css('display', 'none');
 }});
@@ -1033,7 +1041,8 @@ $("#jus").css('display', 'none');
     $( window ).on( "load", function() {
   if(localStorage.getItem("bouquet") == "ok"){
 $("#bouquet").css('display','block');
- 
+} else  if(localStorage.getItem("bouquet") == "donne"){
+$("#bouquet").css('display','block');
  }else{
 $("#bouquet").css('display', 'none');
 }});    
@@ -1113,18 +1122,11 @@ $("#burritos").css('display', 'none');
 
 
     $( window ).on( "load", function() {
-  if(localStorage.getItem("burritos") == "ok"){
-$("#burritos").css('display','block');
- 
- }else{
-$("#burritos").css('display', 'none');
-}});  
-
-
-    $( window ).on( "load", function() {
   if(localStorage.getItem("disquette_jaime") == "ok"){
 $("#disquette_jaime").css('display','block');
- 
+}else   if(localStorage.getItem("disquette_jaime") == "donne"){
+$("#disquette_jaime").css('display','block');
+  
  }else{
 $("#disquette_jaime").css('display', 'none');
 }});  
@@ -1141,7 +1143,8 @@ $("#boussole").css('display', 'none');
     $( window ).on( "load", function() {
   if(localStorage.getItem("gender_changer") == "ok"){
 $("#gender_changer").css('display','block');
- 
+ }else if(localStorage.getItem("gender_changer") == "donne"){
+$("#gender_changer").css('display','block'); 
  }else{
 $("#gender_changer").css('display', 'none');
 }});  

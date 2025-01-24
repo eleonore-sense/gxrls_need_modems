@@ -11,6 +11,7 @@ _|_________\\\\\\                  (_
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <title>↯–↯–GXRLS NEED MODEM-↯–↯</title>
     <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
@@ -31,17 +32,19 @@ _|_________\\\\\\                  (_
 
 
 #bouton_redemarrer{
+ font-family: Consolas, monospace;
+ font-size: 13px;
  cursor:pointer; 
  text-decoration: none; 
  color: black; 
  z-index:3; 
- margin-top: 60px; 
+ margin-bottom: 30px; 
  position: absolute; 
  right: 0%;
- top: 0% ; 
+ bottom: 0% ; 
  margin-right: 30px; 
  transform: translate(0%, 0%);
-width: 120px; 
+width: 150px; 
 }
 
   </style>
@@ -55,7 +58,7 @@ width: 120px;
 générique
   </a>
 
-              <button id="bouton_redemarrer"onclick="redemarrer()">Rédemarrer le jeu</button>
+              <button id="bouton_redemarrer"onclick="redemarrer()">redémarrer le jeu</button>
 
           <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="font-size: 13px;">
 inventaire
@@ -159,6 +162,7 @@ $('#capteur_boussole').css('display', 'none');
 function blablaPont(){
     localStorage.setItem("pont", "fait");
     $('#blabla_pont').css('display', 'none');
+    $("#tout_fermer").css('display','none');
 
 }
 
