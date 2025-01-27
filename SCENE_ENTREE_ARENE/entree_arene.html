@@ -110,14 +110,14 @@ _|_________\\\\\\                  (_
 
 <div id="intro" class="popup" style=" display:none;">
   <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
-  <button id="bouton_0_a" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:-100px;">Ça colle, je...<br>j'ai l'impression de m'enfoncer</button>
-  <button id="bouton_0_b" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:100px;">Y a quoi dans ce marécage&nbsp;? La végétation autour est très étrange</button>
+  <button id="bouton_0_a" class="bouton_intro" onclick="intro()" style="width:364px; top:20px;">Ça colle, je...j'ai l'impression de m'enfoncer</button>
+  <button id="bouton_0_b" class="bouton_intro" onclick="intro()" style="width:336px; top:57px;">Y a quoi dans ce marécage&nbsp;?<br> La végétation autour est très étrange</button>
 </div>
 
 <div id="vns_1" style=" display:none;">
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_1.txt')</script></pre>
-  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:-80px;">Facile à dire avec vos ailes qui vous gardent au sec...</button>
-  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:80px;">Ça a toujours été marécageux par ici&nbsp;?</button>
+  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 228px; top:60px; left:-108px;">Facile à dire avec vos ailes qui vous gardent au sec...</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 184px; top:60px; left:128px;">Ça a toujours été marécageux par ici&nbsp;?</button>
 </div>
 
 
@@ -128,13 +128,13 @@ _|_________\\\\\\                  (_
 
 <div id="vns_3" style="display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_3.txt')</script></pre>
- <button id="bouton_3" class="bouton_intro" onclick="VNS_3()" style="width: 120px; top:70px;">C'est qui "eux"&nbsp;?</button>
+ <button id="bouton_3" class="bouton_intro" onclick="VNS_3()" style="width: 148px; top:70px;">C'est qui "eux"&nbsp;?</button>
 </div>
 
 <div id="vns_4" style="display:none;">
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_4.txt')</script></pre>
-  <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:-80px;">Ma ferme aussi elle faisait partie de la terre...</button>
-  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:80px;">Y a quoi derrière les grilles que vous gardez&nbsp;?</button>
+  <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 385px; top:43px; ">Ma ferme aussi elle faisait partie de la terre...</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 364px; top:71px;">Y a quoi derrière les grilles que vous gardez&nbsp;?</button>
 </div>
 
 <div id="vns_5" style="display:none;">
@@ -143,8 +143,8 @@ _|_________\\\\\\                  (_
 
 <div id="vns_6" style="display:none;">
   <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_6.txt')</script></pre>
-  <button id="bouton_vns_non" class="bouton_intro" onclick="tout_fermer()" style="top:78px; width: 250px;">J'essaie, mais je n'y suis pas encore</button>
-  <button id="bouton_vns_oui" class="bouton_intro" onclick="donner_fleur()" style="top: 78px; width: 300px;">Je ne sais pas, mais j'ai passé une éternité à faire pousser ce bouquet de tournesols</button>
+  <button id="bouton_vns_non" class="bouton_intro" onclick="tout_fermer()" style="top:78px; width: 300px;">J'essaie, mais je n'y suis pas encore</button>
+  <button id="bouton_vns_oui" class="bouton_intro" onclick="donner_fleur()" style="top: 78px; width: 359px;">Je ne sais pas, mais j'ai passé une éternité à faire pousser ce bouquet de tournesols</button>
 </div>
 
 <div id="vns_7" style="display:none;">
@@ -153,7 +153,7 @@ _|_________\\\\\\                  (_
 
 <div id="vns_8" style="display:none;">
  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_8.txt')</script></pre>
- <button id="bouton_8" class="bouton_intro" onclick="grille_b()" style="width: 230px; top:60px;">Il y a quoi derrière l'autre grille&nbsp;?</button>
+ <button id="bouton_8" class="bouton_intro" onclick="grille_b()" style="width: 288px; top:60px;">Il y a quoi derrière l'autre grille&nbsp;?</button>
 </div>
 
 <div id="vns_9" style="display:none;">
@@ -190,7 +190,7 @@ _|_________\\\\\\                  (_
   <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
 
 
-  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+  <div id="bloqueur"></div>
 
   </div>
 
@@ -274,6 +274,7 @@ _|_________\\\\\\                  (_
     document.getElementById("vns_5").style.display= "none";
     document.getElementById("vns_gauche").style.display= "none";     
     document.getElementById("vns_droite").style.display= "none"; 
+    $("#bloqueur").css("display","none");
   }
 
 
@@ -283,29 +284,36 @@ _|_________\\\\\\                  (_
     if(localStorage.getItem("intro_vns") == "ok"){
     document.getElementById("vns_6").style.display= "block";
     document.getElementById("tout_fermer").style.display = "block";
+   $("#bloqueur").css("display","block");
       if(localStorage.getItem("bouquet") == "ok"){
       document.getElementById("bouton_vns_oui").style.display= "block";
       document.getElementById("bouton_vns_non").style.display= "none";
+         $("#bloqueur").css("display","block");
       }else if (localStorage.getItem("bouquet") == "donne"){
       document.getElementById("vns_6").style.display= "none";
       document.getElementById("vns_7").style.display= "block";
       document.getElementById("tout_fermer").style.display = "block";
+         $("#bloqueur").css("display","block");
         if (localStorage.getItem("retourne_source") == "ok"){
         document.getElementById("vns_7").style.display= "none";
         document.getElementById("vns_8").style.display= "block";
         }
+           $("#bloqueur").css("display","block");
           if (localStorage.getItem("grille_b") == "ouvert"){
           document.getElementById("vns_8").style.display= "none";
           document.getElementById("vns_9").style.display= "block";
           }
+             $("#bloqueur").css("display","block");
       }else{
       document.getElementById("bouton_vns_oui").style.display= "none";
       document.getElementById("bouton_vns_non").style.display= "block";
       }
+         $("#bloqueur").css("display","block");
     }else{
     document.getElementById("intro").style.display= "block";
     document.getElementById("bouton_0_a").style.display= "block";
     document.getElementById("bouton_0_b").style.display= "block";
+       $("#bloqueur").css("display","block");
     }
   }
 
@@ -319,6 +327,7 @@ _|_________\\\\\\                  (_
     document.getElementById("bouton_0_b").style.display= "none";
     document.getElementById("intro").style.display= "none";
     document.getElementById("bloqueur").style.display = "block";
+       $("#bloqueur").css("display","block");
   }
 
   function VNS_1(){
@@ -327,6 +336,7 @@ _|_________\\\\\\                  (_
     document.getElementById("vns_1").style.display= "none";   
     document.getElementById("bouton_1_a").style.display= "none";
     document.getElementById("bouton_1_b").style.display= "none";
+       $("#bloqueur").css("display","block");
   }
 
 
@@ -335,6 +345,7 @@ _|_________\\\\\\                  (_
     document.getElementById("bouton_3").style.display= "block";
     document.getElementById("vns_2").style.display= "none";   
     document.getElementById("bouton_2").style.display= "none";
+       $("#bloqueur").css("display","block");
   }
 
 
@@ -344,6 +355,7 @@ _|_________\\\\\\                  (_
     document.getElementById("bouton_4_b").style.display= "block";
     document.getElementById("vns_3").style.display= "none";   
     document.getElementById("bouton_3").style.display= "none";
+       $("#bloqueur").css("display","block");
   }
 
 
@@ -355,6 +367,7 @@ _|_________\\\\\\                  (_
     document.getElementById("bloqueur").style.display= "none";
     document.getElementById("tout_fermer").style.display= "block";
     localStorage.setItem("intro_vns", "ok"); 
+       $("#bloqueur").css("display","block");
   }
 
   function fonction_gargouille_gauche(){

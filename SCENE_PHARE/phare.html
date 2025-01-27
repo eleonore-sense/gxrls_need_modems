@@ -129,13 +129,13 @@ _|_________\\\\\\                  (_
 
     <div id="stjude_1" class="popup" style=" display:none;">
         <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_1.txt')</script></pre>
-        <button id="bouton_1" class="bouton_intro" onclick="fonctionJude2()" style="width:320px; top:45px;">Quel est ce visage qui parle dans cette roche&nbsp;?</button>
+        <button id="bouton_1" class="bouton_intro" onclick="fonctionJude2()" style="width:364px; top:45px;">Quel est ce visage qui parle dans cette roche&nbsp;?</button>
     </div>
 
     <div id="stjude_2" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_2.txt')</script></pre>
-        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionJude3()" style="width: 180px; top:85px; left:-100px;">Tu as peut être ce que je cherche...</button>
-        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionJude3()" style="width: 180px; top:85px; left:100px;">Ton terminal a l'air plus vieux que le temps</button>
+        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionJude3()" style="width: 290px; top:65px; ">Tu as peut être ce que je cherche...</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionJude3()" style="width: 350px; top:95px; ">Ton terminal a l'air plus vieux que le temps</button>
     </div>
 
     <div id="stjude_3" style=" display:none;">
@@ -145,8 +145,8 @@ _|_________\\\\\\                  (_
 
     <div id="stjude_4" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/stjude_4.txt')</script></pre>
-        <button id="bouton_4_a" class="bouton_intro" onclick="tout_fermer()" style="width: 180px; top:47px;">C'est quoi une disquette&nbsp;?</button>
-        <button id="bouton_4_b" class="bouton_intro" onclick="fonctionDecodage()" style="width: 240px; top:47px;">Ah, tiens&nbsp;! J'en ai une sous la main</button>
+        <button id="bouton_4_a" class="bouton_intro" onclick="tout_fermer()" style="width: 215px; top:47px;">C'est quoi encore ça&nbsp;?</button>
+        <button id="bouton_4_b" class="bouton_intro" onclick="fonctionDecodage()" style="width: 290px; top:47px;">Ah, tiens&nbsp;! J'en ai une sous la main</button>
     </div>
 
     <div id="stjude_5" style=" display:none;">
@@ -159,7 +159,7 @@ _|_________\\\\\\                  (_
 
   		<div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
 
-        <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+        <div id="bloqueur"></div>
 
 
 	</div>
@@ -238,6 +238,7 @@ _|_________\\\\\\                  (_
             if(localStorage.getItem("disquette_jaime") == "ok"){
                 document.getElementById("bouton_4_b").style.display= "block";
                 document.getElementById("bouton_4_a").style.display= "none";
+                $("#bloqueur").css("display","block");
             }else if(localStorage.getItem("disquette_jaime") == "donne"){
                 document.getElementById("stjude_5").style.display= "block";   
                 document.getElementById("bouton_4_a").style.display= "none";
@@ -247,11 +248,13 @@ _|_________\\\\\\                  (_
                 document.getElementById("bloqueur").style.display = "none";
             }else{
                 document.getElementById("bouton_4_b").style.display= "none";
-                document.getElementById("bouton_4_a").style.display= "block";    
+                document.getElementById("bouton_4_a").style.display= "block";   
+                $("#bloqueur").css("display","block"); 
             }
         }else{
             document.getElementById("stjude_1").style.display= "block";
             document.getElementById("bouton_1").style.display= "block";
+                $("#bloqueur").css("display","block");
         }
     }
 
@@ -273,6 +276,7 @@ _|_________\\\\\\                  (_
         document.getElementById("cafe").classList.remove("cafe_lift");
         document.getElementById("cafe").classList.add("cafe_drop");
         localStorage.setItem("intro_Jude", "ok");
+                $("#bloqueur").css("display","block");
     }
 
     function fonctionJude4(){
@@ -282,13 +286,14 @@ _|_________\\\\\\                  (_
             document.getElementById("bouton_4_a").style.display= "none";
             document.getElementById("bouton_3").style.display= "none";
             document.getElementById("stjude_3").style.display= "none";
+                $("#bloqueur").css("display","block");
         }else{
             document.getElementById("stjude_4").style.display= "block";   
             document.getElementById("bouton_4_b").style.display= "none";
             document.getElementById("bouton_4_a").style.display= "block";
             document.getElementById("bouton_3").style.display= "none";
             document.getElementById("stjude_3").style.display= "none";
-            document.getElementById("bloqueur").style.display = "none";
+            document.getElementById("bloqueur").style.display = "block";
         }
     }
 
@@ -309,6 +314,7 @@ _|_________\\\\\\                  (_
         $("#stjude_5").css('display', 'none');
         $("#citation_mindyseu").css('display', 'none');
         $("#anthropy").css('display', 'none');
+        $("#bloqueur").css("display","none");
     }
 
 

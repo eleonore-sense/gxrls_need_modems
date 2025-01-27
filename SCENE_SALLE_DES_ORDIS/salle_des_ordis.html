@@ -281,7 +281,7 @@ inventaire
 
 
   <div id="tout_fermer" onclick="tout_fermer()"></div>
-
+  <div id="bloqueur"></div>
     </div>
 
 
@@ -362,6 +362,8 @@ inventaire
         function tout_fermer(){ 
                 $(".popup").css('display', 'none');  
             $("#tout_fermer").css('display', 'none');
+        $("#bloqueur").css('display','none');
+
 
         }
 
@@ -374,39 +376,52 @@ function fonctionTelephone(){
     }
     else{
         $("#intro_1").css('display','block');
+        $("#bloqueur").css('display','block');
+
 }
 }
 
 
 function intro_1(){ 
     $("#intro_1").css('display', 'none');   
-    $("#intro_2").css('display','block');}
+    $("#intro_2").css('display','block');
+    $("#bloqueur").css('display','block');}
 
 
 function intro_2(){ 
     $("#intro_2").css('display', 'none');   
-    $("#intro_3").css('display','block');}
+    $("#intro_3").css('display','block');
+    $("#bloqueur").css('display','block');
+}
 
 
 function intro_3(){ 
     $("#intro_3").css('display', 'none');   
-    $("#intro_4").css('display','block');}
+    $("#intro_4").css('display','block');
+    $("#bloqueur").css('display','block');
+}
 
 
 function intro_4(){ 
     $("#intro_4").css('display', 'none');   
-    $("#intro_5").css('display','block');}
+    $("#intro_5").css('display','block');
+    $("#bloqueur").css('display','block');
+}
 
 
 function intro_5(){ 
     $("#intro_5").css('display', 'none');   
-    $("#intro_6").css('display','block');}
+    $("#intro_6").css('display','block');
+    $("#bloqueur").css('display','block');
+}
 
 
 function intro_6(){ 
     $("#intro_6").css('display', 'none');   
     $("#intro_7").css('display','block');
     localStorage.setItem("intro_steve", "ok"); 
+    $("#bloqueur").css('display','block');
+
   document.getElementById("#telephone").style.animationName = "";
   document.getElementById("#bipbip").style.animationName = "";
 }

@@ -1,15 +1,13 @@
-+-------------------------------------------------+
-|                                                 |
-|                                                 |
-|         Les technocowboys, tu connais ?         |
-|              Notre internet à nous              |
-|          est matériel, viscéral, sale ;         |
-|           il fait partie de la terre.           |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-+-------------------------------------------------+
++-------------------------------------------------------------+
+|                                                             |
+|                                                             |
+|               Les technocowboys, tu connais ?               |
+|     Notre internet à nous est matériel, viscéral, sale ;    |
+|                  il fait partie de la terre.                |
+|                                                             |
+|                                                             |
+|                                                             |
+|                                                             |
+|                                                             | 
+|                                                             |
++-------------------------------------------------------------+

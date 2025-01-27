@@ -1,14 +1,14 @@
-+-------------------------------------------------+
-|                                                 |
-|                                                 |
-| Le slime qui t'entoure est doté de conscience : |
-|        une conscience vivante, organique,       |
-|          de la viscosité qui s'écoule.          |
-|      N'aie pas peur de t'y enfoncer un peu.     |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-|                                                 |
-+-------------------------------------------------+
++-----------------------------------------------------------------------+
+|                                                                       |
+|                                                                       |
+|            Le slime qui t'entoure est doté de conscience :            |
+|                   une conscience vivante, organique,                  |
+|                     de la viscosité qui s'écoule.                     |
+|                 N'aie pas peur de t'y enfoncer un peu.                |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
++-----------------------------------------------------------------------+

@@ -31,6 +31,7 @@ color: white;
             overflow: hidden;
 }
 
+#bloqueur{z-index: 10;}
 #etoile_un{
 animation:         pulse 2s steps(1) infinite;
 }
@@ -404,6 +405,7 @@ $("#bloqueur").css('display','block');
     }else if(localStorage.getItem("poeme_radia") == "ok"){
 document.getElementById("message_margaret").style.display = "block"; 
 document.getElementById("bouton_donner_poeme").style.display = "block";   
+$("#bloqueur").css('display','block');
 
 } else if(localStorage.getItem("poeme_radia") == "donne") {
 document.getElementById("message_margaret_heureuse").style.display = "block"; 
@@ -411,7 +413,7 @@ document.getElementById("tout_fermer").style.display = "block";
 }else{
 document.getElementById("message_margaret").style.display = "block";
 document.getElementById("bouton_pas_de_poeme").style.display = "block";
-$("#bloqueur").css('display','none');  
+$("#bloqueur").css('display','block');  
 }
 }
 
@@ -426,6 +428,7 @@ $("#bloqueur").css('display','block');
 function fonctionIntro2(){
 document.getElementById("intro_margaret_3").style.display = "block";     
 document.getElementById("intro_margaret_2").style.display = "none";   
+$("#bloqueur").css('display','block');
 }
 
 
@@ -433,7 +436,7 @@ function fonctionIntro3(){
 document.getElementById("intro_margaret_4").style.display = "block";   
 document.getElementById("intro_margaret_3").style.display = "none";  
 localStorage.setItem("intro_margaret", "ok");   
-$("#bloqueur").css('display','none');
+$("#bloqueur").css('display','block');
 }
 
 
@@ -444,6 +447,8 @@ document.getElementById("bouton_prendre_manifeste").style.display = "block";
 document.getElementById("bouton_donner_poeme").style.display = "none";
 document.getElementById("message_margaret").style.display = "none";
 document.getElementById("tout_fermer").style.display = "none";  
+$("#bloqueur").css('display','block');
+
 localStorage.setItem("poeme_radia", "donne"); 
 }
 
@@ -454,7 +459,7 @@ localStorage.setItem("manifeste_cyborg", "ok");
 document.getElementById("manifeste_cyborg").style.display = "block";
 document.getElementById("margaret_merci").style.display = "none";
 document.getElementById("bouton_prendre_manifeste").style.display = "none";
-
+$("#bloqueur").css('display','none');
 }
 
 
@@ -463,7 +468,10 @@ document.getElementById("manifeste_cyborg").style.display = "none";
 document.getElementById("margaret_explique").style.display = "block";  
 document.getElementById("bouton_pas_compris_1").style.display = "block";  
 document.getElementById("bouton_pas_compris_2").style.display = "block";  
+$("#bloqueur").css('display','block');
 }
+
+
 
 
 function margaret_explique_2(){
@@ -473,7 +481,9 @@ document.getElementById("margaret_explique").style.display = "none";
 document.getElementById("margaret_explique_2").style.display = "block";  
 document.getElementById("tout_fermer").style.display = "block";  
 }
-        function tout_fermer(){
+       
+
+function tout_fermer(){
             document.getElementById("citation_margaret").style.display = "none";
             document.getElementById("message_margaret").style.display = "none"; 
             document.getElementById("message_margaret_heureuse").style.display = "none";   
@@ -489,7 +499,7 @@ document.getElementById("tout_fermer").style.display = "block";
             document.getElementById("casque_fatoumata").style.display="none";
             document.getElementById("margaret_explique").style.display = "none";  
 $("#bloqueur").css('display','none');
-document.getElementById("margaret_explique_2").style.display = "NONE";  
+document.getElementById("margaret_explique_2").style.display = "none";  
 
 
 }

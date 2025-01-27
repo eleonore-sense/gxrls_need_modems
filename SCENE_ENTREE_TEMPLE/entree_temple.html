@@ -113,7 +113,7 @@ inventaire
 <div id="intro_temple" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_0.txt')</script></pre>
 
-   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:98px;">c'est quoi ça?</button>
+   <button id="boutonTemple1" class="bouton_intro" onclick="fonctionIntroTemple1()" style="top:47px;width:127px;">c'est quoi ça?</button>
 
 </div>
 
@@ -121,7 +121,7 @@ inventaire
 <div id="intro_temple_2" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_1.txt')</script></pre>
 
-   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:205px;">Ohlala, trop fun! je peux rentrer?</button>
+   <button id="boutonTemple2" class="bouton_intro" onclick="fonctionIntroTemple2()" style="top:82px; width:275px;">Ohlala, trop fun! je peux rentrer?</button>
 
 </div>
 
@@ -129,9 +129,9 @@ inventaire
 <div id="intro_temple_3" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_cyberslack_2.txt')</script></pre>
 
-   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:47px;left: -133px; width:155px;">J'ai un gender changer!</button>
+   <button id="boutonTemple3a" class="bouton_intro" onclick="fonctionAccesTemple()" style="top:37px; width:194px;">J'ai un gender changer!</button>
 
-   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:47px;left: 96px; width:205px; ">Euh, je n'ai rien sous la main pour le moment...</button>
+   <button id="boutonTemple3b" class="bouton_intro" onclick="tout_fermer()" style="top:69px; width:376px; ">Euh, je n'ai rien sous la main pour le moment...</button>
 
 </div>
 
@@ -142,7 +142,7 @@ inventaire
 <div id="intro_jaime_0" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_jaime_0.txt')</script></pre>
 
-   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:201px;">whoua! comment tu as fais ça?</button>
+   <button id="boutonJaime1" class="bouton_intro" onclick="fonctionIntroJaime1()" style="top:84px;width:242px;">whoua! comment tu as fais ça?</button>
 
 </div>
 
@@ -174,7 +174,7 @@ inventaire
 
   <div id="tout_fermer" onclick="tout_fermer()"></div>
 
-
+<div id="bloqueur"></div>
 
 
   </div>
@@ -324,6 +324,7 @@ inventaire
         function tout_fermer(){
            $("#tout_fermer").css('display', 'none');
            $(".popup").css('display', 'none');
+           $("#bloqueur").css("display","none");
           
         }
 
@@ -338,6 +339,8 @@ inventaire
             }
         }else{
         $("#intro_temple").css('display', 'block');
+        $("#bloqueur").css("display","block");
+
         }
     }
 
@@ -345,12 +348,16 @@ inventaire
        function fonctionIntroTemple1(){
         $("#intro_temple").css('display', 'none');
         $("#intro_temple_2").css('display', 'block');
+        $("#bloqueur").css("display","block");
+
        }
 
 
        function fonctionIntroTemple2(){
         $("#intro_temple_2").css('display', 'none');
         $("#intro_temple_3").css('display', 'block');
+        $("#bloqueur").css("display","block");
+
 
         localStorage.setItem("intro_temple", "ok");
         if (localStorage.getItem("gender_changer") == "ok"){
@@ -392,6 +399,8 @@ inventaire
 
         }else{
         $("#intro_jaime_0").css('display', 'block');
+        $("#bloqueur").css("display","block");
+
         }
     }
  

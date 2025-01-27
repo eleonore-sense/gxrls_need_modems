@@ -31,7 +31,7 @@ div{
  cursor:pointer; 
  text-decoration: none; 
  color: black; 
- z-index:3; 
+ z-index:40; 
  margin-top: 30px; 
  position: absolute; 
  right: 0%;
@@ -47,7 +47,7 @@ div{
     cursor:pointer; 
     text-decoration: none; 
     color: black; 
-    z-index:3; 
+    z-index:40; 
     margin-top: 30px; 
     position: absolute; 
     left: 0%;
@@ -92,6 +92,15 @@ div{
     cursor: pointer;
 }
 
+
+#bloqueur{
+    height:100vh; 
+    width: 100vw; 
+    z-index: 7; 
+    transform: translate(-50%, -50%); 
+    top: 50%; 
+    left: 50%; 
+    display: none;}
 
 
 .actionneur{

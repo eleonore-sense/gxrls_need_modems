@@ -80,7 +80,7 @@ _|_________\\\\\\                  (_
 
     <pre id="bg-arena-colere" style="margin-left: 0px; margin-top: 0px; animation: arene_colere 0.1s infinite; display: none;"><script>document.include('txt/arena.txt');</script></pre>
 
-    <pre id="bug" style="margin-left: 380px; margin-top: 130px;"><script>document.include('txt/bug.txt');</script></pre>
+    <pre id="bug" onclick="helpbug()" style="margin-left: 380px; margin-top: 130px;"><script>document.include('txt/bug.txt');</script></pre>
 
     <pre id="bug_attaque" style="margin-left: 380px; margin-top: 130px; display: none;"><script>document.include('txt/bug_attaque.txt');</script></pre>
     
@@ -126,19 +126,19 @@ _|_________\\\\\\                  (_
 
     <div id="bug_1" class="popup" style=" display:none;">
         <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/bug_1.txt')</script></pre>
-        <button id="bouton_1_a" class="bouton_intro" onclick="bug_2()" style="width:130px; top:60px;left:-80px;">Oh, pardon... je... je...</button>
-        <button id="bouton_1_b" class="bouton_intro" onclick="bug_2()" style="width:130px; top:60px;left:80px;">Tu as une voix qui porte pour un si petit corps</button>
+        <button id="bouton_1_a" class="bouton_intro" onclick="bug_2()" style="width:121px; top:60px;left:-104px;">Oh, pardon... je... je...</button>
+        <button id="bouton_1_b" class="bouton_intro" onclick="bug_2()" style="width:197px; top:60px;left:80px;">Tu as une voix qui porte pour un si petit corps</button>
     </div>
 
     <div id="bug_2" style="display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/bug_2.txt')</script></pre>
-        <button id="bouton_2_a" class="bouton_intro" onclick="bug_3()" style="width:130px; top:60px;left:-80px;">Tout est devenu si petit d'un coup...</button>
-        <button id="bouton_2_b" class="bouton_intro" onclick="bug_3()" style="width:130px; top:60px;left:80px;">Ou suis-je devenu·e géant·e&nbsp;?</button>
+        <button id="bouton_2_a" class="bouton_intro" onclick="bug_3()" style="width:294px; top:43px;">Tout est devenu si petit d'un coup...</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="bug_3()" style="width:236px; top:70px;">Ou suis-je devenu·e géant·e&nbsp;?</button>
     </div>
 
     <div id="bug_3" style="display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/bug_3.txt')</script></pre>
-        <button id="bouton_3" class="bouton_intro" onclick="popup_phrase()" style="width:180px; top:70px;">Si tu veux</button>
+        <button id="bouton_3" class="bouton_intro" onclick="popup_phrase()" style="width:106px; top:70px;">Si tu veux</button>
     </div>
 
 
@@ -155,8 +155,8 @@ _|_________\\\\\\                  (_
 
     <div id="bug_5" style="display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/bug_5.txt')</script></pre>
-        <button id="bouton_5_a" class="bouton_intro" onclick="fonction_fuite()" style="width:100px; top:70px; left:-80px;">Fuir</button>
-        <button id="bouton_5_b" class="bouton_intro" style="width:100px; top:70px; left:80px; cursor: not-allowed;">Périr</button>
+        <button id="bouton_5_a" class="bouton_intro" onclick="fonction_fuite()" style="width:62px; top:59px; left:-67px;">Fuir</button>
+        <button id="bouton_5_b" class="bouton_intro" style="width:77px; top:59px; left:62px; cursor: not-allowed;">Périr</button>
     </div>
 
     <div id="bug_6" style="display:none;">
@@ -173,7 +173,7 @@ _|_________\\\\\\                  (_
 
     <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
 
-    <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+    <div id="bloqueur"></div>
 
 
 <script>
@@ -307,17 +307,30 @@ function animate_ver() {
         document.getElementById("star").style.cursor= "auto";
     }
 
+
 /////////DIALOGUE/////////
 
     if (localStorage.getItem("retourne_source") == "ok") {
+        $("#bug").css('cursor','pointer');
         const timer_bug_7 = setTimeout(bug_7, 3000);
     }else{
         const timer_bug_1 = setTimeout(bug_1, 3000);
     }
 
+
+function helpbug(){
+    if (localStorage.getItem("retourne_source") == "ok") {
+        bug_7();
+    }else{}
+
+}
+
+
     function bug_1(){
         document.getElementById("bug_1").style.display = "block";
         localStorage.setItem("intro_bug", "ok");
+document.getElementById("bloqueur").style.display = "block";
+
     }
 
     function bug_7(){
@@ -345,6 +358,8 @@ function animate_ver() {
         document.getElementById("bug_2").style.display= "none";
         document.getElementById("bug").style.display= "block";
         document.getElementById("bug_attaque").style.display= "none";
+            document.getElementById("bloqueur").style.display = "block";
+
     }
 
 
@@ -352,7 +367,8 @@ function animate_ver() {
         document.getElementById("popup_phrase").style.display= "block"; 
         document.getElementById("bouton_3").style.display= "none";
         document.getElementById("bug_3").style.display= "none";
-        document.getElementById("bloqueur").style.display = "none";
+        document.getElementById("bloqueur").style.display = "block";
+        $("#bug").css('cursor','pointer');
     }
 
 
@@ -377,6 +393,8 @@ function animate_ver() {
             document.getElementById("bug_attaque").style.display= "block";
             document.getElementById("bg-arena").style.display= "none";
             document.getElementById("bg-arena-colere").style.display= "block";
+        document.getElementById("bloqueur").style.display = "block";
+
         }
     }
 
@@ -388,6 +406,8 @@ function animate_ver() {
         document.getElementById("pied").classList.remove("pied_drop");
         document.getElementById("pied").classList.add("pied_lift");
         setTimeout(() => {  window.location.href='../SCENE_ENTREE_ARENE/entree_arene.html'; }, 2000);
+        document.getElementById("bloqueur").style.display = "block";
+
     }
 
 
@@ -434,6 +454,8 @@ function animate_ver() {
         $("#transfem_serv").css('display', 'none');
         $("#spideralex").css('display', 'none');
         $("#moog").css('display', 'none');
+                document.getElementById("bloqueur").style.display = "none";
+
     }
 
 
