@@ -369,15 +369,17 @@ retour au jeu
   </div>
 
 
-  <!--///////////////////////CARTOUCHE ANTHROPY/////////////////////////////////-->
 
-    <div id="cartouche_jeu" class="obj" style=" left: -170px; top:100px;" onclick="fonctionCartoucheJeu()" >
-        <pre><script>document.include('txt/phare/cartouche_jeu.txt')</script></pre>
+
+<!--///////////////////////TRANSFEM//////////////////////////////////-->
+
+    <div id="transfem" class="obj" style=" left: -174px; top:103px;" onclick="fonctionTransfem()" >
+        <pre><script>document.include('txt/entree_arene/transfem.txt')</script></pre>
     </div>
 
 
-<div id="cartouche_jeu_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
-    <pre class="pre"><script>document.include('../SCENE_PHARE/txt/anthropy.txt')</script>
+<div id="transfem_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_ENTREE_ARENE/txt/thf.txt')</script>
     </pre>
   </div>
 
@@ -399,7 +401,7 @@ retour au jeu
 
   <!--///////////////////////FEUILLE AUTOMNE//////////////////////////////////-->
 
-    <div id="feuille_automne" class="obj" style=" left: -511px; top:218px;" onclick="fonctionFeuilleAutomne()" >
+    <div id="feuille_automne" class="obj" style=" left: -511px; top:213px;" onclick="fonctionFeuilleAutomne()" >
         <pre><script>document.include('txt/welcome_home/feuille_automne.txt')</script></pre>
     </div>
 
@@ -412,7 +414,7 @@ retour au jeu
 
 <!--///////////////////////TOY STORY//////////////////////////////////-->
 
-    <div id="toy_story" class="obj" style=" left: -397px; top:217px;" onclick="fonctionToyStory()" >
+    <div id="toy_story" class="obj" style=" left: -397px; top:211px;" onclick="fonctionToyStory()" >
         <pre><script>document.include('txt/welcome_home/toy_story.txt')</script></pre>
     </div>
 
@@ -423,9 +425,41 @@ retour au jeu
   </div>
 
 
+<!--///////////////////////DRIFTCORE//////////////////////////////////-->
+
+    <div id="driftcore" class="obj" style=" left: -280px; top:205px;" onclick="fonctionDriftcore()" >
+        <pre><script>document.include('txt/jardin/driftcore.txt')</script></pre>
+    </div>
 
 
+<div id="driftcore_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_JARDIN/txt/driftcore.txt')</script>
+    </pre>
+  </div>
 
+<!--///////////////////////GEEKGIRL//////////////////////////////////-->
+
+    <div id="geekgirl" class="obj" style=" left: -173px; top:205px;" onclick="fonctionGeekgirl()" >
+        <pre><script>document.include('txt/entree_temple/geekgirl.txt')</script></pre>
+    </div>
+
+
+<div id="geekgirl_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_ENTREE_TEMPLE/txt/geekgirl.txt')</script>
+    </pre>
+  </div>
+
+  <!--///////////////////////CARTOUCHE ANTHROPY/////////////////////////////////-->
+
+    <div id="cartouche_jeu" class="obj" style=" left: -58px; top:205px;" onclick="fonctionCartoucheJeu()" >
+        <pre><script>document.include('txt/phare/cartouche_jeu.txt')</script></pre>
+    </div>
+
+
+<div id="cartouche_jeu_texte" class="texte" onclick= "fonctionFermeTout()" style="" >
+    <pre class="pre"><script>document.include('../SCENE_PHARE/txt/anthropy.txt')</script>
+    </pre>
+  </div>
 
 <!--///////////////////////BIBLI///////////////////////////////////-->
 
@@ -543,7 +577,7 @@ retour au jeu
         <pre><script>document.include('txt/telescope/donna_haraway_page1.txt')</script></pre>
 </div>
 
-<div id="txt_invisible" class="texte" style="color: #fafafa; top: -85px; left: 113px;"><pre>Nos machines sont <br>étrangement vivantes, <br>et nous, nous sommes <br>épouvantablement inertes.</pre></div>
+<div id="txt_invisible" class="texte" style=" text-shadow: 0 0 0.35em #000000, 0 0 0.35em #000000, 0 0 0.35em #000000;  color: #fafafa; top: -85px; left: 113px;"><pre>Nos machines sont <br>étrangement vivantes, <br>et nous, nous sommes <br>épouvantablement inertes.</pre></div>
 
 
    <button id="bouton_page1" onclick="fonctionPage2()" class="bouton_donna_haraway">suivant</button>
@@ -1169,6 +1203,31 @@ $("#toy_story").css('display', 'none');
 }});  
 
 
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("driftcore") == "ok"){
+$("#driftcore").css('display','block');
+ 
+ }else{
+$("#driftcore").css('display', 'none');
+}});  
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("geekgirl") == "ok"){
+$("#geekgirl").css('display','block');
+ 
+ }else{
+$("#geekgirl").css('display', 'none');
+}});  
+
+
+    $( window ).on( "load", function() {
+  if(localStorage.getItem("transfem") == "ok"){
+$("#transfem").css('display','block');
+ 
+ }else{
+$("#transfem").css('display', 'none');
+}});  
+
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("poignard") == "ok"){
@@ -1361,13 +1420,38 @@ $("#feuille_automne_texte").css('display','block');
 
 }
 
-///////////////////////////Gender_changer//////////////////////////////////////
+///////////////////////////Toystory//////////////////////////////////////
 
 function fonctionToyStory(){
         fonctionFermeTout();
 $("#toystory_texte").css('display','block');
 
 }
+
+///////////////////////////Driftcore//////////////////////////////////////
+
+function fonctionDriftcore(){
+        fonctionFermeTout();
+$("#driftcore_texte").css('display','block');
+
+}
+
+///////////////////////////Geekgirl//////////////////////////////////////
+
+function fonctionGeekgirl(){
+        fonctionFermeTout();
+$("#geekgirl_texte").css('display','block');
+
+}
+
+///////////////////////////Transfem//////////////////////////////////////
+
+function fonctionTransfem(){
+        fonctionFermeTout();
+$("#transfem_texte").css('display','block');
+
+}
+
 
 ///////////////////////////Poignard//////////////////////////////////////
 

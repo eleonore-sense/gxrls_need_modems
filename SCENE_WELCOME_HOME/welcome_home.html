@@ -92,7 +92,7 @@ inventaire
 
 <!--telephone-->
     <div id="telephone">
-        <pre onclick="window.location.href='../SCENE_DAME_TELEPHONE/dame_telephone.html';" style="margin-top:-32px; margin-left: -284px; color: white; cursor: pointer; z-index: 10;"><script>document.include('txt/telephone.txt') ;</script> 
+        <pre onclick="window.location.href='../SCENE_DAME_TELEPHONE/dame_telephone.html';" style="margin-top:-32px; margin-left: -284px; color: white; cursor: pointer; z-index: 5;"><script>document.include('txt/telephone.txt') ;</script> 
         </pre>
     </div>
 
@@ -118,17 +118,17 @@ inventaire
 <div id="intro_jgs" class="popup" style=" ">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_1.txt')</script></pre>
 
-   <button id="boutonJgs1A" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:25px;width:180px;">tu es... la déesse créatrice?</button>
-   <button id="boutonJgs1B" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:55px;width:129px;">dans ton monde..?</button>
+   <button id="boutonJgs1A" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:25px;width:238px;">tu es... la déesse créatrice&nbsp;?</button>
+   <button id="boutonJgs1B" class="bouton_intro" onclick="fonctionIntroJgs1()" style="top:55px;width:156px;">dans ton monde..&nbsp;?</button>
 </div>
 
 
 <div id="intro_jgs_2" class="popup" style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_2.txt')</script></pre>
 
-   <button id="boutonJgs2A" class="bouton_intro" onclick="fonctionIntroJgs2()" style="top:82px; width:62px; left:-67px;">Lorrie?</button>
+   <button id="boutonJgs2A" class="bouton_intro" onclick="fonctionIntroJgs2()" style="top:82px; width:74px; left:-67px;">Lorrie&nbsp;?</button>
 
-      <button id="boutonJgs2" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:82px; width:45px; left: 91px;">toi?</button>
+      <button id="boutonJgs2" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:82px; width:52px; left: 91px;">toi&nbsp;?</button>
 
 </div>
 
@@ -136,7 +136,7 @@ inventaire
 <div id="intro_jgs_3" class="popup" style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;">><script>document.include('txt/intro_jgs_3.txt')</script></pre>
 
-   <button id="boutonJgs3" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:57px;width:181px;">et toi, c'est quoi ton nom?</button>
+   <button id="boutonJgs3" class="bouton_intro" onclick="fonctionIntroJgs3()" style="top:57px;width:224px;">et toi, c'est quoi ton nom&nbsp;?</button>
 
 
 </div>
@@ -145,7 +145,7 @@ inventaire
 <div id="intro_jgs_4" class="popup" style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_4.txt')</script></pre>
 
-   <button id="boutonJgs4" class="bouton_intro" onclick="fonctionIntroJgs4()" style="top:100px; width:292px;">Whouaaa, tes journées ont l'air bien remplies!</button>
+   <button id="boutonJgs4" class="bouton_intro" onclick="fonctionIntroJgs4()" style="top:100px; width:356px;">Whouaaa, tes journées ont l'air bien remplies&nbsp;!</button>
 
 
 </div>
@@ -155,15 +155,15 @@ inventaire
 <div id="intro_jgs_5" class="popup" style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;"><script>document.include('txt/intro_jgs_5.txt')</script></pre>
 
-   <button id="boutonJgs5A" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:81px;width:105px; left:-100px;">impressionnant!</button>
-   <button id="boutonJgs5B" class="bouton_intro" onclick="fonctionIntroJgs5()" style="top:81px;width:98px; left:106px;">l'ASC..Quoi??</button>
+   <button id="boutonJgs5A" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:81px;width:135px; left:-100px;">impressionnant&nbsp;!</button>
+   <button id="boutonJgs5B" class="bouton_intro" onclick="fonctionIntroJgs5()" style="top:81px;width:120px; left:106px;">l'ASC..Quoi&nbsp;??</button>
 </div>
 
 
 <div id="intro_jgs_6" class="popup" style="">
  <pre class="pre_popup" style="color:white; background-color: #000f38; font-weight: normal;">><script>document.include('txt/intro_jgs_6.txt')</script></pre>
 
-   <button id="boutonJgs6" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:94px; width:103px;">super fortiche!</button>
+   <button id="boutonJgs6" class="bouton_intro" onclick="fonctionIntroJgs6()" style="top:94px; width:103px;">super fortiche&nbsp;!</button>
 
 
 </div>
@@ -226,7 +226,7 @@ inventaire
   <div id="tout_fermer" onclick="tout_fermer()"></div>
 
 
-
+    <div id="bloqueur"></div>
 
   </div>
 
@@ -263,7 +263,7 @@ inventaire
         function tout_fermer(){ 
             $("#tout_fermer").css("display", "none");
             $(".popup").css("display", "none");
-
+            $("#bloqueur").css("display", "none");
         }
 
 
@@ -279,6 +279,7 @@ inventaire
 
         }else{
         $("#intro_jgs").css('display', 'block');
+            $("#bloqueur").css("display", "block");
         }
     
 }
@@ -286,29 +287,34 @@ inventaire
        function fonctionIntroJgs1(){
         $("#intro_jgs").css('display', 'none');
         $("#intro_jgs_2").css('display', 'block');
+        $("#bloqueur").css("display", "block");
        }
 
 
        function fonctionIntroJgs2(){
         $("#intro_jgs_2").css('display', 'none');
         $("#intro_jgs_3").css('display', 'block');
+        $("#bloqueur").css("display", "block");
       }    
 
 
        function fonctionIntroJgs3(){
         $("#intro_jgs_3").css('display', 'none');
         $("#intro_jgs_4").css('display', 'block');
+        $("#bloqueur").css("display", "block");
       }    
 
        function fonctionIntroJgs4(){
         $("#intro_jgs_2").css('display', 'none');
         $("#intro_jgs_4").css('display', 'none');
         $("#intro_jgs_5").css('display', 'block');
+        $("#bloqueur").css("display", "block");
       }    
 
        function fonctionIntroJgs5(){
         $("#intro_jgs_5").css('display', 'none');
         $("#intro_jgs_6").css('display', 'block');
+        $("#bloqueur").css("display", "block");
       }    
 
            function fonctionIntroJgs6(){

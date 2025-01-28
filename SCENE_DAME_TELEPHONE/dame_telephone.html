@@ -93,16 +93,16 @@ retour à l'entrée du temple -->
 <div id="intro_damedutel" class="popup" style=" ">
  <pre class="pre_popup"><script>document.include('txt/intro_damedutel_1.txt')</script></pre>
 
-   <button id="boutonDameDuTel1" class="bouton_intro" onclick="fonctionIntroDameDuTel1()" style="top:73px;width:237px;">heu... c'est ça la cyberslacker party?</button>
+   <button id="boutonDameDuTel1" class="bouton_intro" onclick="fonctionIntroDameDuTel1()" style="top:73px;width:302px;">heu... c'est ça la cyberslacker party&nbsp;?</button>
 </div>
 
 
 <div id="intro_damedutel_2" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_damedutel_2.txt')</script></pre>
 
-   <button id="boutonDameDuTel2A" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:100px; left:-127px;">Whouaou, <br>à l'ancienne!</button>
+   <button id="boutonDameDuTel2A" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:130px; left:-127px;">Whouaou, <br>à l'ancienne&nbsp;!</button>
 
-      <button id="boutonDameDuTel2" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:167px; left: 121px;">ok... et ce n'est pas trop mou comme métier?</button>
+      <button id="boutonDameDuTel2" class="bouton_intro" onclick="fonctionIntroDameDuTel2()" style="top:100px; width:275px; left: 100px;">ok... et ce n'est pas trop mou comme métier&nbsp;?</button>
 
 </div>
 
@@ -110,9 +110,9 @@ retour à l'entrée du temple -->
 <div id="intro_damedutel_3" class="popup" style="">
  <pre class="pre_popup">><script>document.include('txt/intro_damedutel_3.txt')</script></pre>
 
-   <button id="boutonDameDuTel3A" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width:154px; left:-133px;">Haa oui quand même!</button>
+   <button id="boutonDameDuTel3A" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width:154px; left:-150px;">Haa oui quand même&nbsp;!</button>
 
-   <button id="boutonDameDuTel3B" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width: 239px; left:120px;">et comment on devient standardiste?</button>
+   <button id="boutonDameDuTel3B" class="bouton_intro" onclick="fonctionIntroDameDuTel3()" style="top:69px;width: 239px; left:120px;">et comment on devient standardiste&nbsp;?</button>
 
 
 </div>
@@ -121,7 +121,7 @@ retour à l'entrée du temple -->
 <div id="intro_damedutel_4" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_damedutel_4.txt')</script></pre>
 
-   <button id="boutonDameDuTel4" class="bouton_intro" onclick="fonctionIntroDameDuTel4()" style="top:71px; width:117px;">mais c'est zinzin!</button>
+   <button id="boutonDameDuTel4" class="bouton_intro" onclick="fonctionIntroDameDuTel4()" style="top:71px; width:156px;">mais c'est zinzin&nbsp;!</button>
 
 
 </div>
@@ -131,16 +131,16 @@ retour à l'entrée du temple -->
 <div id="intro_damedutel_5" class="popup" style="">
  <pre class="pre_popup"><script>document.include('txt/intro_damedutel_5.txt')</script></pre>
 
-   <button id="boutonDameDuTel5A" class="bouton_intro" onclick="fonctionIntroDameDuTel5()" style="top:55px;width:206px;">Pfiouu, les lourdos de l'espace!</button>
+   <button id="boutonDameDuTel5A" class="bouton_intro" onclick="fonctionIntroDameDuTel5()" style="top:55px;width:255px;">Pfiouu, les lourdos de l'espace&nbsp;!</button>
 </div>
 
 
 <div id="intro_damedutel_6" class="popup" style="">
  <pre class="pre_popup">><script>document.include('txt/intro_damedutel_6.txt')</script></pre>
 
-   <button id="boutonDameDuTel6A" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:72px; left: -89px;">pas mal!</button>
+   <button id="boutonDameDuTel6A" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:88px; left: -89px;">pas mal&nbsp;!</button>
 
-   <button id="boutonDameDuTel6B" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:109px; left:95px">that's my gxrls!</button>
+   <button id="boutonDameDuTel6B" class="bouton_intro" onclick="fonctionIntroDameDuTel6()" style="top:100px; width:145px; left:95px">that's my gxrls&nbsp;!</button>
 
 
 </div>
@@ -197,6 +197,7 @@ retour à l'entrée du temple -->
 
 
   <div id="tout_fermer" onclick="tout_fermer()"></div>
+<div id="bloqueur"></div>
 
 
 
@@ -229,6 +230,7 @@ retour à l'entrée du temple -->
         function tout_fermer(){ 
             $("#tout_fermer").css("display", "none");
             $(".popup").css("display", "none");
+            $("#bloqueur").css('display','none');
 
         }
 
@@ -243,6 +245,7 @@ retour à l'entrée du temple -->
 
         }else{
         $("#intro_damedutel").css('display', 'block');
+        $("#bloqueur").css('display','block');
         }
     
 }
@@ -250,28 +253,33 @@ retour à l'entrée du temple -->
        function fonctionIntroDameDuTel1(){
         $("#intro_damedutel").css('display', 'none');
         $("#intro_damedutel_2").css('display', 'block');
+        $("#bloqueur").css('display','block');
        }
 
 
        function fonctionIntroDameDuTel2(){
         $("#intro_damedutel_2").css('display', 'none');
         $("#intro_damedutel_3").css('display', 'block');
+        $("#bloqueur").css('display','block');
       }    
 
 
        function fonctionIntroDameDuTel3(){
         $("#intro_damedutel_3").css('display', 'none');
         $("#intro_damedutel_4").css('display', 'block');
+        $("#bloqueur").css('display','block');
       }    
 
        function fonctionIntroDameDuTel4(){
         $("#intro_damedutel_4").css('display', 'none');
         $("#intro_damedutel_5").css('display', 'block');
+        $("#bloqueur").css('display','block');
       }    
 
        function fonctionIntroDameDuTel5(){
         $("#intro_damedutel_5").css('display', 'none');
         $("#intro_damedutel_6").css('display', 'block');
+        $("#bloqueur").css('display','block');
       }    
 
            function fonctionIntroDameDuTel6(){

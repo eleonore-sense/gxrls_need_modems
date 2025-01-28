@@ -104,24 +104,24 @@ _|_________\\\\\\                  (_
 
     <div id="dialogue_1" class="popup" style=" display:none;">
         <pre class="pe_popup" style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_1.txt')</script></pre>
-        <button id="bouton_1_a" class="bouton_intro" onclick="fonctionDjinn2()" style="width: 140px; top:60px; left:-90px;">Tu sors d'où&nbsp;?</button>
-        <button id="bouton_1_b" class="bouton_intro" onclick="fonctionDjinn2()" style="width: 140px; top:60px; left:90px;">C'est vrai qu'on y a mis de l'attention</button>
+        <button id="bouton_1_a" class="bouton_intro" onclick="fonctionDjinn2()" style="width: 124px; top:60px; left:-90px;">Tu sors d'où&nbsp;?</button>
+        <button id="bouton_1_b" class="bouton_intro" onclick="fonctionDjinn2()" style="width: 160px; top:60px; left:90px;">C'est vrai qu'on y a mis de l'attention</button>
     </div>
 
     <div id="dialogue_2" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_2.txt')</script></pre>
-        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:-100px;">Dis-m'en plus</button>
-        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 160px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
+        <button id="bouton_2_a" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 122px; top:70px; left:-100px;">Dis-m'en plus</button>
+        <button id="bouton_2_b" class="bouton_intro" onclick="fonctionDjinn3()" style="width: 135px; top:70px; left:100px;">Tu as quel âge&nbsp;?</button>
     </div>
 
     <div id="dialogue_3" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_3.txt')</script></pre>
-        <button id="bouton_3" class="bouton_intro" onclick="fonctionDjinn4()" style="width: 200px; top:60px;">Tu as l'air de t'y connaître</button>
+        <button id="bouton_3" class="bouton_intro" onclick="fonctionDjinn4()" style="width: 222px; top:60px;">Tu as l'air de t'y connaître</button>
     </div>
 
     <div id="dialogue_4" style=" display:none;">
         <pre style="z-index: 4; background-color: white; "><script>document.include('txt/dialogue_4.txt')</script></pre>
-        <button id="bouton_4" class="bouton_intro" onclick="fonctionDjinn5()" style="width: 280px; top:33px;">Tu travaillais à l'imprimerie, c'est ça&nbsp;?</button>
+        <button id="bouton_4" class="bouton_intro" onclick="fonctionDjinn5()" style="width: 207px; top:33px;">Tu travaillais à l'imprimerie, c'est ça&nbsp;?</button>
     </div>
 
     <div id="dialogue_5" style=" display:none;">
@@ -172,6 +172,7 @@ _|_________\\\\\\                  (_
     function fonctionPostale(){
        	$("#carte_driftcore").css('display','block');
         $("#tout_fermer").css('display','block');
+            localStorage.setItem("driftcore", "ok"); 
     }
 
     function fonctionRose(){
