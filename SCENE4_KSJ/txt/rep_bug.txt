@@ -1,9 +1,11 @@
 +--------------------------------------------+
 |                                            |
 |                                            |
-|     sur ton chemin tu as du rencontrer     |
+|      Sur ton chemin tu as du rencontré     |
 |   une chimère très sage qui t'a transmis   |
-|        un grand livre…                     |
+|               un grand livre…              |
+|        Ou peut-être que tu ne l'as pas     |
+|               encore croisé!               |
 |                                            |
 |                                            |
 +--------------------------------------------+

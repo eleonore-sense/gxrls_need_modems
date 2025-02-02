@@ -1,0 +1,12 @@
++------------------------------------------------------+
+|                                                      |
+|                                                      |
+|       Retourne aux sources, le code source..!!       |
+|                  vraiment rien?                      |
+|        Bon, je te l'accorde, elle est un peu         |
+|                 technique celle là:                  |
+|      bon aller, fait un clic droit > code source     |
+|         tu devrais y découvrir un message...         |
+|                                                      |
+|                                                      |
++------------------------------------------------------+

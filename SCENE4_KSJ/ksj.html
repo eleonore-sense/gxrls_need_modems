@@ -12,7 +12,7 @@ _|_________\\\\\\                  (_
 -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-          <title>↯–↯–GXRLS NEED MODEM-↯–↯</title>
+          <title>↯–↯–GXRLS NEED MODEMS-↯–↯</title>
     <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
@@ -59,6 +59,29 @@ transform: translate(0%,0%);
 margin-left: 100px;
 
 }
+
+
+.inventaire_cligno{
+animation: clignotement 3s infinite;
+}
+
+.inventaire_normal{
+}
+
+
+.carto_cligno{
+animation: clignotement 3s infinite;
+}
+
+.inventaire_normal{
+}
+ @keyframes clignotement{
+0% {text-shadow: 0 0 0 #000000, 0 0 0 #000000;}
+50% {text-shadow: 0 0 0.35em #000000;}
+100% {text-shadow: 0 0 0 #000000, 0 0 0 #000000;}
+}
+
+
 </style>
 
 <body>
@@ -81,14 +104,6 @@ inventaire
 	</div>
 
 
-	<div id="punchline" style="margin-top: -230px; width: 255px; margin-left: 100px; transform:translate(0%,0%);">
-		<p class="punchline" id="punchline1">"L’informatique est trop importante pour être laissée aux hommes."</p>
-		<p class="punchline" id="punchline2"></p>
-		<p class="punchline" id="punchline3"></p>
-		<p class="punchline" id="punchline4"></p>
-		<p class="punchline" id="punchline5"></p>
-
-	</div>
 
 	<div id="ksj" style="margin-left: -260px; animation: dame linear reverse infinite; animation-duration: 12s;">
 		<pre ><script>document.include('txt/ksj.txt');</script></pre>
@@ -97,10 +112,10 @@ inventaire
 
 
 <div id="deroule_question" style="margin-top:-124px; margin-left: 100px; transform: translate(0%, 0%);">
-	<select id="question" style="">
-	    <option id="option0" value="0">...</option>
-	    <option id="option1" value="1">Whouaa, mais où ai-je atterri ?</option>
-	    <option id="option2" value="2">Vous... vous avez des plumes ?</option>	    
+	<select id="question" style="cursor:pointer;">
+	    <option id="option0" style="cursor:pointer; font-family: Consolas;" value="0">...</option>
+	    <option id="option1" style="cursor:pointer; font-family: Consolas;" value="1">Whouaa, mais où ai-je atterri ?</option>
+	    <option id="option2" style="cursor:pointer; font-family: Consolas;" value="2">Vous... vous avez des plumes ?</option>	    
 	</select>
 </div>
 
@@ -110,6 +125,8 @@ inventaire
 	<pre id="reponse2" class="pre_reponse"><script>document.include('txt/rep2.txt');</script></pre>
 	<pre id="reponse3" class="pre_reponse"><script>document.include('txt/rep3.txt');</script></pre>
 	<pre id="reponse4" class="pre_reponse"><script>document.include('txt/rep4.txt');</script></pre>
+	<pre id="reponse5" class="pre_reponse"><script>document.include('txt/rep5.txt');</script></pre>
+	<pre id="reponse6" class="pre_reponse"><script>document.include('txt/rep6.txt');</script></pre>
 
 
 		<pre id="reponse_mou" class="pre_reponse"><script>document.include('txt/rep_mou.txt');</script></pre>
@@ -117,6 +134,7 @@ inventaire
 		<pre id="reponse_modem" class="pre_reponse"><script>document.include('txt/rep_modem.txt');</script></pre>
 		<pre id="reponse_bug" class="pre_reponse"><script>document.include('txt/rep_bug.txt');</script></pre>
 		<pre id="reponse_mdp" class="pre_reponse"><script>document.include('txt/rep_mdp.txt');</script></pre>
+		<pre id="reponse_mdp2" class="pre_reponse"><script>document.include('txt/rep_mdp2.txt');</script></pre>
 		<pre id="reponse_labyrinthe" class="pre_reponse"><script>document.include('txt/rep_labyrinthe.txt');</script></pre>
 		<pre id="reponse_fin" class="pre_reponse"><script>document.include('txt/rep_fin.txt');</script></pre>
 </div>
@@ -137,32 +155,8 @@ inventaire
 
 <script>
 
-//les phrases punchline (en option)
 
       $( window ).on( "load", function() {
-
-  var tirage = Math.floor(Math.random() * 5);
-
-if(tirage == 0){
-$("#punchline1").css('display','block'); 
-}else if(tirage == 1){
-$("#punchline2").css('display','block'); 
-
-}else if(tirage == 2){
-$("#punchline3").css('display','block'); 
-
-}else if(tirage == 3){
-$("#punchline4").css('display','block'); 
-
-}else if(tirage == 4){
-$("#punchline5").css('display','block'); 
-
-}else{
-$("#punchline6").css('display','block'); 
-
-}
-
-
 
 
 if(localStorage.getItem("pont")== "fin_du_jeu"){
@@ -196,9 +190,13 @@ $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
 }else if(localStorage.getItem("intro_jean")== "ok"){
+	if(localStorage.getItem("blabla_ksj")== "aide_mdp"){
+$('select #option1').css('display','none');
+$('select #option2').text('non, vraiment, la je ne l’ai pas...');
+	}else{
 $('select #option1').text('l’esprit dans l’ordinateur, j’ai pas tout compris je crois...');
 $('select #option2').text('à l’aide! je ne trouve pas le mot de passe!');
-localStorage.setItem("blabla_ksj","mdp");
+localStorage.setItem("blabla_ksj","mdp");}
 
 
 
@@ -207,6 +205,10 @@ localStorage.setItem("blabla_ksj","mdp");
 localStorage.setItem("blabla_ksj","mou");
 $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
+
+
+
+
 
 }else if(localStorage.getItem("intro_bug")== "ok"){
 $('select #option1').text('je crois que j’ai écrasé un être vivant...');
@@ -217,11 +219,21 @@ localStorage.setItem("blabla_ksj","bug");
 
 
 }else if(localStorage.getItem("modem")== "donne"){
+	if(localStorage.getItem("bouquet")== "donne"){
 localStorage.setItem("blabla_ksj","mou");
 $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
-}else if(localStorage.getItem("intro_radia")== "ok"){
+}else if(localStorage.getItem("intro_vns")== "ok"){
+$('select #option1').text('la gargouille me parle de façon ultra cryptée!');
+$('select #option2').text('je suis perdue!');
+localStorage.setItem("blabla_ksj","graine");
+
+}else if(localStorage.getItem("blabla_ksj")== "mou"){
+$('select #option1').css('display','none');
+$('select #option2').text('Heu, salut salut ! Me revoilà !');
+
+}}else if(localStorage.getItem("intro_radia")== "ok"){
 $('select #option1').text('un arbre me parle');
 $('select #option2').text('il se passe des choses étranges dans la forêt');
 localStorage.setItem("blabla_ksj","modem");
@@ -239,10 +251,29 @@ $('select #option2').text('Heu, salut salut ! Me revoilà !');
 $('select #option1').text('la gargouille me parle de façon ultra cryptée!');
 $('select #option2').text('je suis perdue!');
 localStorage.setItem("blabla_ksj","graine");
+
 }else if(localStorage.getItem("blabla_ksj")== "mou"){
 $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
+
+}else if(localStorage.getItem("blabla_ksj")== "inventaire"){
+localStorage.setItem("blabla_ksj","inventaire_ok");
+$('#reponse3').css('display','none');
+$('#reponse4').css('display','block');
+
+}else if(localStorage.getItem("blabla_ksj")== "inventaire_ok"){
+$('select #option1').css('display','none');
+$('select #option2').text('Hmm, et comment je fais pour rentrer chez moi?');
+	$("#inventaire").addClass('inventaire_normal');
+$('#bigcarto').css('display','none');
+$('#reponse4').css('display','block');
+
+}else if(localStorage.getItem("blabla_ksj")== "carto_ok"){
+$('select #option1').text('Euh, merci ?');
+$('select #option2').text('Pourquoi m’aidez-vous ?');
+$('#bigcarto').addClass('');
+$('#reponse5').css('display','none');
 }else{
 	$("#inventaire").css('display','none');
 	$("#bigcarto").css('display','none');
@@ -301,17 +332,30 @@ $('select #option1').css('display','none');
 $('select #option2').css('display','none');
 
 
-
-
-
-
-}else if(localStorage.getItem("blabla_ksj")== "mdp"){
-	$('#reponse_mdp').css('display', 'block');
-
+}else if(localStorage.getItem("blabla_ksj")== "aide_mdp"){
+$('#reponse_mdp').css('display', 'none');
+$('#reponse_mdp2').css('display', 'block');
 $("#question").val('0'); 
 $('select #option1').css('display','none');
 $('select #option2').css('display','none');
 
+
+
+}else if(localStorage.getItem("blabla_ksj")== "mdp"){
+if(x==0){	
+$('#reponse_mdp').css('display', 'block');
+$("#question").val('0'); 
+$('select #option1').css('display','none');
+$('select #option2').text('non, vraiment, la je ne l’ai pas...');
+localStorage.setItem('blabla_ksj','aide_mdp');
+x=1;
+}else{
+$('#reponse_mdp').css('display', 'none');
+$('#reponse_mdp2').css('display', 'block');
+$("#question").val('0'); 
+$('select #option1').css('display','none');
+$('select #option2').css('display','none');
+}
 
 
 
@@ -359,18 +403,39 @@ x=1;
 $('.pre_reponse').css('display','none');
 $("#question").val('0'); 
 }
+}else if(localStorage.getItem("blabla_ksj")=="carto_ok"){
+	$('.pre_reponse').css('display','none');
+	$('#reponse6').css('display', 'block');
+
+$("#question").val('0'); 
+$('select #option1').css('display','none');
+$('select #option2').css('display','none');
+localStorage.setItem('blabla_ksj','r');
 
 
+}else if(localStorage.getItem("blabla_ksj")=="inventaire_ok"){
+	if (x==0){
+	$('.pre_reponse').css('display','none');
+	$('#reponse5').css('display', 'block');
+$("#bigcarto").addClass('carto_cligno');
+$("#question").val('0'); 
+$('select #option1').css('display','block');
+$('select #option1').text('Euh, merci ?');
+$('select #option2').text('Pourquoi m’aidez-vous ?');
+	$("#inventaire").css('display','block');
+	$("#bigcarto").css('display','block');
+	localStorage.setItem('blabla_ksj','carto_ok')
 
+x=1;
+	}else if (x==1){
+	$('.pre_reponse').css('display','none');
+	$('#reponse6').css('display', 'block');
 
-
-
-
-
-
-
-
-
+$("#question").val('0'); 
+$('select #option1').css('display','none');
+$('select #option2').css('display','none');
+localStorage.setItem('blabla_ksj','r');
+}
 }else{
 if (x==0){
 	$('#reponse1').css('display', 'block');
@@ -385,28 +450,20 @@ $('.pre_reponse').css('display','none');
 
 $("#question").val('0'); 
 $('select #option1').css('display','none');
-$('select #option2').text('Hmm, et comment je fais pour rentrer chez moi ?');
+$('select #option2').text('Okay... Et qu’est ce qu’il se passe maintenant?');
 x=2;
-} else if(x==2){
+
+}else if(x==2){
 $('.pre_reponse').css('display','none');
 	$('#reponse3').css('display', 'block');
 
 $("#question").val('0'); 
-$('select #option1').css('display','block');
-$('select #option1').text('Euh, merci ?');
-$('select #option2').text('Pourquoi m’aidez-vous ?');
-	$("#inventaire").css('display','block');
-	$("#bigcarto").css('display','block');
-x=3;
-}else if(x==3){
-$('.pre_reponse').css('display','none');
-	$('#reponse4').css('display', 'block');
-
-$("#question").val('0'); 
 $('select #option1').css('display','none');
+	$("#inventaire").css('display','block');
+	$("#inventaire").addClass('inventaire_cligno');
 $('select #option2').css('display','none');
-localStorage.setItem('blabla_ksj','r');
-}
+localStorage.setItem('blabla_ksj','inventaire');
+x=3;}
 }
 });
 

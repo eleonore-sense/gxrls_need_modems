@@ -314,7 +314,11 @@ function animate_ver() {
         $("#bug").css('cursor','pointer');
         const timer_bug_7 = setTimeout(bug_7, 3000);
     }else{
+    if(localStorage.getItem("intro_bug") == "ok"){
+        const timer_bug_3 = setTimeout(bug_3, 3000);
+    }else{
         const timer_bug_1 = setTimeout(bug_1, 3000);
+    }
     }
 
 
@@ -358,8 +362,7 @@ document.getElementById("bloqueur").style.display = "block";
         document.getElementById("bug_2").style.display= "none";
         document.getElementById("bug").style.display= "block";
         document.getElementById("bug_attaque").style.display= "none";
-            document.getElementById("bloqueur").style.display = "block";
-
+        document.getElementById("bloqueur").style.display = "block";
     }
 
 
@@ -394,6 +397,7 @@ document.getElementById("bloqueur").style.display = "block";
             document.getElementById("bg-arena").style.display= "none";
             document.getElementById("bg-arena-colere").style.display= "block";
         document.getElementById("bloqueur").style.display = "block";
+
 
         }
     }

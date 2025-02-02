@@ -81,7 +81,7 @@ _|_________\\\\\\                  (_
 
 
 <body >
-          <a href="javascript:history.go(-1)" id="bigcarto" >
+          <a href="" id="bigcarto" >
 retour au jeu
   </a>
 
@@ -824,6 +824,17 @@ retour au jeu
 
 
 ///////////////////////////APPARITION LIVRE////////////////////////////////
+
+    $( window ).on( "load", function() {
+
+if(localStorage.getItem("blabla_ksj") == "inventaire"){
+  $("#bigcarto").attr('href', '../SCENE4_KSJ/ksj.html');
+ localStorage.setItem('blabla_ksj','inventaire_ok')
+
+}else{
+  $("#bigcarto").attr('href', 'javascript:history.go(-1)');
+}});
+
 
     $( window ).on( "load", function() {
   if(localStorage.getItem("poeme_radia") == "ok"){

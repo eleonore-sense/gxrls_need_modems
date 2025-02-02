@@ -1,10 +1,10 @@
-+-----------------------------------------------+
-|                                               |
-|                                               |
-|       Ah et tu risques de croiser plein       |
-|          de créatures. Considère-les          |
-|       comme une extension des milliers        |
-|   de mains qui ont construit cet "endroit".   |
-|                                               |
-|                                               |
-+-----------------------------------------------+
++-------------------------------------------------+
+|                                                 |
+|                                                 |
+|      Whouaa on dirait que tu as emporté avec    |
+|          toi des graines de tournesols!         |
+|        Ouvre l'œil, tu pourrais peut-être       |
+|            en faire quelque chose ici!          |
+|                                                 |
+|                                                 |
++-------------------------------------------------+

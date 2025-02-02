@@ -357,7 +357,7 @@ $("#pas_arroser").css('display','block');
 $("#tout_fermer").css('display','block');
 
 }else{
-$("#a_arroser").css('display','block');
+$("#recolter").css('display','block');
 $("#tout_fermer").css('display','block');
 $("#grande_fleur").css('display','block');
 $("#moyenne_fleur").css('display','none');
@@ -386,19 +386,24 @@ $("#grande_fleur").css('cursor','auto');
 
 
 function fonction_dragon(){
-if(localStorage.getItem("plus_joli") == "ok"){
-$("#dame_du_ciel_7").css('display','block');
-$("#tout_fermer").css('display','block');;
-}else if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
-$("#dame_du_ciel_6").css('display','block');
-$("#tout_fermer").css('display','block');
-}else{
-$("#intro").css('display','block');
-$("#bouton_oui").css('display','block');
-$("#bloqueur").css('display','block');
+    if(localStorage.getItem("plus_joli") == "ok"){
+        if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
+            $("#dame_du_ciel_7").css('display','block');
+            $("#tout_fermer").css('display','block');
+        }else{
+            $("#intro").css('display','block');
+            $("#bouton_oui").css('display','block');
+            $("#bloqueur").css('display','block');
+        }
+    }else if(localStorage.getItem("intro_dame_du_ciel") == "ok"){
+        $("#dame_du_ciel_6").css('display','block');
+        $("#tout_fermer").css('display','block');    
+    }else{
+            $("#intro").css('display','block');
+            $("#bouton_oui").css('display','block');
+            $("#bloqueur").css('display','block');
+    }
 }
-}
-
 
 
 function intro(){
