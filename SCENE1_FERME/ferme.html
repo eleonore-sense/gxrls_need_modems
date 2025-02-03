@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-          <title>↯–↯–GXRLS NEED MODEM-↯–↯</title>
+          <title>↯–↯–GXRLS NEED MODEMS-↯–↯</title>
     <link rel="stylesheet" href="../style_commun.css">
     <script src="../jquery-3.7.1.min.js"></script>
     <script src="../script_commun.js"></script>
@@ -166,7 +166,7 @@
         <div id="tracteur_txt" >
             <pre style=" z-index: 9; background-color:white; "><script>document.include('txt/tracteur_txt.txt');</script></pre>
         </div>
-            <button onclick="window.location.href = '../SCENE2_CHAMPS/champs.html'" style="z-index: 16; position:absolute; width: 122px; transform: translate(-50%,-50%); top:40px; cursor: pointer; font-family: consolas;">aller au champ</button>
+            <button onclick="window.location.href = '../SCENE2_CHAMPS/champs.html'" style="z-index: 16; position:absolute; width: 122px; transform: translate(-50%,-50%); top:40px; cursor: pointer; font-family: consolas;">Aller au champ</button>
     </div>
 
 
@@ -208,6 +208,8 @@
 <div id="page_quitter" onclick="fonction_quitter()" style="top: 50%;
             left: 50%;  transform: translate(-50%, -50%);"></div>
 
+
+<div id="bloqueur" style="display: block;"></div>
 
     </div>
 
@@ -324,11 +326,12 @@ const timer_intro = setTimeout(fonction_intro, 8000);
 
         function fonction_intro(){
             if(sessionStorage.getItem("intro_ferme") == "ok"){
-
+            document.getElementById("bloqueur").style.display = "none";
             }else{
             document.getElementById("intro").style.display = "block";
             document.getElementById("page_quitter").style.display = "block";
             sessionStorage.setItem("intro_ferme","ok")
+            document.getElementById("bloqueur").style.display = "none";
         }
 }
 
@@ -401,7 +404,7 @@ function nettoyer(){
             document.getElementById("nettoyer").style.display= "none";
             document.getElementById("propre").style.display= "none";
             document.getElementById("click_tracteur").style.display = "none";
-
+            document.getElementById("bloqueur").style.display = "none";
         }
 
 </script>

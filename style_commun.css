@@ -3,6 +3,7 @@ body {
 font-size: 13px;
             font-family: Consolas, monospace;
             margin: 0; 
+            line-height:1.15;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -14,9 +15,12 @@ font-size: 13px;
 
 pre{
     position: absolute;
+            line-height:1.15;
     top: 50%;
     left: 50%;  
     transform: translate(-50%, -50%);
+    white-space: pre;
+
     }
 
     
@@ -107,6 +111,3 @@ div{
 
 }
 
-button{
-    font-family: consolas;
-}
