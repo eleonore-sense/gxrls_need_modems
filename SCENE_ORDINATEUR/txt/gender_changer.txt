@@ -5,13 +5,13 @@
 |      __.-"       "--.__                                                                    |
 |    ."  "--.__GENDER    "--.__                                                              |
 |    |         "--.__  CHANGER "--.__                                                        |
-|    |    ___        "--.__          ".        Bravo ! Tu as écris le bon mot de passe !     |
-|    | ¤ |"--.__  "--.__   "--.       |        Ça peut être très utile pour relier           |
-|    |   |_ x x "--..__ __     "      |        des branchements et faire des connexions.     |
-|    |     "--.__ x x  |  |    |      |                                                      |
-|    ".__        "--.__|__|  ¤ |      |        Fais-en bon usage !                           |
+|    |    ___        "--.__          ".        Bravo ! Tu as retrouvé le mot de passe !      |
+|    | ¤ |"--.__  "--.__   "--.       |                                                      |
+|    |   |_ x x "--..__ __     "      |        Un cadeau, en échange de ton service.         |
+|    |     "--.__ x x  |  |    |      |        Ça peut être très utile pour relier           |
+|    ".__        "--.__|__|  ¤ |      |        des branchements et faire des connexions.     |
 |        "--.__                |      |                                                      |
-|              "--.__          |      |                                                      |
+|              "--.__          |      |        Fais-en bon usage !                           |
 |                    "--._     |      |                                                      |
 |                         "-._."___.-"                                                       |
 |                                                                                            |
