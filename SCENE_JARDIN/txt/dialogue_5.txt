@@ -5,7 +5,7 @@
 |         \//                                                    \//         |
 |        _/                 Maintenant tu le sais,                \_         |
 |        \                                                         /         |
-|   Ce n'est pas parce que les choses sont faites à l'aide d'une machine     |
+|   ce n'est pas parce que les choses sont faites à l'aide d'une machine     |
 |              \ qu'elles ne sont pas aussi faites à la main. /              |
 |               \                                            /               |
 |         _  ___//                                          \\___  _         |
