@@ -2,11 +2,11 @@
 |                                                      |
 |                                                      |
 |       Retourne aux sources, le code source..!!       |
-|                  vraiment rien?                      |
+|                   Vraiment rien ?                    |
 |        Bon, je te l'accorde, elle est un peu         |
-|                 technique celle là:                  |
-|      bon aller, fait un clic droit > code source     |
-|         tu devrais y découvrir un message...         |
+|                 technique celle-là :                 |
+|           Fais un clic droit > code source           |
+|         Tu devrais y découvrir un message...         |
 |                                                      |
 |                                                      |
 +------------------------------------------------------+

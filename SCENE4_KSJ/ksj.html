@@ -157,19 +157,19 @@ inventaire
 
 if(localStorage.getItem("pont")== "fin_du_jeu"){
 localStorage.setItem("blabla_ksj","fin");
-$('select #option1').text('mais vous étiez donc touxtes déja ici auparavant!');
-$('select #option2').text('merci je suis rentréx chez moi');
+$('select #option1').text('Mais vous étiez donc touxtes déja ici auparavant !');
+$('select #option2').text('Merci, je suis rentré·e chez moi');
 localStorage.setItem("blabla_ksj","fin");
 
 }else if(localStorage.getItem("pont")== "fait"){
 localStorage.setItem("blabla_ksj","fin");
-$('select #option1').text('mais vous étiez donc touxtes déja ici auparavant!');
-$('select #option2').text('merci je suis rentrée chez moi');
+$('select #option1').text('Mais vous étiez donc touxtes déja ici auparavant !');
+$('select #option2').text('Merci, je suis rentré·e chez moi');
 localStorage.setItem("blabla_ksj","fin");
 
 }else if(localStorage.getItem("intro_labyrinthe")== "ok"){
-$('select #option1').text('netochka me fait peur!');
-$('select #option2').text('jamais je ne sortirai vivantx de ce labyrinthe!');
+$('select #option1').text('Netochka me fait peur !');
+$('select #option2').text('Jamais je ne sortirai vivant·e de ce labyrinthe !');
 localStorage.setItem("blabla_ksj","labyrinthe");
 
 
@@ -188,10 +188,10 @@ $('select #option2').text('Heu, salut salut ! Me revoilà !');
 }else if(localStorage.getItem("intro_jean")== "ok"){
 	if(localStorage.getItem("blabla_ksj")== "aide_mdp"){
 $('select #option1').css('display','none');
-$('select #option2').text('non, vraiment, la je ne l’ai pas...');
+$('select #option2').text('Non, vraiment, là je ne l’ai pas...');
 	}else{
-$('select #option1').text('l’esprit dans l’ordinateur, j’ai pas tout compris je crois...');
-$('select #option2').text('à l’aide! je ne trouve pas le mot de passe!');
+$('select #option1').text('L’esprit dans l’ordinateur, j’ai pas tout compris je crois...');
+$('select #option2').text('À l’aide ! Je ne trouve pas le mot de passe !');
 localStorage.setItem("blabla_ksj","mdp");}
 
 
@@ -207,8 +207,8 @@ $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
 
 }else if(localStorage.getItem("intro_bug")== "ok"){
-$('select #option1').text('je crois que j’ai écrasé un être vivant...');
-$('select #option2').text('ce petit bug semble de très mauvais poil!');
+$('select #option1').text('Je crois que j’ai écrasé un être vivant...');
+$('select #option2').text('Ce petit bug semble de très mauvais poil !');
 localStorage.setItem("blabla_ksj","bug");
 
 
@@ -221,8 +221,8 @@ $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
 }else if(localStorage.getItem("intro_vns")== "ok"){
-$('select #option1').text('la gargouille me parle de façon ultra cryptée!');
-$('select #option2').text('je suis perdue!');
+$('select #option1').text('La gargouille me parle de façon ultra cryptée !');
+$('select #option2').text('Je suis perdu·e !');
 localStorage.setItem("blabla_ksj","graine");
 
 }else if(localStorage.getItem("blabla_ksj")== "mou"){
@@ -230,8 +230,8 @@ $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
 }}else if(localStorage.getItem("intro_radia")== "ok"){
-$('select #option1').text('un arbre me parle');
-$('select #option2').text('il se passe des choses étranges dans la forêt');
+$('select #option1').text('Un arbre me parle');
+$('select #option2').text('Il se passe des choses étranges dans la forêt');
 localStorage.setItem("blabla_ksj","modem");
 
 
@@ -244,8 +244,8 @@ $('select #option1').css('display','none');
 $('select #option2').text('Heu, salut salut ! Me revoilà !');
 
 }else if(localStorage.getItem("intro_vns")== "ok"){
-$('select #option1').text('la gargouille me parle de façon ultra cryptée!');
-$('select #option2').text('je suis perdue!');
+$('select #option1').text('La gargouille me parle de façon ultra cryptée !');
+$('select #option2').text('Je suis perdu·e !');
 localStorage.setItem("blabla_ksj","graine");
 
 }else if(localStorage.getItem("blabla_ksj")== "mou"){
@@ -260,7 +260,7 @@ $('#reponse4').css('display','block');
 
 }else if(localStorage.getItem("blabla_ksj")== "inventaire_ok"){
 $('select #option1').css('display','none');
-$('select #option2').text('Hmm, et comment je fais pour rentrer chez moi?');
+$('select #option2').text('Hmm, et comment je fais pour rentrer chez moi ?');
 	$("#inventaire").addClass('inventaire_normal');
 $('#bigcarto').css('display','none');
 $('#reponse4').css('display','block');
@@ -342,7 +342,7 @@ if(x==0){
 $('#reponse_mdp').css('display', 'block');
 $("#question").val('0'); 
 $('select #option1').css('display','none');
-$('select #option2').text('non, vraiment, la je ne l’ai pas...');
+$('select #option2').text('Non, vraiment, là je ne l’ai pas...');
 localStorage.setItem('blabla_ksj','aide_mdp');
 x=1;
 }else{
@@ -446,7 +446,7 @@ $('.pre_reponse').css('display','none');
 
 $("#question").val('0'); 
 $('select #option1').css('display','none');
-$('select #option2').text('Okay... Et qu’est ce qu’il se passe maintenant?');
+$('select #option2').text('Okay... Et qu’est-ce qu’il se passe maintenant ?');
 x=2;
 
 }else if(x==2){

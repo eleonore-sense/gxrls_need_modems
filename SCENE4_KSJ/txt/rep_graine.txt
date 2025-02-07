@@ -1,12 +1,11 @@
 +------------------------------------------------+
 |                                                |
 |                                                |
-|          regarde dans ton inventaire,          |
-|     tu as peut-être apporté quelque chose      |
-|     de ton monde qui pourrait servir ici,      |
-|        faire pousser, faire grandir,           |
-|          trouve une terre propice!             |
-|                                                |
+|          Regarde dans ton inventaire,          |
+|      tu as peut-être apporté quelque chose     |
+|    de ton monde qui pourrait prendre racine    |
+|                ici et grandir.                 |
+|           Trouve une terre propice !           |
 |                                                |
 |                                                |
 +------------------------------------------------+

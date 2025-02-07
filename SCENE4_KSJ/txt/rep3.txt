@@ -1,10 +1,10 @@
 +---------------------------------------------------------+
 |                                                         |
 |                                                         |
-|           Tu as à ta disposition un inventaire,         |
-|       c'est la ou tu retrouveras tous les éléments      |
-|         que tu découvriras au cours de ce voyage.       |
-|                     Vas y jeter un œil!                 |
+|          Tu as à ta disposition un inventaire,          |
+|      C'est là où tu retrouveras tous les éléments       |
+|        que tu découvriras au cours de ce voyage.        |
+|                   Vas y jeter un œil!                   |
 |                                                         |
 |                                                         |
 +---------------------------------------------------------+
