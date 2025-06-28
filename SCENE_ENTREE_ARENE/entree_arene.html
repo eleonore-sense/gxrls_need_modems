@@ -199,6 +199,48 @@ _|_________\\\\\\                  (_
 <script type="text/javascript">
 
 
+function ajusterTousLesPre() {
+    // Trouve ton paysage - ADAPTE CE SÉLECTEUR selon ton HTML
+    const paysage = document.querySelector('#paysage'); // ← change ça selon ton ID/classe
+    
+    if (!paysage) return;
+    
+    const largeurActuelle = paysage.offsetWidth;
+    const largeurReference = 793.25; // ta largeur de référence
+    
+    // Trouve tous les <pre> qui ont une position ou margin-left
+    document.querySelectorAll('pre').forEach(pre => {
+        if (pre === paysage) return; // ignore le paysage lui-même
+        
+        const styles = window.getComputedStyle(pre);
+        const isPositioned = ['absolute', 'relative'].includes(styles.position);
+        const hasMargin = parseFloat(styles.marginLeft) !== 0;
+        
+        if (isPositioned || hasMargin) {
+            // Sauvegarde la position initiale au premier passage
+            if (!pre.dataset.originalPosition) {
+                if (isPositioned) {
+                    pre.dataset.originalPosition = parseFloat(styles.left) || 0;
+                } else {
+                    pre.dataset.originalPosition = parseFloat(styles.marginLeft) || 0;
+                }
+            }
+            
+            const positionOriginal = parseFloat(pre.dataset.originalPosition);
+            const nouvellePosition = (largeurActuelle / largeurReference) * positionOriginal;
+            
+            if (isPositioned) {
+                pre.style.left = `calc(50% + ${nouvellePosition}px)`;
+            } else {
+                pre.style.marginLeft = `${nouvellePosition}px`;
+            }
+        }
+    });
+}
+
+// Lance l'ajustement au chargement et au redimensionnement
+window.addEventListener('load', ajusterTousLesPre);
+window.addEventListener('resize', ajusterTousLesPre);
   ///////////////////////ONLOAD////////////////////////////
 
   if(localStorage.getItem("bouquet") == "donne"){
