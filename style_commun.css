@@ -66,8 +66,8 @@ div{
 
 
 #inventaire{
- font-family: 'Consolas-Local', Consolas, monospace;
- font-size: 13px;
+ font-family: Consolas, monospace;
+ font-size: 8px;
     cursor:pointer; 
     text-decoration: none; 
     color: black; 
