@@ -13,10 +13,12 @@
 }
 
 body {
-    font-size: 13px;
     font-family: 'Consolas-Local', 'Consolas', monospace; /* Fallback sur Consolas système */
     margin: 0; 
-    line-height: 15px;
+    font-size: 13px !important;
+    line-height: 15px !important; /* La valeur exacte de ton PC */
+    letter-spacing: 0px !important;
+    word-spacing: 0px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,15 +37,15 @@ body {
 
 pre {
     position: absolute;
-    line-height: 15px;
+        font-family: 'Consolas-Local', 'Consolas', monospace;
+    font-size: 13px !important;
+    line-height: 15px !important; /* La valeur exacte de ton PC */
+    letter-spacing: 0px !important;
+    word-spacing: 0px !important;
     top: 50%;
     left: 50%;  
     transform: translate(-50%, -50%);
     white-space: pre;
-    font-size: 13px;
-    font-family: 'Consolas-Local', 'Consolas', monospace;
-    letter-spacing: 0;
-    word-spacing: 0;
     /* Force le rendu pixel-perfect */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
