@@ -443,31 +443,36 @@ function ajusterPositions() {
     const paysagePre = paysage.querySelector('pre');
     if (!paysagePre) return;
     
-    // Largeur RÉELLE du paysage sur cet écran/navigateur
     const largeurActuelle = paysagePre.offsetWidth;
-    
-    // Ta largeur de référence (mesurée sur ton PC)
     const largeurReference = 793.25;
-    
-    // Calcul du ratio de différence
     const ratio = largeurActuelle / largeurReference;
     
-    console.log('Ratio détecté:', ratio); // Pour debug
+    console.log('Ratio:', ratio);
     
-    // Ajuste TOUS les éléments qui ont des positions relatives
     document.querySelectorAll('#letout > div').forEach(div => {
-        if (div === paysage) return; // Skip le paysage lui-même
+        if (div === paysage) return;
         
-        const styles = window.getComputedStyle(div);
-        
-        // Sauvegarde les valeurs ORIGINALES (en px) une seule fois
+        // Sauvegarde les valeurs INLINE une seule fois
         if (!div.dataset.initialized) {
-            div.dataset.originalMarginLeft = parseFloat(styles.marginLeft) || 0;
-            div.dataset.originalMarginTop = parseFloat(styles.marginTop) || 0;
+            // Lis directement l'attribut style (les valeurs originales du HTML)
+            const inlineStyle = div.getAttribute('style') || '';
+            
+            // Parse marginLeft
+            const marginLeftMatch = inlineStyle.match(/margin-left:\s*(-?\d+\.?\d*)px/);
+            div.dataset.originalMarginLeft = marginLeftMatch ? marginLeftMatch[1] : '0';
+            
+            // Parse marginTop
+            const marginTopMatch = inlineStyle.match(/margin-top:\s*(-?\d+\.?\d*)px/);
+            div.dataset.originalMarginTop = marginTopMatch ? marginTopMatch[1] : '0';
+            
             div.dataset.initialized = 'true';
+            
+            console.log(div.id, 'ORIGINAL:', {
+                marginLeft: div.dataset.originalMarginLeft,
+                marginTop: div.dataset.originalMarginTop
+            });
         }
         
-        // Applique le ratio
         const newMarginLeft = parseFloat(div.dataset.originalMarginLeft) * ratio;
         const newMarginTop = parseFloat(div.dataset.originalMarginTop) * ratio;
         
@@ -481,10 +486,9 @@ function ajusterPositions() {
     });
 }
 
-// IMPORTANT : Attend que la police soit complètement chargée
 if (document.fonts) {
     document.fonts.ready.then(() => {
-        setTimeout(ajusterPositions, 100); // Petit délai supplémentaire
+        setTimeout(ajusterPositions, 100);
     });
 } else {
     window.addEventListener('load', () => {
