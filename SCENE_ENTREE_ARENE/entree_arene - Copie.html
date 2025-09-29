@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style_commun.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../script_commun.js"></script>
+
+
+
+    <style>
+
+
+.bouton_intro{
+    z-index: 25;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+<body >
+
+
+                <a href="../CARTO/bigcarto.html" id="bigcarto">
+retour à la carto -->
+  </a>
+
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire">
+inventaire
+  </a>
+
+    <!--///////////////////////SCENE///////////////////////////////////-->
+  
+  <div id="letout">
+
+
+    <div id="paysage" style="top: 43px;">
+      <pre ><script>document.include('txt/fond_entree.txt');</script>
+      </pre>
+    </div>
+
+    <div id="champi" style="left:20.5px; top: 307px;">
+      <pre><script>document.include('txt/champi.txt');</script></pre>
+    </div>
+
+    <div id="pouce" style="left:617px; top: 138px; display:none;">
+      <pre><script>document.include('txt/pouce.txt');</script></pre>
+    </div>
+
+    <div id="grille_a" style="top: 131px; left:-180px; cursor: not-allowed;" onclick="fonctionArene()">
+      <pre id="grille_a_ferme" style="display: block;"><script>document.include('txt/grille_a1.txt') ;</script>
+      </pre>
+      <pre id="grille_a_ouvert" style="display: none;"><script>document.include('txt/grille_a2.txt') ;</script>
+      </pre>
+    </div>
+
+    <div id="grille_b" style="top: 147px; left:184px; cursor: not-allowed;">
+      <pre id="grille_b_ferme" style="display: block;"><script>document.include('txt/grille_b1.txt') ;</script>
+      </pre>
+      <pre id="grille_b_ouvert" style="display: none;"><script>document.include('txt/grille_b2.txt') ;</script>
+      </pre>
+    </div>
+
+    <div id="gargouille" style="top: -165px; cursor:pointer;" onclick="fonction_gargouille()">
+      <pre ><script>document.include('txt/gargouille.txt') ;</script>
+      </pre>
+    </div>
+
+
+    <div id="meurtriere" style="left:404px; top: 91px; cursor: pointer;" onclick="citation_gynepunk()">
+      <pre ><script>document.include('txt/meurtriere.txt');</script>
+      </pre>
+    </div>
+
+
+    <div id="etoile" style="left:-304px; top: 291px; cursor: pointer;" onclick="slime()">
+      <pre ><script>document.include('txt/etoile.txt');</script>
+      </pre>
+    </div>
+
+    <div id="sang" style="left:-531px; top: 253px; cursor: pointer;" onclick="thf()">
+      <pre ><script>document.include('txt/sang.txt');</script>
+      </pre>
+    </div>
+
+    <div style="left:-330px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_gauche()">
+      <pre id="garg_gauche"><script>document.include('txt/garg_gauche1.txt');</script></pre>
+    </div>
+
+    <div style="left:350px; top: -250px; cursor:pointer;" onclick="fonction_gargouille_droite()">
+      <pre id="garg_droite"><script>document.include('txt/garg_droite1.txt');</script></pre>
+    </div>
+      
+    
+
+
+
+<!--///////////////////////PAGE POP UP///////////////////////////////////-->
+
+
+<div id="intro" style=" display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/intro.txt')</script></pre>
+  <button id="bouton_0_a" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:-100px;">Ça colle, je...<br>j'ai l'impression de m'enfoncer</button>
+  <button id="bouton_0_b" class="bouton_intro" onclick="intro()" style="width:180px; top:40px;left:100px;">Y a quoi dans ce marécage&nbsp;? La végétation autour est très étrange</button>
+</div>
+
+<div id="vns_1" style=" display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_1.txt')</script></pre>
+  <button id="bouton_1_a" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:-80px;">Facile à dire avec vos ailes qui vous gardent au sec...</button>
+  <button id="bouton_1_b" class="bouton_intro" onclick="VNS_1()" style="width: 135px; top:60px; left:80px;">Ça a toujours été marécageux par ici&nbsp;?</button>
+</div>
+
+
+<div id="vns_2" style="display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_2.txt')</script></pre>
+ <button id="bouton_2" class="bouton_intro" onclick="VNS_2()" style="width: 250px; top:78px;">Je ne saurai dire si cette histoire est vraie ou fausse...</button>
+</div>
+
+<div id="vns_3" style="display:none;">
+ <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_3.txt')</script></pre>
+ <button id="bouton_3" class="bouton_intro" onclick="VNS_3()" style="width: 120px; top:70px;">C'est qui "eux"&nbsp;?</button>
+</div>
+
+<div id="vns_4" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_4.txt')</script></pre>
+  <button id="bouton_4_a" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:-80px;">Ma ferme aussi elle faisait partie de la terre...</button>
+  <button id="bouton_4_b" class="bouton_intro" onclick="VNS_4()" style="width: 135px; top:65px; left:80px;">Y a quoi derrière les grilles que vous gardez&nbsp;?</button>
+</div>
+
+<div id="vns_5" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_5.txt')</script></pre>
+</div>
+
+<div id="vns_6" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_6.txt')</script></pre>
+  <button id="bouton_vns_non" class="bouton_intro" onclick="tout_fermer()" style="top:78px; width: 250px;">J'essaie, mais je n'y suis pas encore</button>
+  <button id="bouton_vns_oui" class="bouton_intro" onclick="donner_fleur()" style="top: 78px; width: 300px;">Je ne sais pas, mais j'ai passé une éternité à faire pousser ce bouquet de tournesols</button>
+</div>
+
+<div id="vns_7" style="display:none;">
+  <pre style="z-index: 4; background-color: white; "><script>document.include('txt/vns_7.txt')</script></pre>
+</div>
+
+<div id="vns_gauche" style="display:none;">
+  <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_gauche.txt')</script></pre>
+</div>
+
+<div id="vns_droite" style="display:none;">
+  <pre style="z-index: 5; background-color: white; "><script>document.include('txt/vns_droite.txt')</script></pre>
+</div>
+
+<div id="citation_gynepunk" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/citation_gynepunk.txt');</script>
+  </pre>
+</div>
+
+<div id="slime" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/slime.txt');</script>
+  </pre>
+</div>
+
+<div id="thf" style="display: none;">
+  <pre style="background-color: white; z-index:6;"><script>document.include('txt/thf.txt');</script>
+  </pre>
+</div>
+
+
+<!--///////////////////////FERMER PAGE///////////////////////////////////-->
+
+
+  <div id="tout_fermer" style="height:100vh; width: 100vw; z-index: 20; cursor: pointer; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;" onclick="tout_fermer()"></div>
+
+
+
+  <div id="bloqueur" style="height:100vh; width: 100vw; z-index: 22; transform: translate(-50%, -50%); top: 50%; left: 50%; display: none;"></div>
+
+  </div>
+
+    </div>
+ 
+<script type="text/javascript">
+
+
+  ///////////////////////ONLOAD////////////////////////////
+
+  if(localStorage.getItem("bouquet") == "donne"){
+    document.getElementById("grille_a_ouvert").style.display= "block";
+    document.getElementById("grille_a_ferme").style.display= "none";
+    document.getElementById("grille_a").style.cursor= "alias";
+  }
+
+  if(localStorage.getItem("slime") == "ok"){
+    document.getElementById("etoile").style.cursor= "auto";
+  }
+
+  if(localStorage.getItem("citation_gynepunk") == "ok"){
+    document.getElementById("meurtriere").style.cursor= "auto";
+  }
+
+  ///////////////////////FONCTIONS////////////////////////////
+
+  function fonctionArene(){
+    if(localStorage.getItem("bouquet") == "donne"){
+      window.location.href='../SCENE_ARENE/arene.html';
+    }
+  }
+
+  function slime(){
+    if(localStorage.getItem("slime") == "ok"){
+      document.getElementById("etoile").style.cursor = "auto";
+    }else{
+      document.getElementById("slime").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      document.getElementById("etoile").style.cursor = "auto";
+      localStorage.setItem("slime", "ok");
+    }
+  }
+
+  function citation_gynepunk(){
+    if(localStorage.getItem("citation_gynepunk") == "ok"){
+      document.getElementById("meurtriere").style.cursor = "auto";   
+    }else{
+      document.getElementById("citation_gynepunk").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      document.getElementById("meurtriere").style.cursor = "auto";
+      localStorage.setItem("citation_gynepunk", "ok");
+    }
+  }
+
+  function thf(){
+      document.getElementById("thf").style.display = "block";
+      document.getElementById("tout_fermer").style.display = "block";
+  }
+
+
+  function tout_fermer(){
+    document.getElementById("tout_fermer").style.display = "none";
+    document.getElementById("bouton_0_a").style.display= "none";
+    document.getElementById("bouton_0_b").style.display= "none";
+    document.getElementById("slime").style.display= "none";
+    document.getElementById("citation_gynepunk").style.display= "none";
+    document.getElementById("thf").style.display= "none";
+    document.getElementById("vns_7").style.display= "none";
+    document.getElementById("vns_6").style.display= "none";     
+    document.getElementById("vns_5").style.display= "none";
+    document.getElementById("vns_gauche").style.display= "none";     
+    document.getElementById("vns_droite").style.display= "none"; 
+  }
+
+
+
+
+  function fonction_gargouille(){
+    if(localStorage.getItem("intro_vns") == "ok"){
+    document.getElementById("vns_6").style.display= "block";
+    document.getElementById("tout_fermer").style.display = "block";
+      if(localStorage.getItem("bouquet") == "ok"){
+      document.getElementById("bouton_vns_oui").style.display= "block";
+      document.getElementById("bouton_vns_non").style.display= "none";
+      }else if (localStorage.getItem("bouquet") == "donne"){
+      document.getElementById("vns_6").style.display= "none";
+      document.getElementById("vns_7").style.display= "block";
+      document.getElementById("tout_fermer").style.display = "block";
+      }else{
+      document.getElementById("bouton_vns_oui").style.display= "none";
+      document.getElementById("bouton_vns_non").style.display= "block";
+      }
+    }else{
+    document.getElementById("intro").style.display= "block";
+    document.getElementById("bouton_0_a").style.display= "block";
+    document.getElementById("bouton_0_b").style.display= "block";
+    }
+  }
+
+
+
+  function intro(){
+    document.getElementById("vns_1").style.display= "block";   
+    document.getElementById("bouton_1_a").style.display= "block";
+    document.getElementById("bouton_1_b").style.display= "block";
+    document.getElementById("bouton_0_a").style.display= "none";
+    document.getElementById("bouton_0_b").style.display= "none";
+    document.getElementById("intro").style.display= "none";
+    document.getElementById("bloqueur").style.display = "block";
+  }
+
+  function VNS_1(){
+    document.getElementById("vns_2").style.display= "block";
+    document.getElementById("bouton_2").style.display= "block";
+    document.getElementById("vns_1").style.display= "none";   
+    document.getElementById("bouton_1_a").style.display= "none";
+    document.getElementById("bouton_1_b").style.display= "none";
+  }
+
+
+  function VNS_2(){
+    document.getElementById("vns_3").style.display= "block";
+    document.getElementById("bouton_3").style.display= "block";
+    document.getElementById("vns_2").style.display= "none";   
+    document.getElementById("bouton_2").style.display= "none";
+  }
+
+
+  function VNS_3(){
+    document.getElementById("vns_4").style.display= "block";   
+    document.getElementById("bouton_4_a").style.display= "block";
+    document.getElementById("bouton_4_b").style.display= "block";
+    document.getElementById("vns_3").style.display= "none";   
+    document.getElementById("bouton_3").style.display= "none";
+  }
+
+
+  function VNS_4(){
+    document.getElementById("vns_4").style.display= "none";   
+    document.getElementById("bouton_4_a").style.display= "none";
+    document.getElementById("bouton_4_b").style.display= "none";
+    document.getElementById("vns_5").style.display= "block";   
+    document.getElementById("bloqueur").style.display= "none";
+    document.getElementById("tout_fermer").style.display= "block";
+    localStorage.setItem("intro_vns", "ok"); 
+  }
+
+  function fonction_gargouille_gauche(){
+    document.getElementById("vns_gauche").style.display= "block";
+    document.getElementById("tout_fermer").style.display= "block";
+  }
+
+  function fonction_gargouille_droite(){
+    document.getElementById("vns_droite").style.display= "block";
+    document.getElementById("tout_fermer").style.display= "block";
+  }
+
+  function donner_fleur(){
+    document.getElementById("vns_6").style.display= "none";
+    setTimeout(function() {
+      document.getElementById("pouce").style.display= "block";
+    }, 1000);
+    setTimeout(function() {
+      document.getElementById("grille_a_ouvert").style.display= "block";
+      document.getElementById("grille_a_ferme").style.display= "none";
+    }, 2000);
+    setTimeout(function() {
+        document.getElementById("vns_7").style.display = "block";
+    }, 3000);  
+    document.getElementById("bloqueur").style.display= "none";
+    document.getElementById("tout_fermer").style.display= "block";
+    document.getElementById("grille_a").style.cursor= "alias";
+    localStorage.setItem("bouquet", "donne");
+  }
+    
+
+
+    ///////////////////////garg gauche///////////////////////////////////
+        var text_garg_gauche = [
+            'txt/garg_gauche1.txt',
+            'txt/garg_gauche2.txt'];
+
+        var counter_garg_gauche = 0;
+        var preElement_garg_gauche = document.getElementById("garg_gauche");
+        var textContents_garg_gauche = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_garg_gauche.length; i++) {
+            preloadText_garg_gauche(text_garg_gauche[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_garg_gauche(url, index) {
+            var request_garg_gauche = new XMLHttpRequest();
+            request_garg_gauche.open('GET', url, true);
+            request_garg_gauche.onreadystatechange = function () {
+                if (request_garg_gauche.readyState === XMLHttpRequest.DONE && request_garg_gauche.status === 200) {
+                    textContents_garg_gauche[index] = request_garg_gauche.responseText;
+                }
+            };
+            request_garg_gauche.send();
+        }
+
+    var timer_garg_gauche;
+
+        function animate_garg_gauche() {
+            preElement_garg_gauche.textContent = textContents_garg_gauche[counter_garg_gauche];
+            counter_garg_gauche++;
+            if (counter_garg_gauche >= textContents_garg_gauche.length) {
+                counter_garg_gauche = 0;            }
+        
+        timer_garg_gauche = setTimeout(animate_garg_gauche, 333); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_garg_gauche();
+
+
+        ///////////////////////garg droite///////////////////////////////////
+        var text_garg_droite = [
+            'txt/garg_droite1.txt',
+            'txt/garg_droite2.txt'];
+
+        var counter_garg_droite = 0;
+        var preElement_garg_droite = document.getElementById("garg_droite");
+        var textContents_garg_droite = [];
+
+        // Preload all the text files using AJAX
+        for (var i = 0; i < text_garg_droite.length; i++) {
+            preloadText_garg_droite(text_garg_droite[i], i);
+        }
+
+        // Function to preload a text file and store its content
+        function preloadText_garg_droite(url, index) {
+            var request_garg_droite = new XMLHttpRequest();
+            request_garg_droite.open('GET', url, true);
+            request_garg_droite.onreadystatechange = function () {
+                if (request_garg_droite.readyState === XMLHttpRequest.DONE && request_garg_droite.status === 200) {
+                    textContents_garg_droite[index] = request_garg_droite.responseText;
+                }
+            };
+            request_garg_droite.send();
+        }
+
+    var timer_garg_droite;
+
+        function animate_garg_droite() {
+            preElement_garg_droite.textContent = textContents_garg_droite[counter_garg_droite];
+            counter_garg_droite++;
+            if (counter_garg_droite >= textContents_garg_droite.length) {
+                counter_garg_droite = 0;            }
+        
+        timer_garg_droite = setTimeout(animate_garg_droite, 333); // Boom, on démarre un nouvel interval
+
+}
+        // Start the animation after all text files are preloaded
+        animate_garg_droite();
+
+
+
+    </script>
+
+
+</body>
+</html>

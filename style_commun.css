@@ -1,27 +1,43 @@
 
+@font-face {
+    font-family: 'Consolas-Local';
+    src: url('fonts/consolas.woff2') format('woff2'),
+         url('fonts/consolas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* Important : bloque le rendu jusqu'au chargement */
+}
+
 body {
-font-size: 13px;
-            font-family: Consolas, monospace;
-            margin: 0; 
-            line-height:1.15;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
+    font-size: 13px;
+    font-family: 'Consolas-Local', 'Consolas', monospace; /* Fallback sur Consolas système */
+    margin: 0; 
+    line-height: 1.15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
 
-
-pre{
+pre {
     position: absolute;
-            line-height:1.15;
+    line-height: 1.15;
     top: 50%;
     left: 50%;  
     transform: translate(-50%, -50%);
     white-space: pre;
+    font-size: 13px;
+    font-family: 'Consolas-Local', 'Consolas', monospace;
+    letter-spacing: 0;
+    word-spacing: 0;
+    /* Force le rendu précis */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+}
 
-    }
 
     
 div{
@@ -30,8 +46,12 @@ div{
 
 
 #bigcarto{
- font-family: Consolas, monospace;
+    font-family: 'Consolas-Local', 'Consolas', monospace;
+        line-height: 1.15;
  font-size: 13px;
+     -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
  cursor:pointer; 
  text-decoration: none; 
  color: black; 
@@ -46,7 +66,7 @@ div{
 
 
 #inventaire{
- font-family: Consolas, monospace;
+ font-family: 'Consolas-Local', Consolas, monospace;
  font-size: 13px;
     cursor:pointer; 
     text-decoration: none; 
