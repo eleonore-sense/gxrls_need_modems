@@ -16,7 +16,7 @@ body {
     font-size: 13px;
     font-family: 'Consolas-Local', 'Consolas', monospace; /* Fallback sur Consolas système */
     margin: 0; 
-    line-height: 1.15;
+    line-height: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ body {
 
 pre {
     position: absolute;
-    line-height: 1.15;
+    line-height: 15px;
     top: 50%;
     left: 50%;  
     transform: translate(-50%, -50%);
@@ -63,7 +63,7 @@ div{
 
 #bigcarto{
     font-family: 'Consolas-Local', 'Consolas', monospace;
-        line-height: 1.15;
+        line-height: 15px;
  font-size: 13px;
      -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
