@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'Consolas-Local';
-    src: url('fonts/consolas.woff2') format('woff2'),
-         url('fonts/consolas.woff') format('woff');
+    src: url('fonts/Consolas.woff2') format('woff2'),
+         url('fonts/Consolas.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block; /* Important : bloque le rendu jusqu'au chargement */
