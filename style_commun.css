@@ -6,6 +6,10 @@
     font-weight: normal;
     font-style: normal;
     font-display: block; /* Important : bloque le rendu jusqu'au chargement */
+    /* Force les métriques */
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
 }
 
 body {
@@ -19,6 +23,14 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+        /* Force le rendu pixel-perfect */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    
+    /* Empêche les ajustements automatiques */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 pre {
@@ -32,10 +44,14 @@ pre {
     font-family: 'Consolas-Local', 'Consolas', monospace;
     letter-spacing: 0;
     word-spacing: 0;
-    /* Force le rendu précis */
-    -webkit-font-smoothing: none;
+    /* Force le rendu pixel-perfect */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeSpeed;
+    text-rendering: geometricPrecision;
+    
+    /* Empêche les ajustements automatiques */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 

@@ -51,14 +51,14 @@ inventaire
       <pre><script>document.include('txt/pouce.txt');</script></pre>
     </div>
 
-    <div id="grille_a" style="top: 131px; left:-180px; cursor: not-allowed;" onclick="fonctionArene()">
+    <div id="grille_a" style="top: 124px; left:-165px; cursor: not-allowed;" onclick="fonctionArene()">
       <pre id="grille_a_ferme" style="display: block;"><script>document.include('txt/grille_a1.txt') ;</script>
       </pre>
       <pre id="grille_a_ouvert" style="display: none;"><script>document.include('txt/grille_a2.txt') ;</script>
       </pre>
     </div>
 
-    <div id="grille_b" style="top: 147px; left:184px; cursor: not-allowed;">
+    <div id="grille_b" style="top: 140px; left:168px; cursor: not-allowed;">
       <pre id="grille_b_ferme" style="display: block;"><script>document.include('txt/grille_b1.txt') ;</script>
       </pre>
       <pre id="grille_b_ouvert" style="display: none;"><script>document.include('txt/grille_b2.txt') ;</script>
@@ -436,7 +436,63 @@ inventaire
         animate_garg_droite();
 
 
+function ajusterPositions() {
+    const paysage = document.getElementById('paysage');
+    if (!paysage) return;
+    
+    const paysagePre = paysage.querySelector('pre');
+    if (!paysagePre) return;
+    
+    // Largeur RÉELLE du paysage sur cet écran/navigateur
+    const largeurActuelle = paysagePre.offsetWidth;
+    
+    // Ta largeur de référence (mesurée sur ton PC)
+    const largeurReference = 793.25;
+    
+    // Calcul du ratio de différence
+    const ratio = largeurActuelle / largeurReference;
+    
+    console.log('Ratio détecté:', ratio); // Pour debug
+    
+    // Ajuste TOUS les éléments qui ont des positions relatives
+    document.querySelectorAll('#letout > div').forEach(div => {
+        if (div === paysage) return; // Skip le paysage lui-même
+        
+        const styles = window.getComputedStyle(div);
+        
+        // Sauvegarde les valeurs ORIGINALES (en px) une seule fois
+        if (!div.dataset.initialized) {
+            div.dataset.originalMarginLeft = parseFloat(styles.marginLeft) || 0;
+            div.dataset.originalMarginTop = parseFloat(styles.marginTop) || 0;
+            div.dataset.initialized = 'true';
+        }
+        
+        // Applique le ratio
+        const newMarginLeft = parseFloat(div.dataset.originalMarginLeft) * ratio;
+        const newMarginTop = parseFloat(div.dataset.originalMarginTop) * ratio;
+        
+        if (newMarginLeft !== 0) {
+            div.style.marginLeft = `${newMarginLeft}px`;
+        }
+        
+        if (newMarginTop !== 0) {
+            div.style.marginTop = `${newMarginTop}px`;
+        }
+    });
+}
 
+// IMPORTANT : Attend que la police soit complètement chargée
+if (document.fonts) {
+    document.fonts.ready.then(() => {
+        setTimeout(ajusterPositions, 100); // Petit délai supplémentaire
+    });
+} else {
+    window.addEventListener('load', () => {
+        setTimeout(ajusterPositions, 200);
+    });
+}
+
+window.addEventListener('resize', ajusterPositions);
     </script>
 
 
