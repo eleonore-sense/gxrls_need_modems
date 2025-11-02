@@ -17,18 +17,39 @@ _|_________\\\\\\                  (_
 
 
     <style>
+@font-face {
+    font-family: 'Consolas-Local';
+    src: url('../fonts/Consolas.woff2') format('woff2'),
+         url('../fonts/Consolas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* Important : bloque le rendu jusqu'au chargement */
+    /* Force les métriques */
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
+}
 
 html, body{
     background-color: black;
 color: white;
             font-size: 12px;
-            font-family: Consolas;
+            font-family: Consolas-Local;
             margin: 0; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
             overflow: hidden;
+                font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
+    line-height: 13.5px !important; /* La valeur exacte de ton PC */
+    letter-spacing: 0px !important;
+    word-spacing: 0px !important;
 }
 
 #bloqueur{z-index: 10;}
@@ -186,11 +207,11 @@ text-shadow: 1px 1px 2px violet, 0 0 1em white, 0 0 0.2em white;
 
 
     <!--///////////////////////paysage///////////////////////////////////-->
-            <a href="../SCENE_DAME_DU_CIEL/dame_du_ciel.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%);">
+            <a href="../SCENE_DAME_DU_CIEL/dame_du_ciel.html" id="bigcarto" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; right: 0%;top: 0% ; margin-right: 30px; transform: translate(0%, 0%); font-family: Consolas-Local;">
 quitter le téléscope -->
   </a>
 
-          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%);">
+          <a href="../INVENTAIRE/inventaire.html" id="inventaire" style="cursor:pointer; text-decoration: none; color: white; z-index:3; margin-top: 30px; position: absolute; left: 0%;top: 0% ; margin-left: 30px; transform: translate(0%, 0%); font-family: Consolas-Local;">
 inventaire
   </a>
 
